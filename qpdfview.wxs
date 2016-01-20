@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="8ADEFC9E-526B-4A28-9DFC-B72EECA9F529" Name="qpdfview" Language="1033" Version="0.4.16" Manufacturer="Adam Reichold" UpgradeCode="4C199DFA-2016-4917-B13C-5ACE805A648C">
+        <Package Description="qpdfview is a tabbed document viewer" Comments="https://launchpad.net/qpdfview" InstallerVersion="200" Compressed="yes" Manufacturer="Adam Reichold" />
+        <Media Id="1" Cabinet="simple.cab" EmbedCab="yes" CompressionLevel="high" />
+        <WixVariable Id="WixUILicenseRtf" Value="gpl-2.0.rtf" />
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="QPDFVIEW" Name="qpdfview">
+                <Component Id="CHANGES.TXT" DiskId="1" Guid="784C0B53-5B18-42DE-98DF-566A5DFE6C12">
+                    <File Id="CHANGES.TXT" Name="CHANGES.txt" Source="qpdfview\CHANGES.txt" />
+                </Component>
+                <Component Id="CONTRIBUTORS.TXT" DiskId="1" Guid="FE2EA3B0-6F19-48A9-B74D-6D7ED0BF49F8">
+                    <File Id="CONTRIBUTORS.TXT" Name="CONTRIBUTORS.txt" Source="qpdfview\CONTRIBUTORS.txt" />
+                </Component>
+                <Component Id="COPYING.TXT" DiskId="1" Guid="28EFBD73-42D8-4215-BBF1-2D16529A0F88">
+                    <File Id="COPYING.TXT" Name="COPYING.txt" Source="qpdfview\COPYING.txt" />
+                </Component>
+                <Component Id="LIBBZ2_1.DLL" DiskId="1" Guid="415315A3-AEF4-47C7-A76D-F6F90AD0DC91">
+                    <File Id="LIBBZ2_1.DLL" Name="libbz2-1.dll" Source="qpdfview\libbz2-1.dll" />
+                </Component>
+                <Component Id="LIBCURL_4.DLL" DiskId="1" Guid="3AA08DB1-8EF4-40A3-A5B8-804EA9C695EF">
+                    <File Id="LIBCURL_4.DLL" Name="libcurl-4.dll" Source="qpdfview\libcurl-4.dll" />
+                </Component>
+                <Component Id="LIBDJVULIBRE_21.DLL" DiskId="1" Guid="500B664B-2CC2-40F7-B4EF-0A7E97C1F927">
+                    <File Id="LIBDJVULIBRE_21.DLL" Name="libdjvulibre-21.dll" Source="qpdfview\libdjvulibre-21.dll" />
+                </Component>
+                <Component Id="LIBEAY32.DLL" DiskId="1" Guid="1898227D-9276-48FA-A50D-0C04ECA65E8E">
+                    <File Id="LIBEAY32.DLL" Name="libeay32.dll" Source="qpdfview\libeay32.dll" />
+                </Component>
+                <Component Id="LIBFFI_6.DLL" DiskId="1" Guid="1C5FD196-B79A-4525-A2A3-3D16262C1A15">
+                    <File Id="LIBFFI_6.DLL" Name="libffi-6.dll" Source="qpdfview\libffi-6.dll" />
+                </Component>
+                <Component Id="LIBFREETYPE_6.DLL" DiskId="1" Guid="7B6AABF2-858C-45A2-A7F0-D19F4F71ED9B">
+                    <File Id="LIBFREETYPE_6.DLL" Name="libfreetype-6.dll" Source="qpdfview\libfreetype-6.dll" />
+                </Component>
+                <Component Id="LIBGCC_S_DW2_1.DLL" DiskId="1" Guid="BB72D3FF-8338-493D-988D-D708DD419BBF">
+                    <File Id="LIBGCC_S_DW2_1.DLL" Name="libgcc_s_dw2-1.dll" Source="qpdfview\libgcc_s_dw2-1.dll" />
+                </Component>
+                <Component Id="LIBGLIB_2.0_0.DLL" DiskId="1" Guid="D0BF8AC7-1215-4DAD-AE6E-45C21D51ABAC">
+                    <File Id="LIBGLIB_2.0_0.DLL" Name="libglib-2.0-0.dll" Source="qpdfview\libglib-2.0-0.dll" />
+                </Component>
+                <Component Id="LIBGMP_10.DLL" DiskId="1" Guid="4033D8ED-19F2-4EA8-8C51-25D3379679B9">
+                    <File Id="LIBGMP_10.DLL" Name="libgmp-10.dll" Source="qpdfview\libgmp-10.dll" />
+                </Component>
+                <Component Id="LIBGNUTLS_30.DLL" DiskId="1" Guid="2447EC7D-D292-4F5E-930B-5F95FAEA16B4">
+                    <File Id="LIBGNUTLS_30.DLL" Name="libgnutls-30.dll" Source="qpdfview\libgnutls-30.dll" />
+                </Component>
+                <Component Id="LIBGS_9.DLL" DiskId="1" Guid="394E0705-EB55-45BA-80FB-9188DBABCAE8">
+                    <File Id="LIBGS_9.DLL" Name="libgs-9.dll" Source="qpdfview\libgs-9.dll" />
+                </Component>
+                <Component Id="LIBHARFBUZZ_0.DLL" DiskId="1" Guid="D116FB7B-F4C6-4B51-8A9C-B9EB726D891D">
+                    <File Id="LIBHARFBUZZ_0.DLL" Name="libharfbuzz-0.dll" Source="qpdfview\libharfbuzz-0.dll" />
+                </Component>
+                <Component Id="LIBHOGWEED_4_1.DLL" DiskId="1" Guid="AA5489BF-7FF1-4284-A0E3-6F62A193C605">
+                    <File Id="LIBHOGWEED_4_1.DLL" Name="libhogweed-4-1.dll" Source="qpdfview\libhogweed-4-1.dll" />
+                </Component>
+                <Component Id="LIBICONV_2.DLL" DiskId="1" Guid="1D88F8E3-8F1E-487A-A68C-D07E46F83B71">
+                    <File Id="LIBICONV_2.DLL" Name="libiconv-2.dll" Source="qpdfview\libiconv-2.dll" />
+                </Component>
+                <Component Id="LIBIDN_11.DLL" DiskId="1" Guid="E41E70F4-6736-4DED-A971-09E5E6170F9D">
+                    <File Id="LIBIDN_11.DLL" Name="libidn-11.dll" Source="qpdfview\libidn-11.dll" />
+                </Component>
+                <Component Id="LIBINTL_8.DLL" DiskId="1" Guid="E6A1C56A-2463-4D04-87F5-56261CCB84BC">
+                    <File Id="LIBINTL_8.DLL" Name="libintl-8.dll" Source="qpdfview\libintl-8.dll" />
+                </Component>
+                <Component Id="LIBJPEG_8.DLL" DiskId="1" Guid="C60511DB-B21A-4B74-A871-1C870C1489B6">
+                    <File Id="LIBJPEG_8.DLL" Name="libjpeg-8.dll" Source="qpdfview\libjpeg-8.dll" />
+                </Component>
+                <Component Id="LIBLCMS2_2.DLL" DiskId="1" Guid="FF8FD65C-59E3-441A-9B43-132880DFBAF8">
+                    <File Id="LIBLCMS2_2.DLL" Name="liblcms2-2.dll" Source="qpdfview\liblcms2-2.dll" />
+                </Component>
+                <Component Id="LIBLZMA_5.DLL" DiskId="1" Guid="39FE8280-EBB1-4E93-ADFE-E9FA37206FCC">
+                    <File Id="LIBLZMA_5.DLL" Name="liblzma-5.dll" Source="qpdfview\liblzma-5.dll" />
+                </Component>
+                <Component Id="LIBNETTLE_6_1.DLL" DiskId="1" Guid="0F7558C1-13DE-4925-ABC1-122271228224">
+                    <File Id="LIBNETTLE_6_1.DLL" Name="libnettle-6-1.dll" Source="qpdfview\libnettle-6-1.dll" />
+                </Component>
+                <Component Id="LIBOPENJPEG_5.DLL" DiskId="1" Guid="9AE530EE-5142-41AD-94C4-2B825FE2B008">
+                    <File Id="LIBOPENJPEG_5.DLL" Name="libopenjpeg-5.dll" Source="qpdfview\libopenjpeg-5.dll" />
+                </Component>
+                <Component Id="LIBP11_KIT_0.DLL" DiskId="1" Guid="20CF4391-9870-4537-81EB-A4EDA0E5DD16">
+                    <File Id="LIBP11_KIT_0.DLL" Name="libp11-kit-0.dll" Source="qpdfview\libp11-kit-0.dll" />
+                </Component>
+                <Component Id="LIBPNG16_16.DLL" DiskId="1" Guid="E3CF7874-1157-4C07-AEB3-E53F48A85015">
+                    <File Id="LIBPNG16_16.DLL" Name="libpng16-16.dll" Source="qpdfview\libpng16-16.dll" />
+                </Component>
+                <Component Id="LIBPOPPLER_55.DLL" DiskId="1" Guid="3D16E99C-1E83-45F8-A6FB-8583499E5FCF">
+                    <File Id="LIBPOPPLER_55.DLL" Name="libpoppler-55.dll" Source="qpdfview\libpoppler-55.dll" />
+                </Component>
+                <Component Id="LIBPOPPLER_QT4_4.DLL" DiskId="1" Guid="E76BF3AA-6811-4B14-9B0E-C9E6F9AB139B">
+                    <File Id="LIBPOPPLER_QT4_4.DLL" Name="libpoppler-qt4-4.dll" Source="qpdfview\libpoppler-qt4-4.dll" />
+                </Component>
+                <Component Id="LIBRTMP_1.DLL" DiskId="1" Guid="5DB9992E-6517-46C5-AAF5-39021E00D9EC">
+                    <File Id="LIBRTMP_1.DLL" Name="librtmp-1.dll" Source="qpdfview\librtmp-1.dll" />
+                </Component>
+                <Component Id="LIBSPECTRE_1.DLL" DiskId="1" Guid="E3D619E6-F250-461E-A653-387A8C876183">
+                    <File Id="LIBSPECTRE_1.DLL" Name="libspectre-1.dll" Source="qpdfview\libspectre-1.dll" />
+                </Component>
+                <Component Id="LIBSSH2_1.DLL" DiskId="1" Guid="8CF672EF-5E52-4CD4-9A61-465A8461F3D5">
+                    <File Id="LIBSSH2_1.DLL" Name="libssh2-1.dll" Source="qpdfview\libssh2-1.dll" />
+                </Component>
+                <Component Id="LIBSTDC___6.DLL" DiskId="1" Guid="DE72120D-2239-4B63-BFC4-F704F42EE2B0">
+                    <File Id="LIBSTDC___6.DLL" Name="libstdc++-6.dll" Source="qpdfview\libstdc++-6.dll" />
+                </Component>
+                <Component Id="LIBTASN1_6.DLL" DiskId="1" Guid="698A0358-586D-4B64-A579-489B8677D5E1">
+                    <File Id="LIBTASN1_6.DLL" Name="libtasn1-6.dll" Source="qpdfview\libtasn1-6.dll" />
+                </Component>
+                <Component Id="LIBTIFF_5.DLL" DiskId="1" Guid="33C87B77-E33D-40A2-9456-2A232C7EB9D9">
+                    <File Id="LIBTIFF_5.DLL" Name="libtiff-5.dll" Source="qpdfview\libtiff-5.dll" />
+                </Component>
+                <Component Id="LIBWINPTHREAD_1.DLL" DiskId="1" Guid="BB400BB4-1E25-4368-8F2D-B331D111A8A9">
+                    <File Id="LIBWINPTHREAD_1.DLL" Name="libwinpthread-1.dll" Source="qpdfview\libwinpthread-1.dll" />
+                </Component>
+                <Component Id="QPDFVIEW.EXE" DiskId="1" Guid="C6202993-19B8-43D9-814F-DC4E60F2A263">
+                    <File Id="QPDFVIEW.EXE" Name="qpdfview.exe" Source="qpdfview\qpdfview.exe">
+                        <Shortcut Id="desktopShortcut" Directory="DesktopFolder" Name="qpdfview" WorkingDirectory="INSTALLDIR" Advertise="yes" Icon="DesktopIcon.exe" IconIndex="0" />
+                        <Shortcut Id="ExeShortcut" Directory="ProgramMenuDir" Name="qpdfview" Advertise="yes" Icon="StartMenuIcon.exe" IconIndex="0" />
+                    </File>
+                </Component>
+                <Component Id="QPDFVIEW.ICO" DiskId="1" Guid="1E4FF51F-5673-43AF-BD61-03E73B7ADDB4">
+                    <File Id="QPDFVIEW.ICO" Name="qpdfview.ico" Source="qpdfview\qpdfview.ico" />
+                </Component>
+                <Component Id="QPDFVIEW_DJVU.DLL" DiskId="1" Guid="76375825-90F8-4829-A7E5-F6961D1A42E5">
+                    <File Id="QPDFVIEW_DJVU.DLL" Name="qpdfview_djvu.dll" Source="qpdfview\qpdfview_djvu.dll" />
+                </Component>
+                <Component Id="QPDFVIEW_IMAGE.DLL" DiskId="1" Guid="D86964F1-2469-49E7-8DEA-C6741622E562">
+                    <File Id="QPDFVIEW_IMAGE.DLL" Name="qpdfview_image.dll" Source="qpdfview\qpdfview_image.dll" />
+                </Component>
+                <Component Id="QPDFVIEW_PDF.DLL" DiskId="1" Guid="877B8231-3C32-4982-B669-D4E53F1FB524">
+                    <File Id="QPDFVIEW_PDF.DLL" Name="qpdfview_pdf.dll" Source="qpdfview\qpdfview_pdf.dll" />
+                </Component>
+                <Component Id="QPDFVIEW_PS.DLL" DiskId="1" Guid="892C73A8-9F7A-4405-8E85-BEA088E75E9B">
+                    <File Id="QPDFVIEW_PS.DLL" Name="qpdfview_ps.dll" Source="qpdfview\qpdfview_ps.dll" />
+                </Component>
+                <Component Id="QTCORE4.DLL" DiskId="1" Guid="2EE15C5D-8F8C-42FD-9151-4B26607B8CD0">
+                    <File Id="QTCORE4.DLL" Name="QtCore4.dll" Source="qpdfview\QtCore4.dll" />
+                </Component>
+                <Component Id="QTDBUS4.DLL" DiskId="1" Guid="3B8093BA-7176-46EA-B9CE-F6E7BD0885D2">
+                    <File Id="QTDBUS4.DLL" Name="QtDBus4.dll" Source="qpdfview\QtDBus4.dll" />
+                </Component>
+                <Component Id="QTGUI4.DLL" DiskId="1" Guid="88A7030A-31F5-4464-81AB-1B79DC6CCAAD">
+                    <File Id="QTGUI4.DLL" Name="QtGui4.dll" Source="qpdfview\QtGui4.dll" />
+                </Component>
+                <Component Id="QTSQL4.DLL" DiskId="1" Guid="FFCF95F9-1BB0-4167-9E54-1CE1D5470733">
+                    <File Id="QTSQL4.DLL" Name="QtSql4.dll" Source="qpdfview\QtSql4.dll" />
+                </Component>
+                <Component Id="QTXML4.DLL" DiskId="1" Guid="A6183CB8-A2F6-4628-A585-07F4E4BA4109">
+                    <File Id="QTXML4.DLL" Name="QtXml4.dll" Source="qpdfview\QtXml4.dll" />
+                </Component>
+                <Component Id="README.TXT" DiskId="1" Guid="5C51EE1E-F490-4417-A297-81CE5065DC2B">
+                    <File Id="README.TXT" Name="README.txt" Source="qpdfview\README.txt" />
+                </Component>
+                <Component Id="SSLEAY32.DLL" DiskId="1" Guid="2C028ED9-8884-4A01-B8BA-A0F45F3C67A4">
+                    <File Id="SSLEAY32.DLL" Name="ssleay32.dll" Source="qpdfview\ssleay32.dll" />
+                </Component>
+                <Component Id="TODO.TXT" DiskId="1" Guid="9EA9C0F2-8DE1-4D46-A426-5285062E9B66">
+                    <File Id="TODO.TXT" Name="TODO.txt" Source="qpdfview\TODO.txt" />
+                </Component>
+                <Component Id="ZLIB1.DLL" DiskId="1" Guid="19525456-5F54-49B7-BA69-586DB107F411">
+                    <File Id="ZLIB1.DLL" Name="zlib1.dll" Source="qpdfview\zlib1.dll" />
+                </Component>
+                <Directory Id="DATA" Name="data">
+                    <Component Id="HELP.HTML" DiskId="1" Guid="57C2F699-FD07-40A7-A1EE-1FB4F0AAE673">
+                        <File Id="HELP.HTML" Name="help.html" Source="qpdfview\data\help.html" />
+                    </Component>
+                    <Component Id="HELP_AZ.HTML" DiskId="1" Guid="7E4F349F-9C2D-4E87-9160-5B5DDC466E61">
+                        <File Id="HELP_AZ.HTML" Name="help_az.html" Source="qpdfview\data\help_az.html" />
+                    </Component>
+                    <Component Id="HELP_BG.HTML" DiskId="1" Guid="6F546BDC-9291-4147-9A90-9CA4C476AD9A">
+                        <File Id="HELP_BG.HTML" Name="help_bg.html" Source="qpdfview\data\help_bg.html" />
+                    </Component>
+                    <Component Id="HELP_CS.HTML" DiskId="1" Guid="697CC7E3-332B-4A85-8650-0AE65480C294">
+                        <File Id="HELP_CS.HTML" Name="help_cs.html" Source="qpdfview\data\help_cs.html" />
+                    </Component>
+                    <Component Id="HELP_DE.HTML" DiskId="1" Guid="6498C3D0-FE9A-45CC-BD11-D46191CDDAB6">
+                        <File Id="HELP_DE.HTML" Name="help_de.html" Source="qpdfview\data\help_de.html" />
+                    </Component>
+                    <Component Id="HELP_EN_GB.HTML" DiskId="1" Guid="14A1F798-9A0E-4ECB-ABB2-10BD3A0B7A21">
+                        <File Id="HELP_EN_GB.HTML" Name="help_en_GB.html" Source="qpdfview\data\help_en_GB.html" />
+                    </Component>
+                    <Component Id="HELP_ES.HTML" DiskId="1" Guid="A57C1ECF-9471-4D83-9445-2B381DA5D548">
+                        <File Id="HELP_ES.HTML" Name="help_es.html" Source="qpdfview\data\help_es.html" />
+                    </Component>
+                    <Component Id="HELP_FA.HTML" DiskId="1" Guid="5637A5A0-A7C3-41A4-B686-5393AE6EAF6C">
+                        <File Id="HELP_FA.HTML" Name="help_fa.html" Source="qpdfview\data\help_fa.html" />
+                    </Component>
+                    <Component Id="HELP_FI.HTML" DiskId="1" Guid="F5458770-2808-4486-93C0-B07CB1C8C4B0">
+                        <File Id="HELP_FI.HTML" Name="help_fi.html" Source="qpdfview\data\help_fi.html" />
+                    </Component>
+                    <Component Id="HELP_FR.HTML" DiskId="1" Guid="4B70CAFE-A9FB-43DE-A93C-014646E0DA1D">
+                        <File Id="HELP_FR.HTML" Name="help_fr.html" Source="qpdfview\data\help_fr.html" />
+                    </Component>
+                    <Component Id="HELP_GL.HTML" DiskId="1" Guid="9FE4C7CF-8B75-4199-8351-04F54206FB34">
+                        <File Id="HELP_GL.HTML" Name="help_gl.html" Source="qpdfview\data\help_gl.html" />
+                    </Component>
+                    <Component Id="HELP_IT.HTML" DiskId="1" Guid="4CA87F3B-E49D-4781-A298-372AC4ADB818">
+                        <File Id="HELP_IT.HTML" Name="help_it.html" Source="qpdfview\data\help_it.html" />
+                    </Component>
+                    <Component Id="HELP_KO.HTML" DiskId="1" Guid="904A3637-C630-4F77-8C0F-C5607FA5690F">
+                        <File Id="HELP_KO.HTML" Name="help_ko.html" Source="qpdfview\data\help_ko.html" />
+                    </Component>
+                    <Component Id="HELP_MS.HTML" DiskId="1" Guid="5711BAAF-51A0-4914-939D-5EBC4500E605">
+                        <File Id="HELP_MS.HTML" Name="help_ms.html" Source="qpdfview\data\help_ms.html" />
+                    </Component>
+                    <Component Id="HELP_PL.HTML" DiskId="1" Guid="55168EFB-FC39-4D29-B4BB-4E8C31DF58D7">
+                        <File Id="HELP_PL.HTML" Name="help_pl.html" Source="qpdfview\data\help_pl.html" />
+                    </Component>
+                    <Component Id="HELP_PT.HTML" DiskId="1" Guid="3BA68573-5A8F-4C50-9BBC-6F2FCD1904E1">
+                        <File Id="HELP_PT.HTML" Name="help_pt.html" Source="qpdfview\data\help_pt.html" />
+                    </Component>
+                    <Component Id="HELP_PT_BR.HTML" DiskId="1" Guid="3AAA6E12-AE72-43E6-B54E-0326CD77A435">
+                        <File Id="HELP_PT_BR.HTML" Name="help_pt_BR.html" Source="qpdfview\data\help_pt_BR.html" />
+                    </Component>
+                    <Component Id="HELP_RU.HTML" DiskId="1" Guid="ABEC6AD3-74F2-4B4F-B1C2-CC52E3E8C5A1">
+                        <File Id="HELP_RU.HTML" Name="help_ru.html" Source="qpdfview\data\help_ru.html" />
+                    </Component>
+                    <Component Id="HELP_SK.HTML" DiskId="1" Guid="2D47B392-FD18-47D0-A894-6BC82CD16707">
+                        <File Id="HELP_SK.HTML" Name="help_sk.html" Source="qpdfview\data\help_sk.html" />
+                    </Component>
+                    <Component Id="HELP_SV.HTML" DiskId="1" Guid="BCBEAB44-1F45-4B77-A878-6BD1507B5180">
+                        <File Id="HELP_SV.HTML" Name="help_sv.html" Source="qpdfview\data\help_sv.html" />
+                    </Component>
+                    <Component Id="HELP_UK.HTML" DiskId="1" Guid="F62E1D78-187C-4993-8FFF-60C9F0D6E6ED">
+                        <File Id="HELP_UK.HTML" Name="help_uk.html" Source="qpdfview\data\help_uk.html" />
+                    </Component>
+                    <Component Id="HELP_VI.HTML" DiskId="1" Guid="3386B4AE-C70B-41BD-83A8-02933F168B17">
+                        <File Id="HELP_VI.HTML" Name="help_vi.html" Source="qpdfview\data\help_vi.html" />
+                    </Component>
+                    <Component Id="HELP_ZH_CN.HTML" DiskId="1" Guid="C5EEEFAB-D181-4D14-9C3A-263B36931B32">
+                        <File Id="HELP_ZH_CN.HTML" Name="help_zh_CN.html" Source="qpdfview\data\help_zh_CN.html" />
+                    </Component>
+                    <Component Id="QPDFVIEW_AST.QM" DiskId="1" Guid="C86E8FA4-9EA3-48CD-B608-4A94ACE6B3AE">
+                        <File Id="QPDFVIEW_AST.QM" Name="qpdfview_ast.qm" Source="qpdfview\data\qpdfview_ast.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_AZ.QM" DiskId="1" Guid="6B0858F1-AD95-4C66-A0B1-5FFF560D15BC">
+                        <File Id="QPDFVIEW_AZ.QM" Name="qpdfview_az.qm" Source="qpdfview\data\qpdfview_az.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_BE.QM" DiskId="1" Guid="68A865DA-DAEB-4519-9565-EBDF997F2476">
+                        <File Id="QPDFVIEW_BE.QM" Name="qpdfview_be.qm" Source="qpdfview\data\qpdfview_be.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_BG.QM" DiskId="1" Guid="BFC9E5D5-AAB2-4A14-A0D8-25C585AABCEA">
+                        <File Id="QPDFVIEW_BG.QM" Name="qpdfview_bg.qm" Source="qpdfview\data\qpdfview_bg.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_BS.QM" DiskId="1" Guid="D77A9481-C681-414C-892E-A09A6EA9FE99">
+                        <File Id="QPDFVIEW_BS.QM" Name="qpdfview_bs.qm" Source="qpdfview\data\qpdfview_bs.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_CA.QM" DiskId="1" Guid="3B5859C4-2D91-473E-B614-0BCED4B22BB1">
+                        <File Id="QPDFVIEW_CA.QM" Name="qpdfview_ca.qm" Source="qpdfview\data\qpdfview_ca.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_CS.QM" DiskId="1" Guid="5BC07145-FEEB-444C-B922-6F3A4BC05DBB">
+                        <File Id="QPDFVIEW_CS.QM" Name="qpdfview_cs.qm" Source="qpdfview\data\qpdfview_cs.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_DA.QM" DiskId="1" Guid="3C9E0339-C3FD-4D81-BFBB-037A303003C1">
+                        <File Id="QPDFVIEW_DA.QM" Name="qpdfview_da.qm" Source="qpdfview\data\qpdfview_da.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_DE.QM" DiskId="1" Guid="03A21D81-79B7-46B9-9186-E75B034E8B04">
+                        <File Id="QPDFVIEW_DE.QM" Name="qpdfview_de.qm" Source="qpdfview\data\qpdfview_de.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_EL.QM" DiskId="1" Guid="1C18C560-234B-421A-81D3-2D1F5A9C7F4E">
+                        <File Id="QPDFVIEW_EL.QM" Name="qpdfview_el.qm" Source="qpdfview\data\qpdfview_el.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_EN_GB.QM" DiskId="1" Guid="B7981DD8-B70F-4C56-B43B-D5A0CE70E562">
+                        <File Id="QPDFVIEW_EN_GB.QM" Name="qpdfview_en_GB.qm" Source="qpdfview\data\qpdfview_en_GB.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_EO.QM" DiskId="1" Guid="E0B3F4D6-C07B-41E4-B1F0-BC94B6DACE77">
+                        <File Id="QPDFVIEW_EO.QM" Name="qpdfview_eo.qm" Source="qpdfview\data\qpdfview_eo.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_ES.QM" DiskId="1" Guid="FDC6379E-3167-4601-B501-F85A47E1549C">
+                        <File Id="QPDFVIEW_ES.QM" Name="qpdfview_es.qm" Source="qpdfview\data\qpdfview_es.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_EU.QM" DiskId="1" Guid="BA224C58-3DF4-44A0-BF98-486BF9497CEC">
+                        <File Id="QPDFVIEW_EU.QM" Name="qpdfview_eu.qm" Source="qpdfview\data\qpdfview_eu.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_FI.QM" DiskId="1" Guid="A06F3DA4-1993-4694-BE43-2906500C0751">
+                        <File Id="QPDFVIEW_FI.QM" Name="qpdfview_fi.qm" Source="qpdfview\data\qpdfview_fi.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_FR.QM" DiskId="1" Guid="E132EAEC-B53E-482D-9B47-5E3E038EE35D">
+                        <File Id="QPDFVIEW_FR.QM" Name="qpdfview_fr.qm" Source="qpdfview\data\qpdfview_fr.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_GL.QM" DiskId="1" Guid="EEE8183E-1697-45A7-A19F-1262689841D8">
+                        <File Id="QPDFVIEW_GL.QM" Name="qpdfview_gl.qm" Source="qpdfview\data\qpdfview_gl.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_HE.QM" DiskId="1" Guid="6406E8F1-F2EE-479E-9662-A76D30C4D32C">
+                        <File Id="QPDFVIEW_HE.QM" Name="qpdfview_he.qm" Source="qpdfview\data\qpdfview_he.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_HR.QM" DiskId="1" Guid="5D1E13FF-B31E-4186-8A62-C9C97D3596C6">
+                        <File Id="QPDFVIEW_HR.QM" Name="qpdfview_hr.qm" Source="qpdfview\data\qpdfview_hr.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_HU.QM" DiskId="1" Guid="8FB0DE29-034F-4178-B571-E86C96B5BEEF">
+                        <File Id="QPDFVIEW_HU.QM" Name="qpdfview_hu.qm" Source="qpdfview\data\qpdfview_hu.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_ID.QM" DiskId="1" Guid="A91E1A90-3155-4F97-A0C4-35F89ADBD407">
+                        <File Id="QPDFVIEW_ID.QM" Name="qpdfview_id.qm" Source="qpdfview\data\qpdfview_id.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_IT.QM" DiskId="1" Guid="BEB66C24-DE6C-489E-8DF0-0AD879364BF6">
+                        <File Id="QPDFVIEW_IT.QM" Name="qpdfview_it.qm" Source="qpdfview\data\qpdfview_it.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_KK.QM" DiskId="1" Guid="D3724FEE-1E4A-45A4-9344-8D3140AE80B6">
+                        <File Id="QPDFVIEW_KK.QM" Name="qpdfview_kk.qm" Source="qpdfview\data\qpdfview_kk.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_KO.QM" DiskId="1" Guid="55399368-11F5-4FDC-882F-972B2066A709">
+                        <File Id="QPDFVIEW_KO.QM" Name="qpdfview_ko.qm" Source="qpdfview\data\qpdfview_ko.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_KY.QM" DiskId="1" Guid="38C69BA2-9C2B-46F0-93BF-B805C025877C">
+                        <File Id="QPDFVIEW_KY.QM" Name="qpdfview_ky.qm" Source="qpdfview\data\qpdfview_ky.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_LT.QM" DiskId="1" Guid="20EE66C1-4570-4B68-91C6-3111B7590992">
+                        <File Id="QPDFVIEW_LT.QM" Name="qpdfview_lt.qm" Source="qpdfview\data\qpdfview_lt.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_MS.QM" DiskId="1" Guid="A396CC57-45C6-44E8-AB20-F2FED839763F">
+                        <File Id="QPDFVIEW_MS.QM" Name="qpdfview_ms.qm" Source="qpdfview\data\qpdfview_ms.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_MY.QM" DiskId="1" Guid="27AC3B6E-FE0E-4C3F-96FE-FBE90437B196">
+                        <File Id="QPDFVIEW_MY.QM" Name="qpdfview_my.qm" Source="qpdfview\data\qpdfview_my.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_PL.QM" DiskId="1" Guid="4C437F5D-4B7E-4289-86D3-73F65C7EA813">
+                        <File Id="QPDFVIEW_PL.QM" Name="qpdfview_pl.qm" Source="qpdfview\data\qpdfview_pl.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_PT.QM" DiskId="1" Guid="A160F0B9-C858-47B2-AAC2-E786C94C82FB">
+                        <File Id="QPDFVIEW_PT.QM" Name="qpdfview_pt.qm" Source="qpdfview\data\qpdfview_pt.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_PT_BR.QM" DiskId="1" Guid="3F583374-4A7D-4D63-9E1B-B2B902340339">
+                        <File Id="QPDFVIEW_PT_BR.QM" Name="qpdfview_pt_BR.qm" Source="qpdfview\data\qpdfview_pt_BR.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_RO.QM" DiskId="1" Guid="1A9B8C34-F8A8-46FB-931F-9E96D91BE723">
+                        <File Id="QPDFVIEW_RO.QM" Name="qpdfview_ro.qm" Source="qpdfview\data\qpdfview_ro.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_RU.QM" DiskId="1" Guid="E018578A-F1B7-480D-A3CE-18BCDE93CB37">
+                        <File Id="QPDFVIEW_RU.QM" Name="qpdfview_ru.qm" Source="qpdfview\data\qpdfview_ru.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_SK.QM" DiskId="1" Guid="97A76422-D620-48E1-8EF7-C6D3A0BD9144">
+                        <File Id="QPDFVIEW_SK.QM" Name="qpdfview_sk.qm" Source="qpdfview\data\qpdfview_sk.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_SV.QM" DiskId="1" Guid="F763526D-EBD9-4E48-9862-A3EBDB7B2D80">
+                        <File Id="QPDFVIEW_SV.QM" Name="qpdfview_sv.qm" Source="qpdfview\data\qpdfview_sv.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_TH.QM" DiskId="1" Guid="EC81663B-57E1-465F-B78B-63DCF77CC8FB">
+                        <File Id="QPDFVIEW_TH.QM" Name="qpdfview_th.qm" Source="qpdfview\data\qpdfview_th.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_TR.QM" DiskId="1" Guid="ACF32C90-A709-4582-BBD4-08EAFFA71649">
+                        <File Id="QPDFVIEW_TR.QM" Name="qpdfview_tr.qm" Source="qpdfview\data\qpdfview_tr.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_UG.QM" DiskId="1" Guid="D5F223D2-ACC6-4CEE-81FB-161B9BA49A39">
+                        <File Id="QPDFVIEW_UG.QM" Name="qpdfview_ug.qm" Source="qpdfview\data\qpdfview_ug.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_UK.QM" DiskId="1" Guid="7CBB1246-5F3B-40B3-8618-5231A99457C4">
+                        <File Id="QPDFVIEW_UK.QM" Name="qpdfview_uk.qm" Source="qpdfview\data\qpdfview_uk.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_VI.QM" DiskId="1" Guid="2FB8F088-7F25-4083-84A3-8251DE270AB8">
+                        <File Id="QPDFVIEW_VI.QM" Name="qpdfview_vi.qm" Source="qpdfview\data\qpdfview_vi.qm" />
+                    </Component>
+                    <Component Id="QPDFVIEW_ZH_CN.QM" DiskId="1" Guid="0522D5FB-2D08-415F-9E6C-DB1B0F6DFD38">
+                        <File Id="QPDFVIEW_ZH_CN.QM" Name="qpdfview_zh_CN.qm" Source="qpdfview\data\qpdfview_zh_CN.qm" />
+                    </Component>
+                </Directory>
+                <Directory Id="LICENSES" Name="licenses">
+                    <Directory Id="BZIP2" Name="bzip2">
+                        <Component Id="LICENSE" DiskId="1" Guid="B89272D7-29B0-49F5-BB4E-6B4ED641C0EA">
+                            <File Id="LICENSE" Name="LICENSE" Source="qpdfview\licenses\bzip2\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="CURL" Name="curl">
+                        <Component Id="LICENSE_1" DiskId="1" Guid="75E58794-7773-4619-B349-75F5B2197841">
+                            <File Id="LICENSE_1" Name="LICENSE" Source="qpdfview\licenses\curl\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="DJVULIBRE" Name="djvulibre">
+                        <Component Id="LICENSE_2" DiskId="1" Guid="72230D3F-889F-434C-98FF-903807258B81">
+                            <File Id="LICENSE_2" Name="LICENSE" Source="qpdfview\licenses\djvulibre\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="FREETYPE" Name="freetype">
+                        <Component Id="FTL.TXT" DiskId="1" Guid="9DB2A6C3-9FB0-4A22-8FC2-127D9D1AB9AA">
+                            <File Id="FTL.TXT" Name="FTL.TXT" Source="qpdfview\licenses\freetype\FTL.TXT" />
+                        </Component>
+                        <Component Id="GPLV2.TXT" DiskId="1" Guid="3FEB30DD-58F1-4320-B001-0EE83CC63F27">
+                            <File Id="GPLV2.TXT" Name="GPLv2.TXT" Source="qpdfview\licenses\freetype\GPLv2.TXT" />
+                        </Component>
+                        <Component Id="LICENSE.TXT" DiskId="1" Guid="F5E1DE4F-46C7-42A6-83F6-48848C783EA2">
+                            <File Id="LICENSE.TXT" Name="LICENSE.TXT" Source="qpdfview\licenses\freetype\LICENSE.TXT" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="GCC_LIBS" Name="gcc-libs">
+                        <Component Id="COPYING.LIB" DiskId="1" Guid="1B46EB74-0E4C-4139-9355-107DD2BF521A">
+                            <File Id="COPYING.LIB" Name="COPYING.LIB" Source="qpdfview\licenses\gcc-libs\COPYING.LIB" />
+                        </Component>
+                        <Component Id="COPYING.RUNTIME" DiskId="1" Guid="708FD4E4-0CF8-49EB-9517-32C0343DACD7">
+                            <File Id="COPYING.RUNTIME" Name="COPYING.RUNTIME" Source="qpdfview\licenses\gcc-libs\COPYING.RUNTIME" />
+                        </Component>
+                        <Component Id="COPYING3" DiskId="1" Guid="877DBA80-FD6F-4E8C-B341-EFF4135EE5C5">
+                            <File Id="COPYING3" Name="COPYING3" Source="qpdfview\licenses\gcc-libs\COPYING3" />
+                        </Component>
+                        <Component Id="FILES.TXT" DiskId="1" Guid="99DA7B01-E772-4E7B-8AC3-BA163CA59BAF">
+                            <File Id="FILES.TXT" Name="files.txt" Source="qpdfview\licenses\gcc-libs\files.txt" />
+                        </Component>
+                        <Component Id="README" DiskId="1" Guid="C036AECA-49A4-4D12-85E8-2CC1A21BE463">
+                            <File Id="README" Name="README" Source="qpdfview\licenses\gcc-libs\README" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="GETTEXT" Name="gettext">
+                        <Component Id="COPYING" DiskId="1" Guid="0D2DD909-A23A-4A9B-88D9-2A56A764D050">
+                            <File Id="COPYING" Name="COPYING" Source="qpdfview\licenses\gettext\COPYING" />
+                        </Component>
+                        <Component Id="FILES.TXT_1" DiskId="1" Guid="2CAB3E3E-9494-4C62-9C93-10F3E1DCD4E7">
+                            <File Id="FILES.TXT_1" Name="files.txt" Source="qpdfview\licenses\gettext\files.txt" />
+                        </Component>
+                        <Directory Id="GETTEXT_RUNTIME" Name="gettext-runtime">
+                            <Component Id="COPYING_1" DiskId="1" Guid="9B2CC1F8-F4FE-4C56-BF8C-265D75336921">
+                                <File Id="COPYING_1" Name="COPYING" Source="qpdfview\licenses\gettext\gettext-runtime\COPYING" />
+                            </Component>
+                            <Directory Id="INTL" Name="intl">
+                                <Component Id="COPYING.LIB_1" DiskId="1" Guid="B2964C6C-9C23-4C3D-AABC-94FB6ED75D6E">
+                                    <File Id="COPYING.LIB_1" Name="COPYING.LIB" Source="qpdfview\licenses\gettext\gettext-runtime\intl\COPYING.LIB" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="LIBASPRINTF" Name="libasprintf">
+                                <Component Id="COPYING_2" DiskId="1" Guid="3EB1129C-7C04-4DF9-B53F-FBC7CE634E92">
+                                    <File Id="COPYING_2" Name="COPYING" Source="qpdfview\licenses\gettext\gettext-runtime\libasprintf\COPYING" />
+                                </Component>
+                                <Component Id="COPYING.LIB_2" DiskId="1" Guid="3EA45528-00C9-4528-9E05-59303E6B423C">
+                                    <File Id="COPYING.LIB_2" Name="COPYING.LIB" Source="qpdfview\licenses\gettext\gettext-runtime\libasprintf\COPYING.LIB" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                        <Directory Id="GETTEXT_TOOLS" Name="gettext-tools">
+                            <Component Id="COPYING_3" DiskId="1" Guid="21A999AA-BE04-475C-9F18-374E2FC9FF3B">
+                                <File Id="COPYING_3" Name="COPYING" Source="qpdfview\licenses\gettext\gettext-tools\COPYING" />
+                            </Component>
+                            <Directory Id="GNULIB_LIB" Name="gnulib-lib">
+                                <Directory Id="LIBXML" Name="libxml">
+                                    <Component Id="COPYING_4" DiskId="1" Guid="B1DEE7F6-8302-4F72-B10B-BCA86CB67B08">
+                                        <File Id="COPYING_4" Name="COPYING" Source="qpdfview\licenses\gettext\gettext-tools\gnulib-lib\libxml\COPYING" />
+                                    </Component>
+                                </Directory>
+                            </Directory>
+                        </Directory>
+                        <Directory Id="GNULIB_LOCAL" Name="gnulib-local">
+                            <Directory Id="LIB" Name="lib">
+                                <Directory Id="LIBXML_1" Name="libxml">
+                                    <Component Id="COPYING_5" DiskId="1" Guid="83EA5922-88A5-43E6-ACD9-35418DF825D3">
+                                        <File Id="COPYING_5" Name="COPYING" Source="qpdfview\licenses\gettext\gnulib-local\lib\libxml\COPYING" />
+                                    </Component>
+                                </Directory>
+                            </Directory>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="GHOSTSCRIPT" Name="ghostscript">
+                        <Component Id="LICENSE_3" DiskId="1" Guid="C1AC0338-4DC2-4D36-B82E-D25E6CD8A5E3">
+                            <File Id="LICENSE_3" Name="LICENSE" Source="qpdfview\licenses\ghostscript\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="GLIB2" Name="glib2">
+                        <Component Id="COPYING_6" DiskId="1" Guid="83AF5FA3-15F8-46E5-BF34-F3AC6552ED6C">
+                            <File Id="COPYING_6" Name="COPYING" Source="qpdfview\licenses\glib2\COPYING" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="GNUTLS" Name="gnutls">
+                        <Component Id="LICENSE_4" DiskId="1" Guid="DA349DC8-03A9-4A67-8F97-4A73DFEFFBAD">
+                            <File Id="LICENSE_4" Name="LICENSE" Source="qpdfview\licenses\gnutls\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="HARFBUZZ" Name="harfbuzz">
+                        <Component Id="COPYING_7" DiskId="1" Guid="1B2F7FED-BB59-435E-8706-9167C304100D">
+                            <File Id="COPYING_7" Name="COPYING" Source="qpdfview\licenses\harfbuzz\COPYING" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LCMS" Name="lcms">
+                        <Component Id="LICENSE_5" DiskId="1" Guid="7292A321-35C5-47C3-B711-974DC6541A33">
+                            <File Id="LICENSE_5" Name="LICENSE" Source="qpdfview\licenses\lcms\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBFFI" Name="libffi">
+                        <Component Id="LICENSE_6" DiskId="1" Guid="4B30B959-121B-4AAE-8C52-B479245C3E8D">
+                            <File Id="LICENSE_6" Name="LICENSE" Source="qpdfview\licenses\libffi\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBGMP" Name="libgmp">
+                        <Component Id="LICENSE_7" DiskId="1" Guid="464B17A7-8621-425E-BEB0-C4F05BDF9FAC">
+                            <File Id="LICENSE_7" Name="LICENSE" Source="qpdfview\licenses\libgmp\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBICONV" Name="libiconv">
+                        <Component Id="COPYING_8" DiskId="1" Guid="D6BB9FEC-012C-417A-B3AF-D0F34E57916F">
+                            <File Id="COPYING_8" Name="COPYING" Source="qpdfview\licenses\libiconv\COPYING" />
+                        </Component>
+                        <Component Id="COPYING.LIB_3" DiskId="1" Guid="906FE9DF-6719-4CFB-8710-F9C987476DD9">
+                            <File Id="COPYING.LIB_3" Name="COPYING.LIB" Source="qpdfview\licenses\libiconv\COPYING.LIB" />
+                        </Component>
+                        <Component Id="README_1" DiskId="1" Guid="E65B70C4-CED8-49C6-B075-3B7E340DABEA">
+                            <File Id="README_1" Name="README" Source="qpdfview\licenses\libiconv\README" />
+                        </Component>
+                        <Directory Id="LIBCHARSET" Name="libcharset">
+                            <Component Id="COPYING.LIB_4" DiskId="1" Guid="0157F811-8280-43F5-8B66-B75B9BD6E6D7">
+                                <File Id="COPYING.LIB_4" Name="COPYING.LIB" Source="qpdfview\licenses\libiconv\libcharset\COPYING.LIB" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="LIBIDN" Name="libidn">
+                        <Component Id="LICENSE_8" DiskId="1" Guid="32928085-485B-4379-93C3-194D7E69FB97">
+                            <File Id="LICENSE_8" Name="LICENSE" Source="qpdfview\licenses\libidn\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBJPEG_TURBO" Name="libjpeg-turbo">
+                        <Component Id="README_2" DiskId="1" Guid="B6566326-2802-40A0-96FE-8FA05E2DC513">
+                            <File Id="README_2" Name="README" Source="qpdfview\licenses\libjpeg-turbo\README" />
+                        </Component>
+                        <Component Id="README_TURBO.TXT" DiskId="1" Guid="9D3CCE53-8326-4247-8A4E-26C9339DA410">
+                            <File Id="README_TURBO.TXT" Name="README-turbo.txt" Source="qpdfview\licenses\libjpeg-turbo\README-turbo.txt" />
+                        </Component>
+                        <Directory Id="SIMD" Name="simd">
+                            <Component Id="JSIMDEXT.INC" DiskId="1" Guid="24168446-BB28-4901-8D4D-927D299B514D">
+                                <File Id="JSIMDEXT.INC" Name="jsimdext.inc" Source="qpdfview\licenses\libjpeg-turbo\simd\jsimdext.inc" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="LIBPNG" Name="libpng">
+                        <Component Id="LICENSE_9" DiskId="1" Guid="F2CAD3BA-5481-4C5B-87C4-B47F9494B31C">
+                            <File Id="LICENSE_9" Name="LICENSE" Source="qpdfview\licenses\libpng\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBSPECTRE" Name="libspectre">
+                        <Component Id="LICENSE_10" DiskId="1" Guid="F4809FA5-4B8D-4F17-9C5B-4AC15B0DE2EC">
+                            <File Id="LICENSE_10" Name="LICENSE" Source="qpdfview\licenses\libspectre\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBSSH2" Name="libssh2">
+                        <Component Id="LICENSE_11" DiskId="1" Guid="1954C5E1-76F3-4AB3-B56D-8F7F9E35A8EA">
+                            <File Id="LICENSE_11" Name="LICENSE" Source="qpdfview\licenses\libssh2\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBTASN1" Name="libtasn1">
+                        <Component Id="LICENSE_12" DiskId="1" Guid="07FF5C7F-1EC6-4870-BF1B-6A18DD0924B0">
+                            <File Id="LICENSE_12" Name="LICENSE" Source="qpdfview\licenses\libtasn1\LICENSE" />
+                        </Component>
+                        <Component Id="LICENSE.LIB" DiskId="1" Guid="CCE50B40-4DBC-49FB-B7AC-ED8587B7A6EA">
+                            <File Id="LICENSE.LIB" Name="LICENSE.LIB" Source="qpdfview\licenses\libtasn1\LICENSE.LIB" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBTIFF" Name="libtiff">
+                        <Component Id="COPYRIGHT" DiskId="1" Guid="6CDC0307-BFFC-4C92-9B22-BD8B0C4BD3FE">
+                            <File Id="COPYRIGHT" Name="COPYRIGHT" Source="qpdfview\licenses\libtiff\COPYRIGHT" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="LIBWINPTHREAD" Name="libwinpthread">
+                        <Component Id="COPYING_9" DiskId="1" Guid="92807CBD-0637-4EF1-B3DA-3FEE5E9D7FB8">
+                            <File Id="COPYING_9" Name="COPYING" Source="qpdfview\licenses\libwinpthread\COPYING" />
+                        </Component>
+                        <Directory Id="MINGW_W64_LIBRARIES" Name="mingw-w64-libraries">
+                            <Directory Id="WINPTHREADS" Name="winpthreads">
+                                <Component Id="COPYING_10" DiskId="1" Guid="D107C1D4-F337-4559-B1C7-F6B6FFBC8EDB">
+                                    <File Id="COPYING_10" Name="COPYING" Source="qpdfview\licenses\libwinpthread\mingw-w64-libraries\winpthreads\COPYING" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="NETTLE" Name="nettle">
+                        <Component Id="LICENSE_13" DiskId="1" Guid="8BB93C89-0A25-401E-A92A-D8563A010B75">
+                            <File Id="LICENSE_13" Name="LICENSE" Source="qpdfview\licenses\nettle\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="OPENJPEG" Name="openjpeg">
+                        <Component Id="LICENSE_14" DiskId="1" Guid="B3E2F70D-4F19-4E2E-8622-3E54E51F5649">
+                            <File Id="LICENSE_14" Name="LICENSE" Source="qpdfview\licenses\openjpeg\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="OPENSSL" Name="openssl">
+                        <Component Id="LICENSE_15" DiskId="1" Guid="FC371693-10F1-4453-BFDC-CE303A3907DE">
+                            <File Id="LICENSE_15" Name="LICENSE" Source="qpdfview\licenses\openssl\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="P11KIT" Name="p11kit">
+                        <Component Id="LICENSE_16" DiskId="1" Guid="62E9FD3B-0357-4066-BD8E-53CC28B0BB32">
+                            <File Id="LICENSE_16" Name="LICENSE" Source="qpdfview\licenses\p11kit\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="POPPLER" Name="poppler">
+                        <Component Id="LICENSE_17" DiskId="1" Guid="52491B05-ABDD-430F-9736-F6753095486A">
+                            <File Id="LICENSE_17" Name="LICENSE" Source="qpdfview\licenses\poppler\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="QT" Name="qt">
+                        <Component Id="INDEX.HTML" DiskId="1" Guid="6A4C5C20-DBE4-4FAB-A2AB-0E219A62621F">
+                            <File Id="INDEX.HTML" Name="index.html" Source="qpdfview\licenses\qt\index.html" />
+                        </Component>
+                        <Directory Id="HTML" Name="html">
+                            <Component Id="_3RDPARTY.HTML" DiskId="1" Guid="723ABE89-B2DA-4098-9868-3687E407E101">
+                                <File Id="_3RDPARTY.HTML" Name="3rdparty.html" Source="qpdfview\licenses\qt\html\3rdparty.html" />
+                            </Component>
+                            <Component Id="CATHARON_LICENSE.HTML" DiskId="1" Guid="7CB2F53F-3F88-4D02-9177-37A15B4DB52B">
+                                <File Id="CATHARON_LICENSE.HTML" Name="catharon-license.html" Source="qpdfview\licenses\qt\html\catharon-license.html" />
+                            </Component>
+                            <Component Id="CREDITS.HTML" DiskId="1" Guid="5C48391C-0C33-4878-8D76-BD6E803D6C79">
+                                <File Id="CREDITS.HTML" Name="credits.html" Source="qpdfview\licenses\qt\html\credits.html" />
+                            </Component>
+                            <Component Id="DESIGNER_RECURSIVE_SHADOW_CASTING.HTML" DiskId="1" Guid="34FEA213-83B5-4597-86F8-7690447E7EFC">
+                                <File Id="DESIGNER_RECURSIVE_SHADOW_CASTING.HTML" Name="designer-recursive-shadow-casting.html" Source="qpdfview\licenses\qt\html\designer-recursive-shadow-casting.html" />
+                            </Component>
+                            <Component Id="EDITIONS.HTML" DiskId="1" Guid="7CD20F2E-C843-4067-B9A2-8BB08AD38B6C">
+                                <File Id="EDITIONS.HTML" Name="editions.html" Source="qpdfview\licenses\qt\html\editions.html" />
+                            </Component>
+                            <Component Id="GPL.HTML" DiskId="1" Guid="ED31AA82-C181-431D-8752-C083F3C719E8">
+                                <File Id="GPL.HTML" Name="gpl.html" Source="qpdfview\licenses\qt\html\gpl.html" />
+                            </Component>
+                            <Component Id="LEGAL_EASING.HTML" DiskId="1" Guid="C442E29F-D002-43CF-962B-FE5146DA40D4">
+                                <File Id="LEGAL_EASING.HTML" Name="legal-easing.html" Source="qpdfview\licenses\qt\html\legal-easing.html" />
+                            </Component>
+                            <Component Id="LGPL.HTML" DiskId="1" Guid="6A86142B-FBF6-40D1-9898-2DA70E7EF0D9">
+                                <File Id="LGPL.HTML" Name="lgpl.html" Source="qpdfview\licenses\qt\html\lgpl.html" />
+                            </Component>
+                            <Component Id="LICENSES_FONTS.HTML" DiskId="1" Guid="4AE151CC-5A6F-48C8-9DE2-39CA5373204B">
+                                <File Id="LICENSES_FONTS.HTML" Name="licenses-fonts.html" Source="qpdfview\licenses\qt\html\licenses-fonts.html" />
+                            </Component>
+                            <Component Id="LICENSES.HTML" DiskId="1" Guid="35309107-90CB-4C06-B8C1-2B7119BA935F">
+                                <File Id="LICENSES.HTML" Name="licenses.html" Source="qpdfview\licenses\qt\html\licenses.html" />
+                            </Component>
+                            <Component Id="LICENSING.HTML" DiskId="1" Guid="04FB0458-52EC-4A83-B33B-7710FF05221D">
+                                <File Id="LICENSING.HTML" Name="licensing.html" Source="qpdfview\licenses\qt\html\licensing.html" />
+                            </Component>
+                            <Component Id="OPENSOURCEEDITION.HTML" DiskId="1" Guid="612CC436-B545-4FB4-8674-653962A8DAA7">
+                                <File Id="OPENSOURCEEDITION.HTML" Name="opensourceedition.html" Source="qpdfview\licenses\qt\html\opensourceedition.html" />
+                            </Component>
+                            <Component Id="PDF_LICENSING.HTML" DiskId="1" Guid="1716F0A7-BD05-42C5-BE96-A9154DD44F82">
+                                <File Id="PDF_LICENSING.HTML" Name="pdf-licensing.html" Source="qpdfview\licenses\qt\html\pdf-licensing.html" />
+                            </Component>
+                            <Component Id="QT_MAC_COCOA_LICENSING.HTML" DiskId="1" Guid="A698381E-F61C-460C-A8FC-276959166D9E">
+                                <File Id="QT_MAC_COCOA_LICENSING.HTML" Name="qt-mac-cocoa-licensing.html" Source="qpdfview\licenses\qt\html\qt-mac-cocoa-licensing.html" />
+                            </Component>
+                            <Component Id="QT3TO4_TREEWALKER.HTML" DiskId="1" Guid="F78A5519-5B4C-4584-988C-10735ACA68B5">
+                                <File Id="QT3TO4_TREEWALKER.HTML" Name="qt3to4-treewalker.html" Source="qpdfview\licenses\qt\html\qt3to4-treewalker.html" />
+                            </Component>
+                            <Component Id="QTMAIN.HTML" DiskId="1" Guid="A1ED0C92-BA42-410F-99C7-5CB97657232E">
+                                <File Id="QTMAIN.HTML" Name="qtmain.html" Source="qpdfview\licenses\qt\html\qtmain.html" />
+                            </Component>
+                            <Component Id="QTQUICKLICENSE.HTML" DiskId="1" Guid="009704F5-F590-4659-97C2-A43531C4EB22">
+                                <File Id="QTQUICKLICENSE.HTML" Name="qtquicklicense.html" Source="qpdfview\licenses\qt\html\qtquicklicense.html" />
+                            </Component>
+                            <Component Id="TRADEMARKS.HTML" DiskId="1" Guid="6F6C0ECD-95AA-426A-B122-4C49C570F47C">
+                                <File Id="TRADEMARKS.HTML" Name="trademarks.html" Source="qpdfview\licenses\qt\html\trademarks.html" />
+                            </Component>
+                            <Directory Id="SCRIPTS" Name="scripts">
+                                <Component Id="FUNCTIONS.JS" DiskId="1" Guid="D7CB2ECC-CE25-42C3-A39D-A47F99BCD585">
+                                    <File Id="FUNCTIONS.JS" Name="functions.js" Source="qpdfview\licenses\qt\html\scripts\functions.js" />
+                                </Component>
+                                <Component Id="JQUERY.JS" DiskId="1" Guid="02FC15C9-6E04-4459-BD23-66DD2C3D8AD5">
+                                    <File Id="JQUERY.JS" Name="jquery.js" Source="qpdfview\licenses\qt\html\scripts\jquery.js" />
+                                </Component>
+                                <Component Id="NARROW.JS" DiskId="1" Guid="623F6D37-16B5-4527-8D49-7486D4A50C93">
+                                    <File Id="NARROW.JS" Name="narrow.js" Source="qpdfview\licenses\qt\html\scripts\narrow.js" />
+                                </Component>
+                                <Component Id="SUPERFISH.JS" DiskId="1" Guid="E3FFCC62-66F9-4FE4-BDFD-F44F224C4032">
+                                    <File Id="SUPERFISH.JS" Name="superfish.js" Source="qpdfview\licenses\qt\html\scripts\superfish.js" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="STYLE" Name="style">
+                                <Component Id="NARROW.CSS" DiskId="1" Guid="E76F093E-CB0F-4544-996C-EB7758993F0C">
+                                    <File Id="NARROW.CSS" Name="narrow.css" Source="qpdfview\licenses\qt\html\style\narrow.css" />
+                                </Component>
+                                <Component Id="STYLE.CSS" DiskId="1" Guid="ED300570-6C72-4E5A-B57A-5056759F2B50">
+                                    <File Id="STYLE.CSS" Name="style.css" Source="qpdfview\licenses\qt\html\style\style.css" />
+                                </Component>
+                                <Component Id="STYLE_IE6.CSS" DiskId="1" Guid="7243194C-F400-42A7-B393-AE8CA46D4D94">
+                                    <File Id="STYLE_IE6.CSS" Name="style_ie6.css" Source="qpdfview\licenses\qt\html\style\style_ie6.css" />
+                                </Component>
+                                <Component Id="STYLE_IE7.CSS" DiskId="1" Guid="CD508B53-EA92-4EAB-BC0A-1E52EBEE25C2">
+                                    <File Id="STYLE_IE7.CSS" Name="style_ie7.css" Source="qpdfview\licenses\qt\html\style\style_ie7.css" />
+                                </Component>
+                                <Component Id="STYLE_IE8.CSS" DiskId="1" Guid="B59B9957-EE11-4355-B2E2-D4D259D9C720">
+                                    <File Id="STYLE_IE8.CSS" Name="style_ie8.css" Source="qpdfview\licenses\qt\html\style\style_ie8.css" />
+                                </Component>
+                                <Component Id="SUPERFISH.CSS" DiskId="1" Guid="D4E78970-4164-42D8-B229-0BEA81091A23">
+                                    <File Id="SUPERFISH.CSS" Name="superfish.css" Source="qpdfview\licenses\qt\html\style\superfish.css" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="RTMP" Name="rtmp">
+                        <Component Id="LICENSE_18" DiskId="1" Guid="05CB887F-1A50-4630-8D49-7AD3D86E0516">
+                            <File Id="LICENSE_18" Name="LICENSE" Source="qpdfview\licenses\rtmp\LICENSE" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="WINPTHREADS_1" Name="winpthreads">
+                        <Component Id="COPYING_11" DiskId="1" Guid="120E73EC-7019-4AED-A940-D4ED53F4166A">
+                            <File Id="COPYING_11" Name="COPYING" Source="qpdfview\licenses\winpthreads\COPYING" />
+                        </Component>
+                        <Directory Id="MINGW_W64_LIBRARIES_1" Name="mingw-w64-libraries">
+                            <Directory Id="WINPTHREADS_2" Name="winpthreads">
+                                <Component Id="COPYING_12" DiskId="1" Guid="D829C63A-AE27-4A94-A6A1-8DBE92FA751B">
+                                    <File Id="COPYING_12" Name="COPYING" Source="qpdfview\licenses\winpthreads\mingw-w64-libraries\winpthreads\COPYING" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="XZ" Name="xz">
+                        <Component Id="COPYING_13" DiskId="1" Guid="C4A0894F-C84C-4B57-BE7E-D75EE896E0CE">
+                            <File Id="COPYING_13" Name="COPYING" Source="qpdfview\licenses\xz\COPYING" />
+                        </Component>
+                        <Component Id="COPYING.GPLV2" DiskId="1" Guid="D119390A-BDAB-4920-AF46-2B5A8E41EDAE">
+                            <File Id="COPYING.GPLV2" Name="COPYING.GPLv2" Source="qpdfview\licenses\xz\COPYING.GPLv2" />
+                        </Component>
+                        <Component Id="COPYING.GPLV3" DiskId="1" Guid="38E97FD7-9F28-4896-BEC0-84B066B33E48">
+                            <File Id="COPYING.GPLV3" Name="COPYING.GPLv3" Source="qpdfview\licenses\xz\COPYING.GPLv3" />
+                        </Component>
+                        <Component Id="COPYING.LGPLV2.1" DiskId="1" Guid="1D873288-0229-4368-B6D5-FB7CEC470341">
+                            <File Id="COPYING.LGPLV2.1" Name="COPYING.LGPLv2.1" Source="qpdfview\licenses\xz\COPYING.LGPLv2.1" />
+                        </Component>
+                        <Component Id="FILES.TXT_2" DiskId="1" Guid="5F545172-0755-4C40-B0C0-B41CD30FA31C">
+                            <File Id="FILES.TXT_2" Name="files.txt" Source="qpdfview\licenses\xz\files.txt" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="ZLIB" Name="zlib">
+                        <Component Id="LICENSE_19" DiskId="1" Guid="94D7E8A4-CC54-42C4-A538-D6AD1A470F53">
+                            <File Id="LICENSE_19" Name="LICENSE" Source="qpdfview\licenses\zlib\LICENSE" />
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
+            <Directory Id="DesktopFolder" />
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ProgramMenuDir" Name="qpdfview">
+                    <Component Id="StartMenuShortcuts" Guid="370914BA-A5EC-4049-9D2F-CAB42804788F">
+                        <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+                        <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" />
+                    </Component>
+                </Directory>
+            </Directory>
+        </Directory>
+        <Feature Id="DefaultFeature" Title="Main Feature" Level="1">
+            <ComponentRef Id="CHANGES.TXT" />
+            <ComponentRef Id="CONTRIBUTORS.TXT" />
+            <ComponentRef Id="COPYING.TXT" />
+            <ComponentRef Id="LIBBZ2_1.DLL" />
+            <ComponentRef Id="LIBCURL_4.DLL" />
+            <ComponentRef Id="LIBDJVULIBRE_21.DLL" />
+            <ComponentRef Id="LIBEAY32.DLL" />
+            <ComponentRef Id="LIBFFI_6.DLL" />
+            <ComponentRef Id="LIBFREETYPE_6.DLL" />
+            <ComponentRef Id="LIBGCC_S_DW2_1.DLL" />
+            <ComponentRef Id="LIBGLIB_2.0_0.DLL" />
+            <ComponentRef Id="LIBGMP_10.DLL" />
+            <ComponentRef Id="LIBGNUTLS_30.DLL" />
+            <ComponentRef Id="LIBGS_9.DLL" />
+            <ComponentRef Id="LIBHARFBUZZ_0.DLL" />
+            <ComponentRef Id="LIBHOGWEED_4_1.DLL" />
+            <ComponentRef Id="LIBICONV_2.DLL" />
+            <ComponentRef Id="LIBIDN_11.DLL" />
+            <ComponentRef Id="LIBINTL_8.DLL" />
+            <ComponentRef Id="LIBJPEG_8.DLL" />
+            <ComponentRef Id="LIBLCMS2_2.DLL" />
+            <ComponentRef Id="LIBLZMA_5.DLL" />
+            <ComponentRef Id="LIBNETTLE_6_1.DLL" />
+            <ComponentRef Id="LIBOPENJPEG_5.DLL" />
+            <ComponentRef Id="LIBP11_KIT_0.DLL" />
+            <ComponentRef Id="LIBPNG16_16.DLL" />
+            <ComponentRef Id="LIBPOPPLER_55.DLL" />
+            <ComponentRef Id="LIBPOPPLER_QT4_4.DLL" />
+            <ComponentRef Id="LIBRTMP_1.DLL" />
+            <ComponentRef Id="LIBSPECTRE_1.DLL" />
+            <ComponentRef Id="LIBSSH2_1.DLL" />
+            <ComponentRef Id="LIBSTDC___6.DLL" />
+            <ComponentRef Id="LIBTASN1_6.DLL" />
+            <ComponentRef Id="LIBTIFF_5.DLL" />
+            <ComponentRef Id="LIBWINPTHREAD_1.DLL" />
+            <ComponentRef Id="QPDFVIEW.EXE" />
+            <ComponentRef Id="QPDFVIEW.ICO" />
+            <ComponentRef Id="QPDFVIEW_DJVU.DLL" />
+            <ComponentRef Id="QPDFVIEW_IMAGE.DLL" />
+            <ComponentRef Id="QPDFVIEW_PDF.DLL" />
+            <ComponentRef Id="QPDFVIEW_PS.DLL" />
+            <ComponentRef Id="QTCORE4.DLL" />
+            <ComponentRef Id="QTDBUS4.DLL" />
+            <ComponentRef Id="QTGUI4.DLL" />
+            <ComponentRef Id="QTSQL4.DLL" />
+            <ComponentRef Id="QTXML4.DLL" />
+            <ComponentRef Id="README.TXT" />
+            <ComponentRef Id="SSLEAY32.DLL" />
+            <ComponentRef Id="TODO.TXT" />
+            <ComponentRef Id="ZLIB1.DLL" />
+            <ComponentRef Id="HELP.HTML" />
+            <ComponentRef Id="HELP_AZ.HTML" />
+            <ComponentRef Id="HELP_BG.HTML" />
+            <ComponentRef Id="HELP_CS.HTML" />
+            <ComponentRef Id="HELP_DE.HTML" />
+            <ComponentRef Id="HELP_EN_GB.HTML" />
+            <ComponentRef Id="HELP_ES.HTML" />
+            <ComponentRef Id="HELP_FA.HTML" />
+            <ComponentRef Id="HELP_FI.HTML" />
+            <ComponentRef Id="HELP_FR.HTML" />
+            <ComponentRef Id="HELP_GL.HTML" />
+            <ComponentRef Id="HELP_IT.HTML" />
+            <ComponentRef Id="HELP_KO.HTML" />
+            <ComponentRef Id="HELP_MS.HTML" />
+            <ComponentRef Id="HELP_PL.HTML" />
+            <ComponentRef Id="HELP_PT.HTML" />
+            <ComponentRef Id="HELP_PT_BR.HTML" />
+            <ComponentRef Id="HELP_RU.HTML" />
+            <ComponentRef Id="HELP_SK.HTML" />
+            <ComponentRef Id="HELP_SV.HTML" />
+            <ComponentRef Id="HELP_UK.HTML" />
+            <ComponentRef Id="HELP_VI.HTML" />
+            <ComponentRef Id="HELP_ZH_CN.HTML" />
+            <ComponentRef Id="QPDFVIEW_AST.QM" />
+            <ComponentRef Id="QPDFVIEW_AZ.QM" />
+            <ComponentRef Id="QPDFVIEW_BE.QM" />
+            <ComponentRef Id="QPDFVIEW_BG.QM" />
+            <ComponentRef Id="QPDFVIEW_BS.QM" />
+            <ComponentRef Id="QPDFVIEW_CA.QM" />
+            <ComponentRef Id="QPDFVIEW_CS.QM" />
+            <ComponentRef Id="QPDFVIEW_DA.QM" />
+            <ComponentRef Id="QPDFVIEW_DE.QM" />
+            <ComponentRef Id="QPDFVIEW_EL.QM" />
+            <ComponentRef Id="QPDFVIEW_EN_GB.QM" />
+            <ComponentRef Id="QPDFVIEW_EO.QM" />
+            <ComponentRef Id="QPDFVIEW_ES.QM" />
+            <ComponentRef Id="QPDFVIEW_EU.QM" />
+            <ComponentRef Id="QPDFVIEW_FI.QM" />
+            <ComponentRef Id="QPDFVIEW_FR.QM" />
+            <ComponentRef Id="QPDFVIEW_GL.QM" />
+            <ComponentRef Id="QPDFVIEW_HE.QM" />
+            <ComponentRef Id="QPDFVIEW_HR.QM" />
+            <ComponentRef Id="QPDFVIEW_HU.QM" />
+            <ComponentRef Id="QPDFVIEW_ID.QM" />
+            <ComponentRef Id="QPDFVIEW_IT.QM" />
+            <ComponentRef Id="QPDFVIEW_KK.QM" />
+            <ComponentRef Id="QPDFVIEW_KO.QM" />
+            <ComponentRef Id="QPDFVIEW_KY.QM" />
+            <ComponentRef Id="QPDFVIEW_LT.QM" />
+            <ComponentRef Id="QPDFVIEW_MS.QM" />
+            <ComponentRef Id="QPDFVIEW_MY.QM" />
+            <ComponentRef Id="QPDFVIEW_PL.QM" />
+            <ComponentRef Id="QPDFVIEW_PT.QM" />
+            <ComponentRef Id="QPDFVIEW_PT_BR.QM" />
+            <ComponentRef Id="QPDFVIEW_RO.QM" />
+            <ComponentRef Id="QPDFVIEW_RU.QM" />
+            <ComponentRef Id="QPDFVIEW_SK.QM" />
+            <ComponentRef Id="QPDFVIEW_SV.QM" />
+            <ComponentRef Id="QPDFVIEW_TH.QM" />
+            <ComponentRef Id="QPDFVIEW_TR.QM" />
+            <ComponentRef Id="QPDFVIEW_UG.QM" />
+            <ComponentRef Id="QPDFVIEW_UK.QM" />
+            <ComponentRef Id="QPDFVIEW_VI.QM" />
+            <ComponentRef Id="QPDFVIEW_ZH_CN.QM" />
+            <ComponentRef Id="LICENSE" />
+            <ComponentRef Id="LICENSE_1" />
+            <ComponentRef Id="LICENSE_2" />
+            <ComponentRef Id="FTL.TXT" />
+            <ComponentRef Id="GPLV2.TXT" />
+            <ComponentRef Id="LICENSE.TXT" />
+            <ComponentRef Id="COPYING.LIB" />
+            <ComponentRef Id="COPYING.RUNTIME" />
+            <ComponentRef Id="COPYING3" />
+            <ComponentRef Id="FILES.TXT" />
+            <ComponentRef Id="README" />
+            <ComponentRef Id="COPYING" />
+            <ComponentRef Id="FILES.TXT_1" />
+            <ComponentRef Id="COPYING_1" />
+            <ComponentRef Id="COPYING.LIB_1" />
+            <ComponentRef Id="COPYING_2" />
+            <ComponentRef Id="COPYING.LIB_2" />
+            <ComponentRef Id="COPYING_3" />
+            <ComponentRef Id="COPYING_4" />
+            <ComponentRef Id="COPYING_5" />
+            <ComponentRef Id="LICENSE_3" />
+            <ComponentRef Id="COPYING_6" />
+            <ComponentRef Id="LICENSE_4" />
+            <ComponentRef Id="COPYING_7" />
+            <ComponentRef Id="LICENSE_5" />
+            <ComponentRef Id="LICENSE_6" />
+            <ComponentRef Id="LICENSE_7" />
+            <ComponentRef Id="COPYING_8" />
+            <ComponentRef Id="COPYING.LIB_3" />
+            <ComponentRef Id="README_1" />
+            <ComponentRef Id="COPYING.LIB_4" />
+            <ComponentRef Id="LICENSE_8" />
+            <ComponentRef Id="README_2" />
+            <ComponentRef Id="README_TURBO.TXT" />
+            <ComponentRef Id="JSIMDEXT.INC" />
+            <ComponentRef Id="LICENSE_9" />
+            <ComponentRef Id="LICENSE_10" />
+            <ComponentRef Id="LICENSE_11" />
+            <ComponentRef Id="LICENSE_12" />
+            <ComponentRef Id="LICENSE.LIB" />
+            <ComponentRef Id="COPYRIGHT" />
+            <ComponentRef Id="COPYING_9" />
+            <ComponentRef Id="COPYING_10" />
+            <ComponentRef Id="LICENSE_13" />
+            <ComponentRef Id="LICENSE_14" />
+            <ComponentRef Id="LICENSE_15" />
+            <ComponentRef Id="LICENSE_16" />
+            <ComponentRef Id="LICENSE_17" />
+            <ComponentRef Id="INDEX.HTML" />
+            <ComponentRef Id="_3RDPARTY.HTML" />
+            <ComponentRef Id="CATHARON_LICENSE.HTML" />
+            <ComponentRef Id="CREDITS.HTML" />
+            <ComponentRef Id="DESIGNER_RECURSIVE_SHADOW_CASTING.HTML" />
+            <ComponentRef Id="EDITIONS.HTML" />
+            <ComponentRef Id="GPL.HTML" />
+            <ComponentRef Id="LEGAL_EASING.HTML" />
+            <ComponentRef Id="LGPL.HTML" />
+            <ComponentRef Id="LICENSES_FONTS.HTML" />
+            <ComponentRef Id="LICENSES.HTML" />
+            <ComponentRef Id="LICENSING.HTML" />
+            <ComponentRef Id="OPENSOURCEEDITION.HTML" />
+            <ComponentRef Id="PDF_LICENSING.HTML" />
+            <ComponentRef Id="QT_MAC_COCOA_LICENSING.HTML" />
+            <ComponentRef Id="QT3TO4_TREEWALKER.HTML" />
+            <ComponentRef Id="QTMAIN.HTML" />
+            <ComponentRef Id="QTQUICKLICENSE.HTML" />
+            <ComponentRef Id="TRADEMARKS.HTML" />
+            <ComponentRef Id="FUNCTIONS.JS" />
+            <ComponentRef Id="JQUERY.JS" />
+            <ComponentRef Id="NARROW.JS" />
+            <ComponentRef Id="SUPERFISH.JS" />
+            <ComponentRef Id="NARROW.CSS" />
+            <ComponentRef Id="STYLE.CSS" />
+            <ComponentRef Id="STYLE_IE6.CSS" />
+            <ComponentRef Id="STYLE_IE7.CSS" />
+            <ComponentRef Id="STYLE_IE8.CSS" />
+            <ComponentRef Id="SUPERFISH.CSS" />
+            <ComponentRef Id="LICENSE_18" />
+            <ComponentRef Id="COPYING_11" />
+            <ComponentRef Id="COPYING_12" />
+            <ComponentRef Id="COPYING_13" />
+            <ComponentRef Id="COPYING.GPLV2" />
+            <ComponentRef Id="COPYING.GPLV3" />
+            <ComponentRef Id="COPYING.LGPLV2.1" />
+            <ComponentRef Id="FILES.TXT_2" />
+            <ComponentRef Id="LICENSE_19" />
+            <ComponentRef Id="StartMenuShortcuts" />
+        </Feature>
+        <UI />
+        <UIRef Id="WixUI_Minimal" />
+        <CustomAction Id="CA_Set_WIXUI_EXITDIALOGOPTIONALTEXT" Property="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Thank you for installing [ProductName]." />
+        <InstallUISequence>
+            <Custom Action="CA_Set_WIXUI_EXITDIALOGOPTIONALTEXT" After="FindRelatedProducts">NOT Installed</Custom>
+        </InstallUISequence>
+        <Icon Id="DesktopIcon.exe" SourceFile="qpdfview\qpdfview.ico" />
+        <Icon Id="StartMenuIcon.exe" SourceFile="qpdfview\qpdfview.ico" />
+    </Product>
+</Wix>
+<!-- generated with WixEdit v0.7.5 http://wixedit.sourceforge.net/ -->
