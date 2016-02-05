@@ -2,14 +2,12 @@
 
 #pacman -S bzr bzr-fastimport git
 
-bzr branch lp:qpdfview
+git clone https://github.com/darealshinji/qpdfview
 cd qpdfview
-git init
-bzr fast-export --plain . | git fast-import
+bzr branch lp:qpdfview
+bzr fast-export --plain qpdfview | git fast-import
 git checkout -f master 2>/dev/null
-rm -rf .bzr
+rm -rf qpdfview
 
-#git remote add origin https://github.com/darealshinji/qpdfview.git
-#git push -u origin master
 #git push origin qpdfview-0.4.16
 

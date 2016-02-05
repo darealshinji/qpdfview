@@ -17,38 +17,31 @@ CONFIG += without_svg
 
 RESOURCES += icons_png.qrc
 
-PDF_PLUGIN_NAME = qpdfview_pdf.dll
-PS_PLUGIN_NAME = qpdfview_ps.dll
-DJVU_PLUGIN_NAME = qpdfview_djvu.dll
+PDF_PLUGIN_NAME   = qpdfview_pdf.dll
+PS_PLUGIN_NAME    = qpdfview_ps.dll
+DJVU_PLUGIN_NAME  = qpdfview_djvu.dll
 IMAGE_PLUGIN_NAME = qpdfview_image.dll
 
 DJVU_PLUGIN_INCLUDEPATH += $include
-DJVU_PLUGIN_LIBS += -ldjvulibre
+DJVU_PLUGIN_LIBS        += -ldjvulibre
 
-PDF_PLUGIN_DEFINES += HAS_POPPLER_14
-PDF_PLUGIN_DEFINES += HAS_POPPLER_18
-PDF_PLUGIN_DEFINES += HAS_POPPLER_20
-PDF_PLUGIN_DEFINES += HAS_POPPLER_22
-PDF_PLUGIN_DEFINES += HAS_POPPLER_24
-PDF_PLUGIN_DEFINES += HAS_POPPLER_26
-#PDF_PLUGIN_DEFINES += HAS_POPPLER_31
-#PDF_PLUGIN_DEFINES += HAS_POPPLER_35
-PDF_PLUGIN_INCLUDEPATH += $include/poppler/qt4 $include/poppler
-PDF_PLUGIN_LIBS += -lpoppler-qt4
+PDF_PLUGIN_DEFINES      += HAS_POPPLER_14
+PDF_PLUGIN_DEFINES      += HAS_POPPLER_18
+PDF_PLUGIN_DEFINES      += HAS_POPPLER_20
+PDF_PLUGIN_DEFINES      += HAS_POPPLER_22
+PDF_PLUGIN_DEFINES      += HAS_POPPLER_24
+PDF_PLUGIN_DEFINES      += HAS_POPPLER_26
+#PDF_PLUGIN_DEFINES     += HAS_POPPLER_31
+#PDF_PLUGIN_DEFINES     += HAS_POPPLER_35
+PDF_PLUGIN_INCLUDEPATH  += $include/poppler/qt4 $include/poppler
+PDF_PLUGIN_LIBS         += -lpoppler-qt4
 
-PS_PLUGIN_INCLUDEPATH += $include
-PS_PLUGIN_LIBS += -lspectre
+PS_PLUGIN_INCLUDEPATH   += $include
+PS_PLUGIN_LIBS          += -lspectre
 EOF
 
-make distclean
+test -f Makefile && make distclean
 rm -f Makefile* lib*.a translations/*.qm icons/*.png
-
-if [ ! -d sources_backup ]; then
-    cp -r sources sources_backup
-    for f in sources/*; do
-        sed -i 's|\.svg"|.png"|g' $f
-    done
-fi
 
 sed 's|\.svg|.png|g' icons.qrc > icons_png.qrc
 for f in icons/*.svg; do
