@@ -2,6 +2,8 @@
 
 # helper script for mingw32 builds on Msys
 
+# pacman -S mingw-w64-i686-qt5 mingw-w64-i686-poppler mingw-w64-i686-libspectre mingw-w64-i686-djvulibre
+
 VERSION="0.4.16"
 include="/mingw32/include"
 
