@@ -35,8 +35,8 @@ PDF_PLUGIN_DEFINES      += HAS_POPPLER_24
 PDF_PLUGIN_DEFINES      += HAS_POPPLER_26
 #PDF_PLUGIN_DEFINES     += HAS_POPPLER_31
 #PDF_PLUGIN_DEFINES     += HAS_POPPLER_35
-PDF_PLUGIN_INCLUDEPATH  += $include/poppler/qt4 $include/poppler
-PDF_PLUGIN_LIBS         += -lpoppler-qt4
+PDF_PLUGIN_INCLUDEPATH  += $include/poppler/qt5 $include/poppler
+PDF_PLUGIN_LIBS         += -lpoppler-qt5
 
 PS_PLUGIN_INCLUDEPATH   += $include
 PS_PLUGIN_LIBS          += -lspectre
@@ -56,6 +56,7 @@ done
 
 mkdir -p release/data
 cp -f help/*.html translations/*.qm release/data
+cp -f icons/qpdfview_win32.ico release/qpdfview.ico
 
 qmake qpdfview.pro
 make release

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="12.6.1" version="12.6.1" Modules="simple" RootPath="." Language="en" Id="{166DA0A3-647E-44C4-BD3C-002DECB25038}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="12.6.1" version="12.7" Modules="simple" RootPath="." Language="en" Id="{166DA0A3-647E-44C4-BD3C-002DECB25038}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:2"/>
@@ -12,7 +12,7 @@
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:3"/>
     <ROW Property="Manufacturer" Value="Adam Reichold"/>
-    <ROW Property="ProductCode" Value="1033:{4E67DAC5-F7C2-429D-9990-FB598D591825} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{E95A7D84-EE7C-436F-8955-2828EC6DBF5E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="qpdfview"/>
     <ROW Property="ProductVersion" Value="0.4.16" Type="32"/>
@@ -125,15 +125,10 @@
     <ROW Component="LICENSE_8" ComponentId="{6FBB001C-3C44-4340-BFF0-70F5A665F0B2}" Directory_="libidn_Dir" Attributes="0" KeyPath="LICENSE_8" Type="0"/>
     <ROW Component="LICENSE_9" ComponentId="{DBCF2695-0DC6-458D-B43A-49F1B5804E63}" Directory_="libpng_Dir" Attributes="0" KeyPath="LICENSE_9" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{AA394192-F290-407E-97FC-F397B8EC6091}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="QtCore4.dll" ComponentId="{3AEDE0AE-3F88-4533-BB4A-0B64A3759BDC}" Directory_="APPDIR" Attributes="0" KeyPath="QtCore4.dll"/>
-    <ROW Component="QtDBus4.dll" ComponentId="{7429FC17-2ED6-4A69-A466-2809C01953F9}" Directory_="APPDIR" Attributes="0" KeyPath="QtDBus4.dll"/>
-    <ROW Component="QtGui4.dll" ComponentId="{DEBC4B36-8651-47FA-9652-65A3FD9B4EA8}" Directory_="APPDIR" Attributes="0" KeyPath="QtGui4.dll"/>
-    <ROW Component="QtSql4.dll" ComponentId="{46EB7FDC-FD74-4CBA-B51D-823543E2A781}" Directory_="APPDIR" Attributes="0" KeyPath="QtSql4.dll"/>
-    <ROW Component="QtXml4.dll" ComponentId="{D4F9AC36-A9E0-48DF-8F2B-988BDDEFD559}" Directory_="APPDIR" Attributes="0" KeyPath="QtXml4.dll"/>
     <ROW Component="README" ComponentId="{21C15297-C8EF-45F8-80A7-B67292EBFB21}" Directory_="libjpegturbo_Dir" Attributes="0" KeyPath="README_2" Type="0"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{DDD3C4A5-AE05-4213-8537-F5B8AB472F46}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="functions.js" ComponentId="{8365EACC-1C83-4EDD-8219-246EE0FB7527}" Directory_="scripts_Dir" Attributes="0" KeyPath="functions.js" Type="0"/>
-    <ROW Component="help.html" ComponentId="{F904D03D-5B8C-41D6-BD49-AE5F730C697D}" Directory_="data_Dir" Attributes="0" KeyPath="help.html" Type="0"/>
+    <ROW Component="help.html" ComponentId="{B16C0A0E-1892-4872-8534-35C8E8238517}" Directory_="data_Dir" Attributes="0" KeyPath="help.html" Type="0"/>
     <ROW Component="index.html" ComponentId="{4743FF6C-3F82-4B3D-8CA7-D8A8EEE511C1}" Directory_="qt_Dir" Attributes="0" KeyPath="index.html" Type="0"/>
     <ROW Component="jsimdext.inc" ComponentId="{CB05DD55-290C-41E9-9C69-84BE233F447A}" Directory_="simd_Dir" Attributes="0" KeyPath="jsimdext.inc" Type="0"/>
     <ROW Component="libbz21.dll" ComponentId="{891FBF19-8F9D-4DE8-B35E-25067A775341}" Directory_="APPDIR" Attributes="0" KeyPath="libbz21.dll"/>
@@ -150,6 +145,9 @@
     <ROW Component="libharfbuzz0.dll" ComponentId="{8783D9E1-D697-4498-9D82-226985CD04B3}" Directory_="APPDIR" Attributes="0" KeyPath="libharfbuzz0.dll"/>
     <ROW Component="libhogweed41.dll" ComponentId="{BBC12B19-C998-4210-A101-FE8ED162899E}" Directory_="APPDIR" Attributes="0" KeyPath="libhogweed41.dll"/>
     <ROW Component="libiconv2.dll" ComponentId="{4550C13B-162E-4517-AB04-B6787D3994DA}" Directory_="APPDIR" Attributes="0" KeyPath="libiconv2.dll"/>
+    <ROW Component="libicudt56.dll" ComponentId="{E73CC582-0E81-4CD6-8374-440DD2024D06}" Directory_="APPDIR" Attributes="0" KeyPath="libicudt56.dll"/>
+    <ROW Component="libicuin56.dll" ComponentId="{937E0735-3D7A-4F6F-8D6F-572D229C0376}" Directory_="APPDIR" Attributes="0" KeyPath="libicuin56.dll"/>
+    <ROW Component="libicuuc56.dll" ComponentId="{BFCCB02B-E355-409B-8109-DC4133B2EE57}" Directory_="APPDIR" Attributes="0" KeyPath="libicuuc56.dll"/>
     <ROW Component="libidn11.dll" ComponentId="{7C7ECD6D-BA76-4632-8B63-2B855D26FF6B}" Directory_="APPDIR" Attributes="0" KeyPath="libidn11.dll"/>
     <ROW Component="libintl8.dll" ComponentId="{2B8FB3C3-9417-4C1D-AE39-43E54DC76FC2}" Directory_="APPDIR" Attributes="0" KeyPath="libintl8.dll"/>
     <ROW Component="libjpeg8.dll" ComponentId="{AEDE52B9-0696-44A9-B452-485AE0085B2C}" Directory_="APPDIR" Attributes="0" KeyPath="libjpeg8.dll"/>
@@ -158,9 +156,10 @@
     <ROW Component="libnettle61.dll" ComponentId="{8482E55C-5294-4258-95AF-E42B0E7F2583}" Directory_="APPDIR" Attributes="0" KeyPath="libnettle61.dll"/>
     <ROW Component="libopenjpeg5.dll" ComponentId="{25EEB7BB-BBEC-41C3-9592-A06922EF2A95}" Directory_="APPDIR" Attributes="0" KeyPath="libopenjpeg5.dll"/>
     <ROW Component="libp11kit0.dll" ComponentId="{652E82E6-0BBC-49A0-AE7D-1F4869A8BB46}" Directory_="APPDIR" Attributes="0" KeyPath="libp11kit0.dll"/>
+    <ROW Component="libpcre160.dll" ComponentId="{D3F6992E-8FAB-40ED-BF24-7CA4FF958CD6}" Directory_="APPDIR" Attributes="0" KeyPath="libpcre160.dll"/>
     <ROW Component="libpng1616.dll" ComponentId="{645490C7-C8FD-45B3-9A5A-A72B5F9D1DD4}" Directory_="APPDIR" Attributes="0" KeyPath="libpng1616.dll"/>
-    <ROW Component="libpoppler55.dll" ComponentId="{55C9CBC3-A6CE-406C-B708-9EE664EB2B8F}" Directory_="APPDIR" Attributes="0" KeyPath="libpoppler55.dll"/>
-    <ROW Component="libpopplerqt44.dll" ComponentId="{566FAAE2-7725-4A90-AB84-3E92E2BC75C3}" Directory_="APPDIR" Attributes="0" KeyPath="libpopplerqt44.dll"/>
+    <ROW Component="libpoppler58.dll" ComponentId="{ACF2C5B4-5C46-4327-9544-5728E62A8700}" Directory_="APPDIR" Attributes="0" KeyPath="libpoppler58.dll"/>
+    <ROW Component="libpopplerqt51.dll" ComponentId="{3AB17471-F691-42DE-91F0-FB51CE1156AE}" Directory_="APPDIR" Attributes="0" KeyPath="libpopplerqt51.dll"/>
     <ROW Component="librtmp1.dll" ComponentId="{063DBABD-C467-4E88-BC5B-B5E31F888688}" Directory_="APPDIR" Attributes="0" KeyPath="librtmp1.dll"/>
     <ROW Component="libspectre1.dll" ComponentId="{0D95D4C8-1418-47CF-85D3-C4B66CF6887C}" Directory_="APPDIR" Attributes="0" KeyPath="libspectre1.dll"/>
     <ROW Component="libssh21.dll" ComponentId="{23D6EEA8-3D7A-45B4-B89C-BE839A0EAFED}" Directory_="APPDIR" Attributes="0" KeyPath="libssh21.dll"/>
@@ -174,12 +173,19 @@
     <ROW Component="qpdfview_image.dll" ComponentId="{B39B85F3-5D4D-4128-82A5-D5411922478D}" Directory_="APPDIR" Attributes="0" KeyPath="qpdfview_image.dll"/>
     <ROW Component="qpdfview_pdf.dll" ComponentId="{396860ED-6D1B-49DF-A9AE-311EF9DA4B61}" Directory_="APPDIR" Attributes="0" KeyPath="qpdfview_pdf.dll"/>
     <ROW Component="qpdfview_ps.dll" ComponentId="{369B56F7-C532-424B-A9CA-F06768A5ABE9}" Directory_="APPDIR" Attributes="0" KeyPath="qpdfview_ps.dll"/>
+    <ROW Component="qt5core.dll" ComponentId="{3BF162FF-446E-423E-BDC9-697ADF46D4C5}" Directory_="APPDIR" Attributes="0" KeyPath="qt5core.dll"/>
+    <ROW Component="qt5dbus.dll" ComponentId="{4368FAAB-5F2E-4440-9909-31AAB806EB6A}" Directory_="APPDIR" Attributes="0" KeyPath="qt5dbus.dll"/>
+    <ROW Component="qt5gui.dll" ComponentId="{E7D21B79-BBE2-4C54-A298-00708FA1C0C2}" Directory_="APPDIR" Attributes="0" KeyPath="qt5gui.dll"/>
+    <ROW Component="qt5printsupport.dll" ComponentId="{CA344632-07B5-40BC-A717-C31265E2B59C}" Directory_="APPDIR" Attributes="0" KeyPath="qt5printsupport.dll"/>
+    <ROW Component="qt5sql.dll" ComponentId="{E2527FF9-8B4E-4202-9141-EA7DE0C4D6DD}" Directory_="APPDIR" Attributes="0" KeyPath="qt5sql.dll"/>
+    <ROW Component="qt5widgets.dll" ComponentId="{E9E105D3-AD9B-464E-9FD6-F6C8BB9D2BCC}" Directory_="APPDIR" Attributes="0" KeyPath="qt5widgets.dll"/>
+    <ROW Component="qt5xml.dll" ComponentId="{9A3D6588-5931-460B-9F76-C82F7C30B6EB}" Directory_="APPDIR" Attributes="0" KeyPath="qt5xml.dll"/>
     <ROW Component="rdparty.html" ComponentId="{95F27794-61AB-4EC7-9C5E-7F80D7435B89}" Directory_="html_Dir" Attributes="0" KeyPath="rdparty.html" Type="0"/>
     <ROW Component="ssleay32.dll" ComponentId="{9A79D124-1CC8-4885-8270-E2FD7849B880}" Directory_="APPDIR" Attributes="0" KeyPath="ssleay32.dll"/>
     <ROW Component="zlib1.dll" ComponentId="{A4E72460-05C3-4DAB-BE44-EAC6DCA4AE41}" Directory_="APPDIR" Attributes="0" KeyPath="zlib1.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="CHANGES.txt COPYING COPYING.LIB COPYING.LIB_1 COPYING.LIB_2 COPYING_1 COPYING_10 COPYING_11 COPYING_12 COPYING_13 COPYING_2 COPYING_3 COPYING_4 COPYING_5 COPYING_6 COPYING_7 COPYING_8 COPYING_9 COPYRIGHT FTL.TXT LICENSE LICENSE_1 LICENSE_10 LICENSE_11 LICENSE_12 LICENSE_13 LICENSE_14 LICENSE_15 LICENSE_16 LICENSE_17 LICENSE_18 LICENSE_19 LICENSE_2 LICENSE_3 LICENSE_4 LICENSE_5 LICENSE_6 LICENSE_7 LICENSE_8 LICENSE_9 ProductInformation QtCore4.dll QtDBus4.dll QtGui4.dll QtSql4.dll QtXml4.dll README SHORTCUTDIR functions.js help.html index.html jsimdext.inc libbz21.dll libcurl4.dll libdjvulibre21.dll libeay32.dll libffi6.dll libfreetype6.dll libgcc_s_dw21.dll libglib2.00.dll libgmp10.dll libgnutls30.dll libgs9.dll libharfbuzz0.dll libhogweed41.dll libiconv2.dll libidn11.dll libintl8.dll libjpeg8.dll liblcms22.dll liblzma5.dll libnettle61.dll libopenjpeg5.dll libp11kit0.dll libpng1616.dll libpoppler55.dll libpopplerqt44.dll librtmp1.dll libspectre1.dll libssh21.dll libstdc6.dll libtasn16.dll libtiff5.dll libwinpthread1.dll narrow.css qpdfview.exe qpdfview_djvu.dll qpdfview_image.dll qpdfview_pdf.dll qpdfview_ps.dll rdparty.html ssleay32.dll zlib1.dll"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="CHANGES.txt COPYING COPYING.LIB COPYING.LIB_1 COPYING.LIB_2 COPYING_1 COPYING_10 COPYING_11 COPYING_12 COPYING_13 COPYING_2 COPYING_3 COPYING_4 COPYING_5 COPYING_6 COPYING_7 COPYING_8 COPYING_9 COPYRIGHT FTL.TXT LICENSE LICENSE_1 LICENSE_10 LICENSE_11 LICENSE_12 LICENSE_13 LICENSE_14 LICENSE_15 LICENSE_16 LICENSE_17 LICENSE_18 LICENSE_19 LICENSE_2 LICENSE_3 LICENSE_4 LICENSE_5 LICENSE_6 LICENSE_7 LICENSE_8 LICENSE_9 ProductInformation README SHORTCUTDIR functions.js help.html index.html jsimdext.inc libbz21.dll libcurl4.dll libdjvulibre21.dll libeay32.dll libffi6.dll libfreetype6.dll libgcc_s_dw21.dll libglib2.00.dll libgmp10.dll libgnutls30.dll libgs9.dll libharfbuzz0.dll libhogweed41.dll libiconv2.dll libicudt56.dll libicuin56.dll libicuuc56.dll libidn11.dll libintl8.dll libjpeg8.dll liblcms22.dll liblzma5.dll libnettle61.dll libopenjpeg5.dll libp11kit0.dll libpcre160.dll libpng1616.dll libpoppler58.dll libpopplerqt51.dll librtmp1.dll libspectre1.dll libssh21.dll libstdc6.dll libtasn16.dll libtiff5.dll libwinpthread1.dll narrow.css qpdfview.exe qpdfview_djvu.dll qpdfview_image.dll qpdfview_pdf.dll qpdfview_ps.dll qt5core.dll qt5dbus.dll qt5gui.dll qt5printsupport.dll qt5sql.dll qt5widgets.dll qt5xml.dll rdparty.html ssleay32.dll zlib1.dll"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
@@ -226,7 +232,7 @@
     <ROW File="LICENSE_16" Component_="LICENSE_16" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\p11kit\LICENSE" SelfReg="false" NextFile="LICENSE_17"/>
     <ROW File="LICENSE_17" Component_="LICENSE_17" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\poppler\LICENSE" SelfReg="false" NextFile="rdparty.html"/>
     <ROW File="LICENSE_18" Component_="LICENSE_18" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\rtmp\LICENSE" SelfReg="false" NextFile="COPYING_11"/>
-    <ROW File="LICENSE_19" Component_="LICENSE_19" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\zlib\LICENSE" SelfReg="false"/>
+    <ROW File="LICENSE_19" Component_="LICENSE_19" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\zlib\LICENSE" SelfReg="false" NextFile="help.html"/>
     <ROW File="LICENSE_2" Component_="LICENSE_2" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\djvulibre\LICENSE" SelfReg="false" NextFile="FTL.TXT"/>
     <ROW File="LICENSE_3" Component_="LICENSE_3" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\ghostscript\LICENSE" SelfReg="false" NextFile="COPYING_6"/>
     <ROW File="LICENSE_4" Component_="LICENSE_4" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\gnutls\LICENSE" SelfReg="false" NextFile="COPYING_7"/>
@@ -235,11 +241,6 @@
     <ROW File="LICENSE_7" Component_="LICENSE_7" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\libgmp\LICENSE" SelfReg="false" NextFile="COPYING_8"/>
     <ROW File="LICENSE_8" Component_="LICENSE_8" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\libidn\LICENSE" SelfReg="false" NextFile="README_2"/>
     <ROW File="LICENSE_9" Component_="LICENSE_9" FileName="LICENSE" Attributes="0" SourcePath="qpdfview\licenses\libpng\LICENSE" SelfReg="false" NextFile="LICENSE_10"/>
-    <ROW File="QtCore4.dll" Component_="QtCore4.dll" FileName="QtCore4.dll" Attributes="0" SourcePath="qpdfview\QtCore4.dll" SelfReg="false" NextFile="QtDBus4.dll"/>
-    <ROW File="QtDBus4.dll" Component_="QtDBus4.dll" FileName="QtDBus4.dll" Attributes="0" SourcePath="qpdfview\QtDBus4.dll" SelfReg="false" NextFile="QtGui4.dll"/>
-    <ROW File="QtGui4.dll" Component_="QtGui4.dll" FileName="QtGui4.dll" Attributes="0" SourcePath="qpdfview\QtGui4.dll" SelfReg="false" NextFile="QtSql4.dll"/>
-    <ROW File="QtSql4.dll" Component_="QtSql4.dll" FileName="QtSql4.dll" Attributes="0" SourcePath="qpdfview\QtSql4.dll" SelfReg="false" NextFile="QtXml4.dll"/>
-    <ROW File="QtXml4.dll" Component_="QtXml4.dll" FileName="QtXml4.dll" Attributes="0" SourcePath="qpdfview\QtXml4.dll" SelfReg="false" NextFile="ssleay32.dll"/>
     <ROW File="README" Component_="COPYING.LIB" FileName="README" Attributes="0" SourcePath="qpdfview\licenses\gcc-libs\README" SelfReg="false" NextFile="COPYING"/>
     <ROW File="README.txt" Component_="CHANGES.txt" FileName="README.txt" Attributes="0" SourcePath="qpdfview\README.txt" SelfReg="false" NextFile="CHANGES.txt"/>
     <ROW File="README_1" Component_="COPYING_8" FileName="README" Attributes="0" SourcePath="qpdfview\licenses\libiconv\README" SelfReg="false" NextFile="LICENSE_8"/>
@@ -266,8 +267,10 @@
     <ROW File="help_fi.html" Component_="help.html" FileName="HELP_F~2.HTM|help_fi.html" Attributes="0" SourcePath="qpdfview\data\help_fi.html" SelfReg="false" NextFile="help_fr.html"/>
     <ROW File="help_fr.html" Component_="help.html" FileName="HELP_F~3.HTM|help_fr.html" Attributes="0" SourcePath="qpdfview\data\help_fr.html" SelfReg="false" NextFile="help_gl.html"/>
     <ROW File="help_gl.html" Component_="help.html" FileName="HELP_G~1.HTM|help_gl.html" Attributes="0" SourcePath="qpdfview\data\help_gl.html" SelfReg="false" NextFile="help_it.html"/>
-    <ROW File="help_it.html" Component_="help.html" FileName="HELP_I~1.HTM|help_it.html" Attributes="0" SourcePath="qpdfview\data\help_it.html" SelfReg="false" NextFile="help_ko.html"/>
-    <ROW File="help_ko.html" Component_="help.html" FileName="HELP_K~1.HTM|help_ko.html" Attributes="0" SourcePath="qpdfview\data\help_ko.html" SelfReg="false" NextFile="help_ms.html"/>
+    <ROW File="help_it.html" Component_="help.html" FileName="HELP_I~1.HTM|help_it.html" Attributes="0" SourcePath="qpdfview\data\help_it.html" SelfReg="false" NextFile="help_ja.html"/>
+    <ROW File="help_ja.html" Component_="help.html" FileName="HELP_J~1.HTM|help_ja.html" Attributes="0" SourcePath="qpdfview\data\help_ja.html" SelfReg="false" NextFile="help_ko.html"/>
+    <ROW File="help_ko.html" Component_="help.html" FileName="HELP_K~1.HTM|help_ko.html" Attributes="0" SourcePath="qpdfview\data\help_ko.html" SelfReg="false" NextFile="help_lt.html"/>
+    <ROW File="help_lt.html" Component_="help.html" FileName="HELP_L~1.HTM|help_lt.html" Attributes="0" SourcePath="qpdfview\data\help_lt.html" SelfReg="false" NextFile="help_ms.html"/>
     <ROW File="help_ms.html" Component_="help.html" FileName="HELP_M~1.HTM|help_ms.html" Attributes="0" SourcePath="qpdfview\data\help_ms.html" SelfReg="false" NextFile="help_pl.html"/>
     <ROW File="help_pl.html" Component_="help.html" FileName="HELP_P~1.HTM|help_pl.html" Attributes="0" SourcePath="qpdfview\data\help_pl.html" SelfReg="false" NextFile="help_pt.html"/>
     <ROW File="help_pt.html" Component_="help.html" FileName="HELP_P~2.HTM|help_pt.html" Attributes="0" SourcePath="qpdfview\data\help_pt.html" SelfReg="false" NextFile="help_pt_BR.html"/>
@@ -297,6 +300,9 @@
     <ROW File="libharfbuzz0.dll" Component_="libharfbuzz0.dll" FileName="LIBHAR~1.DLL|libharfbuzz-0.dll" Attributes="0" SourcePath="qpdfview\libharfbuzz-0.dll" SelfReg="false" NextFile="libhogweed41.dll"/>
     <ROW File="libhogweed41.dll" Component_="libhogweed41.dll" FileName="LIBHOG~1.DLL|libhogweed-4-1.dll" Attributes="0" SourcePath="qpdfview\libhogweed-4-1.dll" SelfReg="false" NextFile="libiconv2.dll"/>
     <ROW File="libiconv2.dll" Component_="libiconv2.dll" FileName="LIBICO~1.DLL|libiconv-2.dll" Attributes="0" SourcePath="qpdfview\libiconv-2.dll" SelfReg="false" NextFile="libidn11.dll"/>
+    <ROW File="libicudt56.dll" Component_="libicudt56.dll" FileName="LIBICU~1.DLL|libicudt56.dll" Attributes="0" SourcePath="qpdfview\libicudt56.dll" SelfReg="false" NextFile="libicuin56.dll"/>
+    <ROW File="libicuin56.dll" Component_="libicuin56.dll" FileName="LIBICU~2.DLL|libicuin56.dll" Attributes="0" SourcePath="qpdfview\libicuin56.dll" SelfReg="false" NextFile="libicuuc56.dll"/>
+    <ROW File="libicuuc56.dll" Component_="libicuuc56.dll" FileName="LIBICU~3.DLL|libicuuc56.dll" Attributes="0" SourcePath="qpdfview\libicuuc56.dll" SelfReg="false" NextFile="libpcre160.dll"/>
     <ROW File="libidn11.dll" Component_="libidn11.dll" FileName="LIBIDN~1.DLL|libidn-11.dll" Attributes="0" SourcePath="qpdfview\libidn-11.dll" SelfReg="false" NextFile="libintl8.dll"/>
     <ROW File="libintl8.dll" Component_="libintl8.dll" FileName="LIBINT~1.DLL|libintl-8.dll" Attributes="0" SourcePath="qpdfview\libintl-8.dll" SelfReg="false" NextFile="libjpeg8.dll"/>
     <ROW File="libjpeg8.dll" Component_="libjpeg8.dll" FileName="LIBJPE~1.DLL|libjpeg-8.dll" Attributes="0" SourcePath="qpdfview\libjpeg-8.dll" SelfReg="false" NextFile="liblcms22.dll"/>
@@ -305,9 +311,10 @@
     <ROW File="libnettle61.dll" Component_="libnettle61.dll" FileName="LIBNET~1.DLL|libnettle-6-1.dll" Attributes="0" SourcePath="qpdfview\libnettle-6-1.dll" SelfReg="false" NextFile="libopenjpeg5.dll"/>
     <ROW File="libopenjpeg5.dll" Component_="libopenjpeg5.dll" FileName="LIBOPE~1.DLL|libopenjpeg-5.dll" Attributes="0" SourcePath="qpdfview\libopenjpeg-5.dll" SelfReg="false" NextFile="libp11kit0.dll"/>
     <ROW File="libp11kit0.dll" Component_="libp11kit0.dll" FileName="LIBP11~1.DLL|libp11-kit-0.dll" Attributes="0" SourcePath="qpdfview\libp11-kit-0.dll" SelfReg="false" NextFile="libpng1616.dll"/>
-    <ROW File="libpng1616.dll" Component_="libpng1616.dll" FileName="LIBPNG~1.DLL|libpng16-16.dll" Attributes="0" SourcePath="qpdfview\libpng16-16.dll" SelfReg="false" NextFile="libpoppler55.dll"/>
-    <ROW File="libpoppler55.dll" Component_="libpoppler55.dll" FileName="LIBPOP~1.DLL|libpoppler-55.dll" Attributes="0" SourcePath="qpdfview\libpoppler-55.dll" SelfReg="false" NextFile="libpopplerqt44.dll"/>
-    <ROW File="libpopplerqt44.dll" Component_="libpopplerqt44.dll" FileName="LIBPOP~2.DLL|libpoppler-qt4-4.dll" Attributes="0" SourcePath="qpdfview\libpoppler-qt4-4.dll" SelfReg="false" NextFile="librtmp1.dll"/>
+    <ROW File="libpcre160.dll" Component_="libpcre160.dll" FileName="LIBPCR~1.DLL|libpcre16-0.dll" Attributes="0" SourcePath="qpdfview\libpcre16-0.dll" SelfReg="false" NextFile="libpoppler58.dll"/>
+    <ROW File="libpng1616.dll" Component_="libpng1616.dll" FileName="LIBPNG~1.DLL|libpng16-16.dll" Attributes="0" SourcePath="qpdfview\libpng16-16.dll" SelfReg="false" NextFile="librtmp1.dll"/>
+    <ROW File="libpoppler58.dll" Component_="libpoppler58.dll" FileName="LIBPOP~1.DLL|libpoppler-58.dll" Attributes="0" SourcePath="qpdfview\libpoppler-58.dll" SelfReg="false" NextFile="libpopplerqt51.dll"/>
+    <ROW File="libpopplerqt51.dll" Component_="libpopplerqt51.dll" FileName="LIBPOP~2.DLL|libpoppler-qt5-1.dll" Attributes="0" SourcePath="qpdfview\libpoppler-qt5-1.dll" SelfReg="false" NextFile="qt5core.dll"/>
     <ROW File="librtmp1.dll" Component_="librtmp1.dll" FileName="LIBRTM~1.DLL|librtmp-1.dll" Attributes="0" SourcePath="qpdfview\librtmp-1.dll" SelfReg="false" NextFile="libspectre1.dll"/>
     <ROW File="libspectre1.dll" Component_="libspectre1.dll" FileName="LIBSPE~1.DLL|libspectre-1.dll" Attributes="0" SourcePath="qpdfview\libspectre-1.dll" SelfReg="false" NextFile="libssh21.dll"/>
     <ROW File="libssh21.dll" Component_="libssh21.dll" FileName="LIBSSH~1.DLL|libssh2-1.dll" Attributes="0" SourcePath="qpdfview\libssh2-1.dll" SelfReg="false" NextFile="libstdc6.dll"/>
@@ -347,29 +354,37 @@
     <ROW File="qpdfview_hu.qm" Component_="help.html" FileName="QPDFV~20.QM|qpdfview_hu.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_hu.qm" SelfReg="false" NextFile="qpdfview_id.qm"/>
     <ROW File="qpdfview_id.qm" Component_="help.html" FileName="QPDFV~21.QM|qpdfview_id.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_id.qm" SelfReg="false" NextFile="qpdfview_it.qm"/>
     <ROW File="qpdfview_image.dll" Component_="qpdfview_image.dll" FileName="QPDFVI~2.DLL|qpdfview_image.dll" Attributes="0" SourcePath="qpdfview\qpdfview_image.dll" SelfReg="false" NextFile="qpdfview_pdf.dll"/>
-    <ROW File="qpdfview_it.qm" Component_="help.html" FileName="QPDFV~22.QM|qpdfview_it.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_it.qm" SelfReg="false" NextFile="qpdfview_kk.qm"/>
-    <ROW File="qpdfview_kk.qm" Component_="help.html" FileName="QPDFV~23.QM|qpdfview_kk.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_kk.qm" SelfReg="false" NextFile="qpdfview_ko.qm"/>
-    <ROW File="qpdfview_ko.qm" Component_="help.html" FileName="QPDFV~24.QM|qpdfview_ko.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ko.qm" SelfReg="false" NextFile="qpdfview_ky.qm"/>
-    <ROW File="qpdfview_ky.qm" Component_="help.html" FileName="QPDFV~25.QM|qpdfview_ky.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ky.qm" SelfReg="false" NextFile="qpdfview_lt.qm"/>
-    <ROW File="qpdfview_lt.qm" Component_="help.html" FileName="QPDFV~26.QM|qpdfview_lt.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_lt.qm" SelfReg="false" NextFile="qpdfview_ms.qm"/>
-    <ROW File="qpdfview_ms.qm" Component_="help.html" FileName="QPDFV~27.QM|qpdfview_ms.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ms.qm" SelfReg="false" NextFile="qpdfview_my.qm"/>
-    <ROW File="qpdfview_my.qm" Component_="help.html" FileName="QPDFV~28.QM|qpdfview_my.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_my.qm" SelfReg="false" NextFile="qpdfview_pl.qm"/>
+    <ROW File="qpdfview_it.qm" Component_="help.html" FileName="QPDFV~22.QM|qpdfview_it.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_it.qm" SelfReg="false" NextFile="qpdfview_ja.qm"/>
+    <ROW File="qpdfview_ja.qm" Component_="help.html" FileName="QPDFV~23.QM|qpdfview_ja.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ja.qm" SelfReg="false" NextFile="qpdfview_kk.qm"/>
+    <ROW File="qpdfview_kk.qm" Component_="help.html" FileName="QPDFV~24.QM|qpdfview_kk.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_kk.qm" SelfReg="false" NextFile="qpdfview_ko.qm"/>
+    <ROW File="qpdfview_ko.qm" Component_="help.html" FileName="QPDFV~25.QM|qpdfview_ko.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ko.qm" SelfReg="false" NextFile="qpdfview_ky.qm"/>
+    <ROW File="qpdfview_ky.qm" Component_="help.html" FileName="QPDFV~26.QM|qpdfview_ky.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ky.qm" SelfReg="false" NextFile="qpdfview_lt.qm"/>
+    <ROW File="qpdfview_lt.qm" Component_="help.html" FileName="QPDFV~27.QM|qpdfview_lt.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_lt.qm" SelfReg="false" NextFile="qpdfview_ms.qm"/>
+    <ROW File="qpdfview_ms.qm" Component_="help.html" FileName="QPDFV~28.QM|qpdfview_ms.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ms.qm" SelfReg="false" NextFile="qpdfview_my.qm"/>
+    <ROW File="qpdfview_my.qm" Component_="help.html" FileName="QPDFV~29.QM|qpdfview_my.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_my.qm" SelfReg="false" NextFile="qpdfview_pl.qm"/>
     <ROW File="qpdfview_pdf.dll" Component_="qpdfview_pdf.dll" FileName="QPDFVI~3.DLL|qpdfview_pdf.dll" Attributes="0" SourcePath="qpdfview\qpdfview_pdf.dll" SelfReg="false" NextFile="qpdfview_ps.dll"/>
-    <ROW File="qpdfview_pl.qm" Component_="help.html" FileName="QPDFV~29.QM|qpdfview_pl.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_pl.qm" SelfReg="false" NextFile="qpdfview_pt.qm"/>
-    <ROW File="qpdfview_ps.dll" Component_="qpdfview_ps.dll" FileName="QPDFVI~4.DLL|qpdfview_ps.dll" Attributes="0" SourcePath="qpdfview\qpdfview_ps.dll" SelfReg="false" NextFile="QtCore4.dll"/>
-    <ROW File="qpdfview_pt.qm" Component_="help.html" FileName="QPDFV~30.QM|qpdfview_pt.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_pt.qm" SelfReg="false" NextFile="qpdfview_pt_BR.qm"/>
-    <ROW File="qpdfview_pt_BR.qm" Component_="help.html" FileName="QPDFV~31.QM|qpdfview_pt_BR.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_pt_BR.qm" SelfReg="false" NextFile="qpdfview_ro.qm"/>
-    <ROW File="qpdfview_ro.qm" Component_="help.html" FileName="QPDFV~32.QM|qpdfview_ro.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ro.qm" SelfReg="false" NextFile="qpdfview_ru.qm"/>
-    <ROW File="qpdfview_ru.qm" Component_="help.html" FileName="QPDFV~33.QM|qpdfview_ru.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ru.qm" SelfReg="false" NextFile="qpdfview_sk.qm"/>
-    <ROW File="qpdfview_sk.qm" Component_="help.html" FileName="QPDFV~34.QM|qpdfview_sk.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_sk.qm" SelfReg="false" NextFile="qpdfview_sv.qm"/>
-    <ROW File="qpdfview_sv.qm" Component_="help.html" FileName="QPDFV~35.QM|qpdfview_sv.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_sv.qm" SelfReg="false" NextFile="qpdfview_th.qm"/>
-    <ROW File="qpdfview_th.qm" Component_="help.html" FileName="QPDFV~36.QM|qpdfview_th.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_th.qm" SelfReg="false" NextFile="qpdfview_tr.qm"/>
-    <ROW File="qpdfview_tr.qm" Component_="help.html" FileName="QPDFV~37.QM|qpdfview_tr.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_tr.qm" SelfReg="false" NextFile="qpdfview_ug.qm"/>
-    <ROW File="qpdfview_ug.qm" Component_="help.html" FileName="QPDFV~38.QM|qpdfview_ug.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ug.qm" SelfReg="false" NextFile="qpdfview_uk.qm"/>
-    <ROW File="qpdfview_uk.qm" Component_="help.html" FileName="QPDFV~39.QM|qpdfview_uk.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_uk.qm" SelfReg="false" NextFile="qpdfview_vi.qm"/>
-    <ROW File="qpdfview_vi.qm" Component_="help.html" FileName="QPDFV~40.QM|qpdfview_vi.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_vi.qm" SelfReg="false" NextFile="qpdfview_zh_CN.qm"/>
-    <ROW File="qpdfview_zh_CN.qm" Component_="help.html" FileName="QPDFV~41.QM|qpdfview_zh_CN.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_zh_CN.qm" SelfReg="false" NextFile="LICENSE"/>
+    <ROW File="qpdfview_pl.qm" Component_="help.html" FileName="QPDFV~30.QM|qpdfview_pl.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_pl.qm" SelfReg="false" NextFile="qpdfview_pt.qm"/>
+    <ROW File="qpdfview_ps.dll" Component_="qpdfview_ps.dll" FileName="QPDFVI~4.DLL|qpdfview_ps.dll" Attributes="0" SourcePath="qpdfview\qpdfview_ps.dll" SelfReg="false" NextFile="ssleay32.dll"/>
+    <ROW File="qpdfview_pt.qm" Component_="help.html" FileName="QPDFV~31.QM|qpdfview_pt.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_pt.qm" SelfReg="false" NextFile="qpdfview_pt_BR.qm"/>
+    <ROW File="qpdfview_pt_BR.qm" Component_="help.html" FileName="QPDFV~32.QM|qpdfview_pt_BR.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_pt_BR.qm" SelfReg="false" NextFile="qpdfview_ro.qm"/>
+    <ROW File="qpdfview_ro.qm" Component_="help.html" FileName="QPDFV~33.QM|qpdfview_ro.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ro.qm" SelfReg="false" NextFile="qpdfview_ru.qm"/>
+    <ROW File="qpdfview_ru.qm" Component_="help.html" FileName="QPDFV~34.QM|qpdfview_ru.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ru.qm" SelfReg="false" NextFile="qpdfview_sk.qm"/>
+    <ROW File="qpdfview_sk.qm" Component_="help.html" FileName="QPDFV~35.QM|qpdfview_sk.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_sk.qm" SelfReg="false" NextFile="qpdfview_sv.qm"/>
+    <ROW File="qpdfview_sv.qm" Component_="help.html" FileName="QPDFV~36.QM|qpdfview_sv.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_sv.qm" SelfReg="false" NextFile="qpdfview_th.qm"/>
+    <ROW File="qpdfview_th.qm" Component_="help.html" FileName="QPDFV~37.QM|qpdfview_th.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_th.qm" SelfReg="false" NextFile="qpdfview_tr.qm"/>
+    <ROW File="qpdfview_tr.qm" Component_="help.html" FileName="QPDFV~38.QM|qpdfview_tr.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_tr.qm" SelfReg="false" NextFile="qpdfview_ug.qm"/>
+    <ROW File="qpdfview_ug.qm" Component_="help.html" FileName="QPDFV~39.QM|qpdfview_ug.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_ug.qm" SelfReg="false" NextFile="qpdfview_uk.qm"/>
+    <ROW File="qpdfview_uk.qm" Component_="help.html" FileName="QPDFV~40.QM|qpdfview_uk.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_uk.qm" SelfReg="false" NextFile="qpdfview_vi.qm"/>
+    <ROW File="qpdfview_vi.qm" Component_="help.html" FileName="QPDFV~41.QM|qpdfview_vi.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_vi.qm" SelfReg="false" NextFile="qpdfview_zh_CN.qm"/>
+    <ROW File="qpdfview_zh_CN.qm" Component_="help.html" FileName="QPDFV~42.QM|qpdfview_zh_CN.qm" Attributes="0" SourcePath="qpdfview\data\qpdfview_zh_CN.qm" SelfReg="false" NextFile="libicudt56.dll"/>
     <ROW File="qt3to4treewalker.html" Component_="rdparty.html" FileName="QT3TO4~1.HTM|qt3to4-treewalker.html" Attributes="0" SourcePath="qpdfview\licenses\qt\html\qt3to4-treewalker.html" SelfReg="false" NextFile="qtmain.html"/>
+    <ROW File="qt5core.dll" Component_="qt5core.dll" FileName="qt5core.dll" Attributes="0" SourcePath="qpdfview\qt5core.dll" SelfReg="false" NextFile="qt5dbus.dll"/>
+    <ROW File="qt5dbus.dll" Component_="qt5dbus.dll" FileName="qt5dbus.dll" Attributes="0" SourcePath="qpdfview\qt5dbus.dll" SelfReg="false" NextFile="qt5gui.dll"/>
+    <ROW File="qt5gui.dll" Component_="qt5gui.dll" FileName="qt5gui.dll" Attributes="0" SourcePath="qpdfview\qt5gui.dll" SelfReg="false" NextFile="qt5printsupport.dll"/>
+    <ROW File="qt5printsupport.dll" Component_="qt5printsupport.dll" FileName="QT5PRI~1.DLL|qt5printsupport.dll" Attributes="0" SourcePath="qpdfview\qt5printsupport.dll" SelfReg="false" NextFile="qt5sql.dll"/>
+    <ROW File="qt5sql.dll" Component_="qt5sql.dll" FileName="qt5sql.dll" Attributes="0" SourcePath="qpdfview\qt5sql.dll" SelfReg="false" NextFile="qt5widgets.dll"/>
+    <ROW File="qt5widgets.dll" Component_="qt5widgets.dll" FileName="QT5WID~1.DLL|qt5widgets.dll" Attributes="0" SourcePath="qpdfview\qt5widgets.dll" SelfReg="false" NextFile="qt5xml.dll"/>
+    <ROW File="qt5xml.dll" Component_="qt5xml.dll" FileName="qt5xml.dll" Attributes="0" SourcePath="qpdfview\qt5xml.dll" SelfReg="false"/>
     <ROW File="qtmaccocoalicensing.html" Component_="rdparty.html" FileName="QT-MAC~1.HTM|qt-mac-cocoa-licensing.html" Attributes="0" SourcePath="qpdfview\licenses\qt\html\qt-mac-cocoa-licensing.html" SelfReg="false" NextFile="qt3to4treewalker.html"/>
     <ROW File="qtmain.html" Component_="rdparty.html" FileName="QTMAIN~1.HTM|qtmain.html" Attributes="0" SourcePath="qpdfview\licenses\qt\html\qtmain.html" SelfReg="false" NextFile="qtquicklicense.html"/>
     <ROW File="qtquicklicense.html" Component_="rdparty.html" FileName="QTQUIC~1.HTM|qtquicklicense.html" Attributes="0" SourcePath="qpdfview\licenses\qt\html\qtquicklicense.html" SelfReg="false" NextFile="functions.js"/>
@@ -382,7 +397,7 @@
     <ROW File="superfish.css" Component_="narrow.css" FileName="SUPERF~1.CSS|superfish.css" Attributes="0" SourcePath="qpdfview\licenses\qt\html\style\superfish.css" SelfReg="false" NextFile="trademarks.html"/>
     <ROW File="superfish.js" Component_="functions.js" FileName="SUPERF~1.JS|superfish.js" Attributes="0" SourcePath="qpdfview\licenses\qt\html\scripts\superfish.js" SelfReg="false" NextFile="narrow.css"/>
     <ROW File="trademarks.html" Component_="rdparty.html" FileName="TRADEM~1.HTM|trademarks.html" Attributes="0" SourcePath="qpdfview\licenses\qt\html\trademarks.html" SelfReg="false" NextFile="index.html"/>
-    <ROW File="zlib1.dll" Component_="zlib1.dll" FileName="zlib1.dll" Attributes="0" SourcePath="qpdfview\zlib1.dll" SelfReg="false" NextFile="help.html"/>
+    <ROW File="zlib1.dll" Component_="zlib1.dll" FileName="zlib1.dll" Attributes="0" SourcePath="qpdfview\zlib1.dll" SelfReg="false" NextFile="LICENSE"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFileName="[|ProductName]-[|ProductVersion]" Languages="en" InstallationType="4" UseLargeSchema="true"/>

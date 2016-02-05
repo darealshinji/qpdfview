@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
+export PATH="$PWD:$PATH"
+
 if [ "$(uname -o)" = "GNU/Linux" ]; then
 	depends_dir="$HOME/.local/share/depends_exe"
-	depends_exe="wine $depends_dir/depends.exe"
 else
 	depends_dir="/usr/local/bin"
-	depends_exe="depends"
 fi
 
 function errorExit() {
@@ -27,16 +27,16 @@ function copy_dlls() {
 	else
 		printf "analyzing \`$file'... "
 		depends -c -oc:"$txt" "$file"
-		cygpath="$(cygpath -d / | sed -r 's|.|\L&|; s|\\|\\\\|g')"
-		file_lower="$(basename ${file} | tr [A-Z] [a-z])"
-		dlls="$(grep "$cygpath" "$txt" | cut -d, -f2 | tr [A-Z] [a-z] | \
-			sed -e 's|\\|/|g; s|"||g' | grep -v "${file_lower}$")"
+		dlls="$(grep '^,.*\.DLL' "$txt" | cut -d '"' -f2 | tr [A-Z] [a-z])"
 		echo "done"
 
 		mkdir -p "$outdir"
 		echo "copy dependencies:"
 		for f in $dlls; do
-			cp -vf "$f" "$outdir"
+			dll="$(which $f)"
+			if ! $(echo "$dll" | grep -q '/c/Windows/'); then 
+				cp -vf "$dll" "$outdir"
+			fi
 		done
 	fi
 	rm -f "$txt"
