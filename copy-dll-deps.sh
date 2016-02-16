@@ -1,12 +1,41 @@
 #!/usr/bin/env bash
 
-export PATH="$PWD:$PATH"
+# Copyright (C) 2016  djcj <djcj@gmx.de>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
 
-if [ "$(uname -o)" = "GNU/Linux" ]; then
-	depends_dir="$HOME/.local/share/depends_exe"
-else
-	depends_dir="/usr/local/bin"
-fi
+# TODO:
+#  - add search paths via CLI option
+#  - avoid redundant dll copying
+#  - don't copy input dlls
+
+
+case "$(uname -o)" in
+	"Msys"|"Cygwin")
+		depends_dir="/usr/local/bin"
+		unix="no"
+		;;
+	*)
+		depends_dir="$HOME/.local/share/depends_exe"
+		unix="yes"
+		;;
+esac
 
 function errorExit() {
 	echo ""
@@ -17,28 +46,34 @@ function errorExit() {
 function copy_dlls() {
 	file="${1}"
 	outdir="${2}"
+	dir="$(dirname "$file")"
 	txt="deps-$(basename ${file}).txt"
 
-	if [ "$(uname -o)" = "GNU/Linux" ]; then
+	if [ "$unix" = "yes" ]; then
 		wine "$depends_dir/depends.exe" -c -oc:"$txt" "$file" 2>/dev/null
-		echo "warning: automatic copying of dependencies not (yet) possible on GNU/Linux"
-		echo ""
-		grep '^,.*\.DLL' "$txt" | cut -d '"' -f2 | tr [A-Z] [a-z]
 	else
+		export PATH="$dir:$PATH"
 		printf "analyzing \`$file'... "
 		depends -c -oc:"$txt" "$file"
-		dlls="$(grep '^,.*\.DLL' "$txt" | cut -d '"' -f2 | tr [A-Z] [a-z])"
 		echo "done"
+	fi
 
-		mkdir -p "$outdir"
-		echo "copy dependencies:"
-		for f in $dlls; do
+	dlls="$(grep '^,.*\.DLL' "$txt" | cut -d '"' -f2 | tr [A-Z] [a-z])"
+	mkdir -p "$outdir"
+	echo "copy dependencies:"
+	for f in $dlls; do
+		# don't rely on depends.exe to print full paths
+		f="$(basename "$f")"
+		if [ "$unix" = "yes" ]; then
+			dll="$(find "$dir" -iname "$f" | head -n1)"
+			cp -vf "$dll" "$outdir"
+		else
 			dll="$(which $f)"
 			if ! $(echo "$dll" | grep -q '/c/Windows/'); then 
 				cp -vf "$dll" "$outdir"
 			fi
-		done
-	fi
+		fi
+	done
 	rm -f "$txt"
 }
 
@@ -77,11 +112,16 @@ function get_depends_exe() {
 input="$1"
 outdir="$2"
 
+if [ -z "$input" ]; then
+	echo "usage: $0 <EXE|DLL|DIR> [<OUTDIR>]"
+	exit 1
+fi
+
 if [ ! -e "$input" ]; then
 	errorExit "cannot open \`$input' (No such file or directory)"
 fi
 
-if [ "$(uname -o)" = "GNU/Linux" ]; then
+if [ "$unix" = "yes" ]; then
 	if ! which wine 2>/dev/null 1>/dev/null ; then
 		errorExit "\`wine' not in PATH"
 	fi
