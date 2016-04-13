@@ -73,9 +73,7 @@ for f in icons/*.svg; do
 done
 
 # compile translations
-for f in translations/*.ts; do
-    lrelease $f
-done
+lrelease qpdfview.pro
 
 # copy files
 mkdir -p release/data
