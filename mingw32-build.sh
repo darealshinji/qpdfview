@@ -6,9 +6,9 @@
 
 VERSION="0.4.16"
 include="/mingw32/include"
-mupdfver="1.8"
+mupdfver="1.9a"
 mupdfdir="mupdf-${mupdfver}-source"
-mupdfmd5="3205256d78d8524d67dd2a47c7a345fa"
+mupdfsha256="8015c55f4e6dd892d3c50db4f395c1e46660a10b460e2ecd180a497f55bbc4cc"
 
 cat <<EOF > qpdfview_win32.pri
 isEmpty(APPLICATION_VERSION):APPLICATION_VERSION = $VERSION
@@ -60,7 +60,7 @@ rm -rf $mupdfdir release
 # build MuPDF
 test -f mupdf-${mupdfver}-source.tar.gz || (\
     wget http://mupdf.com/downloads/mupdf-${mupdfver}-source.tar.gz && \
-	(echo "$mupdfmd5 *mupdf-${mupdfver}-source.tar.gz" | md5sum.exe -c - || exit 1))
+	(echo "$mupdfsha256 *mupdf-${mupdfver}-source.tar.gz" | sha256sum -c - || exit 1))
 tar xf mupdf-${mupdfver}-source.tar.gz
 for l in mupdf openjpeg jbig2dec; do
     make -C $mupdfdir build/release/lib${l}.a build=release
