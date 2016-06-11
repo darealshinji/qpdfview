@@ -1,0 +1,38 @@
+
+TARGET  := i686-w64-mingw32.static
+CXX     := $(TARGET)-g++
+STRIP   := $(TARGET)-strip
+PKGCONF := $(TARGET)-pkg-config
+MAKE    ?= make
+
+ifeq ($(V),1)
+verbose=yes
+else
+verbose=no
+endif
+
+# can't build a working static library right now
+SHARED  = libdjvulibre-21.dll
+LIBS   := -lmingw32 -lmoldname -lmingwex -ladvapi32 -lshell32 -ljpeg `$(PKGCONF) --libs libtiff-4`
+
+
+all: shared
+
+shared: $(SHARED)
+
+clean:
+	$(MAKE) distclean || $(MAKE) clean || true
+	rm -rf build *.dll *.a *.o
+
+$(SHARED):
+	( TIFF_LIBS="`$(PKGCONF) --libs libtiff-4`" \
+		./configure --disable-desktopfiles \
+			--enable-shared \
+			--disable-static \
+			--host=$(TARGET) && $(MAKE) ) || ( \
+		$(CXX) -shared -o $@ libdjvu/.libs/*.o $(LIBS) -mthreads \
+			-Wl,--export-all-symbols \
+			-Wl,--enable-auto-image-base \
+			-Wl,--out-implib,libdjvulibre.dll.a && \
+		$(TARGET)-strip $@ )
+

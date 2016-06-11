@@ -1,0 +1,8 @@
+    <tr>
+        <td class="package">ghostscript</td>
+        <td class="website"><a href="http://www.ghostscript.com/">ghostscript</a></td>
+    </tr>
+    <tr>
+        <td class="package">libspectre</td>
+        <td class="website"><a href="https://libspectre.freedesktop.org">libspectre</a></td>
+    </tr>
