@@ -47,7 +47,7 @@ Source: https://github.com/Alexpux/MINGW-packages/blob/0329cdc2379062087ded826ab
  
  LIBGS_REQUIRED="8.62"
  
-+PKG_CHECK_MODULES(GHOSTSCRIPT, [ghostscript >= 8.62], [LIB_GS="$GHOSTSCRIPT_LIBS"], [
++PKG_CHECK_MODULES(GHOSTSCRIPT, [ghostscript >= $LIBGS_REQUIRED], [LIB_GS="$GHOSTSCRIPT_LIBS"], [
  AC_CHECK_LIB(gs, gsapi_new_instance, have_libgs=yes, have_libgs=no)
  if test "x$have_libgs" = "xyes"; then
      LIB_GS="-lgs"
