@@ -4,7 +4,7 @@ set -e
 # helper script for static* mingw32 builds via MXE (https://github.com/mxe/mxe)
 # (* can only build a libdjvu dll right now)
 
-# requires git, rsvg-convert and the MXE build-dependencies
+# requires git, rsvg-convert, upx-ucl and the MXE build-dependencies
 
 scriptpath="$(dirname "$(readlink -f "$0")")"
 
@@ -198,4 +198,9 @@ release/libqpdfview_djvu.a $djvudir/libdjvulibre.dll.a"
 ### problems with statically linking plugins
 sed -e "s@$libs_old@$libs_new@" Makefile.application.Release > Makefile.application.Release_
 make -f Makefile.application.Release_
+
+
+### compress binaries ###
+upx-ucl release/$djvulibre_dll
+upx-ucl release/qpdfview.exe
 
