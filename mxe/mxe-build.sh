@@ -17,15 +17,17 @@ mupdfdir="mupdf-${mupdfver}-source"
 mupdffile="${mupdfdir}.tar.gz"
 mupdfsha256="8015c55f4e6dd892d3c50db4f395c1e46660a10b460e2ecd180a497f55bbc4cc"
 
-djvuver1="3.5.25"
-djvuver2="${djvuver1}.3"
-djvudir="djvulibre-${djvuver1}"
-djvufile="djvulibre-${djvuver2}.tar.gz"
-djvusha256="898d7ed6dd2fa311a521baa95407a91b20a872d80c45e8245442d64f142cb1e0"
+djvuver="3.5.27"
+djvudir="djvulibre-${djvuver}"
+djvufile="djvulibre-${djvuver}.tar.gz"
+djvulibre_dll="libdjvulibre-21.dll"
+djvusha256="e69668252565603875fb88500cde02bf93d12d48a3884e472696c896e81f505f"
 
 mxe_base="$HOME/mxe"
 mxe_target="i686-w64-mingw32.static"
 pkgconfig="${mxe_target}-pkg-config"
+strip="${mxe_target}-strip"
+cxx="${mxe_target}-g++"
 
 
 ## check for MXE prefix
@@ -69,7 +71,7 @@ cd $qpdf
 #test -f $mupdffile || ( wget "http://mupdf.com/downloads/$mupdffile" && \
 #	(echo "$mupdfsha256 *$mupdffile" | sha256sum -c - || exit 1) )
 test -f $djvufile || ( \
-	wget "http://downloads.sourceforge.net/project/djvu/DjVuLibre/${djvuver1}/$djvufile" && \
+	wget "http://downloads.sourceforge.net/project/djvu/DjVuLibre/${djvuver}/$djvufile" && \
 	(echo "$djvusha256 *$djvufile" | sha256sum -c - || exit 1) )
 
 
@@ -135,10 +137,24 @@ rm -rf $mupdfdir $djvudir debug release
 
 ### build djvulibre
 tar xf $djvufile
-cp ../Makefile.djvulibre $djvudir/Makefile.mxe
 cd $djvudir
 patch -p1 < $scriptpath/djvulibre.diff
-make -j $jobs -f Makefile.mxe
+automake
+CXXFLAGS="-mthreads" \
+JPEG_LIBS="-ljpeg" \
+TIFF_LIBS="$($pkgconfig --libs libtiff-4)" \
+	./configure --host="$mxe_target" \
+	--enable-shared \
+	--disable-static \
+	--disable-desktopfiles \
+	--with-extra-libraries="$mxe_base/usr/$mxe_target/lib"
+make -j $jobs -C libdjvu libdjvulibre.la || true
+djvu_libs="-mthreads -lmingw32 -lmoldname -lmingwex -ladvapi32 -lshell32 -ljpeg $($pkgconfig --libs libtiff-4)"
+$cxx -shared -o $djvulibre_dll libdjvu/.libs/*.o $djvu_libs \
+		-Wl,--export-all-symbols \
+		-Wl,--enable-auto-image-base \
+		-Wl,--out-implib,libdjvulibre.dll.a
+$strip $djvulibre_dll
 cd ..
 
 
@@ -157,7 +173,7 @@ lrelease qpdfview.pro
 mkdir -p release/data
 cp help/*.html translations/*.qm release/data
 cp icons/qpdfview_win32.ico release/qpdfview.ico
-cp $djvudir/libdjvulibre-*.dll release
+cp $djvudir/$djvulibre_dll release
 
 
 ### build qpdfview
