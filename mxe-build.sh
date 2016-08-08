@@ -169,7 +169,6 @@ lrelease qpdfview.pro
 ### copy files
 mkdir -p release/data
 cp help/*.html translations/*.qm release/data
-cp icons/qpdfview_win32.ico release/qpdfview.ico
 cp $djvudir/$djvulibre_dll release
 
 
