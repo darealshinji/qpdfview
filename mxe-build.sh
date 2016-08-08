@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 # helper script for static* mingw32 builds via MXE (https://github.com/mxe/mxe)
@@ -43,9 +43,6 @@ if [ ! -d "$mxe_base" ]; then
 			cd "`dirname "$mxe_base"`"
 			git clone --depth 1 "https://github.com/mxe/mxe"
 			cd mxe
-			cp -f "$scriptpath"/*.mk "$scriptpath"/*.c "$scriptpath"/*.patch src
-			# add new packages to index.html
-			sed -i 's@<td class="website"><a href="https://www.gnu.org/software/gettext/">gettext</a></td>@<td class="website"><a href="https://www.gnu.org/software/gettext/">gettext</a></td>\n<tr><td class="package">ghostscript</td><td class="website"><a href="http://www.ghostscript.com/">ghostscript</a></td></tr>\n<tr><td class="package">libspectre</td><td class="website"><a href="https://libspectre.freedesktop.org">libspectre</a></td></tr>@' index.html
 			make -j $jobs libspectre poppler MXE_TARGETS="$mxe_target"
 			cd "$scriptpath"
 			;;

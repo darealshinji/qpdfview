@@ -1,6 +1,6 @@
 --- a/libdjvu/Makefile.am
 +++ b/libdjvu/Makefile.am
-@@ -33,6 +33,8 @@
+@@ -33,6 +33,8 @@ libdjvulibre_la_LIBADD = $(JPEG_LIBS) $(PTHREAD_LIBS)
  libdjvulibre_la_LDFLAGS = -no-undefined -version-info $(version_info)
  
  if HAVE_OS_WIN32
@@ -11,21 +11,19 @@
  
 --- a/libdjvu/miniexp.cpp
 +++ b/libdjvu/miniexp.cpp
-@@ -383,14 +383,16 @@
+@@ -382,6 +382,7 @@ static void NTAPI gctls_cb(PVOID, DWORD dwReason, PVOID) {
+     {CSLOCK(r);TlsFree(tlsIndex);tlsIndex=TLS_OUT_OF_INDEXES;}
  }
  # endif
++#ifndef __GNUC__
  // -- Very black magic to clean tls variables.
-+/*
  # ifdef _M_IX86
  #  pragma comment (linker, "/INCLUDE:_tlscb")
- # else
- #  pragma comment (linker, "/INCLUDE:tlscb")
- # endif
+@@ -391,6 +392,7 @@ static void NTAPI gctls_cb(PVOID, DWORD dwReason, PVOID) {
  # pragma const_seg(".CRT$XLB")
-+*/
  extern "C" PIMAGE_TLS_CALLBACK tlscb = gctls_cb;
--# pragma const_seg()
-+/* # pragma const_seg() */
+ # pragma const_seg()
++#endif  /* !__GNUC__ */
  
  #else
  // No threads
