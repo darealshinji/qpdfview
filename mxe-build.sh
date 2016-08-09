@@ -8,7 +8,7 @@ set -e
 
 scriptpath="$(dirname "$(readlink -f "$0")")"
 
-version="0.4.16"
+version="0.4.16+bzr2006"
 qpdf="qpdfview-git"
 jobs=4
 
@@ -43,7 +43,7 @@ if [ ! -d "$mxe_base" ]; then
 			cd "`dirname "$mxe_base"`"
 			git clone --depth 1 "https://github.com/mxe/mxe"
 			cd mxe
-			make -j $jobs libspectre poppler MXE_TARGETS="$mxe_target"
+			make -j $jobs poppler MXE_TARGETS="$mxe_target"
 			cd "$scriptpath"
 			;;
 		2)
@@ -58,7 +58,7 @@ if [ ! -d "$mxe_base" ]; then
 			;;
 	esac
 fi
-make -C "$mxe_base" -j $jobs libspectre poppler MXE_TARGETS="$mxe_target"
+make -C "$mxe_base" -j $jobs poppler MXE_TARGETS="$mxe_target"
 export PATH="$mxe_base/usr/$mxe_target/qt/bin:$mxe_base/usr/bin:$PATH"
 
 
@@ -74,7 +74,8 @@ test -f $djvufile || ( \
 
 ### win32 settings
 cat <<EOF > qpdfview_win32.pri
-isEmpty(APPLICATION_VERSION):APPLICATION_VERSION = $version
+#isEmpty(APPLICATION_VERSION):APPLICATION_VERSION = $version
+APPLICATION_VERSION = $version
 
 CONFIG += without_pkgconfig
 CONFIG += without_magic
@@ -82,10 +83,11 @@ CONFIG += without_cups
 CONFIG += without_synctex
 CONFIG += without_signals
 CONFIG += without_svg
+CONFIG += without_ps
 #CONFIG += with_fitz
 
 CONFIG += static_pdf_plugin
-CONFIG += static_ps_plugin
+#CONFIG += static_ps_plugin
 CONFIG += static_djvu_plugin
 #CONFIG += static_fitz_plugin
 CONFIG += static_image_plugin
@@ -93,7 +95,7 @@ CONFIG += static_image_plugin
 RESOURCES += icons_png.qrc
 
 PDF_PLUGIN_NAME   = release/libqpdfview_pdf.a
-PS_PLUGIN_NAME    = release/libqpdfview_ps.a
+#PS_PLUGIN_NAME    = release/libqpdfview_ps.a
 DJVU_PLUGIN_NAME  = release/libqpdfview_djvu.a
 IMAGE_PLUGIN_NAME = release/libqpdfview_image.a
 #FITZ_PLUGIN_NAME  = release/libqpdfview_fitz.a
@@ -112,8 +114,8 @@ PDF_PLUGIN_DEFINES      += HAS_POPPLER_26
 PDF_PLUGIN_INCLUDEPATH  += $($pkgconfig --cflags poppler-qt4 | sed 's|-I\/|\/|g')
 PDF_PLUGIN_LIBS         += $($pkgconfig --libs poppler-qt4)
 
-PS_PLUGIN_INCLUDEPATH   += $($pkgconfig --cflags libspectre | sed 's|-I\/|\/|g')
-PS_PLUGIN_LIBS          += $($pkgconfig --libs libspectre)
+#PS_PLUGIN_INCLUDEPATH   += $($pkgconfig --cflags libspectre | sed 's|-I\/|\/|g')
+#PS_PLUGIN_LIBS          += $($pkgconfig --libs libspectre)
 
 #FITZ_PLUGIN_INCLUDEPATH += $mupdfdir/include
 #FITZ_PLUGIN_LIBS        += -L$mupdfdir/build/release -lmupdf -lmupdfthird
@@ -178,16 +180,16 @@ make release || true
 
 libs_old="qpdfview_win32_res.o \
 release/libqpdfview_pdf.a \
-release/libqpdfview_ps.a \
 release/libqpdfview_djvu.a"
-#release/libqpdfview_fitz.a"
+#release/libqpdfview_ps.a
+#release/libqpdfview_fitz.a
 
 libs_new="qpdfview_win32_res.o \
 release/libqpdfview_pdf.a \
 	-Wl,--allow-multiple-definition $($pkgconfig --libs poppler-qt4) \
 	$($pkgconfig --libs freetype2) -ljpeg \
-release/libqpdfview_ps.a $($pkgconfig --libs libspectre) \
 release/libqpdfview_djvu.a $djvudir/libdjvulibre.dll.a"
+#release/libqpdfview_ps.a $($pkgconfig --libs libspectre)
 #release/libqpdfview_fitz.a -L$mupdfdir/build/release -Wl,--allow-multiple-definition -lmupdf -lmupdfthird
 
 
