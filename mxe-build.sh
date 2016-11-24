@@ -8,8 +8,8 @@ set -e
 
 scriptpath="$(dirname "$(readlink -f "$0")")"
 
-version="0.4.16+bzr2006"
-qpdf="qpdfview-git"
+version="0.4.17beta1"
+qpdf="qpdfview-${version}"
 jobs=4
 
 mupdfver="1.9a"
@@ -138,7 +138,7 @@ rm -rf $mupdfdir $djvudir debug release
 tar xf $djvufile
 cd $djvudir
 patch -p1 < $scriptpath/djvulibre.diff
-automake
+autoreconf -if
 CXXFLAGS="-mthreads" \
 JPEG_LIBS="-ljpeg" \
 TIFF_LIBS="$($pkgconfig --libs libtiff-4)" \
