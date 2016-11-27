@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# AppImage Recipe for qpdfview - https://github.com/probonopd/AppImageKit/wiki
+# tested in Ubuntu 12.04 chroot
+
+set -e
+
+sudo apt-get install -y --no-install-recommends build-essential fuse wget ca-certificates \
+  libqt4-dev qt4-qmake qt4-dev-tools libpoppler-qt4-dev libicu48 \
+  libcups2-dev libdjvulibre-dev
+
+# Ghostscript is old, bloated and hard to relocate
+#libspectre-dev
+
+# don't rely on local magic files; guessing the filetype
+# by filename should be save enough for documents and images
+#libmagic-dev
+
+APP=qpdfview
+LOWERAPP=${APP,,}
+ARCH=x86_64
+MULTIARCH=x86_64-linux-gnu
+PLUGINDIR=/usr/lib/$MULTIARCH/qt4/plugins
+
+VER1=0.4.17beta1
+
+JOBS=4
+
+srcdir=qpdfview-qpdfview-$VER1
+src_tarball=qpdfview-$VER1.tar.gz
+BUILDROOT="$PWD/qpdfview-build"
+
+mkdir -p "$BUILDROOT"
+cd "$BUILDROOT"
+
+test -e $src_tarball || wget -q https://github.com/darealshinji/qpdfview/archive/$src_tarball -O $src_tarball
+test -e $srcdir || tar xf $src_tarball
+cd $srcdir
+
+# build qpdfview
+qmake CONFIG+='without_magic without_ps' qpdfview.pro
+make -j$JOBS
+make install INSTALL_ROOT="$BUILDROOT/$APP.AppDir"
+lrelease qpdfview.pro
+
+cd "$BUILDROOT/$APP.AppDir"
+mkdir -p ./usr/bin/data ./usr/lib/plugins
+mv ./usr/lib/qpdfview/*.so ./usr/bin
+mv ./usr/share/qpdfview/*.html "$BUILDROOT/$srcdir"/translations/*.qm ./usr/bin/data
+
+# install Qt plugins
+mkdir -p ./usr/lib/plugins/imageformats ./usr/lib/plugins/sqldrivers
+cp $PLUGINDIR/imageformats/libq*.so ./usr/lib/plugins/imageformats
+cp $PLUGINDIR/sqldrivers/libq*.so ./usr/lib/plugins/sqldrivers
+
+cat <<EOF> ./usr/bin/qt.conf
+[Paths]
+Plugins = ../lib/plugins
+lib = ../lib
+EOF
+
+# source AppImage functions
+test -e ../functions.sh || wget -q https://raw.githubusercontent.com/probonopd/AppImages/master/functions.sh -O ../functions.sh
+. ../functions.sh
+
+# dlopened by Qt?
+cp /usr/lib/libicui18n.so.48 ./usr/lib/
+
+copy_deps
+
+mv -f ./usr/lib/$MULTIARCH/* ./usr/lib/
+mv -f ./lib/$MULTIARCH/* ./usr/lib/
+move_lib
+
+delete_blacklisted
+
+get_desktop
+
+#get_icon
+mv ./usr/share/icons/hicolor/scalable/apps/qpdfview.svg .
+
+get_desktopintegration $APP
+get_apprun
+
+GLIBC_NEEDED=$(glibc_needed)
+VERSION=$VER1.glibc$GLIBC_NEEDED
+echo $VERSION
+
+cd ..
+
+generate_appimage
+
