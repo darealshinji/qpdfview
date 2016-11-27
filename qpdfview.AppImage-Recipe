@@ -6,7 +6,7 @@
 set -e
 
 sudo apt-get install -y --no-install-recommends build-essential fuse wget ca-certificates \
-  libqt4-dev qt4-qmake qt4-dev-tools libpoppler-qt4-dev libicu48 \
+  libqt4-dev qt4-qmake qt4-dev-tools libpoppler-qt4-dev \
   libcups2-dev libdjvulibre-dev
 
 # Ghostscript is old, bloated and hard to relocate
@@ -64,7 +64,7 @@ test -e ../functions.sh || wget -q https://raw.githubusercontent.com/probonopd/A
 . ../functions.sh
 
 # dlopened by Qt?
-cp /usr/lib/libicui18n.so.48 ./usr/lib/
+#cp /usr/lib/libicui18n.so.48 ./usr/lib/
 
 copy_deps
 
