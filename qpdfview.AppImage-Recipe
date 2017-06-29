@@ -1,20 +1,17 @@
 #!/bin/bash
 
-# AppImage Recipe for qpdfview - https://github.com/probonopd/AppImageKit/wiki
-# tested in Ubuntu 12.04 chroot
+# AppImage Recipe for qpdfview - https://github.com/AppImage/AppImageKit/wiki
 
 set -e
 
 sudo apt-get install -y --no-install-recommends build-essential fuse wget ca-certificates \
   libqt4-dev qt4-qmake qt4-dev-tools libpoppler-qt4-dev \
-  libcups2-dev libdjvulibre-dev
+  libcups2-dev libdjvulibre-dev libmagic-dev
 
 # Ghostscript is old, bloated and hard to relocate
 #libspectre-dev
 
-# don't rely on local magic files; guessing the filetype
-# by filename should be save enough for documents and images
-#libmagic-dev
+VERSION=0.4.17
 
 APP=qpdfview
 LOWERAPP=${APP,,}
@@ -22,23 +19,23 @@ ARCH=x86_64
 MULTIARCH=x86_64-linux-gnu
 PLUGINDIR=/usr/lib/$MULTIARCH/qt4/plugins
 
-VER1=0.4.17beta1
-
 JOBS=4
 
-srcdir=qpdfview-qpdfview-$VER1
-src_tarball=qpdfview-$VER1.tar.gz
+srcdir=qpdfview-qpdfview-$VERSION
+src_tarball=qpdfview-$VERSION.tar.gz
 BUILDROOT="$PWD/qpdfview-build"
 
 mkdir -p "$BUILDROOT"
 cd "$BUILDROOT"
+rm -rf $APP.AppDir
 
 test -e $src_tarball || wget -q https://github.com/darealshinji/qpdfview/archive/$src_tarball -O $src_tarball
 test -e $srcdir || tar xf $src_tarball
 cd $srcdir
+test ! -e Makefile || make distclean
 
 # build qpdfview
-qmake CONFIG+='without_magic without_ps' qpdfview.pro
+qmake CONFIG+='without_ps' APPLICATION_VERSION="\"$VERSION\"" qpdfview.pro
 make -j$JOBS
 make install INSTALL_ROOT="$BUILDROOT/$APP.AppDir"
 lrelease qpdfview.pro
@@ -60,11 +57,8 @@ lib = ../lib
 EOF
 
 # source AppImage functions
-test -e ../functions.sh || wget -q https://raw.githubusercontent.com/probonopd/AppImages/master/functions.sh -O ../functions.sh
+test -e ../functions.sh || wget -q https://raw.githubusercontent.com/AppImage/AppImages/master/functions.sh -O ../functions.sh
 . ../functions.sh
-
-# dlopened by Qt?
-#cp /usr/lib/libicui18n.so.48 ./usr/lib/
 
 copy_deps
 
@@ -81,10 +75,6 @@ mv ./usr/share/icons/hicolor/scalable/apps/qpdfview.svg .
 
 get_desktopintegration $APP
 get_apprun
-
-GLIBC_NEEDED=$(glibc_needed)
-VERSION=$VER1.glibc$GLIBC_NEEDED
-echo $VERSION
 
 cd ..
 
