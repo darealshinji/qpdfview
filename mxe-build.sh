@@ -8,7 +8,7 @@ set -e
 
 scriptpath="$(dirname "$(readlink -f "$0")")"
 
-version="0.4.17beta1"
+version="0.4.17"
 qpdf="qpdfview-${version}"
 jobs=4
 
@@ -25,6 +25,7 @@ djvusha256="e69668252565603875fb88500cde02bf93d12d48a3884e472696c896e81f505f"
 
 mxe_base="$HOME/mxe"
 mxe_target="i686-w64-mingw32.static"
+#mxe_target="x86_64-w64-mingw32.static"
 pkgconfig="${mxe_target}-pkg-config"
 strip="${mxe_target}-strip"
 cxx="${mxe_target}-g++"
