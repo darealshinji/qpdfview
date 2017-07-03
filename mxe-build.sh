@@ -187,7 +187,7 @@ release/libqpdfview_djvu.a"
 
 libs_new="qpdfview_win32_res.o \
 release/libqpdfview_pdf.a \
-	-Wl,--allow-multiple-definition $($pkgconfig --libs poppler-qt4) \
+	$($pkgconfig --libs poppler-qt4) \
 	$($pkgconfig --libs freetype2) -ljpeg \
 release/libqpdfview_djvu.a $djvudir/libdjvulibre.dll.a"
 #release/libqpdfview_ps.a $($pkgconfig --libs libspectre)
