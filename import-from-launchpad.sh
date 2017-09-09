@@ -2,6 +2,9 @@
 
 #pacman -S bzr bzr-fastimport git
 
+# bzr-fastimport is not available in 16.04:
+# https://packages.ubuntu.com/trusty/bzr-fastimport
+
 git clone https://github.com/darealshinji/qpdfview
 cd qpdfview
 bzr branch lp:qpdfview
