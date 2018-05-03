@@ -1,0 +1,42 @@
+--- a/application.pro
++++ b/application.pro
+@@ -67,6 +67,10 @@ SOURCES += \
+ 
+ DEFINES += APPLICATION_VERSION=\\\"$${APPLICATION_VERSION}\\\"
+ 
++with_staticresources {
++	RESOURCES += help.qrc translations.qrc
++}
++
+ with_lto {
+     QMAKE_CFLAG += -flto
+     QMAKE_CXXFLAGS += -flto
+--- a/sources/helpdialog.cpp
++++ b/sources/helpdialog.cpp
+@@ -41,7 +41,7 @@ HelpDialog::HelpDialog(QWidget* parent) : QDialog(parent)
+ 
+     m_textBrowser = new QTextBrowser(this);
+     m_textBrowser->setTextInteractionFlags(Qt::TextBrowserInteraction | Qt::TextSelectableByKeyboard);
+-    m_textBrowser->setSearchPaths(QStringList() << QDir(QApplication::applicationDirPath()).filePath("data") << DATA_INSTALL_PATH);
++    m_textBrowser->setSearchPaths(QStringList() << QDir(QApplication::applicationDirPath()).filePath("data") << DATA_INSTALL_PATH << ":");
+ 
+     //: Please replace by file name of localized help if available, e.g. "help_fr.html".
+     m_textBrowser->setSource(QUrl::fromLocalFile(tr("help.html")));
+--- a/sources/main.cpp
++++ b/sources/main.cpp
+@@ -114,6 +114,7 @@ void loadTranslators()
+ 
+     if(applicationTranslator->load(QLocale::system(), "qpdfview", "_", QDir(QApplication::applicationDirPath()).filePath("data"))) { qApp->installTranslator(applicationTranslator); }
+     else if(applicationTranslator->load(QLocale::system(), "qpdfview", "_", DATA_INSTALL_PATH)) { qApp->installTranslator(applicationTranslator); }
++    else if(applicationTranslator->load(QLocale::system(), "qpdfview", "_", ":/")) { qApp->installTranslator(applicationTranslator); }
+ 
+ #else
+ 
+@@ -121,6 +122,7 @@ void loadTranslators()
+ 
+     if(applicationTranslator->load("qpdfview_" + QLocale::system().name(), QDir(QApplication::applicationDirPath()).filePath("data"))) { qApp->installTranslator(applicationTranslator); }
+     else if(applicationTranslator->load("qpdfview_" + QLocale::system().name(), DATA_INSTALL_PATH)) { qApp->installTranslator(applicationTranslator); }
++    else if(applicationTranslator->load("qpdfview_" + QLocale::system().name(), ":/")) { qApp->installTranslator(applicationTranslator); }
+ 
+ #endif // QT_VERSION
+ }
