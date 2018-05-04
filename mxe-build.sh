@@ -4,6 +4,7 @@ set -e
 # helper script for static mingw32 builds via MXE (https://github.com/mxe/mxe)
 
 mxe_base="$HOME/mxe"
+#mxe_target="x86_64-w64-mingw32.static"
 mxe_target="i686-w64-mingw32.static"
 pkgconfig="${mxe_target}-pkg-config"
 strip="${mxe_target}-strip"
@@ -30,6 +31,7 @@ CONFIG += static_djvu_plugin
 CONFIG += static_image_plugin
 
 DEFINES += DJVU_STATIC
+RESOURCES += help.qrc translations.qrc
 
 PDF_PLUGIN_NAME   = release/libqpdfview_pdf.a
 PS_PLUGIN_NAME    = release/libqpdfview_ps.a
@@ -39,7 +41,7 @@ IMAGE_PLUGIN_NAME = release/libqpdfview_image.a
 PDF_PLUGIN_DEFINES      += HAS_POPPLER_14 HAS_POPPLER_18 HAS_POPPLER_20 HAS_POPPLER_22 HAS_POPPLER_24 HAS_POPPLER_26
 #PDF_PLUGIN_DEFINES     += HAS_POPPLER_31 HAS_POPPLER_35
 PDF_PLUGIN_INCLUDEPATH  += $($pkgconfig --cflags poppler-qt5 | sed 's|-I\/|\/|g')
-PDF_PLUGIN_LIBS         += $($pkgconfig --libs poppler-qt5)
+PDF_PLUGIN_LIBS         += $($pkgconfig --libs poppler-qt5 lcms2)
 
 #PS_PLUGIN_LIBS         += $($pkgconfig --libs libspectre)
 DJVU_PLUGIN_LIBS        += $($pkgconfig --libs ddjvuapi)
