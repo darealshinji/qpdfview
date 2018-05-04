@@ -39,10 +39,11 @@ IMAGE_PLUGIN_NAME = release/libqpdfview_image.a
 PDF_PLUGIN_DEFINES      += HAS_POPPLER_14 HAS_POPPLER_18 HAS_POPPLER_20 HAS_POPPLER_22 HAS_POPPLER_24 HAS_POPPLER_26
 #PDF_PLUGIN_DEFINES     += HAS_POPPLER_31 HAS_POPPLER_35
 PDF_PLUGIN_INCLUDEPATH  += $($pkgconfig --cflags poppler-qt5 | sed 's|-I\/|\/|g')
+PDF_PLUGIN_LIBS         += $($pkgconfig --libs poppler-qt5)
+
+#PS_PLUGIN_LIBS         += $($pkgconfig --libs libspectre)
+DJVU_PLUGIN_LIBS        += $($pkgconfig --libs ddjvuapi)
 EOF
-
-
-set -x
 
 
 ### clean up
@@ -50,16 +51,10 @@ test -f Makefile && (make distclean || true)
 rm -f Makefile* translations/*.qm
 rm -rf debug release
 
-
 ### compile translations
 lrelease qpdfview.pro
 
-
 ### build qpdfview
 $qmake qpdfview.pro
-make -j4 || true
-libs_old="libqtmain.a release/libqpdfview_pdf.a release/libqpdfview_djvu.a"
-libs_new="libqtmain.a release/libqpdfview_pdf.a $($pkgconfig --libs poppler-qt5) release/libqpdfview_djvu.a $($pkgconfig --libs ddjvuapi)"
-sed -e "s@$libs_old@$libs_new@" Makefile.application.Release > Makefile.application.Release_
-make -f Makefile.application.Release_
+make -j4
 
