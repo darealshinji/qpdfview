@@ -29,12 +29,12 @@ CONFIG += static_ps_plugin
 CONFIG += static_djvu_plugin
 CONFIG += static_image_plugin
 
+DEFINES += DJVU_STATIC
+
 PDF_PLUGIN_NAME   = release/libqpdfview_pdf.a
 PS_PLUGIN_NAME    = release/libqpdfview_ps.a
 DJVU_PLUGIN_NAME  = release/libqpdfview_djvu.a
 IMAGE_PLUGIN_NAME = release/libqpdfview_image.a
-
-DJVU_PLUGIN_DEFINES += DDJVUAPI= MINILISPAPI=
 
 PDF_PLUGIN_DEFINES      += HAS_POPPLER_14 HAS_POPPLER_18 HAS_POPPLER_20 HAS_POPPLER_22 HAS_POPPLER_24 HAS_POPPLER_26
 #PDF_PLUGIN_DEFINES     += HAS_POPPLER_31 HAS_POPPLER_35
