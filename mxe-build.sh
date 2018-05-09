@@ -23,7 +23,6 @@ CONFIG += without_magic
 CONFIG += without_cups
 CONFIG += without_synctex
 CONFIG += without_signals
-CONFIG += without_ps  # doesn't work correctly
 CONFIG += with_staticresources
 CONFIG += static_pdf_plugin
 CONFIG += static_ps_plugin
@@ -43,7 +42,7 @@ PDF_PLUGIN_DEFINES      += HAS_POPPLER_14 HAS_POPPLER_18 HAS_POPPLER_20 HAS_POPP
 PDF_PLUGIN_INCLUDEPATH  += $($pkgconfig --cflags poppler-qt5 | sed 's|-I\/|\/|g')
 PDF_PLUGIN_LIBS         += $($pkgconfig --libs poppler-qt5 lcms2)
 
-#PS_PLUGIN_LIBS         += $($pkgconfig --libs libspectre)
+PS_PLUGIN_LIBS          += $($pkgconfig --libs libspectre)
 DJVU_PLUGIN_LIBS        += $($pkgconfig --libs ddjvuapi)
 EOF
 
