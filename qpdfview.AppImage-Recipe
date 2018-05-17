@@ -3,80 +3,85 @@
 # AppImage Recipe for qpdfview - https://github.com/AppImage/AppImageKit/wiki
 
 set -e
+set -x
 
-sudo apt-get install -y --no-install-recommends build-essential fuse wget ca-certificates \
-  libqt4-dev qt4-qmake qt4-dev-tools libpoppler-qt4-dev \
-  libcups2-dev libdjvulibre-dev libmagic-dev
+APP="qpdfview"
+VERSION="0.4.17"
+jobs="6"
+qtversion="5.10.1"
 
-# Ghostscript is old, bloated and hard to relocate
-#libspectre-dev
+# ghostscript
+wget -q -c https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23.tar.gz
+rm -rf ghostscript-9.23
+tar xf ghostscript-9.23.tar.gz
+cd ghostscript-9.23
 
-VERSION=0.4.17
+rm -rf cups freetype
+CFLAGS="-O2 -fPIC" ./configure --with-drivers=ALL,display --without-x --disable-gtk
+make -j$jobs libgs
+cd ..
 
-APP=qpdfview
-LOWERAPP=${APP,,}
-ARCH=x86_64
-MULTIARCH=x86_64-linux-gnu
-PLUGINDIR=/usr/lib/$MULTIARCH/qt4/plugins
+# libspectre
+wget -q -c http://libspectre.freedesktop.org/releases/libspectre-0.2.8.tar.gz
+rm -rf libspectre-0.2.8
+tar xf libspectre-0.2.8.tar.gz
+cd libspectre-0.2.8
 
-JOBS=4
+CFLAGS="-O3" ./configure --disable-static
+make -j$jobs
+echo '{ global: spectre_*; local: *; };' > map
+gcc -shared -o libspectre.so.1 -Wl,-soname,libspectre.so.1 \
+  -s -Wl,-z,defs -Wl,--version-script=map \
+  libspectre/.libs/*.o ../ghostscript-9.23/bin/gs.a \
+  -lcups -lcupsimage -lfreetype -lfontconfig -lidn -lpaper -ldl -lm -lpthread -pthread
+cd ..
 
-srcdir=qpdfview-qpdfview-$VERSION
-src_tarball=qpdfview-$VERSION.tar.gz
-BUILDROOT="$PWD/qpdfview-build"
+# qpdfview
+rm -rf qpdfview-git
+git clone --depth 1 https://github.com/darealshinji/qpdfview qpdfview-git
+cd qpdfview-git
+lrelease translations/*.ts
+sed -i 's|LIBSPECTRE_VERSION|"0.2.8"|g' sources/mainwindow.cpp
+qmake \
+  QMAKE_CFLAGS_RELEASE-=-O2 \
+  QMAKE_CFLAGS_RELEASE+='-O3 -Wno-unused-parameter' \
+  QMAKE_CXXFLAGS_RELEASE-=-O2 \
+  QMAKE_CXXFLAGS_RELEASE+=-O3 \
+  QMAKE_LFLAGS_RELEASE+=-s \
+  CONFIG+='static_image_plugin static_resources with_lto plugin_resolve_all' \
+  qpdfview.pro
+make -j$jobs
 
-mkdir -p "$BUILDROOT"
-cd "$BUILDROOT"
-rm -rf $APP.AppDir
+mkdir -p ./appimage/${APP}.AppDir/usr/bin
+cd appimage
 
-test -e $src_tarball || wget -q https://github.com/darealshinji/qpdfview/archive/$src_tarball -O $src_tarball
-test -e $srcdir || tar xf $src_tarball
-cd $srcdir
-test ! -e Makefile || make distclean
+wget -q https://raw.githubusercontent.com/AppImage/AppImages/master/functions.sh
+. ./functions.sh
 
-# build qpdfview
-qmake CONFIG+='without_ps' APPLICATION_VERSION="\"$VERSION\"" qpdfview.pro
-make -j$JOBS
-make install INSTALL_ROOT="$BUILDROOT/$APP.AppDir"
-lrelease qpdfview.pro
+cd ${APP}.AppDir
+cp ../../qpdfview ../../libqpdfview_*.so ./usr/bin
 
-cd "$BUILDROOT/$APP.AppDir"
-mkdir -p ./usr/bin/data ./usr/lib/plugins
-mv ./usr/lib/qpdfview/*.so ./usr/bin
-mv ./usr/share/qpdfview/*.html "$BUILDROOT/$srcdir"/translations/*.qm ./usr/bin/data
-
-# install Qt plugins
-mkdir -p ./usr/lib/plugins/imageformats ./usr/lib/plugins/sqldrivers
-cp $PLUGINDIR/imageformats/libq*.so ./usr/lib/plugins/imageformats
-cp $PLUGINDIR/sqldrivers/libq*.so ./usr/lib/plugins/sqldrivers
-
-cat <<EOF> ./usr/bin/qt.conf
-[Paths]
-Plugins = ../lib/plugins
-lib = ../lib
-EOF
-
-# source AppImage functions
-test -e ../functions.sh || wget -q https://raw.githubusercontent.com/AppImage/AppImages/master/functions.sh -O ../functions.sh
-. ../functions.sh
-
+# Qt libs from www.qt.io online installer
+export LD_LIBRARY_PATH="$PWD/../../../libspectre-0.2.8:$HOME/Qt/$qtversion/gcc_64/lib:$LD_LIBRARY_PATH"
 copy_deps
 
-mv -f ./usr/lib/$MULTIARCH/* ./usr/lib/
-mv -f ./lib/$MULTIARCH/* ./usr/lib/
-move_lib
+mkdir libs
+mv ./home libs
+mv ./lib libs
+mv ./usr/lib/* libs
+mv `find libs -type f` ./usr/lib
+rm -rf libs
 
 delete_blacklisted
 
-get_desktop
+cp ../../miscellaneous/qpdfview.desktop .
+fix_desktop qpdfview.desktop
 
-#get_icon
-mv ./usr/share/icons/hicolor/scalable/apps/qpdfview.svg .
+mkdir -p ./usr/share/metainfo
+cp ../../miscellaneous/qpdfview.appdata.xml ./usr/share/metainfo
+cp ../../icons/qpdfview.svg .
 
-get_desktopintegration $APP
 get_apprun
-
 cd ..
-
-generate_appimage
+generate_type2_appimage
 
