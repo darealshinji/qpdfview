@@ -2,6 +2,16 @@
 
 # AppImage Recipe for qpdfview - https://github.com/AppImage/AppImageKit/wiki
 
+cat <<EOF> /dev/null
+
+sudo apt install build-essential wget git fuse \
+ libfontconfig1-dev libfreetype6-dev libidn11-dev libtiff5-dev libpng-dev \
+ libopenjp2-7-dev libjbig2dec0-dev libjpeg-turbo8-dev liblcms2-dev zlib1g-dev \
+ libpaper-dev libdbus-1-dev libpoppler-qt5-dev libdjvulibre-dev \
+ libgs-dev libspectre-dev
+
+EOF
+
 set -e
 set -x
 
@@ -10,46 +20,41 @@ VERSION="0.4.17"
 jobs="6"
 qtversion="5.10.1"
 
-# ghostscript
-wget -q -c https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23.tar.gz
-rm -rf ghostscript-9.23
-tar xf ghostscript-9.23.tar.gz
-cd ghostscript-9.23
+QTPFX="$HOME/Qt/$qtversion/gcc_64"
+GSDIR="ghostscript-9.23"
+SPDIR="libspectre-0.2.8"
 
-rm -rf cups freetype
-CFLAGS="-O2 -fPIC" ./configure --with-drivers=ALL,display --without-x --disable-gtk
-make -j$jobs libgs
+# ghostscript
+wget -q -c https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/${GSDIR}.tar.gz
+rm -rf $GSDIR
+tar xf ${GSDIR}.tar.gz
+cd $GSDIR
+
+rm -rf freetype jbig2dec jpeg lcms2art libpng openjpeg tiff zlib
+CFLAGS="-O2 -fvisibility=hidden -DGSDLLEXPORT=\"__attribute__((visibility(\\\"default\\\")))\"" \
+  ./configure --with-drivers=ALL,display --without-x --disable-gtk --disable-cups --disable-contrib --without-ijs
+make -j$jobs so
+strip sobin/*
 cd ..
 
 # libspectre
-wget -q -c http://libspectre.freedesktop.org/releases/libspectre-0.2.8.tar.gz
-rm -rf libspectre-0.2.8
-tar xf libspectre-0.2.8.tar.gz
-cd libspectre-0.2.8
+wget -q -c http://libspectre.freedesktop.org/releases/${SPDIR}.tar.gz
+rm -rf $SPDIR
+tar xf ${SPDIR}.tar.gz
+cd $SPDIR
 
-CFLAGS="-O3" ./configure --disable-static
+./configure --disable-static
 make -j$jobs
-echo '{ global: spectre_*; local: *; };' > map
-gcc -shared -o libspectre.so.1 -Wl,-soname,libspectre.so.1 \
-  -s -Wl,-z,defs -Wl,--version-script=map \
-  libspectre/.libs/*.o ../ghostscript-9.23/bin/gs.a \
-  -lcups -lcupsimage -lfreetype -lfontconfig -lidn -lpaper -ldl -lm -lpthread -pthread
+strip libspectre/.libs/libspectre.so.*
 cd ..
 
 # qpdfview
 rm -rf qpdfview-git
 git clone --depth 1 https://github.com/darealshinji/qpdfview qpdfview-git
 cd qpdfview-git
-lrelease translations/*.ts
+"$QTPFX/bin/lrelease" qpdfview.pro
 sed -i 's|LIBSPECTRE_VERSION|"0.2.8"|g' sources/mainwindow.cpp
-qmake \
-  QMAKE_CFLAGS_RELEASE-=-O2 \
-  QMAKE_CFLAGS_RELEASE+='-O3 -Wno-unused-parameter' \
-  QMAKE_CXXFLAGS_RELEASE-=-O2 \
-  QMAKE_CXXFLAGS_RELEASE+=-O3 \
-  QMAKE_LFLAGS_RELEASE+=-s \
-  CONFIG+='static_image_plugin static_resources with_lto plugin_resolve_all' \
-  qpdfview.pro
+"$QTPFX/bin/qmake" qpdfview.pro CONFIG+='static_image_plugin static_resources with_lto plugin_resolve_all'
 make -j$jobs
 
 mkdir -p ./appimage/${APP}.AppDir/usr/bin
@@ -60,9 +65,10 @@ wget -q https://raw.githubusercontent.com/AppImage/AppImages/master/functions.sh
 
 cd ${APP}.AppDir
 cp ../../qpdfview ../../libqpdfview_*.so ./usr/bin
+strip ./usr/bin/*
 
 # Qt libs from www.qt.io online installer
-export LD_LIBRARY_PATH="$PWD/../../../libspectre-0.2.8:$HOME/Qt/$qtversion/gcc_64/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$PWD/../../../$GSDIR/sobin:$PWD/../../../$SPDIR:$QTPFX/lib:$LD_LIBRARY_PATH"
 copy_deps
 
 mkdir libs
