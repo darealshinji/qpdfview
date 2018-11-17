@@ -673,17 +673,17 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Information</source>
-        <translation type="unfinished">Informacija</translation>
+        <translation>Informacija</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Instance-to-instance communication requires D-Bus support.</source>
-        <translation type="unfinished"></translation>
+        <translation>Susisiekimas tarp egzempliorių reikalauja D-Bus palaikymo.</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="2183"/>
         <source>&lt;/ul&gt;&lt;p&gt;See &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;p&gt;Išsamesnei informacijai, žiūrėkite &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 qpdfview kūrėjai&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3154"/>
@@ -928,22 +928,22 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3261"/>
         <source>Open copy in new &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atverti kopiją naujame &amp;lange</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3264"/>
         <source>Split view horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Perskirti rodinį horizontaliai...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3265"/>
         <source>Split view vertically...</source>
-        <translation type="unfinished"></translation>
+        <translation>Perskirti rodinį vertikaliai...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3266"/>
         <source>Close current view</source>
-        <translation type="unfinished"></translation>
+        <translation>Užverti dabartinį rodinį</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3447"/>
@@ -1235,7 +1235,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="468"/>
         <source>Compressed (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Suglaudintas (%1)</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="472"/>
@@ -1245,7 +1245,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="488"/>
         <source>Could not decompress &apos;%1&apos;!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepavyko išglaudinti &quot;%1&quot;!</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="498"/>
@@ -1328,7 +1328,7 @@
     <message>
         <location filename="../sources/printdialog.cpp" line="90"/>
         <source>Number-up:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puslapių ant lapo:</translation>
     </message>
     <message>
         <location filename="../sources/printdialog.cpp" line="93"/>
@@ -1373,7 +1373,7 @@
     <message>
         <location filename="../sources/printdialog.cpp" line="103"/>
         <source>Number-up layout:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puslapių ant lapo išdėstymas:</translation>
     </message>
     <message>
         <location filename="../sources/printdialog.cpp" line="107"/>
@@ -1569,7 +1569,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="291"/>
         <source>Synchronize split views:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinchronizuoti perskirtus rodinius:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="298"/>
@@ -1579,7 +1579,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="301"/>
         <source>Parallel search execution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lygiagrečios paieškos vykdymas:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="305"/>

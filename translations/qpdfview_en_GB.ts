@@ -673,17 +673,17 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Information</source>
-        <translation type="unfinished">Information</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Instance-to-instance communication requires D-Bus support.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instance-to-instance communication requires D-Bus support.</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="2183"/>
         <source>&lt;/ul&gt;&lt;p&gt;See &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;p&gt;See &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3154"/>
@@ -928,22 +928,22 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3261"/>
         <source>Open copy in new &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation>Open copy in new &amp;window</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3264"/>
         <source>Split view horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Split view horizontally...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3265"/>
         <source>Split view vertically...</source>
-        <translation type="unfinished"></translation>
+        <translation>Split view vertically...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3266"/>
         <source>Close current view</source>
-        <translation type="unfinished"></translation>
+        <translation>Close current view</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3447"/>
@@ -1235,7 +1235,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="468"/>
         <source>Compressed (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Compressed (%1)</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="472"/>
@@ -1245,7 +1245,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="488"/>
         <source>Could not decompress &apos;%1&apos;!</source>
-        <translation type="unfinished"></translation>
+        <translation>Could not decompress &apos;%1&apos;!</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="498"/>
@@ -1569,7 +1569,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="291"/>
         <source>Synchronize split views:</source>
-        <translation type="unfinished"></translation>
+        <translation>Synchronise split views:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="298"/>
@@ -1579,7 +1579,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="301"/>
         <source>Parallel search execution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parallel search execution:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="305"/>

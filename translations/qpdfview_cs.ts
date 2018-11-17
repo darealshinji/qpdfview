@@ -673,17 +673,17 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Information</source>
-        <translation type="unfinished">Informace</translation>
+        <translation>Informace</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Instance-to-instance communication requires D-Bus support.</source>
-        <translation type="unfinished"></translation>
+        <translation>Komunikace od instance k instanci vyžaduje podporu pro D-Bus.</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="2183"/>
         <source>&lt;/ul&gt;&lt;p&gt;See &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;p&gt;Podívejte se na &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt;, kde naleznete další informace.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3154"/>
@@ -928,22 +928,22 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3261"/>
         <source>Open copy in new &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít kopii v novém &amp;okně</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3264"/>
         <source>Split view horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozdělit pohled vodorovně...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3265"/>
         <source>Split view vertically...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozdělit pohled svisle...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3266"/>
         <source>Close current view</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavřít nynější pohled</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3447"/>
@@ -1235,7 +1235,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="468"/>
         <source>Compressed (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zabaleno (%1)</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="472"/>
@@ -1245,7 +1245,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="488"/>
         <source>Could not decompress &apos;%1&apos;!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se rozbalit &apos;%1&apos;!</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="498"/>
@@ -1569,7 +1569,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="291"/>
         <source>Synchronize split views:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seřídit rozdělené pohledy:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="298"/>
@@ -1579,7 +1579,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="301"/>
         <source>Parallel search execution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Provádění souběžného vyhledávání:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="305"/>

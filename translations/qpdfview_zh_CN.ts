@@ -174,12 +174,12 @@
     <message>
         <location filename="../sources/main.cpp" line="171"/>
         <source>An empty instance name is not allowed.</source>
-        <translation>实例名不许为空</translation>
+        <translation>实例名不许为空。</translation>
     </message>
     <message>
         <location filename="../sources/main.cpp" line="182"/>
         <source>An empty search text is not allowed.</source>
-        <translation>搜索词不许为空</translation>
+        <translation>搜索词不许为空。</translation>
     </message>
     <message>
         <location filename="../sources/main.cpp" line="239"/>
@@ -558,7 +558,7 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="1596"/>
         <source>Select the first page of the body matter:</source>
-        <translation>选择版面的首页</translation>
+        <translation>选择版面的首页：</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="1609"/>
@@ -663,7 +663,7 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3263"/>
         <source>Move to &amp;instance...</source>
-        <translation>移动到实例...(&amp;i)</translation>
+        <translation>移动到实例(&amp;I)...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3152"/>
@@ -673,17 +673,17 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Information</source>
-        <translation type="unfinished">信息</translation>
+        <translation>信息</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Instance-to-instance communication requires D-Bus support.</source>
-        <translation type="unfinished"></translation>
+        <translation>实例到实例的通信需要 D-Bus 支持。</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="2183"/>
         <source>&lt;/ul&gt;&lt;p&gt;See &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;p&gt;请访问 &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; 以了解更多信息。&lt;/p&gt;&lt;p&gt;&amp;copy; %1 qpdfview 开发者&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3154"/>
@@ -693,7 +693,7 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3155"/>
         <source>Save &amp;copy...</source>
-        <translation>保存和复制...(&amp;c)</translation>
+        <translation>保存副本(&amp;C)...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3156"/>
@@ -728,7 +728,7 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3178"/>
         <source>&amp;Set first page...</source>
-        <translation>设置首页(S)...</translation>
+        <translation>设置首页(&amp;S)...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3180"/>
@@ -773,7 +773,7 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3191"/>
         <source>&amp;Add annotation</source>
-        <translation>添加注释</translation>
+        <translation>添加注释(&amp;A)</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3193"/>
@@ -928,22 +928,22 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3261"/>
         <source>Open copy in new &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation>在新窗口中打开副本(&amp;W)</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3264"/>
         <source>Split view horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>水平分割视图...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3265"/>
         <source>Split view vertically...</source>
-        <translation type="unfinished"></translation>
+        <translation>垂直分割视图...</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3266"/>
         <source>Close current view</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭当前视图</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3447"/>
@@ -1235,7 +1235,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="468"/>
         <source>Compressed (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>已压缩(%1)</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="472"/>
@@ -1245,7 +1245,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="488"/>
         <source>Could not decompress &apos;%1&apos;!</source>
-        <translation type="unfinished"></translation>
+        <translation>无法解压缩“%1”！</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="498"/>
@@ -1569,7 +1569,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="291"/>
         <source>Synchronize split views:</source>
-        <translation type="unfinished"></translation>
+        <translation>同步分割视图：</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="298"/>
@@ -1579,7 +1579,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="301"/>
         <source>Parallel search execution:</source>
-        <translation type="unfinished"></translation>
+        <translation>并行执行搜索：</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="305"/>
@@ -1828,7 +1828,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="528"/>
         <source>Extended search dock:</source>
-        <translation>高级搜索条</translation>
+        <translation>扩展搜索条：</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="588"/>

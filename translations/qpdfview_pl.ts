@@ -673,7 +673,7 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacje</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="1460"/>
@@ -943,7 +943,7 @@
     <message>
         <location filename="../sources/mainwindow.cpp" line="3266"/>
         <source>Close current view</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknięcie bieżącego widoku</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="3447"/>
