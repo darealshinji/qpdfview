@@ -2,23 +2,24 @@
 set -e
 
 # helper script for mingw32 builds via MXE (https://github.com/mxe/mxe)
-# requires MXE packages: qt5 libspectre poppler djvulibre
+# requires MXE packages: djvulibre libspectre qt5 poppler
 
 mxe_base="$HOME/dev/mxe"
 
 VERSION="0.4.18beta1"
 
-#mxe_target="i686-w64-mingw32.static"
-#mxe_target="i686-w64-mingw32.shared"
-mxe_target="x86_64-w64-mingw32.static"
-#mxe_target="x86_64-w64-mingw32.shared"
+if [ "_$1" = "_x64" ]; then
+  mxe_target="x86_64-w64-mingw32.static"
+else
+  mxe_target="i686-w64-mingw32.static"
+fi
 
 pc="${mxe_target}-pkg-config"
 export PATH="$mxe_base/usr/$mxe_target/qt5/bin:$mxe_base/usr/bin:$PATH"
 
 ### checkout
 rm -rf qpdfview-git
-git clone "https://github.com/darealshinji/qpdfview" qpdfview-git
+git clone --depth 100 "https://github.com/darealshinji/qpdfview" qpdfview-git
 cd qpdfview-git
 git checkout qpdfview-$VERSION
 
@@ -36,6 +37,10 @@ CONFIG += without_cups
 CONFIG += without_synctex
 CONFIG += without_signals
 CONFIG += static_resources
+CONFIG += static_pdf_plugin
+CONFIG += static_ps_plugin
+CONFIG += static_djvu_plugin
+CONFIG += static_image_plugin
 
 DEFINES += HAS_POPPLER_14
 DEFINES += HAS_POPPLER_18
@@ -45,6 +50,7 @@ DEFINES += HAS_POPPLER_24
 DEFINES += HAS_POPPLER_26
 DEFINES += HAS_POPPLER_31
 DEFINES += HAS_POPPLER_35
+DEFINES += DJVU_STATIC
 
 POPPLER_VERSION    = $($pc --modversion poppler-qt5)
 LIBSPECTRE_VERSION = $($pc --modversion libspectre)
@@ -60,23 +66,10 @@ DJVU_PLUGIN_INCLUDEPATH += $($pc --cflags-only-I ddjvuapi | sed 's|-I\/|\/|g')
 DJVU_PLUGIN_LIBS        += $($pc --libs ddjvuapi)
 EOF
 
-### link plugins statically
-case $mxe_target in
-  *.static)
-  cat <<EOF >> qpdfview_win32.pri
-CONFIG += static_pdf_plugin
-CONFIG += static_ps_plugin
-CONFIG += static_djvu_plugin
-CONFIG += static_image_plugin
-DEFINES += DJVU_STATIC
-EOF
-  ;;
-esac
-
 ### build qpdfview
 lrelease qpdfview.pro
-qmake qpdfview.pro
+${mxe_target}-qmake-qt5 qpdfview.pro
 make qmake_all
-sed -i 's|-lqpdfview_|libqpdfview_|g' Makefile.application  # bug
-make -j6
+sed -i 's|-lqpdfview_|libqpdfview_|g' Makefile.application  # Qt bug
+make -j4
 

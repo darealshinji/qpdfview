@@ -1,0 +1,15 @@
+--- a/psi/iapi.h
++++ b/psi/iapi.h
+@@ -93,7 +93,11 @@
+ # define GSDLLEXPORT
+ #endif
+ #ifndef GSDLLAPI
+-# define GSDLLAPI
++# ifdef __GNUC__
++#  define GSDLLAPI __attribute__ ((visibility ("default")))
++# else
++#  define GSDLLAPI
++# endif
+ #endif
+ #ifndef GSDLLCALL
+ # define GSDLLCALL
