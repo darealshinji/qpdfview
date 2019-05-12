@@ -2827,7 +2827,15 @@ void DocumentView::prepareScene()
 
     if(s_settings->pageItem().useDevicePixelRatio())
     {
+#if QT_VERSION >= QT_VERSION_CHECK(5,6,0)
+
+        renderParam.setDevicePixelRatio(devicePixelRatioF());
+
+#else
+
         renderParam.setDevicePixelRatio(devicePixelRatio());
+
+#endif // QT_VERSION
     }
 
 #endif // QT_VERSION
@@ -2951,7 +2959,15 @@ void DocumentView::prepareThumbnailsScene()
 
     if(s_settings->pageItem().useDevicePixelRatio())
     {
+#if QT_VERSION >= QT_VERSION_CHECK(5,6,0)
+
+        renderParam.setDevicePixelRatio(devicePixelRatioF());
+
+#else
+
         renderParam.setDevicePixelRatio(devicePixelRatio());
+
+#endif // QT_VERSION
     }
 
 #endif // QT_VERSION
