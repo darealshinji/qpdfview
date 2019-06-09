@@ -108,11 +108,11 @@ Section "install"
 	;CreateShortCut "$DESKTOP\${APPNAME}.lnk" "$INSTDIR\${APPNAME}.exe" "" ""
 
 	# File Associations
-	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".pdf"  "PDF File"
-	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".ps"   "PS File"
-	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".eps"  "EPS File"
-	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".djvu" "DJVU File"
-	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".djv"  "DJVU File"
+	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".pdf"  "PDF Document"
+	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".ps"   "PS Document"
+	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".eps"  "EPS Document"
+	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".djvu" "DJVU Document"
+	${registerExtension} "$INSTDIR\${APPNAME}.exe" ".djv"  "DJVU Document"
 
 	# Registry information for add/remove programs
 	WriteRegStr HKLM "${ARP}" "DisplayName" "${APPNAME} ${DISPLAYVERSION}${DISPLAYARCH}"
@@ -160,11 +160,11 @@ Section "uninstall"
 
 	# Remove File Associations
 	# Note: setting .pdf doesn't work correctly on Windows 10
-	${unregisterExtension} ".pdf"  "PDF File"
-	${unregisterExtension} ".ps"   "PS File"
-	${unregisterExtension} ".eps"  "EPS File"
-	${unregisterExtension} ".djvu" "DJVU File"
-	${unregisterExtension} ".djv"  "DJVU File"
+	${unregisterExtension} ".pdf"  "PDF Document"
+	${unregisterExtension} ".ps"   "PS Document"
+	${unregisterExtension} ".eps"  "EPS Document"
+	${unregisterExtension} ".djvu" "DJVU Document"
+	${unregisterExtension} ".djv"  "DJVU Document"
 
 	# Remove uninstaller information from the registry
 	DeleteRegKey HKLM "${ARP}"
