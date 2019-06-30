@@ -15,7 +15,7 @@
 !define VERSIONMAJOR 0
 !define VERSIONMINOR 4
 !define VERSIONBUILD 18
-!define VERSIONBETA "beta1"
+;!define VERSIONBETA "beta1"
 !define DISPLAYVERSION "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}${VERSIONBETA}"
 
 !define HELPURL "https://answers.launchpad.net/qpdfview" ;"Support Information" link

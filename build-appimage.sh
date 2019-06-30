@@ -1,14 +1,24 @@
 #!/bin/bash
+
+function patch_ai ()
+{
+  wget -q -c "https://raw.githubusercontent.com/darealshinji/code-snippets/master/hexedit.c"
+  gcc -O2 hexedit.c
+  ./a.out --mode=set --offset=0x08 --char=0x00 --file="$1"
+  ./a.out --mode=set --offset=0x09 --char=0x00 --file="$1"
+  ./a.out --mode=set --offset=0x0A --char=0x00 --file="$1"
+}
+
 set -e
 set -x
 
-CMVER="3.13.4"
+CMVER="3.15.5"
 CMDIR="cmake-${CMVER}-Linux-x86_64"
 POPVER="0.68.0"  # latest version that builds on Ubuntu 14.04
 POPDIR="poppler-$POPVER"
-GSVER="9.26"
+GSVER="9.50"
 GSDIR="ghostscript-$GSVER"
-GSDIR2="gs926"
+GSDIR2="gs950"
 SPVER="0.2.8"
 SPDIR="libspectre-$SPVER"
 DJVVER="3.5.27"
@@ -16,7 +26,7 @@ DJVDIR="djvulibre-$DJVVER"
 JOBS=4
 TOP="$PWD"
 
-export VERSION="0.4.18beta1"
+export VERSION="0.4.18"
 export PKG_CONFIG_PATH="$PWD/build"
 export PATH="$PWD/build/$CMDIR/bin:$PATH"
 
@@ -128,7 +138,7 @@ rm -rf qpdfview-build
 test -e qpdfview-git || git clone --depth 100 "https://github.com/darealshinji/qpdfview" qpdfview-git
 cp -r qpdfview-git qpdfview-build
 cd qpdfview-build
-git checkout qpdfview-$VERSION
+#git checkout qpdfview-$VERSION
 
 lrelease qpdfview.pro
 conf="static_resources with_lto static_pdf_plugin static_ps_plugin static_djvu_plugin static_image_plugin"
@@ -147,6 +157,7 @@ cp lib*.so.* appdir/usr/lib
 strip appdir/usr/bin/* appdir/usr/lib/*
 
 wget -q -c -O deploy.AppImage "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
+patch_ai deploy.AppImage
 chmod a+x deploy.AppImage
 ./deploy.AppImage appdir/usr/share/applications/qpdfview.desktop -verbose=2 -bundle-non-qt-libs -extra-plugins=iconengines,imageformats
 
@@ -159,6 +170,7 @@ cp $DJVDIR/COPYRIGHT $doc/$DJVDIR
 cp qpdfview-git/CONTRIBUTORS qpdfview-git/COPYING $doc/qpdfview
 
 wget -q -c "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
+patch_ai appimagetool-x86_64.AppImage
 chmod a+x appimagetool-x86_64.AppImage
 ./appimagetool-x86_64.AppImage appdir
 
