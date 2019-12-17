@@ -41,7 +41,7 @@ SetCompressor lzma
 Name "${APPNAME}"
 Icon "${APPNAME}_win32.ico"
 LicenseData "${LICENSE}"
-OutFile "${APPNAME}-installer-${ARCH}.exe"
+OutFile "${APPNAME}-${DISPLAYVERSION}-setup-${ARCH}.exe"
 
 Page license
 Page directory
