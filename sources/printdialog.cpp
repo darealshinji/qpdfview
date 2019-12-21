@@ -1,6 +1,7 @@
 /*
 
 Copyright 2012-2013 Adam Reichold
+Copyright 2019 Pavel Sanda
 
 This file is part of qpdfview.
 
@@ -67,6 +68,7 @@ PrintDialog::PrintDialog(QPrinter* printer, QWidget* parent) : QPrintDialog(prin
 #if QT_VERSION < QT_VERSION_CHECK(5,11,0)
 
     m_pageRangesLineEdit = new QLineEdit(this);
+    m_pageRangesLineEdit->setToolTip(tr("e.g. 3-4,7,8,9-11"));
 
     m_printOptionsLayout->addRow(tr("Page ranges:"), m_pageRangesLineEdit);
 
