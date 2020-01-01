@@ -29,6 +29,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 extern "C"
 {
 
+#include <mupdf/fitz/color.h>
 #include <mupdf/fitz/stream.h>
 #include <mupdf/fitz/bidi.h>
 #include <mupdf/fitz/output.h>
@@ -112,8 +113,7 @@ QSizeF FitzPage::size() const
 {
     QMutexLocker mutexLocker(&m_parent->m_mutex);
 
-    fz_rect rect;
-    fz_bound_page(m_parent->m_context, m_page, &rect);
+    fz_rect rect = fz_bound_page(m_parent->m_context, m_page);
 
     return QSizeF(rect.x1 - rect.x0, rect.y1 - rect.y0);
 }
@@ -122,40 +122,36 @@ QImage FitzPage::render(qreal horizontalResolution, qreal verticalResolution, Ro
 {
     QMutexLocker mutexLocker(&m_parent->m_mutex);
 
-    fz_matrix matrix;
-
-    fz_scale(&matrix, horizontalResolution / 72.0f, verticalResolution / 72.0f);
+    fz_matrix matrix = fz_scale(horizontalResolution / 72.0f, verticalResolution / 72.0f);
 
     switch(rotation)
     {
     default:
     case RotateBy0:
-        fz_pre_rotate(&matrix, 0.0);
+        matrix = fz_pre_rotate(matrix, 0.0);
         break;
     case RotateBy90:
-        fz_pre_rotate(&matrix, 90.0);
+        matrix = fz_pre_rotate(matrix, 90.0);
         break;
     case RotateBy180:
-        fz_pre_rotate(&matrix, 180.0);
+        matrix = fz_pre_rotate(matrix, 180.0);
         break;
     case RotateBy270:
-        fz_pre_rotate(&matrix, 270.0);
+        matrix = fz_pre_rotate(matrix, 270.0);
         break;
     }
 
-    fz_rect rect;
-    fz_bound_page(m_parent->m_context, m_page, &rect);
-    fz_transform_rect(&rect, &matrix);
+    fz_rect rect = fz_bound_page(m_parent->m_context, m_page);
+    rect = fz_transform_rect(rect, matrix);
 
-    fz_irect irect;
-    fz_round_rect(&irect, &rect);
+    fz_irect irect = fz_round_rect(rect);
 
 
     fz_context* context = fz_clone_context(m_parent->m_context);
-    fz_display_list* display_list = fz_new_display_list(context, &rect);
+    fz_display_list* display_list = fz_new_display_list(context, rect);
 
     fz_device* device = fz_new_list_device(context, display_list);
-    fz_run_page(m_parent->m_context, m_page, device, &matrix, 0);
+    fz_run_page(m_parent->m_context, m_page, device, matrix, 0);
     fz_close_device(m_parent->m_context, device);
     fz_drop_device(m_parent->m_context, device);
 
@@ -163,9 +159,7 @@ QImage FitzPage::render(qreal horizontalResolution, qreal verticalResolution, Ro
     mutexLocker.unlock();
 
 
-    fz_matrix tileMatrix;
-    fz_translate(&tileMatrix, -rect.x0, -rect.y0);
-
+    fz_matrix tileMatrix = fz_translate(-rect.x0, -rect.y0);
     fz_rect tileRect = fz_infinite_rect;
 
     int tileWidth = irect.x1 - irect.x0;
@@ -173,7 +167,7 @@ QImage FitzPage::render(qreal horizontalResolution, qreal verticalResolution, Ro
 
     if(!boundingRect.isNull())
     {
-        fz_pre_translate(&tileMatrix, -boundingRect.x(), -boundingRect.y());
+        tileMatrix = fz_pre_translate(tileMatrix, -boundingRect.x(), -boundingRect.y());
 
         tileRect.x0 = boundingRect.x();
         tileRect.y0 = boundingRect.y();
@@ -191,8 +185,8 @@ QImage FitzPage::render(qreal horizontalResolution, qreal verticalResolution, Ro
 
     fz_pixmap* pixmap = fz_new_pixmap_with_data(context, fz_device_bgr(context), image.width(), image.height(), 0, 1, image.bytesPerLine(), image.bits());
 
-    device = fz_new_draw_device(context, &tileMatrix, pixmap);
-    fz_run_display_list(context, display_list, device, &fz_identity, &tileRect, 0);
+    device = fz_new_draw_device(context, tileMatrix, pixmap);
+    fz_run_display_list(context, display_list, device, fz_identity, tileRect, 0);
     fz_close_device(context, device);
     fz_drop_device(context, device);
 
@@ -209,8 +203,7 @@ QList< Link* > FitzPage::links() const
 
     QList< Link* > links;
 
-    fz_rect rect;
-    fz_bound_page(m_parent->m_context, m_page, &rect);
+    fz_rect rect = fz_bound_page(m_parent->m_context, m_page);
 
     const qreal width = qAbs(rect.x1 - rect.x0);
     const qreal height = qAbs(rect.y1 - rect.y0);
@@ -256,9 +249,9 @@ QString FitzPage::text(const QRectF &rect) const
     mediaBox.x1 = rect.right();
     mediaBox.y1 = rect.bottom();
 
-    fz_stext_page* textPage = fz_new_stext_page(m_parent->m_context, &mediaBox);
+    fz_stext_page* textPage = fz_new_stext_page(m_parent->m_context, mediaBox);
     fz_device* device = fz_new_stext_device(m_parent->m_context, textPage, 0);
-    fz_run_page(m_parent->m_context, m_page, device, &fz_identity, 0);
+    fz_run_page(m_parent->m_context, m_page, device, fz_identity, 0);
     fz_close_device(m_parent->m_context, device);
     fz_drop_device(m_parent->m_context, device);
 
@@ -286,18 +279,17 @@ QList<QRectF> FitzPage::search(const QString& text, bool matchCase, bool wholeWo
 
     QMutexLocker mutexLocker(&m_parent->m_mutex);
 
-    fz_rect rect;
-    fz_bound_page(m_parent->m_context, m_page, &rect);
+    fz_rect rect = fz_bound_page(m_parent->m_context, m_page);
 
-    fz_stext_page* textPage = fz_new_stext_page(m_parent->m_context, &rect);
+    fz_stext_page* textPage = fz_new_stext_page(m_parent->m_context, rect);
     fz_device* device = fz_new_stext_device(m_parent->m_context, textPage, 0);
-    fz_run_page(m_parent->m_context, m_page, device, &fz_identity, 0);
+    fz_run_page(m_parent->m_context, m_page, device, fz_identity, 0);
     fz_close_device(m_parent->m_context, device);
     fz_drop_device(m_parent->m_context, device);
 
     const QByteArray needle = text.toUtf8();
 
-    QVector< fz_rect > hits(32);
+    QVector< fz_quad > hits(32);
     int numberOfHits = fz_search_stext_page(m_parent->m_context, textPage, needle.constData(), hits.data(), hits.size());
 
     while(numberOfHits == hits.size())
@@ -313,9 +305,9 @@ QList<QRectF> FitzPage::search(const QString& text, bool matchCase, bool wholeWo
     QList< QRectF > results;
     results.reserve(hits.size());
 
-    foreach(fz_rect rect, hits)
+    foreach(fz_quad rect, hits)
     {
-        results.append(QRectF(rect.x0, rect.y0, rect.x1 - rect.x0, rect.y1 - rect.y0));
+        results.append(QRectF(rect.ul.x, rect.ul.y, rect.ur.x - rect.ul.x, rect.ll.y - rect.ul.y));
     }
 
     return results;

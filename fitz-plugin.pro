@@ -21,7 +21,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 DEFINES += $$FITZ_PLUGIN_DEFINES
 INCLUDEPATH += $$FITZ_PLUGIN_INCLUDEPATH
 
-isEmpty(FITZ_PLUGIN_LIBS):FITZ_PLUGIN_LIBS = -lmupdf -lmupdfthird
+isEmpty(FITZ_PLUGIN_LIBS):FITZ_PLUGIN_LIBS = -lmupdf -lmupdf-third -ljpeg
 LIBS += $$FITZ_PLUGIN_LIBS
 
 !static_fitz_plugin {
