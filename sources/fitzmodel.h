@@ -69,6 +69,7 @@ namespace Model
         const class FitzDocument* m_parent;
 
         fz_page* m_page;
+        const fz_rect m_boundingRect;
 
     };
 
@@ -123,7 +124,7 @@ public:
 
 private:
     QMutex m_mutex[FZ_LOCK_MAX];
-    fz_locks_context m_locks_context;
+    fz_locks_context m_locksContext;
     fz_context* m_context;
 
     static void lock(void* user, int lock);
