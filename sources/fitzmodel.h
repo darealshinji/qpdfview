@@ -71,6 +71,9 @@ namespace Model
         fz_page* m_page;
         const fz_rect m_boundingRect;
 
+        struct DisplayList;
+        mutable DisplayList* m_displayList;
+
     };
 
     class FitzDocument : public Document
