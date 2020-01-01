@@ -140,7 +140,7 @@ void loadTranslators()
     loadTranslator(toolkitTranslator, "qt", QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 
     QTranslator* applicationTranslator = new QTranslator(qApp);
-    if(loadTranslator(applicationTranslator, "qpdfview", QDir(QApplication::applicationDirPath()).filePath("data"))) {}
+    if(loadTranslator(applicationTranslator, "qpdfview", QDir(QApplication::applicationDirPath()).filePath(APP_DIR_DATA_PATH))) {}
     else if(loadTranslator(applicationTranslator, "qpdfview", DATA_INSTALL_PATH)) {}
     else if(loadTranslator(applicationTranslator, "qpdfview", ":/")) {}
 }

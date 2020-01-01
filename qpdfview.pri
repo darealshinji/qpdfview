@@ -7,6 +7,7 @@ isEmpty(MANUAL_INSTALL_PATH):MANUAL_INSTALL_PATH = /usr/share/man/man1
 isEmpty(ICON_INSTALL_PATH):ICON_INSTALL_PATH = /usr/share/icons/hicolor/scalable/apps
 isEmpty(LAUNCHER_INSTALL_PATH):LAUNCHER_INSTALL_PATH = /usr/share/applications
 isEmpty(APPDATA_INSTALL_PATH):APPDATA_INSTALL_PATH = /usr/share/appdata
+isEmpty(APP_DIR_DATA_PATH):APP_DIR_DATA_PATH = data
 
 win32:include(qpdfview_win32.pri)
 os2:include(qpdfview_os2.pri)

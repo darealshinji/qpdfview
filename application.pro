@@ -262,7 +262,7 @@ static_resources {
     RESOURCES += help.qrc translations.qrc
 }
 
-DEFINES += DATA_INSTALL_PATH=\\\"$${DATA_INSTALL_PATH}\\\"
+DEFINES += DATA_INSTALL_PATH=\\\"$${DATA_INSTALL_PATH}\\\" APP_DIR_DATA_PATH=\\\"$${APP_DIR_DATA_PATH}\\\"
 
 
 DESKTOP_FILE = miscellaneous/qpdfview.desktop
