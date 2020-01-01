@@ -1266,117 +1266,122 @@
 <context>
     <name>qpdfview::PrintDialog</name>
     <message>
-        <location filename="../sources/printdialog.cpp" line="65"/>
+        <location filename="../sources/printdialog.cpp" line="66"/>
         <source>Fit to page:</source>
         <translation>Уместить в страницу</translation>
     </message>
     <message>
         <location filename="../sources/printdialog.cpp" line="71"/>
+        <source>e.g. 3-4,7,8,9-11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sources/printdialog.cpp" line="73"/>
         <source>Page ranges:</source>
         <translation>Диапазон страниц:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="78"/>
+        <location filename="../sources/printdialog.cpp" line="80"/>
         <source>All pages</source>
         <translation>Все страницы</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="79"/>
+        <location filename="../sources/printdialog.cpp" line="81"/>
         <source>Even pages</source>
         <translation>Чётные страницы</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="80"/>
+        <location filename="../sources/printdialog.cpp" line="82"/>
         <source>Odd pages</source>
         <translation>Нечётные страницы</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="83"/>
+        <location filename="../sources/printdialog.cpp" line="85"/>
         <source>Page set:</source>
         <translation>Печатать страницы:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="86"/>
+        <location filename="../sources/printdialog.cpp" line="88"/>
         <source>Single page</source>
         <translation>Одна страница</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="87"/>
+        <location filename="../sources/printdialog.cpp" line="89"/>
         <source>Two pages</source>
         <translation>2 траницы</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="88"/>
+        <location filename="../sources/printdialog.cpp" line="90"/>
         <source>Four pages</source>
         <translation>4 страницы</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="89"/>
+        <location filename="../sources/printdialog.cpp" line="91"/>
         <source>Six pages</source>
         <translation>6 страниц</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="90"/>
+        <location filename="../sources/printdialog.cpp" line="92"/>
         <source>Nine pages</source>
         <translation>9 страниц</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="91"/>
+        <location filename="../sources/printdialog.cpp" line="93"/>
         <source>Sixteen pages</source>
         <translation>Шестнадцать страниц</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="94"/>
+        <location filename="../sources/printdialog.cpp" line="96"/>
         <source>Number-up:</source>
         <translation>Номером вверх</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="97"/>
+        <location filename="../sources/printdialog.cpp" line="99"/>
         <source>Bottom to top and left to right</source>
         <translation>Снизу вверх и слева направо</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="98"/>
+        <location filename="../sources/printdialog.cpp" line="100"/>
         <source>Bottom to top and right to left</source>
         <translation>Снизу вверх и справа налево</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="99"/>
+        <location filename="../sources/printdialog.cpp" line="101"/>
         <source>Left to right and bottom to top</source>
         <translation>Слева направо и снизу вверх</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="100"/>
+        <location filename="../sources/printdialog.cpp" line="102"/>
         <source>Left to right and top to bottom</source>
         <translation>Слева направо и сверху вниз</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="101"/>
+        <location filename="../sources/printdialog.cpp" line="103"/>
         <source>Right to left and bottom to top</source>
         <translation>Справа налево и снизу вверх</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="102"/>
+        <location filename="../sources/printdialog.cpp" line="104"/>
         <source>Right to left and top to bottom</source>
         <translation>Справа налево и сверху вниз</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="103"/>
+        <location filename="../sources/printdialog.cpp" line="105"/>
         <source>Top to bottom and left to right</source>
         <translation>Сверху вниз и слева направо</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="104"/>
+        <location filename="../sources/printdialog.cpp" line="106"/>
         <source>Top to bottom and right to left</source>
         <translation>Сверху вниз и справа налево</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="107"/>
+        <location filename="../sources/printdialog.cpp" line="109"/>
         <source>Number-up layout:</source>
         <translation>Порядок страниц</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="111"/>
+        <location filename="../sources/printdialog.cpp" line="113"/>
         <source>Extended options</source>
         <translation>Дополнительные параметры</translation>
     </message>

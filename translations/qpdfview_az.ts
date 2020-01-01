@@ -1266,117 +1266,122 @@
 <context>
     <name>qpdfview::PrintDialog</name>
     <message>
-        <location filename="../sources/printdialog.cpp" line="65"/>
+        <location filename="../sources/printdialog.cpp" line="66"/>
         <source>Fit to page:</source>
         <translation>Səhifəyə uyğunlaşdır:</translation>
     </message>
     <message>
         <location filename="../sources/printdialog.cpp" line="71"/>
+        <source>e.g. 3-4,7,8,9-11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sources/printdialog.cpp" line="73"/>
         <source>Page ranges:</source>
         <translation>Səhifə aralığı:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="78"/>
+        <location filename="../sources/printdialog.cpp" line="80"/>
         <source>All pages</source>
         <translation>Bütün səhifələr</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="79"/>
+        <location filename="../sources/printdialog.cpp" line="81"/>
         <source>Even pages</source>
         <translation>Cüt səhifələr</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="80"/>
+        <location filename="../sources/printdialog.cpp" line="82"/>
         <source>Odd pages</source>
         <translation>Tək səhifələr</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="83"/>
+        <location filename="../sources/printdialog.cpp" line="85"/>
         <source>Page set:</source>
         <translation>Səhifələr:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="86"/>
+        <location filename="../sources/printdialog.cpp" line="88"/>
         <source>Single page</source>
         <translation>Bir səhifə</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="87"/>
+        <location filename="../sources/printdialog.cpp" line="89"/>
         <source>Two pages</source>
         <translation>İki səhifə</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="88"/>
+        <location filename="../sources/printdialog.cpp" line="90"/>
         <source>Four pages</source>
         <translation>Dörd səhifə</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="89"/>
+        <location filename="../sources/printdialog.cpp" line="91"/>
         <source>Six pages</source>
         <translation>Altı səhifə</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="90"/>
+        <location filename="../sources/printdialog.cpp" line="92"/>
         <source>Nine pages</source>
         <translation>Doqquz səhifə</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="91"/>
+        <location filename="../sources/printdialog.cpp" line="93"/>
         <source>Sixteen pages</source>
         <translation>16 səhifə</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="94"/>
+        <location filename="../sources/printdialog.cpp" line="96"/>
         <source>Number-up:</source>
         <translation>Bir rəqəm yuxarı:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="97"/>
+        <location filename="../sources/printdialog.cpp" line="99"/>
         <source>Bottom to top and left to right</source>
         <translation>Aşağıdan yixarı və soldan sağa</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="98"/>
+        <location filename="../sources/printdialog.cpp" line="100"/>
         <source>Bottom to top and right to left</source>
         <translation>Aşağıdan yuxarı və sağdan sola</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="99"/>
+        <location filename="../sources/printdialog.cpp" line="101"/>
         <source>Left to right and bottom to top</source>
         <translation>Soldan sağa və aşağıdan yuxarı</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="100"/>
+        <location filename="../sources/printdialog.cpp" line="102"/>
         <source>Left to right and top to bottom</source>
         <translation>Soldan sağa və yuxarıdan aşağı</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="101"/>
+        <location filename="../sources/printdialog.cpp" line="103"/>
         <source>Right to left and bottom to top</source>
         <translation>Sağdan sola və aşağıdan yuxarı</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="102"/>
+        <location filename="../sources/printdialog.cpp" line="104"/>
         <source>Right to left and top to bottom</source>
         <translation>Sağdan sola və yuxarıdan aşağı</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="103"/>
+        <location filename="../sources/printdialog.cpp" line="105"/>
         <source>Top to bottom and left to right</source>
         <translation>Yuxarıdan aşağı və soldan sağa</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="104"/>
+        <location filename="../sources/printdialog.cpp" line="106"/>
         <source>Top to bottom and right to left</source>
         <translation>Yuxarıdan aşağı və sağdan sola</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="107"/>
+        <location filename="../sources/printdialog.cpp" line="109"/>
         <source>Number-up layout:</source>
         <translation>Nömrələr-üstə düzümü:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="111"/>
+        <location filename="../sources/printdialog.cpp" line="113"/>
         <source>Extended options</source>
         <translation>Geniş seçənəklər</translation>
     </message>

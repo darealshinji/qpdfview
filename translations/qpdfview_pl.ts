@@ -1266,117 +1266,122 @@
 <context>
     <name>qpdfview::PrintDialog</name>
     <message>
-        <location filename="../sources/printdialog.cpp" line="65"/>
+        <location filename="../sources/printdialog.cpp" line="66"/>
         <source>Fit to page:</source>
         <translation>Dopasuj do strony:</translation>
     </message>
     <message>
         <location filename="../sources/printdialog.cpp" line="71"/>
+        <source>e.g. 3-4,7,8,9-11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sources/printdialog.cpp" line="73"/>
         <source>Page ranges:</source>
         <translation>Zakres stron:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="78"/>
+        <location filename="../sources/printdialog.cpp" line="80"/>
         <source>All pages</source>
         <translation>Wszystkie strony</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="79"/>
+        <location filename="../sources/printdialog.cpp" line="81"/>
         <source>Even pages</source>
         <translation>Parzyste strony</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="80"/>
+        <location filename="../sources/printdialog.cpp" line="82"/>
         <source>Odd pages</source>
         <translation>Nieparzyste strony</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="83"/>
+        <location filename="../sources/printdialog.cpp" line="85"/>
         <source>Page set:</source>
         <translation>Wybór stron:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="86"/>
+        <location filename="../sources/printdialog.cpp" line="88"/>
         <source>Single page</source>
         <translation>Pojedyncza strona</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="87"/>
+        <location filename="../sources/printdialog.cpp" line="89"/>
         <source>Two pages</source>
         <translation>Dwie strony</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="88"/>
+        <location filename="../sources/printdialog.cpp" line="90"/>
         <source>Four pages</source>
         <translation>Cztery strony</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="89"/>
+        <location filename="../sources/printdialog.cpp" line="91"/>
         <source>Six pages</source>
         <translation>Sześć stron</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="90"/>
+        <location filename="../sources/printdialog.cpp" line="92"/>
         <source>Nine pages</source>
         <translation>Dziewięć stron</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="91"/>
+        <location filename="../sources/printdialog.cpp" line="93"/>
         <source>Sixteen pages</source>
         <translation>Szesnaście stron</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="94"/>
+        <location filename="../sources/printdialog.cpp" line="96"/>
         <source>Number-up:</source>
         <translation>Stron na arkusz:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="97"/>
+        <location filename="../sources/printdialog.cpp" line="99"/>
         <source>Bottom to top and left to right</source>
         <translation>Od dołu do góry i od lewej do prawej</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="98"/>
+        <location filename="../sources/printdialog.cpp" line="100"/>
         <source>Bottom to top and right to left</source>
         <translation>Od dołu do góry i od prawej do lewej</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="99"/>
+        <location filename="../sources/printdialog.cpp" line="101"/>
         <source>Left to right and bottom to top</source>
         <translation>Od lewej do prawej i od dołu do góry</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="100"/>
+        <location filename="../sources/printdialog.cpp" line="102"/>
         <source>Left to right and top to bottom</source>
         <translation>Od lewej do prawej i od góry do dołu</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="101"/>
+        <location filename="../sources/printdialog.cpp" line="103"/>
         <source>Right to left and bottom to top</source>
         <translation>Od prawej do lewej i od dołu do góry</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="102"/>
+        <location filename="../sources/printdialog.cpp" line="104"/>
         <source>Right to left and top to bottom</source>
         <translation>Od prawej do lewej i od góry do dołu</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="103"/>
+        <location filename="../sources/printdialog.cpp" line="105"/>
         <source>Top to bottom and left to right</source>
         <translation>Od góry do dołu i od lewej do prawej</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="104"/>
+        <location filename="../sources/printdialog.cpp" line="106"/>
         <source>Top to bottom and right to left</source>
         <translation>Od góry do dołu i od prawej do lewej</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="107"/>
+        <location filename="../sources/printdialog.cpp" line="109"/>
         <source>Number-up layout:</source>
         <translation>Kolejność:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="111"/>
+        <location filename="../sources/printdialog.cpp" line="113"/>
         <source>Extended options</source>
         <translation>Opcje rozszerzone</translation>
     </message>

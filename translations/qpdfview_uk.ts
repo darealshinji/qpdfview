@@ -1266,117 +1266,122 @@
 <context>
     <name>qpdfview::PrintDialog</name>
     <message>
-        <location filename="../sources/printdialog.cpp" line="65"/>
+        <location filename="../sources/printdialog.cpp" line="66"/>
         <source>Fit to page:</source>
         <translation>Підлаштовування під аркуш:</translation>
     </message>
     <message>
         <location filename="../sources/printdialog.cpp" line="71"/>
+        <source>e.g. 3-4,7,8,9-11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sources/printdialog.cpp" line="73"/>
         <source>Page ranges:</source>
         <translation>Діапазон сторінок:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="78"/>
+        <location filename="../sources/printdialog.cpp" line="80"/>
         <source>All pages</source>
         <translation>Всі сторінки</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="79"/>
+        <location filename="../sources/printdialog.cpp" line="81"/>
         <source>Even pages</source>
         <translation>Парні сторінки</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="80"/>
+        <location filename="../sources/printdialog.cpp" line="82"/>
         <source>Odd pages</source>
         <translation>Непарні сторінки</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="83"/>
+        <location filename="../sources/printdialog.cpp" line="85"/>
         <source>Page set:</source>
         <translation>Набір сторінок:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="86"/>
+        <location filename="../sources/printdialog.cpp" line="88"/>
         <source>Single page</source>
         <translation>Одна сторінка</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="87"/>
+        <location filename="../sources/printdialog.cpp" line="89"/>
         <source>Two pages</source>
         <translation>Дві сторінки</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="88"/>
+        <location filename="../sources/printdialog.cpp" line="90"/>
         <source>Four pages</source>
         <translation>Чотири сторінки</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="89"/>
+        <location filename="../sources/printdialog.cpp" line="91"/>
         <source>Six pages</source>
         <translation>Шість сторінок</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="90"/>
+        <location filename="../sources/printdialog.cpp" line="92"/>
         <source>Nine pages</source>
         <translation>Дев’ять сторінок</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="91"/>
+        <location filename="../sources/printdialog.cpp" line="93"/>
         <source>Sixteen pages</source>
         <translation>Шістнадцять сторінок</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="94"/>
+        <location filename="../sources/printdialog.cpp" line="96"/>
         <source>Number-up:</source>
         <translation>Розташовування:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="97"/>
+        <location filename="../sources/printdialog.cpp" line="99"/>
         <source>Bottom to top and left to right</source>
         <translation>Знизу вгору і зліва праворуч</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="98"/>
+        <location filename="../sources/printdialog.cpp" line="100"/>
         <source>Bottom to top and right to left</source>
         <translation>Знизу вгору і справа ліворуч</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="99"/>
+        <location filename="../sources/printdialog.cpp" line="101"/>
         <source>Left to right and bottom to top</source>
         <translation>Зліва праворуч і знизу вгору</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="100"/>
+        <location filename="../sources/printdialog.cpp" line="102"/>
         <source>Left to right and top to bottom</source>
         <translation>Зліва праворуч і згори взниз</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="101"/>
+        <location filename="../sources/printdialog.cpp" line="103"/>
         <source>Right to left and bottom to top</source>
         <translation>Справа ліворуч і знизу вгору</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="102"/>
+        <location filename="../sources/printdialog.cpp" line="104"/>
         <source>Right to left and top to bottom</source>
         <translation>Справа ліворуч і згори вниз</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="103"/>
+        <location filename="../sources/printdialog.cpp" line="105"/>
         <source>Top to bottom and left to right</source>
         <translation>Згори вниз і зліва праворуч</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="104"/>
+        <location filename="../sources/printdialog.cpp" line="106"/>
         <source>Top to bottom and right to left</source>
         <translation>Згори вниз і справа ліворуч</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="107"/>
+        <location filename="../sources/printdialog.cpp" line="109"/>
         <source>Number-up layout:</source>
         <translation>Компонування сторінок:</translation>
     </message>
     <message>
-        <location filename="../sources/printdialog.cpp" line="111"/>
+        <location filename="../sources/printdialog.cpp" line="113"/>
         <source>Extended options</source>
         <translation>Додаткові параметри</translation>
     </message>
