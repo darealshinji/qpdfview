@@ -25,7 +25,6 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <iostream>
 
-#include <QApplication>
 #include <QDebug>
 #include <QDir>
 #include <QInputDialog>
@@ -57,6 +56,7 @@ typedef synctex_node_t synctex_node_p;
 
 #endif // WITH_SYNCTEX
 
+#include "application.h"
 #include "documentview.h"
 #include "database.h"
 #include "mainwindow.h"
@@ -461,21 +461,7 @@ int main(int argc, char** argv)
 
     parseWorkbenchExtendedSelection(argc, argv);
 
-    QApplication application(argc, argv);
-
-    QApplication::setOrganizationDomain("local.qpdfview");
-    QApplication::setOrganizationName("qpdfview");
-    QApplication::setApplicationName("qpdfview");
-
-    QApplication::setApplicationVersion(APPLICATION_VERSION);
-
-    QApplication::setWindowIcon(QIcon(":icons/qpdfview"));
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-
-    QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-
-#endif // QT_VERSION
+    Application application(argc, argv);
 
     loadTranslators();
 
@@ -484,6 +470,8 @@ int main(int argc, char** argv)
     resolveSourceReferences();
 
     activateUniqueInstance();
+
+    application.setMainWindow(mainWindow);
 
     prepareSignalHandler();
 

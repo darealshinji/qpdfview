@@ -3103,7 +3103,7 @@ QAction* MainWindow::createAction(const QString& text, const QString& objectName
     QAction* action = new QAction(text, this);
 
     action->setObjectName(objectName);
-    action->setIcon(icon);
+    setVisibleIcon(action, icon, !checkable);
     action->setShortcuts(shortcuts);
 
     if(!objectName.isEmpty())
@@ -3120,8 +3120,6 @@ QAction* MainWindow::createAction(const QString& text, const QString& objectName
     }
     else
     {
-        action->setIconVisibleInMenu(true);
-
         connect(action, SIGNAL(triggered()), member);
     }
 

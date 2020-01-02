@@ -419,6 +419,20 @@ inline QIcon loadIconWithFallback(const QString& name)
     return icon;
 }
 
+inline void setVisibleIcon(QAction* action, const QIcon& icon, bool visible = true)
+{
+    action->setIcon(icon);
+
+#ifndef Q_OS_MAC
+
+    if(visible)
+    {
+        action->setIconVisibleInMenu(true);
+    }
+
+#endif // Q_OS_MAC
+}
+
 void openInNewWindow(const QString& filePath, int page);
 
 } // qpdfview

@@ -39,13 +39,11 @@ BookmarkMenu::BookmarkMenu(const QFileInfo& fileInfo, QWidget* parent) : QMenu(p
     action->setData(fileInfo.absoluteFilePath());
 
     m_openAction = addAction(tr("&Open"));
-    m_openAction->setIcon(loadIconWithFallback(QLatin1String("document-open")));
-    m_openAction->setIconVisibleInMenu(true);
+    setVisibleIcon(m_openAction, loadIconWithFallback(QLatin1String("document-open")));
     connect(m_openAction, SIGNAL(triggered()), SLOT(on_open_triggered()));
 
     m_openInNewTabAction = addAction(tr("Open in new &tab"));
-    m_openInNewTabAction->setIcon(loadIconWithFallback(QLatin1String("tab-new")));
-    m_openInNewTabAction->setIconVisibleInMenu(true);
+    setVisibleIcon(m_openInNewTabAction, loadIconWithFallback(QLatin1String("tab-new")));
     connect(m_openInNewTabAction, SIGNAL(triggered()), SLOT(on_openInNewTab_triggered()));
 
     m_jumpToPageActionGroup = new QActionGroup(this);
@@ -78,8 +76,7 @@ void BookmarkMenu::addJumpToPageAction(int page, const QString& label)
     }
 
     QAction* action = new QAction(label, this);
-    action->setIcon(loadIconWithFallback(QLatin1String("go-jump")));
-    action->setIconVisibleInMenu(true);
+    setVisibleIcon(action, loadIconWithFallback(QLatin1String("go-jump")));
     action->setData(page);
 
     insertAction(before, action);
