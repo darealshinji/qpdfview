@@ -3120,7 +3120,12 @@ QAction* MainWindow::createAction(const QString& text, const QString& objectName
     }
     else
     {
+#ifndef Q_OS_MAC
+
+        // On macOS menu icons are not part of the design.
         action->setIconVisibleInMenu(true);
+
+#endif // Q_OS_MAC
 
         connect(action, SIGNAL(triggered()), member);
     }

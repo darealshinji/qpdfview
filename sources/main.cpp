@@ -28,6 +28,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 #include <QDebug>
 #include <QDir>
+#include <QFileOpenEvent>
 #include <QInputDialog>
 #include <QLibraryInfo>
 #include <QMessageBox>
@@ -57,6 +58,7 @@ typedef synctex_node_t synctex_node_p;
 
 #endif // WITH_SYNCTEX
 
+#include "application.h"
 #include "documentview.h"
 #include "database.h"
 #include "mainwindow.h"
@@ -453,6 +455,48 @@ void prepareSignalHandler()
 
 } // anonymous
 
+namespace qpdfview {
+
+Application::Application(int& argc, char** argv) : QApplication(argc, argv)
+{
+    setOrganizationDomain("local.qpdfview");
+    setOrganizationName("qpdfview");
+    setApplicationName("qpdfview");
+
+    setApplicationVersion(APPLICATION_VERSION);
+
+#ifdef Q_OS_MAC
+
+    // On macOS menu icons should not be shown, and app icons are determined by .app bundle.
+    setAttribute(Qt::AA_DontShowIconsInMenus);
+
+#else
+
+    setWindowIcon(QIcon(":icons/qpdfview"));
+
+#endif // Q_OS_MAC
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+
+    setAttribute(Qt::AA_UseHighDpiPixmaps);
+
+#endif // QT_VERSION
+}
+
+bool Application::event(QEvent *event)
+{
+    if(event->type() == QEvent::FileOpen)
+    {
+        // On macOS and potentially other systems this handles "Open With" and "Drag & Drop" after exec().
+        QFileOpenEvent *openEvent = static_cast< QFileOpenEvent * >(event);
+        mainWindow->jumpToPageOrOpenInNewTab(openEvent->file(), -1, true, QRectF(), quiet);
+    }
+
+    return QApplication::event(event);
+}
+
+} // qpdfview
+
 int main(int argc, char** argv)
 {
     qRegisterMetaType< QList< QRectF > >("QList<QRectF>");
@@ -461,21 +505,7 @@ int main(int argc, char** argv)
 
     parseWorkbenchExtendedSelection(argc, argv);
 
-    QApplication application(argc, argv);
-
-    QApplication::setOrganizationDomain("local.qpdfview");
-    QApplication::setOrganizationName("qpdfview");
-    QApplication::setApplicationName("qpdfview");
-
-    QApplication::setApplicationVersion(APPLICATION_VERSION);
-
-    QApplication::setWindowIcon(QIcon(":icons/qpdfview"));
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-
-    QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-
-#endif // QT_VERSION
+    Application application(argc, argv);
 
     loadTranslators();
 

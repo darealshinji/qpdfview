@@ -35,7 +35,8 @@ HEADERS += \
     sources/bookmarkmenu.h \
     sources/bookmarkdialog.h \
     sources/database.h \
-    sources/mainwindow.h
+    sources/mainwindow.h \
+    sources/application.h
 
 SOURCES += \
     sources/settings.cpp \
