@@ -64,7 +64,8 @@ SOURCES += \
     sources/bookmarkmodel.cpp \
     sources/database.cpp \
     sources/mainwindow.cpp \
-    sources/main.cpp
+    sources/main.cpp \
+    sources/application.cpp
 
 DEFINES += APPLICATION_VERSION=\\\"$${APPLICATION_VERSION}\\\"
 

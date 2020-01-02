@@ -28,12 +28,17 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 namespace qpdfview
 {
 
+class MainWindow;
+
 class Application : public QApplication
 {
     Q_OBJECT
 
+    MainWindow* mainWindow;
+
 public:
     Application(int& argc, char** argv);
+    void setMainWindow(MainWindow* window);
     virtual bool event(QEvent* event);
 };
 

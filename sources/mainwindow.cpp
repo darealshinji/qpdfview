@@ -3103,7 +3103,7 @@ QAction* MainWindow::createAction(const QString& text, const QString& objectName
     QAction* action = new QAction(text, this);
 
     action->setObjectName(objectName);
-    action->setIcon(icon);
+    setVisibleIcon(action, icon, !checkable);
     action->setShortcuts(shortcuts);
 
     if(!objectName.isEmpty())
@@ -3120,13 +3120,6 @@ QAction* MainWindow::createAction(const QString& text, const QString& objectName
     }
     else
     {
-#ifndef Q_OS_MAC
-
-        // On macOS menu icons are not part of the design.
-        action->setIconVisibleInMenu(true);
-
-#endif // Q_OS_MAC
-
         connect(action, SIGNAL(triggered()), member);
     }
 
