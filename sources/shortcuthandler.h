@@ -59,6 +59,18 @@ public:
     bool matchesMoveLeft(const QKeySequence& keySequence) const;
     bool matchesMoveRight(const QKeySequence& keySequence) const;
 
+    static QKeySequence defaultZoomIn();
+    static QKeySequence defaultZoomOut();
+    static QKeySequence defaultRotateLeft();
+    static QKeySequence defaultRotateRight();
+    static QKeySequence defaultPreviousPage();
+    static QKeySequence defaultNextPage();
+    static QKeySequence defaultJumpToPage();
+    static QKeySequence defaultFullscreen();
+    static QKeySequence defaultPresentation();
+    static QKeySequence defaultPreviousTab();
+    static QKeySequence defaultNextTab();
+
 public slots:
     bool submit();
     void revert();

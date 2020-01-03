@@ -189,6 +189,105 @@ bool ShortcutHandler::setData(const QModelIndex& index, const QVariant& value, i
     return false;
 }
 
+QKeySequence ShortcutHandler::defaultZoomIn()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::CTRL + Qt::Key_Plus);
+#else
+    return QKeySequence(Qt::CTRL + Qt::Key_Up);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultZoomOut()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::CTRL + Qt::Key_Minus);
+#else
+    return QKeySequence(Qt::CTRL + Qt::Key_Down);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultRotateLeft()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::ALT + Qt::Key_Left);
+#else
+    return QKeySequence(Qt::CTRL + Qt::Key_Left);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultRotateRight()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::ALT + Qt::Key_Right);
+#else
+    return QKeySequence(Qt::CTRL + Qt::Key_Right);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultPreviousPage()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::ALT + Qt::Key_Up);
+#else
+    return QKeySequence(Qt::Key_Backspace);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultNextPage()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::ALT + Qt::Key_Down);
+#else
+    return QKeySequence(Qt::Key_Space);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultJumpToPage()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_G);
+#else
+    return QKeySequence(Qt::CTRL + Qt::Key_J);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultFullscreen()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::CTRL + Qt::META + Qt::Key_F);
+#else
+    return QKeySequence(Qt::Key_F11);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultPresentation()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_F);
+#else
+    return QKeySequence(Qt::Key_F12);
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultPreviousTab()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::META + Qt::SHIFT + Qt::Key_Tab);
+#else
+    return QKeySequence::PreviousChild;
+#endif
+}
+
+QKeySequence ShortcutHandler::defaultNextTab()
+{
+#ifdef Q_OS_MAC
+    return QKeySequence(Qt::META + Qt::Key_Tab);
+#else
+    return QKeySequence::NextChild;
+#endif
+}
+
 bool ShortcutHandler::matchesSkipBackward(const QKeySequence& keySequence) const
 {
     return matches(keySequence, m_skipBackwardAction->shortcuts());
