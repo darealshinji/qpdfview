@@ -2,7 +2,7 @@ This is my personal Github mirror of the qpdfview source code.
 This branch here only contains build files for Windows and Linux AppImages.
 
 Please only report issues that are specific to the binaries I've built or
-related to the build files form this branch here.
+related to the build files from this branch here.
 For generic issues with qpdfview please contact the original developers on Launchpad:
 https://bugs.launchpad.net/qpdfview
 
