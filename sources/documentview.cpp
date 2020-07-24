@@ -2174,16 +2174,32 @@ void DocumentView::keyPressEvent(QKeyEvent* event)
             }
         }
 
-        if((maskedKey == Qt::Key_Up && verticalScrollBar()->minimum() == verticalScrollBar()->maximum()) ||
-           (maskedKey == Qt::Key_Left && !horizontalScrollBar()->isVisible()))
+        if(maskedKey == Qt::Key_Up && verticalScrollBar()->value() == verticalScrollBar()->minimum() && m_currentPage != 1)
+        {
+            previousPage();
+
+            verticalScrollBar()->setValue(verticalScrollBar()->maximum());
+
+            event->accept();
+            return;
+        }
+        else if(maskedKey == Qt::Key_Left && !horizontalScrollBar()->isVisible())
         {
             previousPage();
 
             event->accept();
             return;
         }
-        else if((maskedKey == Qt::Key_Down && verticalScrollBar()->minimum() == verticalScrollBar()->maximum()) ||
-                (maskedKey == Qt::Key_Right && !horizontalScrollBar()->isVisible()))
+        else if(maskedKey == Qt::Key_Down && verticalScrollBar()->value() == verticalScrollBar()->maximum() && m_currentPage != m_layout->currentPage(m_pages.count()))
+        {
+            nextPage();
+
+            verticalScrollBar()->setValue(verticalScrollBar()->minimum());
+
+            event->accept();
+            return;
+        }
+        else if(maskedKey == Qt::Key_Right && !horizontalScrollBar()->isVisible())
         {
             nextPage();
 
