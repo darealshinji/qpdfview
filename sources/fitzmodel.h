@@ -30,8 +30,8 @@ extern "C"
 
 #include <mupdf/fitz/context.h>
 
-typedef struct fz_page_s fz_page;
-typedef struct fz_document_s fz_document;
+typedef struct fz_page fz_page;
+typedef struct fz_document fz_document;
 
 }
 

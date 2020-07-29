@@ -251,7 +251,7 @@ QList< Link* > FitzPage::links() const
             {
                 float left;
                 float top;
-                const int page = fz_resolve_link(m_parent->m_context, m_parent->m_document, link->uri, &left, &top);
+                const int page = fz_resolve_link(m_parent->m_context, m_parent->m_document, link->uri, &left, &top).page;
 
                 if (page != -1)
                 {
