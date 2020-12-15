@@ -335,6 +335,7 @@ void Settings::DocumentView::sync()
 
     m_pagesPerRow = m_settings->value("documentView/pagesPerRow", Defaults::DocumentView::pagesPerRow()).toInt();
 
+    m_relativeJumps = m_settings->value("documentView/relativeJumps", Defaults::DocumentView::relativeJumps()).toBool();
     m_minimalScrolling = m_settings->value("documentView/minimalScrolling", Defaults::DocumentView::minimalScrolling()).toBool();
 
     m_highlightCurrentThumbnail = m_settings->value("documentView/highlightCurrentThumbnail", Defaults::DocumentView::highlightCurrentThumbnail()).toBool();
@@ -398,6 +399,12 @@ void Settings::DocumentView::setPagesPerRow(int pagesPerRow)
         m_pagesPerRow = pagesPerRow;
         m_settings->setValue("documentView/pagesPerRow", pagesPerRow);
     }
+}
+
+void Settings::DocumentView::setRelativeJumps(bool relativeJumps)
+{
+    m_relativeJumps = relativeJumps;
+    m_settings->setValue("documentView/relativeJumps", relativeJumps);
 }
 
 void Settings::DocumentView::setMinimalScrolling(bool minimalScrolling)

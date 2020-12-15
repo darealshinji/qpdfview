@@ -292,6 +292,9 @@ void SettingsDialog::createBehaviorTab()
                                                   s_settings->mainWindow().synchronizeSplitViews());
 
 
+    m_relativeJumpsCheckBox = addCheckBox(m_behaviorLayout, tr("Relative jumps:"), QString(),
+                                          s_settings->documentView().relativeJumps());
+
     m_minimalScrollingCheckBox = addCheckBox(m_behaviorLayout, tr("Minimal scrolling:"), QString(),
                                              s_settings->documentView().minimalScrolling());
 
@@ -336,6 +339,7 @@ void SettingsDialog::acceptBehaivorTab()
     s_settings->mainWindow().setSynchronizeOutlineView(m_synchronizeOutlineViewCheckBox->isChecked());
     s_settings->mainWindow().setSynchronizeSplitViews(m_synchronizeSplitViewsCheckBox->isChecked());
 
+    s_settings->documentView().setRelativeJumps(m_relativeJumpsCheckBox->isChecked());
     s_settings->documentView().setMinimalScrolling(m_minimalScrollingCheckBox->isChecked());
     s_settings->documentView().setZoomFactor(m_zoomFactorSpinBox->value());
     s_settings->documentView().setParallelSearchExecution(m_parallelSearchExecutionCheckBox->isChecked());
@@ -367,6 +371,7 @@ void SettingsDialog::resetBehaviorTab()
     m_synchronizeOutlineViewCheckBox->setChecked(Defaults::MainWindow::synchronizeOutlineView());
     m_synchronizeSplitViewsCheckBox->setChecked(Defaults::MainWindow::synchronizeSplitViews());
 
+    m_relativeJumpsCheckBox->setChecked(Defaults::DocumentView::relativeJumps());
     m_minimalScrollingCheckBox->setChecked(Defaults::DocumentView::minimalScrolling());
     m_zoomFactorSpinBox->setValue(Defaults::DocumentView::zoomFactor());
     m_parallelSearchExecutionCheckBox->setChecked(Defaults::DocumentView::parallelSearchExecution());

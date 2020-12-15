@@ -1567,22 +1567,30 @@ bool DocumentView::print(QPrinter* printer, const PrintOptions& printOptions)
 
 void DocumentView::previousPage()
 {
-    jumpToPage(m_layout->previousPage(m_currentPage));
+    const qreal leftAndTop = s_settings->documentView().relativeJumps() ? qQNaN() : 0.0;
+
+    jumpToPage(m_layout->previousPage(m_currentPage), true, leftAndTop, leftAndTop);
 }
 
 void DocumentView::nextPage()
 {
-    jumpToPage(m_layout->nextPage(m_currentPage, m_pages.count()));
+    const qreal leftAndTop = s_settings->documentView().relativeJumps() ? qQNaN() : 0.0;
+
+    jumpToPage(m_layout->nextPage(m_currentPage, m_pages.count()), true, leftAndTop, leftAndTop);
 }
 
 void DocumentView::firstPage()
 {
-    jumpToPage(1);
+    const qreal leftAndTop = s_settings->documentView().relativeJumps() ? qQNaN() : 0.0;
+
+    jumpToPage(1, true, leftAndTop, leftAndTop);
 }
 
 void DocumentView::lastPage()
 {
-    jumpToPage(m_pages.count());
+    const qreal leftAndTop = s_settings->documentView().relativeJumps() ? qQNaN() : 0.0;
+
+    jumpToPage(m_pages.count(), leftAndTop, leftAndTop);
 }
 
 void DocumentView::jumpToPage(int page, bool trackChange, qreal newLeft, qreal newTop)

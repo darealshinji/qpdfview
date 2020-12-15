@@ -188,6 +188,9 @@ public:
         int pagesPerRow() const { return m_pagesPerRow; }
         void setPagesPerRow(int pagesPerRow);
 
+        bool relativeJumps() const { return m_relativeJumps; }
+        void setRelativeJumps(bool relativeJumps);
+
         bool minimalScrolling() const { return m_minimalScrolling; }
         void setMinimalScrolling(bool minimalScrolling);
 
@@ -282,6 +285,7 @@ public:
 
         int m_pagesPerRow;
 
+        bool m_relativeJumps;
         bool m_minimalScrolling;
 
         bool m_highlightCurrentThumbnail;
@@ -562,6 +566,7 @@ public:
 
         static int pagesPerRow() { return 3; }
 
+        static bool relativeJumps() { return true; }
         static bool minimalScrolling() { return false; }
 
         static bool highlightCurrentThumbnail() { return false; }

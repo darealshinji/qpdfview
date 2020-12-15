@@ -104,6 +104,7 @@ private:
     QCheckBox* m_synchronizeOutlineViewCheckBox;
     QCheckBox* m_synchronizeSplitViewsCheckBox;
 
+    QCheckBox* m_relativeJumpsCheckBox;
     QCheckBox* m_minimalScrollingCheckBox;
     QDoubleSpinBox* m_zoomFactorSpinBox;
     QCheckBox* m_parallelSearchExecutionCheckBox;
