@@ -156,24 +156,34 @@ QRectF trimMargins(QRgb paperColor, const QImage& image)
                   static_cast< qreal >(bottom - top) / height);
 }
 
-void invertLight(QImage& image)
+void invertLightness(QImage& image)
 {
     QRgb* const begin = reinterpret_cast< QRgb* >(image.bits());
     QRgb* const end = reinterpret_cast< QRgb* >(image.bits() + image.byteCount());
 
+    // This is a transformation in RGB space that mirrors the color coordinates
+    // about the plane that intersects the mid point of the cube (0.5, 0.5, 0.5)
+    // and is perpendicular to the diagonal vector (1,1,1).
+    //
+    // Each color-coordinate is moved along the (1,1,1)-vector twice its
+    // distance from this mid plane.
+    //
+    // Moving a color-coordinate along (1,1,1) preserves the "hue" 
+    // but changes the "lightness" of the color.
+    
     for(QRgb* pointer = begin; pointer != end; ++pointer)
     {
-        const int alpha = qAlpha(*pointer);	
+        const int alpha = qAlpha(*pointer);
         int r = qRed(*pointer);
-	int g = qGreen(*pointer);
+        int g = qGreen(*pointer);
         int b = qBlue(*pointer);
-	int d = (int) round((384- r - g - b) / 1.5);
-	r = r + d;
-	g = g + d;
-	b = b + d;
-	r = (r > 255) ? 255 : (r < 0 ? 0 : r);
-	g = (g > 255) ? 255 : (g < 0 ? 0 : g);
-	b = (b > 255) ? 255 : (b < 0 ? 0 : b);
+        int d = (int) round((382.5 - r - g - b) / 1.5);
+        r = r + d;
+        g = g + d;
+        b = b + d;
+        r = qBound(0, r, 255);
+        g = qBound(0, g, 255);
+        b = qBound(0, b, 255);
         *pointer = qRgba(r, g, b, alpha);
     }
 }
@@ -505,11 +515,11 @@ void RenderTask::run()
         convertToGrayscale(image);
     }
 
-    if(m_renderParam.invertLight())
+    if(m_renderParam.invertLightness())
     {
         CANCELLATION_POINT
 
-        invertLight(image);
+        invertLightness(image);
     }
 
     if(m_renderParam.invertColors())

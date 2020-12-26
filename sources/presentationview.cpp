@@ -172,7 +172,7 @@ void PresentationView::setRenderFlags(qpdfview::RenderFlags renderFlags)
         prepareScene();
         prepareView();
 
-        if(changedFlags.testFlag(InvertColors) || changedFlags.testFlag(InvertLight))
+        if(changedFlags.testFlag(InvertColors) || changedFlags.testFlag(InvertLightness))
         {
             prepareBackground();
         }
@@ -568,12 +568,10 @@ void PresentationView::prepareBackground()
         backgroundColor.setRgb(~backgroundColor.rgb());
     }
 
-    /*
-    if(m_renderFlags.testFlag(InvertLight))
+    if(m_renderFlags.testFlag(InvertLightness))
     {
         backgroundColor.setRgb(~backgroundColor.rgb());
     }
-    */
     
     scene()->setBackgroundBrush(QBrush(backgroundColor));
 }

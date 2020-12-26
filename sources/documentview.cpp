@@ -814,11 +814,11 @@ DocumentView::DocumentView(QWidget* parent) : QGraphicsView(parent),
         m_renderFlags |= InvertColors;
     }
 
-    if(s_settings->documentView().invertLight())
+    if(s_settings->documentView().invertLightness())
     {
-        m_renderFlags |= InvertLight;
+        m_renderFlags |= InvertLightness;
     }
-
+    
     if(s_settings->documentView().convertToGrayscale())
     {
         m_renderFlags |= ConvertToGrayscale;
@@ -1141,14 +1141,14 @@ void DocumentView::setRenderFlags(qpdfview::RenderFlags renderFlags)
 
             s_settings->documentView().setInvertColors(invertColors());
         }
-	
-	if(changedFlags.testFlag(InvertLight))
+
+        if(changedFlags.testFlag(InvertLightness))
         {
             prepareBackground();
 
-            emit invertLightChanged(invertLight());
+            emit invertLightnessChanged(invertLightness());
 
-            s_settings->documentView().setInvertLight(invertLight());
+            s_settings->documentView().setInvertLightness(invertLightness());
         }
 
         if(changedFlags.testFlag(ConvertToGrayscale))
@@ -2833,11 +2833,11 @@ void DocumentView::prepareBackground()
     {
         backgroundColor = s_settings->pageItem().paperColor();
 
-        if(invertColors() || invertLight())
+        if(invertColors() || invertLightness())
         {
             backgroundColor.setRgb(~backgroundColor.rgb());
         }
-}
+    }
 
     scene()->setBackgroundBrush(QBrush(backgroundColor));
     m_thumbnailsScene->setBackgroundBrush(QBrush(backgroundColor));

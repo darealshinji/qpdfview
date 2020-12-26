@@ -1182,7 +1182,7 @@ inline void PageItem::paintPage(QPainter* painter, const QRectF& exposedRect) co
 
         QColor paperColor = s_settings->pageItem().paperColor();
 
-	if(m_renderParam.invertLight())
+        if(m_renderParam.invertLightness())
         {
             paperColor.setRgb(~paperColor.rgb());
         }
