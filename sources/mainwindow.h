@@ -121,6 +121,7 @@ protected slots:
     void on_currentTab_renderFlagsChanged(qpdfview::RenderFlags renderFlags);
 
     void on_currentTab_invertColorsChanged(bool invertColors);
+    void on_currentTab_invertLightChanged(bool invertLight);
     void on_currentTab_convertToGrayscaleChanged(bool convertToGrayscale);
     void on_currentTab_trimMarginsChanged(bool trimMargins);
 
@@ -206,6 +207,7 @@ protected slots:
     void on_rotateRight_triggered();
 
     void on_invertColors_triggered(bool checked);
+    void on_invertLight_triggered(bool checked);
     void on_convertToGrayscale_triggered(bool checked);
     void on_trimMargins_triggered(bool checked);
     void on_darkenWithPaperColor_triggered(bool checked);
@@ -405,6 +407,7 @@ private:
     QAction* m_rotateRightAction;
 
     QAction* m_invertColorsAction;
+    QAction* m_invertLightAction;
     QAction* m_convertToGrayscaleAction;
     QAction* m_trimMarginsAction;
     QAction* m_darkenWithPaperColorAction;
@@ -560,6 +563,7 @@ public slots:
     Q_NOREPLY void fitToPageSizeMode(bool checked);
 
     Q_NOREPLY void invertColors(bool checked);
+    Q_NOREPLY void invertLight(bool checked);
     Q_NOREPLY void convertToGrayscale(bool checked);
     Q_NOREPLY void trimMargins(bool checked);
 

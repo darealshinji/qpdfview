@@ -626,6 +626,7 @@ void MainWindow::on_tabWidget_currentChanged()
     m_rotateRightAction->setEnabled(hasCurrent);
 
     m_invertColorsAction->setEnabled(hasCurrent);
+    m_invertLightAction->setEnabled(hasCurrent);
     m_convertToGrayscaleAction->setEnabled(hasCurrent);
     m_trimMarginsAction->setEnabled(hasCurrent);
 
@@ -706,6 +707,7 @@ void MainWindow::on_tabWidget_currentChanged()
         on_currentTab_scaleFactorChanged(tab->scaleFactor());
 
         on_currentTab_invertColorsChanged(tab->invertColors());
+        on_currentTab_invertLightChanged(tab->invertLight());
         on_currentTab_convertToGrayscaleChanged(tab->convertToGrayscale());
         on_currentTab_trimMarginsChanged(tab->trimMargins());
 
@@ -755,6 +757,7 @@ void MainWindow::on_tabWidget_currentChanged()
         m_fitToPageWidthModeAction->setChecked(false);
 
         m_invertColorsAction->setChecked(false);
+        m_invertLightAction->setChecked(false);
         m_convertToGrayscaleAction->setChecked(false);
         m_trimMarginsAction->setChecked(false);
 
@@ -1084,6 +1087,13 @@ void MainWindow::on_currentTab_invertColorsChanged(bool invertColors)
     ONLY_IF_SENDER_IS_CURRENT_TAB
 
     m_invertColorsAction->setChecked(invertColors);
+}
+
+void MainWindow::on_currentTab_invertLightChanged(bool invertLight)
+{
+    ONLY_IF_SENDER_IS_CURRENT_TAB
+
+    m_invertLightAction->setChecked(invertLight);
 }
 
 void MainWindow::on_currentTab_convertToGrayscaleChanged(bool convertToGrayscale)
@@ -1768,6 +1778,11 @@ void MainWindow::on_rotateRight_triggered()
 void MainWindow::on_invertColors_triggered(bool checked)
 {
     currentTab()->setInvertColors(checked);
+}
+
+void MainWindow::on_invertLight_triggered(bool checked)
+{
+    currentTab()->setInvertLight(checked);
 }
 
 void MainWindow::on_convertToGrayscale_triggered(bool checked)
@@ -2783,6 +2798,7 @@ void MainWindow::connectTab(DocumentView* tab)
     connect(tab, SIGNAL(renderFlagsChanged(qpdfview::RenderFlags)), SLOT(on_currentTab_renderFlagsChanged(qpdfview::RenderFlags)));
 
     connect(tab, SIGNAL(invertColorsChanged(bool)), SLOT(on_currentTab_invertColorsChanged(bool)));
+    connect(tab, SIGNAL(invertLightChanged(bool)), SLOT(on_currentTab_invertLightChanged(bool)));
     connect(tab, SIGNAL(convertToGrayscaleChanged(bool)), SLOT(on_currentTab_convertToGrayscaleChanged(bool)));
     connect(tab, SIGNAL(trimMarginsChanged(bool)), SLOT(on_currentTab_trimMarginsChanged(bool)));
 
@@ -3213,6 +3229,7 @@ void MainWindow::createActions()
     m_rotateRightAction = createAction(tr("Rotate &right"), QLatin1String("rotateRight"), QLatin1String("object-rotate-right"), ShortcutHandler::defaultRotateRight(), SLOT(on_rotateRight_triggered()));
 
     m_invertColorsAction = createAction(tr("Invert colors"), QLatin1String("invertColors"), QIcon(), QKeySequence(Qt::CTRL + Qt::Key_I), SLOT(on_invertColors_triggered(bool)), true);
+    m_invertLightAction = createAction(tr("Invert light"), QLatin1String("invertLight"), QIcon(), QKeySequence(Qt::CTRL + Qt::Key_L), SLOT(on_invertLight_triggered(bool)), true);
     m_convertToGrayscaleAction = createAction(tr("Convert to grayscale"), QLatin1String("convertToGrayscale"), QIcon(), QKeySequence(Qt::CTRL + Qt::Key_U), SLOT(on_convertToGrayscale_triggered(bool)), true);
     m_trimMarginsAction = createAction(tr("Trim margins"), QLatin1String("trimMargins"), QIcon(), QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_U), SLOT(on_trimMargins_triggered(bool)), true);
 
@@ -3530,7 +3547,7 @@ void MainWindow::createMenus()
     m_viewMenu->addSeparator();
     m_viewMenu->addActions(QList< QAction* >() << m_rotateLeftAction << m_rotateRightAction);
     m_viewMenu->addSeparator();
-    m_viewMenu->addActions(QList< QAction* >() << m_invertColorsAction << m_convertToGrayscaleAction << m_trimMarginsAction);
+    m_viewMenu->addActions(QList< QAction* >() << m_invertColorsAction << m_invertLightAction << m_convertToGrayscaleAction << m_trimMarginsAction);
 
     m_compositionModeMenu = m_viewMenu->addMenu(tr("Composition"));
     m_compositionModeMenu->addAction(m_darkenWithPaperColorAction);
@@ -3787,6 +3804,13 @@ void MainWindowAdaptor::invertColors(bool checked)
     ONLY_IF_CURRENT_TAB
 
     mainWindow()->on_invertColors_triggered(checked);
+}
+
+void MainWindowAdaptor::invertLight(bool checked)
+{
+    ONLY_IF_CURRENT_TAB
+
+    mainWindow()->on_invertLight_triggered(checked);
 }
 
 void MainWindowAdaptor::convertToGrayscale(bool checked)

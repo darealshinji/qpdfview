@@ -620,6 +620,16 @@ void Settings::DocumentView::setInvertColors(bool invertColors)
     m_settings->setValue("documentView/invertColors", invertColors);
 }
 
+bool Settings::DocumentView::invertLight() const
+{
+    return m_settings->value("documentView/invertLight", Defaults::DocumentView::invertLight()).toBool();
+}
+
+void Settings::DocumentView::setInvertLight(bool invertLight)
+{
+    m_settings->setValue("documentView/invertLight", invertLight);
+}
+
 bool Settings::DocumentView::convertToGrayscale() const
 {
     return m_settings->value("documentView/convertToGrayscale", Defaults::DocumentView::convertToGrayscale()).toBool();

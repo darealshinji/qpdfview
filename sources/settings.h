@@ -259,6 +259,9 @@ public:
         bool invertColors() const;
         void setInvertColors(bool invertColors);
 
+        bool invertLight() const;
+        void setInvertLight(bool invertLight);
+
         bool convertToGrayscale() const;
         void setConvertToGrayscale(bool convertToGrayscale);
 
@@ -601,6 +604,7 @@ public:
         static Rotation rotation() { return RotateBy0; }
 
         static bool invertColors() { return false; }
+        static bool invertLight() { return false; }
         static bool convertToGrayscale() { return false; }
         static bool trimMargins() { return false; }
 

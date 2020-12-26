@@ -21,6 +21,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "rendertask.h"
 
+#include <cmath>
 #include <QApplication>
 #include <qmath.h>
 #include <QPainter>
@@ -153,6 +154,28 @@ QRectF trimMargins(QRgb paperColor, const QImage& image)
                   static_cast< qreal >(top) / height,
                   static_cast< qreal >(right - left) / width,
                   static_cast< qreal >(bottom - top) / height);
+}
+
+void invertLight(QImage& image)
+{
+    QRgb* const begin = reinterpret_cast< QRgb* >(image.bits());
+    QRgb* const end = reinterpret_cast< QRgb* >(image.bits() + image.byteCount());
+
+    for(QRgb* pointer = begin; pointer != end; ++pointer)
+    {
+        const int alpha = qAlpha(*pointer);	
+        int r = qRed(*pointer);
+	int g = qGreen(*pointer);
+        int b = qBlue(*pointer);
+	int d = (int) round((384- r - g - b) / 1.5);
+	r = r + d;
+	g = g + d;
+	b = b + d;
+	r = (r > 255) ? 255 : (r < 0 ? 0 : r);
+	g = (g > 255) ? 255 : (g < 0 ? 0 : g);
+	b = (b > 255) ? 255 : (b < 0 ? 0 : b);
+        *pointer = qRgba(r, g, b, alpha);
+    }
 }
 
 void convertToGrayscale(QImage& image)
@@ -480,6 +503,13 @@ void RenderTask::run()
         CANCELLATION_POINT
 
         convertToGrayscale(image);
+    }
+
+    if(m_renderParam.invertLight())
+    {
+        CANCELLATION_POINT
+
+        invertLight(image);
     }
 
     if(m_renderParam.invertColors())

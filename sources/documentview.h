@@ -112,6 +112,9 @@ public:
     bool invertColors() const { return m_renderFlags.testFlag(InvertColors); }
     void setInvertColors(bool invertColors) { setRenderFlag(InvertColors, invertColors); }
 
+    bool invertLight() const { return m_renderFlags.testFlag(InvertLight); }
+    void setInvertLight(bool invertLight) { setRenderFlag(InvertLight, invertLight); }
+
     bool convertToGrayscale() const { return m_renderFlags.testFlag(ConvertToGrayscale); }
     void setConvertToGrayscale(bool convertToGrayscale) { setRenderFlag(ConvertToGrayscale, convertToGrayscale); }
 
@@ -193,6 +196,7 @@ signals:
     void renderFlagsChanged(qpdfview::RenderFlags renderFlags);
 
     void invertColorsChanged(bool invertColors);
+    void invertLightChanged(bool invertLight);
     void convertToGrayscaleChanged(bool convertToGrayscale);
     void trimMarginsChanged(bool trimMargins);
 
