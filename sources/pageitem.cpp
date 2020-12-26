@@ -1,5 +1,6 @@
 /*
 
+Copyright 2020 Johan Björklund
 Copyright 2012-2015 Adam Reichold
 
 This file is part of qpdfview.
@@ -1183,6 +1184,11 @@ inline void PageItem::paintPage(QPainter* painter, const QRectF& exposedRect) co
         QColor paperColor = s_settings->pageItem().paperColor();
 
         if(m_renderParam.invertColors())
+        {
+            paperColor.setRgb(~paperColor.rgb());
+        }
+
+        if(m_renderParam.invertLightness())
         {
             paperColor.setRgb(~paperColor.rgb());
         }

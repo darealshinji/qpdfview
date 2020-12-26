@@ -1,6 +1,7 @@
 /*
 
 Copyright 2015 S. Razi Alavizadeh
+Copyright 2020 Johan Björklund
 Copyright 2012-2015, 2018 Adam Reichold
 Copyright 2012 Alexander Volkov
 
@@ -261,6 +262,9 @@ public:
 
         bool invertColors() const;
         void setInvertColors(bool invertColors);
+
+        bool invertLightness() const;
+        void setInvertLightness(bool invertLightness);
 
         bool convertToGrayscale() const;
         void setConvertToGrayscale(bool convertToGrayscale);
@@ -606,6 +610,7 @@ public:
         static Rotation rotation() { return RotateBy0; }
 
         static bool invertColors() { return false; }
+        static bool invertLightness() { return false; }
         static bool convertToGrayscale() { return false; }
         static bool trimMargins() { return false; }
 

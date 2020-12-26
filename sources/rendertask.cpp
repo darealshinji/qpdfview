@@ -1,5 +1,6 @@
 /*
 
+Copyright 2020 Johan Björklund
 Copyright 2013-2015 Adam Reichold
 
 This file is part of qpdfview.
@@ -21,6 +22,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "rendertask.h"
 
+#include <cmath>
 #include <QApplication>
 #include <qmath.h>
 #include <QPainter>
@@ -153,6 +155,35 @@ QRectF trimMargins(QRgb paperColor, const QImage& image)
                   static_cast< qreal >(top) / height,
                   static_cast< qreal >(right - left) / width,
                   static_cast< qreal >(bottom - top) / height);
+}
+
+void invertLightness(QImage& image)
+{
+    QRgb* const begin = reinterpret_cast< QRgb* >(image.bits());
+    QRgb* const end = reinterpret_cast< QRgb* >(image.bits() + image.byteCount());
+
+    // This is a transformation in RGB space that mirrors the color coordinates
+    // about the plane that intersects the mid point of the cube (0.5, 0.5, 0.5)
+    // and is perpendicular to the diagonal vector (1,1,1).
+    //
+    // Each color-coordinate is moved along the (1,1,1)-vector twice its
+    // distance from this mid plane.
+    //
+    // Moving a color-coordinate along (1,1,1) preserves the "hue" 
+    // but changes the "lightness" of the color.
+    
+    for(QRgb* pointer = begin; pointer != end; ++pointer)
+    {
+        const int alpha = qAlpha(*pointer);
+        int r = qRed(*pointer);
+        int g = qGreen(*pointer);
+        int b = qBlue(*pointer);
+        const int d = qRound((382.5 - r - g - b) / 1.5);
+        r = qBound(0, r + d, 255);
+        g = qBound(0, g + d, 255);
+        b = qBound(0, b + d, 255);
+        *pointer = qRgba(r, g, b, alpha);
+    }
 }
 
 void convertToGrayscale(QImage& image)
@@ -487,6 +518,13 @@ void RenderTask::run()
         CANCELLATION_POINT
 
         image.invertPixels();
+    }
+
+    if(m_renderParam.invertLightness())
+    {
+        CANCELLATION_POINT
+
+        invertLightness(image);
     }
 
     CANCELLATION_POINT

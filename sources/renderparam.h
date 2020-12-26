@@ -1,5 +1,6 @@
 /*
 
+Copyright 2020 Johan Björklund
 Copyright 2015 Adam Reichold
 
 This file is part of qpdfview.
@@ -35,7 +36,8 @@ enum RenderFlag
     ConvertToGrayscale = 1 << 1,
     TrimMargins = 1 << 2,
     DarkenWithPaperColor = 1 << 3,
-    LightenWithPaperColor = 1 << 4
+    LightenWithPaperColor = 1 << 4,
+    InvertLightness = 1 << 5
 };
 
 Q_DECLARE_FLAGS(RenderFlags, RenderFlag)
@@ -88,6 +90,9 @@ public:
 
     bool invertColors() const { return d->flags.testFlag(InvertColors); }
     void setInvertColors(bool invertColors) { setFlag(InvertColors, invertColors); }
+
+    bool invertLightness() const { return d->flags.testFlag(InvertLightness); }
+    void setInvertLightness(bool invertLightness) { setFlag(InvertLightness, invertLightness); }
 
     bool convertToGrayscale() const { return d->flags.testFlag(ConvertToGrayscale); }
     void setConvertToGrayscale(bool convertToGrayscale) { setFlag(ConvertToGrayscale, convertToGrayscale); }

@@ -1,6 +1,7 @@
 /*
 
 Copyright 2015 S. Razi Alavizadeh
+Copyright 2020 Johan Björklund
 Copyright 2012-2015 Adam Reichold
 Copyright 2012 Alexander Volkov
 
@@ -625,6 +626,16 @@ bool Settings::DocumentView::invertColors() const
 void Settings::DocumentView::setInvertColors(bool invertColors)
 {
     m_settings->setValue("documentView/invertColors", invertColors);
+}
+
+bool Settings::DocumentView::invertLightness() const
+{
+    return m_settings->value("documentView/invertLightness", Defaults::DocumentView::invertLightness()).toBool();
+}
+
+void Settings::DocumentView::setInvertLightness(bool invertLightness)
+{
+    m_settings->setValue("documentView/invertLightness", invertLightness);
 }
 
 bool Settings::DocumentView::convertToGrayscale() const

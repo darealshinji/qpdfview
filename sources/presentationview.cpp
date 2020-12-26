@@ -1,5 +1,6 @@
 /*
 
+Copyright 2020 Johan Björklund
 Copyright 2012-2013 Adam Reichold
 
 This file is part of qpdfview.
@@ -172,7 +173,7 @@ void PresentationView::setRenderFlags(qpdfview::RenderFlags renderFlags)
         prepareScene();
         prepareView();
 
-        if(changedFlags.testFlag(InvertColors))
+        if(changedFlags.testFlag(InvertColors) || changedFlags.testFlag(InvertLightness))
         {
             prepareBackground();
         }
@@ -467,6 +468,11 @@ void PresentationView::keyPressEvent(QKeyEvent* event)
 
         event->accept();
         return;
+    case Qt::CTRL + Qt::SHIFT + Qt::Key_I:
+        setRenderFlags(renderFlags() ^ InvertLightness);
+
+        event->accept();
+        return;
     case Qt::CTRL + Qt::Key_U:
         setRenderFlags(renderFlags() ^ ConvertToGrayscale);
 
@@ -568,6 +574,11 @@ void PresentationView::prepareBackground()
         backgroundColor.setRgb(~backgroundColor.rgb());
     }
 
+    if(m_renderFlags.testFlag(InvertLightness))
+    {
+        backgroundColor.setRgb(~backgroundColor.rgb());
+    }
+    
     scene()->setBackgroundBrush(QBrush(backgroundColor));
 }
 

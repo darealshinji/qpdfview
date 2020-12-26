@@ -1,6 +1,7 @@
 /*
 
 Copyright 2014 S. Razi Alavizadeh
+Copyright 2020 Johan Björklund
 Copyright 2012-2014, 2018 Adam Reichold
 Copyright 2014 Dorian Scholz
 Copyright 2018 Egor Zenkov
@@ -112,6 +113,9 @@ public:
     bool invertColors() const { return m_renderFlags.testFlag(InvertColors); }
     void setInvertColors(bool invertColors) { setRenderFlag(InvertColors, invertColors); }
 
+    bool invertLightness() const { return m_renderFlags.testFlag(InvertLightness); }
+    void setInvertLightness(bool invertLightness) { setRenderFlag(InvertLightness, invertLightness); }
+
     bool convertToGrayscale() const { return m_renderFlags.testFlag(ConvertToGrayscale); }
     void setConvertToGrayscale(bool convertToGrayscale) { setRenderFlag(ConvertToGrayscale, convertToGrayscale); }
 
@@ -193,6 +197,7 @@ signals:
     void renderFlagsChanged(qpdfview::RenderFlags renderFlags);
 
     void invertColorsChanged(bool invertColors);
+    void invertLightnessChanged(bool invertLightness);
     void convertToGrayscaleChanged(bool convertToGrayscale);
     void trimMarginsChanged(bool trimMargins);
 

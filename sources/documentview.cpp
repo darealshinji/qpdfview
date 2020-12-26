@@ -1,6 +1,7 @@
 /*
 
 Copyright 2014 S. Razi Alavizadeh
+Copyright 2020 Johan Björklund
 Copyright 2013 Thomas Etter
 Copyright 2012-2015, 2018 Adam Reichold
 Copyright 2014 Dorian Scholz
@@ -814,6 +815,11 @@ DocumentView::DocumentView(QWidget* parent) : QGraphicsView(parent),
         m_renderFlags |= InvertColors;
     }
 
+    if(s_settings->documentView().invertLightness())
+    {
+        m_renderFlags |= InvertLightness;
+    }
+    
     if(s_settings->documentView().convertToGrayscale())
     {
         m_renderFlags |= ConvertToGrayscale;
@@ -1135,6 +1141,15 @@ void DocumentView::setRenderFlags(qpdfview::RenderFlags renderFlags)
             emit invertColorsChanged(invertColors());
 
             s_settings->documentView().setInvertColors(invertColors());
+        }
+
+        if(changedFlags.testFlag(InvertLightness))
+        {
+            prepareBackground();
+
+            emit invertLightnessChanged(invertLightness());
+
+            s_settings->documentView().setInvertLightness(invertLightness());
         }
 
         if(changedFlags.testFlag(ConvertToGrayscale))
@@ -2828,6 +2843,11 @@ void DocumentView::prepareBackground()
         backgroundColor = s_settings->pageItem().paperColor();
 
         if(invertColors())
+        {
+            backgroundColor.setRgb(~backgroundColor.rgb());
+        }
+
+        if(invertLightness())
         {
             backgroundColor.setRgb(~backgroundColor.rgb());
         }
