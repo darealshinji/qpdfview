@@ -124,6 +124,8 @@ public:
 
     bool operator!=(const RenderParam& other) const { return !operator==(other); }
 
+    static const RenderParam defaultInstance;
+
 private:
     struct SharedData : public QSharedData
     {

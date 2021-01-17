@@ -87,7 +87,7 @@ PageItem::PageItem(Model::Page* page, int index, PaintMode paintMode, QGraphicsI
     m_rubberBand(),
     m_annotationOverlay(),
     m_formFieldOverlay(),
-    m_renderParam(),
+    m_renderParam(RenderParam::defaultInstance),
     m_transform(),
     m_normalizedTransform(),
     m_boundingRect(),

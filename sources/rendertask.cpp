@@ -210,6 +210,8 @@ void composeWithColor(QPainter::CompositionMode mode, const QColor& color, QImag
 
 } // anonymous
 
+const RenderParam RenderParam::defaultInstance;
+
 RenderTaskParent::~RenderTaskParent()
 {
 }
@@ -405,14 +407,12 @@ RenderTaskDispatcher* RenderTask::s_dispatcher = 0;
 
 Settings* RenderTask::s_settings = 0;
 
-const RenderParam RenderTask::s_defaultRenderParam;
-
 RenderTask::RenderTask(Model::Page* page, RenderTaskParent* parent) : QRunnable(),
     m_parent(parent),
     m_isRunning(false),
     m_wasCanceled(NotCanceled),
     m_page(page),
-    m_renderParam(s_defaultRenderParam),
+    m_renderParam(RenderParam::defaultInstance),
     m_rect(),
     m_prefetch(false)
 {
@@ -563,7 +563,7 @@ void RenderTask::deleteParentLater()
 
 void RenderTask::finish(bool canceled)
 {
-    m_renderParam = s_defaultRenderParam;
+    m_renderParam = RenderParam::defaultInstance;
 
     if(canceled)
     {
