@@ -123,6 +123,7 @@ void Settings::PageItem::sync()
 
     m_keepObsoletePixmaps = m_settings->value("pageItem/keepObsoletePixmaps", Defaults::PageItem::keepObsoletePixmaps()).toBool();
     m_useDevicePixelRatio = m_settings->value("pageItem/useDevicePixelRatio", Defaults::PageItem::useDevicePixelRatio()).toBool();
+    m_useLogicalDpi = m_settings->value("pageItem/useLogicalDpi", Defaults::PageItem::useLogicalDpi()).toBool();
 
     m_decoratePages = m_settings->value("pageItem/decoratePages", Defaults::PageItem::decoratePages()).toBool();
     m_decorateLinks = m_settings->value("pageItem/decorateLinks", Defaults::PageItem::decorateLinks()).toBool();
@@ -159,6 +160,12 @@ void Settings::PageItem::setUseDevicePixelRatio(bool useDevicePixelRatio)
 {
     m_useDevicePixelRatio = useDevicePixelRatio;
     m_settings->setValue("pageItem/useDevicePixelRatio", useDevicePixelRatio);
+}
+
+void Settings::PageItem::setUseLogicalDpi(bool useLogicalDpi)
+{
+    m_useLogicalDpi = useLogicalDpi;
+    m_settings->setValue("pageItem/useLogicalDpi", useLogicalDpi);
 }
 
 void Settings::PageItem::setDecoratePages(bool decoratePages)
@@ -273,7 +280,8 @@ Settings::PageItem::PageItem(QSettings* settings) :
     m_progressIcon(),
     m_errorIcon(),
     m_keepObsoletePixmaps(Defaults::PageItem::keepObsoletePixmaps()),
-    m_useDevicePixelRatio(false),
+    m_useDevicePixelRatio(Defaults::PageItem::useDevicePixelRatio()),
+    m_useLogicalDpi(Defaults::PageItem::useLogicalDpi()),
     m_decoratePages(Defaults::PageItem::decoratePages()),
     m_decorateLinks(Defaults::PageItem::decorateLinks()),
     m_decorateFormFields(Defaults::PageItem::decorateFormFields()),

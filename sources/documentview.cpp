@@ -2861,8 +2861,7 @@ void DocumentView::prepareScene()
 {
     // prepare render parameters and adjust scale factor
 
-    RenderParam renderParam(logicalDpiX(), logicalDpiY(), 1.0,
-                            scaleFactor(), rotation(), renderFlags());
+    RenderParam renderParam(scaleFactor(), rotation(), renderFlags());
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,1,0)
 
@@ -2880,6 +2879,11 @@ void DocumentView::prepareScene()
     }
 
 #endif // QT_VERSION
+
+    if(s_settings->pageItem().useLogicalDpi())
+    {
+        renderParam.setResolution(logicalDpiX(), logicalDpiY());
+    }
 
     const qreal visibleWidth = m_layout->visibleWidth(viewport()->width());
     const qreal visibleHeight = m_layout->visibleHeight(viewport()->height());
@@ -2993,8 +2997,7 @@ void DocumentView::prepareThumbnailsScene()
 {
     // prepare render parameters and adjust scale factor
 
-    RenderParam renderParam(logicalDpiX(), logicalDpiY(), 1.0,
-                            scaleFactor(), rotation(), renderFlags());
+    RenderParam renderParam(scaleFactor(), rotation(), renderFlags());
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,1,0)
 
@@ -3012,6 +3015,11 @@ void DocumentView::prepareThumbnailsScene()
     }
 
 #endif // QT_VERSION
+
+    if(s_settings->pageItem().useLogicalDpi())
+    {
+        renderParam.setResolution(logicalDpiX(), logicalDpiY());
+    }
 
     const qreal thumbnailSize = s_settings->documentView().thumbnailSize();
     const qreal thumbnailSpacing = s_settings->documentView().thumbnailSpacing();

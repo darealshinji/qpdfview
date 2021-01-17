@@ -74,6 +74,9 @@ public:
         bool useDevicePixelRatio() const { return m_useDevicePixelRatio; }
         void setUseDevicePixelRatio(bool useDevicePixelRatio);
 
+        bool useLogicalDpi() const { return m_useLogicalDpi; }
+        void setUseLogicalDpi(bool useLogicalDpi);
+
         bool decoratePages() const { return m_decoratePages; }
         void setDecoratePages(bool decoratePages);
 
@@ -129,6 +132,7 @@ public:
 
         bool m_keepObsoletePixmaps;
         bool m_useDevicePixelRatio;
+        bool m_useLogicalDpi;
 
         bool m_decoratePages;
         bool m_decorateLinks;
@@ -517,6 +521,7 @@ public:
 
         static bool keepObsoletePixmaps() { return false; }
         static bool useDevicePixelRatio() { return false; }
+        static bool useLogicalDpi() { return true; }
 
         static bool decoratePages() { return true; }
         static bool decorateLinks() { return true; }

@@ -584,8 +584,7 @@ void PresentationView::prepareBackground()
 
 void PresentationView::prepareScene()
 {
-    RenderParam renderParam(logicalDpiX(), logicalDpiY(), 1.0,
-                            scaleFactor(), rotation(), renderFlags());
+    RenderParam renderParam(scaleFactor(), rotation(), renderFlags());
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,1,0)
 
@@ -603,6 +602,11 @@ void PresentationView::prepareScene()
     }
 
 #endif // QT_VERSION
+
+    if(s_settings->pageItem().useLogicalDpi())
+    {
+        renderParam.setResolution(logicalDpiX(), logicalDpiY());
+    }
 
     const qreal visibleWidth = viewport()->width();
     const qreal visibleHeight = viewport()->height();

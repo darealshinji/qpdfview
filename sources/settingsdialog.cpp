@@ -400,6 +400,9 @@ void SettingsDialog::createGraphicsTab()
 
 #endif // QT_VERSION
 
+    m_useLogicalDpiCheckBox = addCheckBox(m_graphicsLayout, tr("Use logical DPI:"), QString(),
+                                          s_settings->pageItem().useLogicalDpi());
+
 
     m_decoratePagesCheckBox = addCheckBox(m_graphicsLayout, tr("Decorate pages:"), QString(),
                                           s_settings->pageItem().decoratePages());
@@ -451,6 +454,7 @@ void SettingsDialog::acceptGraphicsTab()
     s_settings->pageItem().setUseTiling(m_useTilingCheckBox->isChecked());
     s_settings->pageItem().setKeepObsoletePixmaps(m_keepObsoletePixmapsCheckBox->isChecked());
     s_settings->pageItem().setUseDevicePixelRatio(m_useDevicePixelRatioCheckBox->isChecked());
+    s_settings->pageItem().setUseLogicalDpi(m_useLogicalDpiCheckBox->isChecked());
 
     s_settings->pageItem().setDecoratePages(m_decoratePagesCheckBox->isChecked());
     s_settings->pageItem().setDecorateLinks(m_decorateLinksCheckBox->isChecked());
@@ -492,6 +496,7 @@ void SettingsDialog::resetGraphicsTab()
     m_useTilingCheckBox->setChecked(Defaults::PageItem::useTiling());
     m_keepObsoletePixmapsCheckBox->setChecked(Defaults::PageItem::keepObsoletePixmaps());
     m_useDevicePixelRatioCheckBox->setChecked(Defaults::PageItem::useDevicePixelRatio());
+    m_useLogicalDpiCheckBox->setChecked(Defaults::PageItem::useLogicalDpi());
 
     m_decoratePagesCheckBox->setChecked(Defaults::PageItem::decoratePages());
     m_decorateLinksCheckBox->setChecked(Defaults::PageItem::decorateLinks());

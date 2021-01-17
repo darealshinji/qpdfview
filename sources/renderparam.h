@@ -45,13 +45,12 @@ Q_DECLARE_FLAGS(RenderFlags, RenderFlag)
 class RenderParam
 {
 public:
-    RenderParam(int resolutionX = 72, int resolutionY = 72, qreal devicePixelRatio = 1.0,
-                qreal scaleFactor = 1.0, Rotation rotation = RotateBy0,
+    RenderParam(qreal scaleFactor = 1.0, Rotation rotation = RotateBy0,
                 RenderFlags flags = 0) : d(new SharedData)
     {
-        d->resolutionX = resolutionX;
-        d->resolutionY = resolutionY;
-        d->devicePixelRatio = devicePixelRatio;
+        d->resolutionX = 72;
+        d->resolutionY = 72;
+        d->devicePixelRatio = 1.0;
         d->scaleFactor = scaleFactor;
         d->rotation = rotation;
         d->flags = flags;

@@ -142,6 +142,8 @@ QVariant SearchModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             switch(index.column())
             {
+            default:
+                return QVariant();
             case 0:
                 return view->title();
             case 1:
@@ -184,6 +186,8 @@ QVariant SearchModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             switch(index.column())
             {
+            default:
+                return QVariant();
             case 0:
                 return QVariant();
             case 1:

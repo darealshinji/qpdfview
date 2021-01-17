@@ -124,6 +124,7 @@ private:
     QCheckBox* m_useTilingCheckBox;
     QCheckBox* m_keepObsoletePixmapsCheckBox;
     QCheckBox* m_useDevicePixelRatioCheckBox;
+    QCheckBox* m_useLogicalDpiCheckBox;
 
     QCheckBox* m_decoratePagesCheckBox;
     QCheckBox* m_decorateLinksCheckBox;
