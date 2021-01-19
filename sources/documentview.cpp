@@ -2,8 +2,9 @@
 
 Copyright 2014 S. Razi Alavizadeh
 Copyright 2020 Johan Björklund
+Copyright 2021 Vitaly Cheptsov
 Copyright 2013 Thomas Etter
-Copyright 2012-2015, 2018 Adam Reichold
+Copyright 2012-2015, 2018, 2021 Adam Reichold
 Copyright 2014 Dorian Scholz
 Copyright 2018 Egor Zenkov
 
@@ -980,6 +981,15 @@ QString DocumentView::title() const
     {
         title = m_fileInfo.completeBaseName();
     }
+
+#ifdef Q_OS_MAC
+
+    // On macOS, some Qt versions have a bug of automatically detecting tab entries
+    // as menu entries with roles, causing opening files with these names to result
+    // in the "Preferences" menu item breaking.
+    title.prepend(QChar(0x200B));
+
+#else // Q_OS_MAC
 
     return title;
 }
