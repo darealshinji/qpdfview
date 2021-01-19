@@ -3,6 +3,7 @@
 Copyright 2014-2015, 2018 S. Razi Alavizadeh
 Copyright 2020 Johan Björklund
 Copyright 2018 Marshall Banana
+Copyright 2021 Vitaly Cheptsov
 Copyright 2012-2018 Adam Reichold
 Copyright 2018 Pavel Sanda
 Copyright 2014 Dorian Scholz
@@ -3329,11 +3330,11 @@ QDockWidget* MainWindow::createDock(const QString& text, const QString& objectNa
     dock->setObjectName(objectName);
     dock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetMovable);
 
-#ifdef Q_OS_WIN
+#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
 
     dock->setWindowTitle(dock->windowTitle().remove(QLatin1Char('&')));
 
-#endif // Q_OS_WIN
+#endif // defined(Q_OS_WIN) || defined(Q_OS_MAC)
 
     addDockWidget(Qt::LeftDockWidgetArea, dock);
 
@@ -3355,11 +3356,11 @@ void MainWindow::createSearchDock()
     m_searchDock->setObjectName(QLatin1String("searchDock"));
     m_searchDock->setFeatures(QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetVerticalTitleBar);
 
-#ifdef Q_OS_WIN
+#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
 
     m_searchDock->setWindowTitle(m_searchDock->windowTitle().remove(QLatin1Char('&')));
 
-#endif // Q_OS_WIN
+#endif // defined(Q_OS_WIN) || defined(Q_OS_MAC)
 
     addDockWidget(Qt::BottomDockWidgetArea, m_searchDock);
 
