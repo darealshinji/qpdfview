@@ -989,7 +989,7 @@ QString DocumentView::title() const
     // in the "Preferences" menu item breaking.
     title.prepend(QChar(0x200B));
 
-#else // Q_OS_MAC
+#endif // Q_OS_MAC
 
     return title;
 }
