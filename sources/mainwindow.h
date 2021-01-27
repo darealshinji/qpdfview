@@ -578,6 +578,8 @@ public slots:
 
     bool closeTab(const QString& absoluteFilePath);
 
+    Q_NOREPLY void exit();
+
 private:
     MainWindow* mainWindow() const;
 

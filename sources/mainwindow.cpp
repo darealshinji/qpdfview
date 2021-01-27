@@ -3882,6 +3882,11 @@ bool MainWindowAdaptor::closeTab(const QString& absoluteFilePath)
     return false;
 }
 
+void MainWindowAdaptor::exit()
+{
+    mainWindow()->close();
+}
+
 #undef ONLY_IF_CURRENT_TAB
 
 inline MainWindow* MainWindowAdaptor::mainWindow() const
