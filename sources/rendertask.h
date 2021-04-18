@@ -154,12 +154,28 @@ private:
 
 inline void RenderTask::setCancellation(bool force)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+
     m_wasCanceled.storeRelaxed(force ? CanceledForcibly : CanceledNormally);
+
+#else
+
+    m_wasCanceled.store(force ? CanceledForcibly : CanceledNormally);
+
+#endif // QT_VERSION
 }
 
 inline void RenderTask::resetCancellation()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+
     m_wasCanceled.storeRelaxed(NotCanceled);
+
+#else
+
+    m_wasCanceled.store(NotCanceled);
+
+#endif // QT_VERSION
 }
 
 inline bool RenderTask::testCancellation()

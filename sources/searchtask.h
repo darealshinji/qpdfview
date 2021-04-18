@@ -93,16 +93,32 @@ private:
 
 };
 
-#if QT_VERSION > QT_VERSION_CHECK(5,0,0)
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 
 inline void SearchTask::setCancellation()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+
     m_wasCanceled.storeRelaxed(Canceled);
+
+#else
+
+    m_wasCanceled.store(Canceled);
+
+#endif // QT_VERSION
 }
 
 inline void SearchTask::resetCancellation()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+
     m_wasCanceled.storeRelaxed(NotCanceled);
+
+#else
+
+    m_wasCanceled.store(NotCanceled);
+
+#endif // QT_VERSION
 }
 
 inline bool SearchTask::testCancellation()
