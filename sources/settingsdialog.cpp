@@ -653,12 +653,12 @@ void SettingsDialog::acceptInterfaceTab()
     s_settings->mainWindow().setRecentlyUsedCount(m_recentlyUsedCountSpinBox->value());
     s_settings->mainWindow().setRecentlyClosedCount(m_recentlyClosedCountSpinBox->value());
 
-    s_settings->mainWindow().setFileToolBar(m_fileToolBarLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
-    s_settings->mainWindow().setEditToolBar(m_editToolBarLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
-    s_settings->mainWindow().setViewToolBar(m_viewToolBarLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
+    s_settings->mainWindow().setFileToolBar(m_fileToolBarLineEdit->text().split(',', SplitBehaviorValues::SkipEmptyParts));
+    s_settings->mainWindow().setEditToolBar(m_editToolBarLineEdit->text().split(',', SplitBehaviorValues::SkipEmptyParts));
+    s_settings->mainWindow().setViewToolBar(m_viewToolBarLineEdit->text().split(',', SplitBehaviorValues::SkipEmptyParts));
 
-    s_settings->mainWindow().setDocumentContextMenu(m_documentContextMenuLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
-    s_settings->mainWindow().setTabContextMenu(m_tabContextMenuLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
+    s_settings->mainWindow().setDocumentContextMenu(m_documentContextMenuLineEdit->text().split(',', SplitBehaviorValues::SkipEmptyParts));
+    s_settings->mainWindow().setTabContextMenu(m_tabContextMenuLineEdit->text().split(',', SplitBehaviorValues::SkipEmptyParts));
 
     s_settings->mainWindow().setScrollableMenus(m_scrollableMenusCheckBox->isChecked());
     s_settings->mainWindow().setSearchableMenus(m_searchableMenusCheckBox->isChecked());

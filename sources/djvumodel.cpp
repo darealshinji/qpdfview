@@ -728,7 +728,7 @@ QList< QRectF > DjVuPage::search(const QString& text, bool matchCase, bool whole
 
     const QTransform transform = QTransform::fromScale(72.0 / m_resolution, 72.0 / m_resolution);
 
-    const QStringList words = text.split(RegularExpression(QLatin1String("\\W+")), SplitBehavior::SkipEmptyParts);
+    const QStringList words = text.split(RegularExpression(QLatin1String("\\W+")), SplitBehaviorValues::SkipEmptyParts);
 
     const QList< QRectF > results = findText(pageTextExp, m_size, transform, words, matchCase, wholeWords);
 

@@ -175,7 +175,7 @@ bool ShortcutHandler::setData(const QModelIndex& index, const QVariant& value, i
 {
     if(role == Qt::EditRole && index.column() == 1 && index.row() >= 0 && index.row() < m_actions.count())
     {
-        const QList< QKeySequence > shortcuts = toShortcuts(value.toString().split(';', SplitBehavior::SkipEmptyParts));
+        const QList< QKeySequence > shortcuts = toShortcuts(value.toString().split(';', SplitBehaviorValues::SkipEmptyParts));
 
         if(!shortcuts.isEmpty() || value.toString().isEmpty())
         {

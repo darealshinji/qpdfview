@@ -2450,10 +2450,10 @@ bool DocumentView::printUsingCUPS(QPrinter* printer, const PrintOptions& printOp
 
 #endif // QT_VERSION
     {
-    case PageOrientation::Portrait:
+    case PageOrientationValues::Portrait:
         num_options = cupsAddOption("landscape", "false", num_options, &options);
         break;
-    case PageOrientation::Landscape:
+    case PageOrientationValues::Landscape:
         num_options = cupsAddOption("landscape", "true", num_options, &options);
         break;
     }

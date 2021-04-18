@@ -690,7 +690,7 @@ public:
 
         static QPrinter::PageOrder pageOrder() { return QPrinter::FirstPageFirst; }
 
-        static PageOrientation orientation() { return PageOrientation::Portrait; }
+        static PageOrientation orientation() { return PageOrientationValues::Portrait; }
 
         static QPrinter::ColorMode colorMode() { return QPrinter::Color; }
 

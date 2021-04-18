@@ -109,20 +109,24 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 
 typedef Qt::SplitBehaviorFlags SplitBehavior;
+namespace SplitBehaviorValues = Qt;
 
 #else
 
 typedef QString::SplitBehavior SplitBehavior;
+typedef QString SplitBehaviorValues;
 
 #endif // QT_VERSION
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
 
 typedef QPageLayout::Orientation PageOrientation;
+typedef QPageLayout PageOrientationValues;
 
 #else
 
 typedef QPrinter::Orientation PageOrientation;
+typedef QPrinter PageOrientationValues;
 
 #endif // QT_VERSION
 

@@ -986,7 +986,7 @@ void Database::migrateBookmarks_v1_v3()
             const QString filePath = outerQuery.nextValue();
             const QString pages = outerQuery.nextValue();
 
-            foreach(const QString& page, pages.split(',', SplitBehavior::SkipEmptyParts))
+            foreach(const QString& page, pages.split(',', SplitBehaviorValues::SkipEmptyParts))
             {
                 innerQuery << filePath
                            << page
