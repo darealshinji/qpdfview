@@ -31,6 +31,8 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFile>
 #include <qmath.h>
 
+#include "compatibility.h"
+
 #if defined(Q_OS_WIN) && defined(DJVU_STATIC)
 
 #define DDJVUAPI /**/
@@ -689,7 +691,6 @@ QString DjVuPage::text(const QRectF& rect) const
     }
 
     const QTransform transform = QTransform::fromScale(m_resolution / 72.0, m_resolution / 72.0);
-
     const QString text = loadText(pageTextExp, m_size, transform.mapRect(rect)).simplified();
 
     {
@@ -726,7 +727,8 @@ QList< QRectF > DjVuPage::search(const QString& text, bool matchCase, bool whole
     }
 
     const QTransform transform = QTransform::fromScale(72.0 / m_resolution, 72.0 / m_resolution);
-    const QStringList words = text.split(QRegExp(QLatin1String("\\W+")), QString::SkipEmptyParts);
+
+    const QStringList words = text.split(RegularExpression(QLatin1String("\\W+")), SplitBehavior::SkipEmptyParts);
 
     const QList< QRectF > results = findText(pageTextExp, m_size, transform, words, matchCase, wholeWords);
 

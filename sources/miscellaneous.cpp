@@ -38,6 +38,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVBoxLayout>
 
 #include "searchmodel.h"
+#include "compatibility.h"
 
 namespace qpdfview
 {
@@ -241,7 +242,7 @@ QSize TabBar::tabSizeHint(int index) const
 
 void TabBar::mousePressEvent(QMouseEvent* event)
 {
-    if(event->button() == Qt::MidButton)
+    if(event->button() == Qt::MiddleButton)
     {
         const int index = tabAt(event->pos());
 
@@ -436,9 +437,11 @@ void TreeView::expandAll(const QModelIndex& index)
             expand(index);
         }
 
-        for(int row = 0, rowCount = model()->rowCount(index); row < rowCount; ++row)
+        const QAbstractItemModel* const model = this->model();
+
+        for(int row = 0, rowCount = model->rowCount(index); row < rowCount; ++row)
         {
-            expandAll(index.child(row, 0));
+            expandAll(model->index(row, 0, index));
         }
     }
     else
@@ -456,9 +459,11 @@ void TreeView::collapseAll(const QModelIndex& index)
             collapse(index);
         }
 
-        for(int row = 0, rowCount = model()->rowCount(index); row < rowCount; ++row)
+        const QAbstractItemModel* const model = this->model();
+
+        for(int row = 0, rowCount = model->rowCount(index); row < rowCount; ++row)
         {
-            collapseAll(index.child(row, 0));
+            collapseAll(model->index(row, 0, index));
         }
     }
     else
@@ -469,18 +474,20 @@ void TreeView::collapseAll(const QModelIndex& index)
 
 int TreeView::expandedDepth(const QModelIndex& index)
 {
+    const QAbstractItemModel* const model = this->model();
+
     if(index.isValid())
     {
-        if(!isExpanded(index) || !model()->hasChildren(index))
+        if(!isExpanded(index) || !model->hasChildren(index))
         {
             return 0;
         }
 
         int depth = 0;
 
-        for(int row = 0, rowCount = model()->rowCount(index); row < rowCount; ++row)
+        for(int row = 0, rowCount = model->rowCount(index); row < rowCount; ++row)
         {
-            depth = qMax(depth, expandedDepth(index.child(row, 0)));
+            depth = qMax(depth, expandedDepth(model->index(row, 0, index)));
         }
 
         return 1 + depth;
@@ -489,9 +496,9 @@ int TreeView::expandedDepth(const QModelIndex& index)
     {
         int depth = 0;
 
-        for(int row = 0, rowCount = model()->rowCount(); row < rowCount; ++row)
+        for(int row = 0, rowCount = model->rowCount(); row < rowCount; ++row)
         {
-            depth = qMax(depth, expandedDepth(model()->index(row, 0)));
+            depth = qMax(depth, expandedDepth(model->index(row, 0)));
         }
 
         return depth;
@@ -500,6 +507,8 @@ int TreeView::expandedDepth(const QModelIndex& index)
 
 void TreeView::expandToDepth(const QModelIndex& index, int depth)
 {
+    const QAbstractItemModel* const model = this->model();
+
     if(index.isValid())
     {
         if(depth > 0)
@@ -512,23 +521,25 @@ void TreeView::expandToDepth(const QModelIndex& index, int depth)
 
         if(depth > 1)
         {
-            for(int row = 0, rowCount = model()->rowCount(index); row < rowCount; ++row)
+            for(int row = 0, rowCount = model->rowCount(index); row < rowCount; ++row)
             {
-                expandToDepth(index.child(row, 0), depth - 1);
+                expandToDepth(model->index(row, 0, index), depth - 1);
             }
         }
     }
     else
     {
-        for(int row = 0, rowCount = model()->rowCount(); row < rowCount; ++row)
+        for(int row = 0, rowCount = model->rowCount(); row < rowCount; ++row)
         {
-            expandToDepth(model()->index(row, 0), depth);
+            expandToDepth(model->index(row, 0), depth);
         }
     }
 }
 
 void TreeView::collapseFromDepth(const QModelIndex& index, int depth)
 {
+    const QAbstractItemModel* const model = this->model();
+
     if(index.isValid())
     {
         if(depth <= 0)
@@ -539,22 +550,24 @@ void TreeView::collapseFromDepth(const QModelIndex& index, int depth)
             }
         }
 
-        for(int row = 0, rowCount = model()->rowCount(index); row < rowCount; ++row)
+        for(int row = 0, rowCount = model->rowCount(index); row < rowCount; ++row)
         {
-            collapseFromDepth(index.child(row, 0), depth - 1);
+            collapseFromDepth(model->index(row, 0, index), depth - 1);
         }
     }
     else
     {
-        for(int row = 0, rowCount = model()->rowCount(); row < rowCount; ++row)
+        for(int row = 0, rowCount = model->rowCount(); row < rowCount; ++row)
         {
-            collapseFromDepth(model()->index(row, 0), depth);
+            collapseFromDepth(model->index(row, 0), depth);
         }
     }
 }
 
 void TreeView::restoreExpansion(const QModelIndex& index)
 {
+    const QAbstractItemModel* const model = this->model();
+
     if(index.isValid())
     {
         const bool expanded = index.data(m_expansionRole).toBool();
@@ -565,9 +578,9 @@ void TreeView::restoreExpansion(const QModelIndex& index)
         }
     }
 
-    for(int row = 0, rowCount = model()->rowCount(index); row < rowCount; ++row)
+    for(int row = 0, rowCount = model->rowCount(index); row < rowCount; ++row)
     {
-        restoreExpansion(model()->index(row, 0, index));
+        restoreExpansion(model->index(row, 0, index));
     }
 }
 
@@ -643,7 +656,7 @@ void TreeView::wheelEvent(QWheelEvent* event)
     // If Control is pressed, expand or collapse the selected entry.
     if(event->modifiers().testFlag(Qt::ControlModifier) && selection.isValid())
     {
-        if(event->delta() > 0)
+        if(rotatedForward(event))
         {
             collapse(selection);
         }
@@ -665,7 +678,7 @@ void TreeView::wheelEvent(QWheelEvent* event)
     {
         QModelIndex sibling;
 
-        if(event->delta() > 0)
+        if(rotatedForward(event))
         {
             sibling = indexAbove(selection);
         }

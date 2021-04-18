@@ -60,6 +60,7 @@ typedef synctex_node_t synctex_node_p;
 #include "documentview.h"
 #include "database.h"
 #include "mainwindow.h"
+#include "compatibility.h"
 
 #ifdef WITH_SIGNALS
 
@@ -151,9 +152,9 @@ void parseCommandLineArguments()
     bool searchTextIsNext = false;
     bool noMoreOptions = false;
 
-    QRegExp fileAndPageRegExp("(.+)#(\\d+)");
-    QRegExp fileAndSourceRegExp("(.+)#src:(.+):(\\d+):(\\d+)");
-    QRegExp instanceNameRegExp("[A-Za-z_]+[A-Za-z0-9_]*");
+    RegularExpression fileAndPageRegExp(QLatin1String("^(.+)#(\\d+)$"));
+    RegularExpression fileAndSourceRegExp(QLatin1String("^(.+)#src:(.+):(\\d+):(\\d+)$"));
+    RegularExpression instanceNameRegExp(QLatin1String("^[A-Za-z_]+[A-Za-z0-9_]*$"));
 
     QStringList arguments = QApplication::arguments();
 
@@ -244,17 +245,17 @@ void parseCommandLineArguments()
         {
             File file;
 
-            if(fileAndPageRegExp.exactMatch(argument))
+            if(Match match = Match(fileAndPageRegExp, argument))
             {
-                file.filePath = fileAndPageRegExp.cap(1);
-                file.page = fileAndPageRegExp.cap(2).toInt();
+                file.filePath = match.captured(1);
+                file.page = match.captured(2).toInt();
             }
-            else if(fileAndSourceRegExp.exactMatch(argument))
+            else if(Match match = Match(fileAndSourceRegExp, argument))
             {
-                file.filePath = fileAndSourceRegExp.cap(1);
-                file.sourceName = fileAndSourceRegExp.cap(2);
-                file.sourceLine = fileAndSourceRegExp.cap(3).toInt();
-                file.sourceColumn = fileAndSourceRegExp.cap(4).toInt();
+                file.filePath = match.captured(1);
+                file.sourceName = match.captured(2);
+                file.sourceLine = match.captured(3).toInt();
+                file.sourceColumn = match.captured(4).toInt();
             }
             else
             {
@@ -277,7 +278,7 @@ void parseCommandLineArguments()
         exit(ExitInconsistentArguments);
     }
 
-    if(!instanceName.isEmpty() && !instanceNameRegExp.exactMatch(instanceName))
+    if(!instanceName.isEmpty() && !Match(instanceNameRegExp, instanceName))
     {
         qCritical() << QObject::tr("An instance name must only contain the characters \"[A-Z][a-z][0-9]_\" and must not begin with a digit.");
         exit(ExitIllegalArgument);

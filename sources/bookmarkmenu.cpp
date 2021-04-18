@@ -22,9 +22,10 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "bookmarkmenu.h"
 
-#include "miscellaneous.h"
-
+#include <QActionGroup>
 #include <QFileInfo>
+
+#include "miscellaneous.h"
 
 namespace qpdfview
 {

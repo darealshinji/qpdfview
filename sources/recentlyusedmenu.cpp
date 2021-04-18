@@ -21,6 +21,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "recentlyusedmenu.h"
 
+#include <QActionGroup>
 #include <QFileInfo>
 
 namespace qpdfview

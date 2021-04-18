@@ -11,12 +11,12 @@ TARGET_SHORT = qpdfdjvu
 OBJECTS_DIR = objects-djvu
 MOC_DIR = moc-djvu
 
-HEADERS = sources/model.h sources/djvumodel.h
+HEADERS = sources/model.h sources/compatibility.h sources/djvumodel.h
 SOURCES = sources/djvumodel.cpp
 
 QT += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 !without_pkgconfig {
     CONFIG += link_pkgconfig

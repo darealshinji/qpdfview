@@ -520,49 +520,49 @@ PluginHandler::PluginHandler(QObject* parent) : QObject(parent),
 {
 #ifdef WITH_IMAGE
 #ifdef STATIC_IMAGE_PLUGIN
-    m_objectNames.insertMulti(Image, QLatin1String("ImagePlugin"));
+    m_objectNames.insert(Image, QLatin1String("ImagePlugin"));
 #else
-    m_fileNames.insertMulti(Image, QLatin1String(IMAGE_PLUGIN_NAME));
+    m_fileNames.insert(Image, QLatin1String(IMAGE_PLUGIN_NAME));
 #endif // STATIC_IMAGE_PLUGIN
 #endif // WITH_IMAGE
 
 #ifdef WITH_FITZ
 #ifdef STATIC_FITZ_PLUGIN
-    m_objectNames.insertMulti(PDF, QLatin1String("FitzPlugin"));
-    m_objectNames.insertMulti(EPUB, QLatin1String("FitzPlugin"));
-    m_objectNames.insertMulti(XPS, QLatin1String("FitzPlugin"));
-    m_objectNames.insertMulti(FB2, QLatin1String("FitzPlugin"));
-    m_objectNames.insertMulti(CBZ, QLatin1String("FitzPlugin"));
+    m_objectNames.insert(PDF, QLatin1String("FitzPlugin"));
+    m_objectNames.insert(EPUB, QLatin1String("FitzPlugin"));
+    m_objectNames.insert(XPS, QLatin1String("FitzPlugin"));
+    m_objectNames.insert(FB2, QLatin1String("FitzPlugin"));
+    m_objectNames.insert(CBZ, QLatin1String("FitzPlugin"));
 #else
-    m_fileNames.insertMulti(PDF, QLatin1String(FITZ_PLUGIN_NAME));
-    m_fileNames.insertMulti(EPUB, QLatin1String(FITZ_PLUGIN_NAME));
-    m_fileNames.insertMulti(XPS, QLatin1String(FITZ_PLUGIN_NAME));
-    m_fileNames.insertMulti(FB2, QLatin1String(FITZ_PLUGIN_NAME));
-    m_fileNames.insertMulti(CBZ, QLatin1String(FITZ_PLUGIN_NAME));
+    m_fileNames.insert(PDF, QLatin1String(FITZ_PLUGIN_NAME));
+    m_fileNames.insert(EPUB, QLatin1String(FITZ_PLUGIN_NAME));
+    m_fileNames.insert(XPS, QLatin1String(FITZ_PLUGIN_NAME));
+    m_fileNames.insert(FB2, QLatin1String(FITZ_PLUGIN_NAME));
+    m_fileNames.insert(CBZ, QLatin1String(FITZ_PLUGIN_NAME));
 #endif // STATIC_FITZ_PLUGIN
 #endif // WITH_FITZ
 
 #ifdef WITH_PDF
 #ifdef STATIC_PDF_PLUGIN
-    m_objectNames.insertMulti(PDF, QLatin1String("PdfPlugin"));
+    m_objectNames.insert(PDF, QLatin1String("PdfPlugin"));
 #else
-    m_fileNames.insertMulti(PDF, QLatin1String(PDF_PLUGIN_NAME));
+    m_fileNames.insert(PDF, QLatin1String(PDF_PLUGIN_NAME));
 #endif // STATIC_PDF_PLUGIN
 #endif // WITH_PDF
 
 #ifdef WITH_PS
 #ifdef STATIC_PS_PLUGIN
-    m_objectNames.insertMulti(PS, QLatin1String("PsPlugin"));
+    m_objectNames.insert(PS, QLatin1String("PsPlugin"));
 #else
-    m_fileNames.insertMulti(PS, QLatin1String(PS_PLUGIN_NAME));
+    m_fileNames.insert(PS, QLatin1String(PS_PLUGIN_NAME));
 #endif // STATIC_PS_PLUGIN
 #endif // WITH_PS
 
 #ifdef WITH_DJVU
 #ifdef STATIC_DJVU_PLUGIN
-    m_objectNames.insertMulti(DjVu, QLatin1String("DjVuPlugin"));
+    m_objectNames.insert(DjVu, QLatin1String("DjVuPlugin"));
 #else
-    m_fileNames.insertMulti(DjVu, QLatin1String(DJVU_PLUGIN_NAME));
+    m_fileNames.insert(DjVu, QLatin1String(DJVU_PLUGIN_NAME));
 #endif // STATIC_DJVU_PLUGIN
 #endif // WITH_DJVU
 }

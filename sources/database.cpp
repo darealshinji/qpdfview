@@ -50,6 +50,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include "settings.h"
 #include "documentview.h"
 #include "bookmarkmodel.h"
+#include "compatibility.h"
 
 #ifdef WITH_SQL
 
@@ -729,7 +730,11 @@ Database::Database(QObject* parent) : QObject(parent)
 {
 #ifdef WITH_SQL
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+#if QT_VERSION >= QT_VERSION_CHECK(5,4,0)
+
+    const QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+
+#elif QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 
     const QString path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
 
@@ -981,7 +986,7 @@ void Database::migrateBookmarks_v1_v3()
             const QString filePath = outerQuery.nextValue();
             const QString pages = outerQuery.nextValue();
 
-            foreach(const QString& page, pages.split(",", QString::SkipEmptyParts))
+            foreach(const QString& page, pages.split(',', SplitBehavior::SkipEmptyParts))
             {
                 innerQuery << filePath
                            << page

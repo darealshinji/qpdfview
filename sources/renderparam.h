@@ -46,7 +46,7 @@ class RenderParam
 {
 public:
     RenderParam(qreal scaleFactor = 1.0, Rotation rotation = RotateBy0,
-                RenderFlags flags = 0) : d(new SharedData)
+                RenderFlags flags = RenderFlags()) : d(new SharedData)
     {
         d->resolutionX = 72;
         d->resolutionY = 72;

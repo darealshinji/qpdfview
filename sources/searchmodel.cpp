@@ -26,6 +26,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtConcurrentRun>
 
 #include "documentview.h"
+#include "compatibility.h"
 
 static inline bool operator<(int page, const QPair< int, QRectF >& result) { return page < result.first; }
 static inline bool operator<(const QPair< int, QRectF >& result, int page) { return result.first < page; }
@@ -224,7 +225,7 @@ bool SearchModel::hasResultsOnPage(DocumentView* view, int page) const
 {
     const Results* results = m_results.value(view, 0);
 
-    return results != 0 && qBinaryFind(results->begin(), results->end(), page) != results->end();
+    return results != 0 && std::binary_search(results->begin(), results->end(), page);
 }
 
 int SearchModel::numberOfResultsOnPage(DocumentView* view, int page) const
@@ -236,10 +237,9 @@ int SearchModel::numberOfResultsOnPage(DocumentView* view, int page) const
         return 0;
     }
 
-    const Results::const_iterator pageBegin = qLowerBound(results->constBegin(), results->constEnd(), page);
-    const Results::const_iterator pageEnd = qUpperBound(pageBegin, results->constEnd(), page);
+    const std::pair< Results::const_iterator, Results::const_iterator > pageRange = std::equal_range(results->constBegin(), results->constEnd(), page);
 
-    return pageEnd - pageBegin;
+    return pageRange.second - pageRange.first;
 }
 
 QList< QRectF > SearchModel::resultsOnPage(DocumentView* view, int page) const
@@ -250,10 +250,9 @@ QList< QRectF > SearchModel::resultsOnPage(DocumentView* view, int page) const
 
     if(results != 0)
     {
-        const Results::const_iterator pageBegin = qLowerBound(results->constBegin(), results->constEnd(), page);
-        const Results::const_iterator pageEnd = qUpperBound(pageBegin, results->constEnd(), page);
+        const std::pair< Results::const_iterator, Results::const_iterator > pageRange = std::equal_range(results->constBegin(), results->constEnd(), page);
 
-        for(Results::const_iterator iterator = pageBegin; iterator != pageEnd; ++iterator)
+        for(Results::const_iterator iterator = pageRange.first; iterator != pageRange.second; ++iterator)
         {
             resultsOnPage.append(iterator->second);
         }
@@ -294,14 +293,14 @@ QPersistentModelIndex SearchModel::findResult(DocumentView* view, const QPersist
         default:
         case FindNext:
         {
-            Results::const_iterator lowerBound = qLowerBound(results->constBegin(), results->constEnd(), currentPage);
+            Results::const_iterator lowerBound = std::lower_bound(results->constBegin(), results->constEnd(), currentPage);
 
             row = (lowerBound - results->constBegin()) % rows;
             break;
         }
         case FindPrevious:
         {
-            Results::const_iterator upperBound = qUpperBound(results->constBegin(), results->constEnd(), currentPage);
+            Results::const_iterator upperBound = std::upper_bound(results->constBegin(), results->constEnd(), currentPage);
 
             row = ((upperBound - results->constBegin()) + rows - 1) % rows;
             break;
@@ -323,7 +322,7 @@ void SearchModel::insertResults(DocumentView* view, int page, const QList< QRect
 
     Results* results = m_results.value(view);
 
-    Results::iterator at = qLowerBound(results->begin(), results->end(), page);
+    Results::iterator at = std::lower_bound(results->begin(), results->end(), page);
     const int row = at - results->begin();
 
     beginInsertRows(parent, row, row + resultsOnPage.size() - 1);
@@ -364,7 +363,7 @@ void SearchModel::clearResults(DocumentView* view)
         }
     }
 
-    const QVector< DocumentView* >::iterator at = qBinaryFind(m_views.begin(), m_views.end(), view);
+    const QVector< DocumentView* >::iterator at = binarySearch(m_views.begin(), m_views.end(), view);
     const int row = at - m_views.begin();
 
     if(at == m_views.end())
@@ -429,7 +428,7 @@ SearchModel::SearchModel(QObject* parent) : QAbstractItemModel(parent),
 
 QModelIndex SearchModel::findView(DocumentView *view) const
 {
-    const QVector< DocumentView* >::const_iterator at = qBinaryFind(m_views.constBegin(), m_views.constEnd(), view);
+    const QVector< DocumentView* >::const_iterator at = binarySearch(m_views.constBegin(), m_views.constEnd(), view);
     const int row = at - m_views.constBegin();
 
     if(at == m_views.constEnd())
@@ -442,7 +441,7 @@ QModelIndex SearchModel::findView(DocumentView *view) const
 
 QModelIndex SearchModel::findOrInsertView(DocumentView* view)
 {
-    const QVector< DocumentView* >::iterator at = qLowerBound(m_views.begin(), m_views.end(), view);
+    const QVector< DocumentView* >::iterator at = std::lower_bound(m_views.begin(), m_views.end(), view);
     const int row = at - m_views.begin();
 
     if(at == m_views.end() || *at != view)

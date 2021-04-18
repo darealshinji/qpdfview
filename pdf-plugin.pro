@@ -14,9 +14,10 @@ MOC_DIR = moc-pdf
 HEADERS = sources/model.h sources/pdfmodel.h sources/annotationwidgets.h sources/formfieldwidgets.h
 SOURCES = sources/pdfmodel.cpp sources/annotationwidgets.cpp sources/formfieldwidgets.cpp
 
-QT += core xml gui
+QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+lessThan(QT_MAJOR_VERSION, 6): QT += xml
 
 !without_pkgconfig {
     poppler_qt_pkg = poppler-qt$${QT_MAJOR_VERSION}
@@ -29,6 +30,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
     system(pkg-config --atleast-version=0.26 $${poppler_qt_pkg}):DEFINES += HAS_POPPLER_26
     system(pkg-config --atleast-version=0.31 $${poppler_qt_pkg}):DEFINES += HAS_POPPLER_31
     system(pkg-config --atleast-version=0.35 $${poppler_qt_pkg}):DEFINES += HAS_POPPLER_35
+    system(pkg-config --atleast-version=0.74 $${poppler_qt_pkg}):DEFINES += HAS_POPPLER_74
 
     CONFIG += link_pkgconfig
     PKGCONFIG += $${poppler_qt_pkg}

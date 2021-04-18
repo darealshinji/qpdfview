@@ -25,7 +25,6 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QApplication>
 #include <QCheckBox>
-#include <QDesktopWidget>
 #include <QDialogButtonBox>
 #include <QFormLayout>
 #include <QGroupBox>
@@ -34,12 +33,19 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QShortcut>
 #include <QTableView>
 
+#if QT_VERSION < QT_VERSION_CHECK(5,0,0)
+
+#include <QDesktopWidget>
+
+#endif // QT_VERSION
+
 #include "settings.h"
 #include "model.h"
 #include "pluginhandler.h"
 #include "shortcuthandler.h"
 #include "documentview.h"
 #include "miscellaneous.h"
+#include "compatibility.h"
 
 namespace
 {
@@ -278,11 +284,21 @@ void SettingsDialog::createBehaviorTab()
 #endif // WITH_SQL
 
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+
+    const int screenCount = QGuiApplication::screens().count();
+
+#else
+
+    const int screenCount = QApplication::desktop()->screenCount();
+
+#endif // QT_VERSION
+
     m_synchronizePresentationCheckBox = addCheckBox(m_behaviorLayout, tr("Synchronize presentation:"), QString(),
                                                     s_settings->presentationView().synchronize());
 
     m_presentationScreenSpinBox = addSpinBox(m_behaviorLayout, tr("Presentation screen:"), QString(), QString(), tr("Default"),
-                                             -1, QApplication::desktop()->screenCount() - 1, 1, s_settings->presentationView().screen());
+                                             -1, screenCount - 1, 1, s_settings->presentationView().screen());
 
 
     m_synchronizeOutlineViewCheckBox = addCheckBox(m_behaviorLayout, tr("Synchronize outline view:"), QString(),
@@ -637,12 +653,12 @@ void SettingsDialog::acceptInterfaceTab()
     s_settings->mainWindow().setRecentlyUsedCount(m_recentlyUsedCountSpinBox->value());
     s_settings->mainWindow().setRecentlyClosedCount(m_recentlyClosedCountSpinBox->value());
 
-    s_settings->mainWindow().setFileToolBar(m_fileToolBarLineEdit->text().split(",", QString::SkipEmptyParts));
-    s_settings->mainWindow().setEditToolBar(m_editToolBarLineEdit->text().split(",", QString::SkipEmptyParts));
-    s_settings->mainWindow().setViewToolBar(m_viewToolBarLineEdit->text().split(",", QString::SkipEmptyParts));
+    s_settings->mainWindow().setFileToolBar(m_fileToolBarLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
+    s_settings->mainWindow().setEditToolBar(m_editToolBarLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
+    s_settings->mainWindow().setViewToolBar(m_viewToolBarLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
 
-    s_settings->mainWindow().setDocumentContextMenu(m_documentContextMenuLineEdit->text().split(",", QString::SkipEmptyParts));
-    s_settings->mainWindow().setTabContextMenu(m_tabContextMenuLineEdit->text().split(",", QString::SkipEmptyParts));
+    s_settings->mainWindow().setDocumentContextMenu(m_documentContextMenuLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
+    s_settings->mainWindow().setTabContextMenu(m_tabContextMenuLineEdit->text().split(',', SplitBehavior::SkipEmptyParts));
 
     s_settings->mainWindow().setScrollableMenus(m_scrollableMenusCheckBox->isChecked());
     s_settings->mainWindow().setSearchableMenus(m_searchableMenusCheckBox->isChecked());
@@ -874,7 +890,7 @@ QComboBox* SettingsDialog::addModifiersComboBox(QFormLayout* layout, const QStri
     comboBox->addItem(QShortcut::tr("Shift and Alt"), static_cast< int >(Qt::ShiftModifier | Qt::AltModifier));
     comboBox->addItem(QShortcut::tr("Ctrl and Alt"), static_cast< int >(Qt::ControlModifier | Qt::AltModifier));
     comboBox->addItem(QShortcut::tr("Right mouse button"), static_cast< int >(Qt::RightButton));
-    comboBox->addItem(QShortcut::tr("Middle mouse button"), static_cast< int >(Qt::MidButton));
+    comboBox->addItem(QShortcut::tr("Middle mouse button"), static_cast< int >(Qt::MiddleButton));
     comboBox->addItem(QShortcut::tr("None"), static_cast< int >(Qt::NoModifier));
 
     setCurrentIndexFromKeyboardModifiers(comboBox, modifiers);

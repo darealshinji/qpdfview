@@ -35,6 +35,7 @@ class QSettings;
 
 #include "global.h"
 #include "printoptions.h"
+#include "compatibility.h"
 
 namespace qpdfview
 {
@@ -449,8 +450,8 @@ public:
         QPrinter::PageOrder pageOrder() const;
         void setPageOrder(QPrinter::PageOrder pageOrder);
 
-        QPrinter::Orientation orientation() const;
-        void setOrientation(QPrinter::Orientation orientation);
+        PageOrientation orientation() const;
+        void setOrientation(PageOrientation orientation);
 
         QPrinter::ColorMode colorMode() const;
         void setColorMode(QPrinter::ColorMode colorMode);
@@ -689,7 +690,7 @@ public:
 
         static QPrinter::PageOrder pageOrder() { return QPrinter::FirstPageFirst; }
 
-        static QPrinter::Orientation orientation() { return QPrinter::Portrait; }
+        static PageOrientation orientation() { return PageOrientation::Portrait; }
 
         static QPrinter::ColorMode colorMode() { return QPrinter::Color; }
 

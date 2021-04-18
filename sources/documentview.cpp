@@ -31,7 +31,6 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QInputDialog>
 #include <QDateTime>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QDesktopServices>
 #include <QDir>
 #include <QFileSystemWatcher>
@@ -46,6 +45,16 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTemporaryFile>
 #include <QTimer>
 #include <QUrl>
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+
+#include <QScreen>
+
+#else
+
+#include <QDesktopWidget>
+
+#endif // QT_VERSION_CHECK
 
 #ifdef WITH_CUPS
 
@@ -78,6 +87,7 @@ typedef synctex_node_t synctex_node_p;
 #include "searchmodel.h"
 #include "searchtask.h"
 #include "miscellaneous.h"
+#include "compatibility.h"
 #include "documentlayout.h"
 
 namespace
@@ -629,7 +639,17 @@ void addFileProperties(Model::Properties& properties, const QFileInfo& fileInfo)
 {
     addProperty(properties, "File path", fileInfo.absoluteFilePath());
     addProperty(properties, "File size", formatFileSize(fileInfo.size()));
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,10,0)
+
+    addProperty(properties, "File created", fileInfo.birthTime().toString());
+
+#else
+
     addProperty(properties, "File created", fileInfo.created().toString());
+
+#endif // QT_VERSION
+
     addProperty(properties, "File last modified", fileInfo.lastModified().toString());
     addProperty(properties, "File owner", fileInfo.owner());
     addProperty(properties, "File group", fileInfo.owner());
@@ -717,7 +737,7 @@ DocumentView::DocumentView(QWidget* parent) : QGraphicsView(parent),
     m_scaleMode(ScaleFactorMode),
     m_scaleFactor(1.0),
     m_rotation(RotateBy0),
-    m_renderFlags(0),
+    m_renderFlags(),
     m_highlightAll(false),
     m_rubberBandMode(ModifiersMode),
     m_pageItems(),
@@ -1419,7 +1439,7 @@ void DocumentView::openInSourceEditor(const DocumentView::SourceLink& sourceLink
         const QString absoluteFilePath = m_fileInfo.dir().absoluteFilePath(sourceLink.name);
         const QString sourceEditorCommand = s_settings->documentView().sourceEditor().arg(absoluteFilePath, QString::number(sourceLink.line), QString::number(sourceLink.column));
 
-        QProcess::startDetached(sourceEditorCommand);
+        startDetached(sourceEditorCommand);
     }
     else
     {
@@ -1863,7 +1883,19 @@ void DocumentView::startPresentation()
 
     PresentationView* presentationView = new PresentationView(m_pages);
 
-    presentationView->setGeometry(QApplication::desktop()->screenGeometry(screen));
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+
+    const QRect screenGeometry = screen != -1 ?
+                    QGuiApplication::screens().at(screen)->geometry() :
+                    QGuiApplication::primaryScreen()->geometry();
+
+#else
+
+    const QRect screenGeometry = QApplication::desktop()->screenGeometry(screen);
+
+#endif // QT_VERSION
+
+    presentationView->setGeometry(screenGeometry);
 
     presentationView->show();
     presentationView->setAttribute(Qt::WA_DeleteOnClose);
@@ -2132,7 +2164,7 @@ void DocumentView::keyPressEvent(QKeyEvent* event)
         }
     }
 
-    const QKeySequence keySequence(event->modifiers() + event->key());
+    const QKeySequence keySequence(event->modifiers() | event->key());
 
     int maskedKey = -1;
     bool maskedKeyActive = false;
@@ -2249,6 +2281,8 @@ void DocumentView::mousePressEvent(QMouseEvent* event)
 
 void DocumentView::wheelEvent(QWheelEvent* event)
 {
+    const bool forward = rotatedForward(event);
+
     const bool noModifiersActive = event->modifiers() == Qt::NoModifier;
     const bool zoomModifiersActive = modifiersAreActive(event, s_settings->documentView().zoomModifiers());
     const bool rotateModifiersActive = modifiersAreActive(event, s_settings->documentView().rotateModifiers());
@@ -2256,7 +2290,7 @@ void DocumentView::wheelEvent(QWheelEvent* event)
 
     if(zoomModifiersActive)
     {
-        if(event->delta() > 0)
+        if(forward)
         {
             zoomIn();
         }
@@ -2270,7 +2304,7 @@ void DocumentView::wheelEvent(QWheelEvent* event)
     }
     else if(rotateModifiersActive)
     {
-        if(event->delta() > 0)
+        if(forward)
         {
             rotateLeft();
         }
@@ -2284,7 +2318,25 @@ void DocumentView::wheelEvent(QWheelEvent* event)
     }
     else if(scrollModifiersActive)
     {
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+
+        QPoint pixelDelta = event->pixelDelta();
+        QPoint angleDelta = event->angleDelta();
+
+        if(s_settings->documentView().scrollModifiers() != Qt::AltModifier)
+        {
+            qSwap(pixelDelta.rx(), pixelDelta.ry());
+            qSwap(angleDelta.rx(), angleDelta.ry());
+        }
+
+        QWheelEvent wheelEvent(event->position(), event->globalPosition(), pixelDelta, angleDelta, event->buttons(), Qt::AltModifier, event->phase(), event->inverted(), event->source());
+
+#else
+
         QWheelEvent wheelEvent(event->pos(), event->delta(), event->buttons(), Qt::AltModifier, Qt::Horizontal);
+
+#endif // QT_VERSION
+
         QGraphicsView::wheelEvent(&wheelEvent);
 
         event->accept();
@@ -2292,7 +2344,7 @@ void DocumentView::wheelEvent(QWheelEvent* event)
     }
     else if(noModifiersActive && !m_continuousMode)
     {
-        if(event->delta() > 0 && verticalScrollBar()->value() == verticalScrollBar()->minimum() && m_currentPage != 1)
+        if(forward && verticalScrollBar()->value() == verticalScrollBar()->minimum() && m_currentPage != 1)
         {
             previousPage();
 
@@ -2301,7 +2353,7 @@ void DocumentView::wheelEvent(QWheelEvent* event)
             event->accept();
             return;
         }
-        else if(event->delta() < 0 && verticalScrollBar()->value() == verticalScrollBar()->maximum() && m_currentPage != m_layout->currentPage(m_pages.count()))
+        else if(!forward && verticalScrollBar()->value() == verticalScrollBar()->maximum() && m_currentPage != m_layout->currentPage(m_pages.count()))
         {
             nextPage();
 
@@ -2388,12 +2440,20 @@ bool DocumentView::printUsingCUPS(QPrinter* printer, const PrintOptions& printOp
 
     num_options = cupsAddOption("fit-to-page", printOptions.fitToPage ? "true" : "false", num_options, &options);
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,3,0)
+
+    switch(printer->pageLayout().orientation())
+
+#else
+
     switch(printer->orientation())
+
+#endif // QT_VERSION
     {
-    case QPrinter::Portrait:
+    case PageOrientation::Portrait:
         num_options = cupsAddOption("landscape", "false", num_options, &options);
         break;
-    case QPrinter::Landscape:
+    case PageOrientation::Landscape:
         num_options = cupsAddOption("landscape", "true", num_options, &options);
         break;
     }

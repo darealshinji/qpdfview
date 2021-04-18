@@ -23,6 +23,7 @@ HEADERS += \
     sources/searchitemdelegate.h \
     sources/searchtask.h \
     sources/miscellaneous.h \
+    sources/compatibility.h \
     sources/documentlayout.h \
     sources/documentview.h \
     sources/printdialog.h \

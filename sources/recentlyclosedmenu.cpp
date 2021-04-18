@@ -21,6 +21,8 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "recentlyclosedmenu.h"
 
+#include <QActionGroup>
+
 #include "documentview.h"
 
 namespace qpdfview

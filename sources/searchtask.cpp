@@ -21,8 +21,6 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "searchtask.h"
 
-#include "model.h"
-
 #include <QtConcurrentMap>
 
 namespace qpdfview

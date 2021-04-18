@@ -26,13 +26,10 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QThread>
 #include <QVector>
 
+#include "model.h"
+
 namespace qpdfview
 {
-
-namespace Model
-{
-class Page;
-}
 
 class SearchTask : public QThread
 {
@@ -81,7 +78,6 @@ private:
 
     void releaseProgress(int value);
     int acquireProgress() const;
-    int loadProgress() const;
 
     template< typename Future >
     void processResults(Future future);
@@ -101,22 +97,30 @@ private:
 
 inline void SearchTask::setCancellation()
 {
-    m_wasCanceled.storeRelease(Canceled);
+    m_wasCanceled.storeRelaxed(Canceled);
 }
 
 inline void SearchTask::resetCancellation()
 {
-    m_wasCanceled.storeRelease(NotCanceled);
+    m_wasCanceled.storeRelaxed(NotCanceled);
 }
 
 inline bool SearchTask::testCancellation()
 {
-    return m_wasCanceled.load() != NotCanceled;
+    return loadCancellation() != NotCanceled;
 }
 
 inline int SearchTask::loadCancellation() const
 {
+#if QT_VERSION > QT_VERSION_CHECK(5,14,0)
+
+    return m_wasCanceled.loadRelaxed();
+
+#else
+
     return m_wasCanceled.load();
+
+#endif // QT_VERSION
 }
 
 inline void SearchTask::releaseProgress(int value)
@@ -129,21 +133,16 @@ inline int SearchTask::acquireProgress() const
     return m_progress.loadAcquire();
 }
 
-inline int SearchTask::loadProgress() const
-{
-    return m_progress.load();
-}
-
 #else
 
 inline void SearchTask::setCancellation()
 {
-    m_wasCanceled.fetchAndStoreRelease(Canceled);
+    m_wasCanceled.fetchAndStoreRelaxed(Canceled);
 }
 
 inline void SearchTask::resetCancellation()
 {
-    m_wasCanceled.fetchAndStoreRelease(NotCanceled);
+    m_wasCanceled.fetchAndStoreRelaxed(NotCanceled);
 }
 
 inline bool SearchTask::testCancellation()
@@ -164,11 +163,6 @@ inline void SearchTask::releaseProgress(int value)
 inline int SearchTask::acquireProgress() const
 {
     return m_progress.fetchAndAddAcquire(0);
-}
-
-inline int SearchTask::loadProgress() const
-{
-    return m_progress;
 }
 
 #endif // QT_VERSION

@@ -117,9 +117,9 @@ void ThumbnailItem::setHighlighted(bool highlighted)
 void ThumbnailItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     if(event->modifiers() == Qt::NoModifier
-            && (event->button() == Qt::LeftButton || event->button() == Qt::MidButton))
+            && (event->button() == Qt::LeftButton || event->button() == Qt::MiddleButton))
     {
-        emit linkClicked(event->button() == Qt::MidButton, index() + 1);
+        emit linkClicked(event->button() == Qt::MiddleButton, index() + 1);
 
         event->accept();
         return;

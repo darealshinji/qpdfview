@@ -28,7 +28,11 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMessageBox>
 #include <QSettings>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+
+#include <poppler-qt6.h>
+
+#elif QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 
 #include <poppler-qt5.h>
 
@@ -64,6 +68,72 @@ namespace
 
 using namespace qpdfview;
 using namespace qpdfview::Model;
+
+#ifdef HAS_POPPLER_74
+
+Outline loadOutline(QVector< Poppler::OutlineItem > items, Poppler::Document* document)
+{
+    Outline outline;
+
+    outline.reserve(items.size());
+
+    for(QVector< Poppler::OutlineItem >::const_iterator item = items.constBegin(); item != items.constEnd(); ++item)
+    {
+        outline.push_back(Section());
+        Section& section = outline.back();
+
+        section.title = item->name();
+
+        QSharedPointer< const Poppler::LinkDestination > destination = item->destination();
+
+        if(destination)
+        {
+            int page = destination->pageNumber();
+            qreal left = qQNaN();
+            qreal top = qQNaN();
+
+            page = page >= 1 ? page : 1;
+            page = page <= document->numPages() ? page : document->numPages();
+
+            if(destination->isChangeLeft())
+            {
+                left = destination->left();
+
+                left = left >= 0.0 ? left : 0.0;
+                left = left <= 1.0 ? left : 1.0;
+            }
+
+            if(destination->isChangeTop())
+            {
+                top = destination->top();
+
+                top = top >= 0.0 ? top : 0.0;
+                top = top <= 1.0 ? top : 1.0;
+            }
+
+            Link& link = section.link;
+            link.page = page;
+            link.left = left;
+            link.top = top;
+
+            const QString fileName = item->externalFileName();
+
+            if(!fileName.isEmpty())
+            {
+                link.urlOrFileName = fileName;
+            }
+        }
+
+        if(item->hasChildren())
+        {
+            section.children = loadOutline(item->children(), document);
+        }
+    }
+
+    return outline;
+}
+
+#else
 
 Outline loadOutline(const QDomNode& parent, Poppler::Document* document)
 {
@@ -139,6 +209,8 @@ Outline loadOutline(const QDomNode& parent, Poppler::Document* document)
 
     return outline;
 }
+
+#endif // HAS_POPPLER_74
 
 class FontsModel : public QAbstractTableModel
 {
@@ -972,9 +1044,15 @@ void PdfDocument::setPaperColor(const QColor& paperColor)
 
 Outline PdfDocument::outline() const
 {
-    Outline outline;
-
     LOCK_DOCUMENT
+
+#ifdef HAS_POPPLER_74
+
+    return loadOutline(m_document->outline(), m_document);
+
+#else
+
+    Outline outline;
 
     QScopedPointer< QDomDocument > toc(m_document->toc());
 
@@ -984,6 +1062,8 @@ Outline PdfDocument::outline() const
     }
 
     return outline;
+
+#endif // HAS_POPPLER_74
 }
 
 Properties PdfDocument::properties() const
@@ -1309,7 +1389,15 @@ Model::Document* PdfPlugin::loadDocument(const QString& filePath) const
             document->setRenderBackend(Poppler::Document::SplashBackend);
             break;
         case 1:
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+
+            document->setRenderBackend(Poppler::Document::QPainterBackend);
+
+#else
+
             document->setRenderBackend(Poppler::Document::ArthurBackend);
+
+#endif // QT_VERSION
             break;
         }
 

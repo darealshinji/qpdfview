@@ -159,8 +159,18 @@ QRectF trimMargins(QRgb paperColor, const QImage& image)
 
 void invertLightness(QImage& image)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,10,0)
+
+    qsizetype bytes = image.sizeInBytes();
+
+#else
+
+    int bytes = image.byteCount();
+
+#endif // QT_VERSION
+
     QRgb* const begin = reinterpret_cast< QRgb* >(image.bits());
-    QRgb* const end = reinterpret_cast< QRgb* >(image.bits() + image.byteCount());
+    QRgb* const end = reinterpret_cast< QRgb* >(image.bits() + bytes);
 
     // This is a transformation in RGB space that mirrors the color coordinates
     // about the plane that intersects the mid point of the cube (0.5, 0.5, 0.5)
@@ -178,18 +188,30 @@ void invertLightness(QImage& image)
         int r = qRed(*pointer);
         int g = qGreen(*pointer);
         int b = qBlue(*pointer);
+
         const int d = qRound((382.5 - r - g - b) / 1.5);
         r = qBound(0, r + d, 255);
         g = qBound(0, g + d, 255);
         b = qBound(0, b + d, 255);
+
         *pointer = qRgba(r, g, b, alpha);
     }
 }
 
 void convertToGrayscale(QImage& image)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,10,0)
+
+    qsizetype bytes = image.sizeInBytes();
+
+#else
+
+    int bytes = image.byteCount();
+
+#endif // QT_VERSION
+
     QRgb* const begin = reinterpret_cast< QRgb* >(image.bits());
-    QRgb* const end = reinterpret_cast< QRgb* >(image.bits() + image.byteCount());
+    QRgb* const end = reinterpret_cast< QRgb* >(image.bits() + bytes);
 
     for(QRgb* pointer = begin; pointer != end; ++pointer)
     {

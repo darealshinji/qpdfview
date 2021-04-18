@@ -25,7 +25,6 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include "settings.h"
 
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QLocale>
 #include <QSettings>
 
@@ -36,6 +35,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #else
 
 #include <QDesktopServices>
+#include <QDesktopWidget>
 
 #endif // QT_VERSION
 
@@ -305,9 +305,19 @@ void Settings::PresentationView::setSynchronize(bool synchronize)
 
 int Settings::PresentationView::screen() const
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+
+    const int screenCount = QGuiApplication::screens().count();
+
+#else
+
+    const int screenCount = QApplication::desktop()->screenCount();
+
+#endif // QT_VERSION
+
     int screen = m_settings->value("presentationView/screen", Defaults::PresentationView::screen()).toInt();
 
-    if(screen < -1 || screen >= QApplication::desktop()->screenCount())
+    if(screen < -1 || screen >= screenCount)
     {
         screen = -1;
     }
@@ -1134,12 +1144,12 @@ void Settings::PrintDialog::setPageOrder(QPrinter::PageOrder pageOrder)
     m_settings->setValue("printDialog/pageOrder", static_cast< int >(pageOrder));
 }
 
-QPrinter::Orientation Settings::PrintDialog::orientation() const
+PageOrientation Settings::PrintDialog::orientation() const
 {
-    return static_cast< QPrinter::Orientation >(m_settings->value("printDialog/orientation", static_cast< int >(Defaults::PrintDialog::orientation())).toInt());
+    return static_cast< PageOrientation >(m_settings->value("printDialog/orientation", static_cast< int >(Defaults::PrintDialog::orientation())).toInt());
 }
 
-void Settings::PrintDialog::setOrientation(QPrinter::Orientation orientation)
+void Settings::PrintDialog::setOrientation(PageOrientation orientation)
 {
     m_settings->setValue("printDialog/orientation", static_cast< int >(orientation));
 }

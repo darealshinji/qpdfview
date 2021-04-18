@@ -24,7 +24,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #define PLUGINHANDLER_H
 
 #include <QObject>
-#include <QMap>
+#include <QMultiMap>
 
 class QString;
 class QWidget;
@@ -79,7 +79,7 @@ private:
     static PluginHandler* s_instance;
     PluginHandler(QObject* parent = 0);
 
-    QMap< FileType, Plugin* > m_plugins;
+    QMultiMap< FileType, Plugin* > m_plugins;
 
     QMultiMap< FileType, QString > m_objectNames;
     QMultiMap< FileType, QString > m_fileNames;

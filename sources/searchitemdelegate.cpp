@@ -99,7 +99,15 @@ void SearchItemDelegate::paintText(QPainter* painter, const QStyleOptionViewItem
     textLayout.setFont(font);
 
 
-    QList< QTextLayout::FormatRange > additionalFormats;
+#if QT_VERSION >= QT_VERSION_CHECK(5,6,0)
+
+    QVector< QTextLayout::FormatRange > formats;
+
+#else
+
+    QList< QTextLayout::FormatRange > formats;
+
+#endif // QT_VERSION
 
     for(int index = 0; (index = surroundingText.indexOf(matchedText, index)) != -1; index += matchedText.length())
     {
@@ -108,10 +116,18 @@ void SearchItemDelegate::paintText(QPainter* painter, const QStyleOptionViewItem
         formatRange.length = matchedText.length();
         formatRange.format.setFontWeight(QFont::Bold);
 
-        additionalFormats.append(formatRange);
+        formats.append(formatRange);
     }
 
-    textLayout.setAdditionalFormats(additionalFormats);
+#if QT_VERSION >= QT_VERSION_CHECK(5,6,0)
+
+    textLayout.setFormats(formats);
+
+#else
+
+    textLayout.setAdditionalFormats(formats);
+
+#endif // QT_VERSION
 
 
     textLayout.beginLayout();

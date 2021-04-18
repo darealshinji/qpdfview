@@ -50,13 +50,12 @@ class QToolButton;
 class QTreeView;
 class QWidgetAction;
 
-#include "renderparam.h"
+#include "documentview.h"
 
 namespace qpdfview
 {
 
 class Settings;
-class DocumentView;
 class TabWidget;
 class TreeView;
 class ComboBox;

@@ -442,7 +442,7 @@ void PageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
 void PageItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     const bool leftButtonActive = event->button() == Qt::LeftButton;
-    const bool middleButtonActive = event->button() == Qt::MidButton;
+    const bool middleButtonActive = event->button() == Qt::MiddleButton;
     const bool anyButtonActive = leftButtonActive || middleButtonActive;
 
     const bool noModifiersActive = event->modifiers() == Qt::NoModifier;
@@ -743,7 +743,16 @@ void PageItem::startLoadInteractiveElements()
 
     m_loadInteractiveElements = new QFutureWatcher< void >(this);
     connect(m_loadInteractiveElements, SIGNAL(finished()), SLOT(on_loadInteractiveElements_finished()));
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+
+    m_loadInteractiveElements->setFuture(QtConcurrent::run(std::bind(&PageItem::loadInteractiveElements, this)));
+
+#else
+
     m_loadInteractiveElements->setFuture(QtConcurrent::run(this, &PageItem::loadInteractiveElements));
+
+#endif // QT_VERSION
 }
 
 void PageItem::loadInteractiveElements()
