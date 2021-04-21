@@ -3332,11 +3332,11 @@ QDockWidget* MainWindow::createDock(const QString& text, const QString& objectNa
     dock->setObjectName(objectName);
     dock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetMovable);
 
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
+#if defined(Q_OS_WIN) || defined(Q_OS_MAC) || QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 
     dock->setWindowTitle(dock->windowTitle().remove(QLatin1Char('&')));
 
-#endif // defined(Q_OS_WIN) || defined(Q_OS_MAC)
+#endif // defined(Q_OS_WIN) || defined(Q_OS_MAC) || QT_VERSION
 
     addDockWidget(Qt::LeftDockWidgetArea, dock);
 
@@ -3358,11 +3358,11 @@ void MainWindow::createSearchDock()
     m_searchDock->setObjectName(QLatin1String("searchDock"));
     m_searchDock->setFeatures(QDockWidget::DockWidgetFloatable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetVerticalTitleBar);
 
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
+#if defined(Q_OS_WIN) || defined(Q_OS_MAC) || QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 
     m_searchDock->setWindowTitle(m_searchDock->windowTitle().remove(QLatin1Char('&')));
 
-#endif // defined(Q_OS_WIN) || defined(Q_OS_MAC)
+#endif // defined(Q_OS_WIN) || defined(Q_OS_MAC) || QT_VERSION
 
     addDockWidget(Qt::BottomDockWidgetArea, m_searchDock);
 
