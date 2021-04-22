@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Adam Reichold <adam.reichold@t-online.de> -->
-<application>
-    <id type="desktop">qpdfview.desktop</id>
+<!-- Copyright 2018 Boyuan Yang <073plan@gmail.com> -->
+<component type="desktop-application">
+    <id>qpdfview.desktop</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-2.0+</project_license>
     <name>qpdfview</name>
@@ -28,6 +29,7 @@
             <li>Partial form support (PDF only)</li>
         </ul>    
     </description>
+    <launchable type="desktop-id">qpdfview.desktop</launchable>
     <screenshots>
         <screenshot type="default" width="800" height="600">http://screenshots.debian.net/image/13652_large.png</screenshot>
         <screenshot width="800" height="600">http://screenshots.debian.net/screenshots/q/qpdfview/13653_large.png</screenshot>
@@ -35,5 +37,6 @@
         <screenshot width="707" height="600">http://screenshots.debian.net/screenshots/q/qpdfview/9399_large.png</screenshot>
     </screenshots>
     <url type="homepage">https://launchpad.net/qpdfview</url>
-    <updatecontact>qpdfview@lists.launchpad.net</updatecontact>
+    <developer_name>Adam Reichold</developer_name>
+    <update_contact>qpdfview@lists.launchpad.net</update_contact>
 </application>
