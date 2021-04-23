@@ -38,465 +38,479 @@ This file is additionally licensed under the Creative Commons Attribution-ShareA
 
 <h4>Садржај</h4>
 <ol>
-    <li><a href="#mainmenu">Главни мени</a></li>
+    <li><a href="#mainmenu">Главни изборник</a></li>
     <ol>
         <li><a href="#file">Датотека</a></li>
-        <li><a href="#edit">Уреди</a></li>
-        <li><a href="#view">Приказ</a></li>
-        <li><a href="#tabs">Картице</a></li>
+        <li><a href="#edit">Уређивање</a></li>
+        <li><a href="#view">Преглед</a></li>
+        <li><a href="#tabs">Језичци</a></li>
         <li><a href="#bookmarks">Обележивачи</a></li>
         <li><a href="#help">Помоћ</a></li>
     </ol>
-    <li><a href="#mainview">Главни изглед</a></li>
-    <li><a href="#auxiliaryviews">Помоћни изглед</a></li>
-    <li><a href="#settings">Подешавања</a></li>
+    <li><a href="#mainview">Главни преглед</a></li>
+    <li><a href="#auxiliaryviews">Помоћни преглед</a></li>
+    <li><a href="#settings">Поставке</a></li>
     <ol>
-    	<li><a href="#behaviorsettings">Понашање подешавања</a></li>
-    	<li><a href="#graphicssettings">Графичка подешавања</a></li>
-    	<li><a href="#interfacesettings">Подешавања интерфејса</a></li>
-    	<li><a href="#shortcutsettings">Подешавања пречица</a></li>
-    	<li><a href="#modifiersettings">Подешавање модификација</a></li>
+    	<li><a href="#behaviorsettings">Понашање поставки</a></li>
+    	<li><a href="#graphicssettings">Графичке поставке</a></li>
+    	<li><a href="#interfacesettings">Поставке сучеља</a></li>
+    	<li><a href="#shortcutsettings">Поставке пречица</a></li>
+    	<li><a href="#modifiersettings">Поставке измењивача</a></li>
     </ol>
 </ol>
 
 <h4>Увод</h4>
 
-<p><em>qpdfview</em>је читач докумената са употрбом картица. Користи Poppler за
-PDF подршку, libspectre за PS подршку, DjVuLibre за DjVu подршку, CUPS за
-подршку штампања и Qt toolkit за интерфејс.</p>
+<p><em>qpdfview</em> је читач докумената који користи језичке. Користи Поплер
+за ПДФ подршку, „libspectre“ за ПС подршку, „DjVuLibre“ за ДежаВи подршку,
+„CUPS“ за подршку штампања и Кутов скупа алата за сучеље.</p>
 
-<p>Молимо вас да на страници приручника видите  информације о опцијама командне
-линије и конфигурационих фајлова.</p>
+<p>На страници приручника погледајте информације о опцијама линије наредби и о
+датотекама подешавања.</p>
 
-<h3><a name="mainmenu">Главни мени</a> <a href="#top">&uarr;</a></h3>
+<h3><a name="mainmenu">Главни изборник</a> <a href="#top">&uarr;</a></h3>
 
 <h4><a name="file">Датотека</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Open...</b> Отвара дијалог за избор датотеке која се отвара у тренутној
-картици. Ако нема картице, датотека ће се отвотити у новој картици.</li>
-    <li><b>Open in new tab...</b> Отвара дијалог за избор датотека које се отварају
-у новим картицама.</li>
-    <li><b>Recently used</b> Садржи листу најчешће коришћених датотека (ако је
-омогућено у подешавањима).</li>
-    <li><b>Refresh</b> Поново учитава датотеку приказану у текућој картици.</li>
-    <li><b>Save</b> Saves changes to annotations and form fields to the file
-displayed in the current tab.</li>
-    <li><b>Сачувај као...</b> Отвара дијалог да сачувате датотеку приказану у
-текућој картици укључујући измене у напоменама и облицима поља.</li>
-    <li><b>Save copy...</b> Opens a dialog to save an umodified copy of the file
-displayed in the current tab.</li>
-    <li><b>Штампај...</b> Отвара дијалог штампања датотеке приказане у тренутној
-картици.</li>
-    <li><b>Изађи</b> Затвара све картице и излази из програма.</li>
+    <li><b>Отвори...</b> Отвара прозорче за избор датотеке коју ће се отворити у
+тренутном језичку. Ако нема језичака, датотека ће се отвотити у новом
+језичку.</li>
+    <li><b>Отвори у новом језичку...</b> Отвара прозорче за избор датотека које ће
+се отворити у новим језичцима.</li>
+    <li><b>Недавно коришћено</b> Садржи списак последње коришћених датотека (ако је
+омогућено у поствкама).</li>
+    <li><b>Освежи</b> Поново учитава датотеку приказану у текућем језичку.</li>
+    <li><b>Сачувај</b> Чува измене у прибелешкама и пољима обрасца у датотеци
+приказаној у текућем језичку.</li>
+    <li><b>Сачувај као...</b> Отвара прозорче за чување датотеке приказане у текућем
+језичку укључујући измене у прибелешкама и пољима обрасца.</li>
+    <li><b>Сачувај умножак...</b> Отвара прозорче за чување неизмењеног примерка
+датотеке приказане у текућем језичку.</li>
+    <li><b>Штампај...</b> Отвара прозорче за штампање датотеке приказане у тренутном
+језичку.</li>
+    <li><b>Изађи</b> Затвара све језичке и излази из програма.</li>
 </ul>
 
-<h4><a name="edit">Уреди</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="edit">Уређивање</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Следећа/Претходна/Прва/Задња страна</b> Прескаче на
-следећу/претходну/прву/задњу страну документа.</li>
-    <li><b>Иди на страну...</b> Отвара дијалог за унос стране приказане у текућој
-картици.</li>
-    <li><b>Иди уназад/унапред</b> Иде уназад/унапред у историјату приказаних
+    <li><b>Следећа/Претходна/Прва/Последња страница</b> Иде на
+следећу/претходну/прву/последњу страницу документа.</li>
+    <li><b>Иди на страницу...</b> Отвара прозорче за унос странице за приказивање у
+текућем језичку.</li>
+    <li><b>Иди назад/напред</b> Иде назад/напред у историјату приказаних страница.</li>
+    <li><b>Тражи...</b> Отвара површ претраге испод главног приказа. Претрага
+аутоматски започиње две секунде након последње измене појма претраге или се
+ручно покреће притиском на тастер за унос. Ако се држи притиснут измењивач
+Шифт када се притисне тастер за унос, претрага започиње на свим језичцима, а
+не само на тренутном језичку. (Овај ефекат се поништава ако је у поставкама
+омогућена проширена површ за претрагу.)</li>
+    <li><b>Нађи претходно/следеће</b> Иде на претходно/следеће појављивање појма
+претраге у документу.</li>
+    <li><b>Откажи претрагу</b> Отказује тренутно покренуту претрагу и затвара површ
+претраге.</li>
+    <li><b>Умножи у оставу</b> Ако је изабрано, програм ће сачекати да оквир буде
+превучен да умножи текстове или слике.</li>
+    <li><b>Додај прибелешку</b> Ако је изабрано, програм ће сачекати да оквир буде
+превучен да дода прибелешке.</li>
+    <li><b>Поставке...</b> Отвара прозорче поставки. Дугме са ознаком „Основно“
+вратиће све поставке на свим језичцима на њихове основне вредности. Дугме
+означено са „Основно на тренутном језичку“ вратиће само поставке на
+тренутном језичку на њихове основне вредности.</li>
+</ul>
+
+<p><em>Тренутна страница</em> се може изменити уношењем жељене странице у поље
+за текст на траци алата за уређивање, која се може фокусирати помоћу Ктрл+К
+и притиском на тастер за унос.</p>
+
+<h4><a name="view">Преглед</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Непрекидно</b> Одређује да ли се сви редови прегледа странице виде
+одједном.</li>
+    <li><b>Две странице</b> Одређује да ли распоред страница користи две колоне.</li>
+    <li><b>Две странице са насловном</b> Одређује да ли распоред странице користи
+две колоне са прекидом након насловне странице.</li>
+    <li><b>Више страница</b> Одређује да ли распоред странице користи више
+колона. Број колона се може изменити у прозорчету поставки.</li>
+    <li><b>Са десна на лево</b> Одређује како се ређају странице у распоредима са
+више страница у реду.</li>
+    <li><b>Увећај</b> Повећава чиниоца сразмере за 10 процената. Највећи чинилац
+сразмере је 5000 процената.</li>
+    <li><b>Умањи</b> Умањује чиниоца сразмере за 10 процената. Најмањи чинилац
+сразмере је 10 процената.</li>
+    <li><b>Изворна величина</b> Враћа чиниоца сразмере на 100 процената.</li>
+    <li><b>Уклопи по ширини странице</b> Одређује чиниоца сразмере тако да све
+странице потпуно стану водоравно у главни преглед.</li>
+    <li><b>Уклопи по величини странице</b> Одређује чиниоца сразмере тако да све
+странице потпуно стану водоравно и усправно у главни преглед.</li>
+    <li><b>Окрени лево</b> Окреће страницу на лево/супротно смеру казаљке на сату за
+90 степени.</li>
+    <li><b>Окрени десно</b> Окреће страницу на десно/у смеру казаљке на сату за 90
+степени.</li>
+    <li><b>Преокрени боје</b> Одређује да ли се странице исцртавају изокренутим
+бојама.</li>
+    <li><b>Претвори у сиве тонове</b> Одређује да ли се странице претварају у сиве
+тонове након исцртавања.</li>
+    <li><b>Уреди ивице</b> Омогућава уклањање празних ивица странице након
+исцртавања.</li>
+    <li>„Слагање“ Омогућава слагање исцртаних страница са бојом папира да би дотерао
+позадину скенираних докумената.</li>
+    <li>„Траке алата“ Овај изборник садржи списак доступних трака алата за приступ
+често коришћеним радњама.</li>
+    <li><b>Бочне површи</b> Овај изборник садржи списак доступних бочних површи за
+приказивање додатних информација.</li>
+    <li><b>Слова...</b> Отвара прозорче са списком врста слова коришћених у
+документу.</li>
+    <li><b>Преко целог екрана</b> Окида режим преко целог екрана, тј. прозор се
+приказује увећан и без украса.</li>
+    <li><b>Презентација...</b> Улази у режим презентације коју можете напустити
+притиском тастера Ф12 или „escape“. Тастер почетна/крај се користи за приказ
+прве/последње странице. Тастери стрелице горе и доле, размак и тастер
+странице на доле иду на следећу страницу. тастери стрелице лево и горе,
+повратница и страница на горе иду на претходну страницу. Притисак на контрол
+и унос враћа назад на страницу пре последњег померања.</li>
+</ul>
+
+<p><em>Чинилац сразмере</em> се може изменити уношењем жељеног процента у поље
+за текст на траци алата за преглед, која се може фокусирати помоћу Ктрл+L и
+притиском на тастер за унос.</p>
+
+<h4><a name="tabs">Језичци</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Претходни/следећи језичак</b> Чини претходни/следећи језичак тренутним
+језичком. Кружи до последњег/првог језичка ако је први/последњи језичак
+тренутни језичак.</li>
+    <li><b>Затвори језичак</b> Затвара тренутни језичак.</li>
+    <li><b>Затвори све језичке</b> Затвара све језичке.</li>
+    <li><b>Затвори све језичке осим тренутног</b> Затвара све језичке са изузетком
+тренутног језичка.</li>
+    <li><b>Недавно затворени</b> Садржи списак недавно затворених језичака (ако је
+омогућено у поствкама).</li>
+</ul>
+
+<p>Овај изборник садржи списак свих језичака који може постати текући језичак
+кликом на одговарајућу ставку изборника. Језичци се могу такође затворити на
+средњи клик. Првих девет језичака се такође може активирати притиском на Алт
+и на тастере бројева од један до девет.</p>
+
+<h4><a name="bookmarks">Обележивачи</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Претходни обележивач</b> Иде на најближи обележивач пре тренутне
+странице.</li>
+    <li><b>Следећи обележивач</b> Иде на најближи обележивач после тренутне
+странице.</li>
+    <li><b>Додај обележивач</b> Додаје обележивач за текућу датотеку и страницу.</li>
+    <li><b>Уклони обележивач</b> Уклања обележивач за текућу датотеку и страницу.</li>
+    <li><b>Уклони све обележиваче</b> Уклања све обележиваче.</li>
+    <li><b>Отвори</b> Отвара одговарајућу датотеку у тренутном језичку. Ако нема
+језичака, датотека ће се отвотити у новом језичку.</li>
+    <li><b>Отвори у новом јзичку</b> Отвара одговарајућу датотеку у новом језичку.</li>
+    <li><b>Иди на страницу</b> Иде на одговарајућу страницу ако је одговарајућа
+датотека већ отворена. У супротном одговарајућа датотека се отвара у новом
+језичку.</li>
+</ul>
+
+<h4><a name="help">Помоћ</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+	<li><b>Садржаји</b> Приказује овај документ.</li>
+	<li><b>О програму</b> Приказује издање програма.</li>
+</ul>
+
+<h3><a name="mainview">Главни преглед</a> <a href="#top">&uarr;</a></h3>
+
+<p>Тастер за брисање/размак иду на претходну/следећу страницу. Тастери
+почетна/крај иду на прву/последњу страницу. Тастери стрелице, странице на
+горе/доле премичу преглед. Притисак на Ктрл+Унеси иде на страницу пре
+последњег померања.</p>
+
+<p>Коришћење точкића миша премиче горе и доле. Држање тастера <b>Алт</b>
+приликом коришћења точкића миша помера на лево или десно. Држање тастера
+<b>Ктрл</b> приликом коришћења точкића миша мења сразмеру документа. Држање
+тастера <b>Шифт</b> приликом коришћења точкића миша окреће
+документ. (Тастатурни измењивачи се могу изменити у прозорчету поставки.)
+Кликните и држите средње дугме миша да изаберете четвороугао за зумирање.</p>
+
+<p>Везе су истакнуте црвеним оквирима (ако је укључено у поставкама). Леви клик
+на везу да покажете страницу или да отворите адресу у основном прегледнику
+(ако је укључено у поставкама). Средњи клик на везу да покажете страницу у
+новом језичку. Надношење над везом приказује њено одредиште у облачићу.</p>
+
+<p>Поља образаца су истакнута плавим оквирима (ако је укључено у
+поставкама). Леви клик на поље обрасца да уредите садржај. Надношење над
+пољем обрасца приказује назив у облачићу.</p>
+
+<p>Извор положаја у документу се може отворити у уређивачу извора користећи
+приручни изборник који изборно садржи ставку за први поклапајући
+„<em>SyncTeX</em>“ чвор.</p>
+
+<p>Да <em>умножите текст или слику</em>, држите <b>Шифт</b>, кликните и држите
+лево дугме миша да оцртате оквир око области за умножавање. Када отпустите
+дугме миша, приказује се искочни изборник у коме можете изабрати да ли ћете
+умножити текст или слику у оставу.</p>
+
+<p>Да <em>додате прибелешке</em>, држите <b>Ктрл</b>, кликните и држите лево
+дугме миша да оцртате оквир око области за прибелешку. Када отпустите дугме
+миша, приказује се искочни изборник у коме можете изабрати да ли ћете додати
+текст или истаћи прибелешке. Леви клик да <em>уредите прибелешку</em>. Десни
+клик да <em>уклоните прибелешку</em>. (Додавање и уклањање прибелешки
+захтева издање Поплер библиотеке 0.20.1 или новије.) Надношење над
+прибелешком приказује њен садржај у облачићу.</p>
+
+<p>Да <em>увећате до избора</em>, држите <b>Шифт</b> и <b>Ктрл</b>, кликните и
+држите лево дугме миша да оцртате оквир око области за зумирање.</p>
+
+<p><em>Видљивост трака лата и изборника</em> се може укључивати коришћењем
+подесивих пречица тастатуре чије су основне вредности „Шифт+Алт+T“ и
+„Шифт+Алт+M“.</p>
+
+<h3><a name="auxiliaryviews">Помоћни прегледи</a> <a href="#top">&uarr;</a></h3>
+
+<p><em>Преглед структуре</em> приказује преглед садржаја документа. Леви клик
+на унос иде на одговарајућу страницу у главном прегледу. Приручни изборник
+се може користити за ширење/скупљање свих ставки испод изабране ставке.</p>
+
+<p>Прегледом структуре се такође можете кретати користећи тастатуру и точкић
+миша. Држећи Шифт и користећи тастере горе/доле премичете преглед. Држећи
+Шифт и користећи тастере лево/десно скупљате/ширите један ниво ставке испод
+изабране ставке. Држећи Ктрл и користећи тастере лево/десно потпуно ћете
+скупити/раширити изабрану ставку и њене садржане. Држећи Шифт и користећи
+точкић миша променићете изабрану ставку. Држећи Ктрл и користећи точкић миша
+рашрићете/скупити изабрану ставку.</p>
+
+<p><em>Преглед својстава</em> приказује додатне информације садржане у
+документу.</p>
+
+<p><em>Преглед сличицама</em> приказује мања издања страница документа. Леви
+клик на унос иде на одговарајућу страницу у главном прегледу.</p>
+
+<p><em>Преглед обележивача</em> приказује обележиваче који се односе на
+документ у текућем језичку. Приручни изборник садржи уносе за прелазак на
+претходни/следећи обележивач или за додавање обележивача. Приручни изборник
+сваког уноса такође садржи уносе за уређивање и брисање обележивача.</p>
+
+<p>Ако је укључено у поставкама, <em>раширена површ претраге</em> приказује
+претпреглед који садржи резултате свих претрага обављених у свим
+језичцима. Такође показује текст који окружује резлтат са појмом претраге
+који је наглашен. Клик на резултат отвара одговарјући језичак и иде до његов
+положај.</p>
+
+<h3><a name="settings">Поставке</a> <a href="#top">&uarr;</a></h3>
+
+<h4><a name="behaviorsettings">Поставке понашања</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Отвори адресу</b> Одређује да ли се везе до адресе отварају у основном
+Интернет прегледнику.</li>
+    <li><b>Сам освежи</b> Одређује да ли се датотеке самостално поново учитавају ако
+су измењене на диску.</li>
+    <li><b>Прати недавно коришћено</b> Ако је укључено, недавно коришћени изборник
+је доступан и исписује колико је недавно коришћених датотека постављено у
+опцији „Број недавно коришћених“. (Делује након поновног покретања.)</li>
+    <li><b>Задржи недавно затворене</b> Ако је укључено, недавно затворени изборник
+је доступан и исписује колико је недавно затворених језичака постављено у
+опцији „Број недавно затворених“. Задржавање језичака доступним може
+значајно да повећа коришћење меморије. (Делује након поновног покретања.)</li>
+    <li><b>Врати језичке</b> Ако је омогућено, језичци се чувају приликом изласка из
+програма и враћају се при поновном покретању.</li>
+    <li><b>Врати обележиваче</b> Ако је омогућено, обележивачи се чувају приликом
+изласка из програма и враћају се при поновном покретању.</li>
+    <li><b>Врати поставке по датотеци</b> Ако је укључено, поставке по датотеци се
+чувају/враћају при отварању/затварању језичака.</li>
+    <li><b>Период чувања базе података</b> Период након ког се поставке језичака,
+обележивача или по датотеци чувају у базу података.</li>
+    <li><b>Усклади презентацију</b> Ако је укључено, главни преглед се може
+користити за управљање прегледом презентације.</li>
+    <li><b>Екран презентације</b> Индекс екрана на коме ће се приказивати
+презентација.</li>
+    <li><b>Усклади преглед структуре</b> Ако је укључено, преглед структуре ће
+истаћи први унос који указује на текућу страницу кад год се измени текућа
 страница.</li>
-    <li><b>Search...</b> Opens the search dock below the main view. The search
-automatically starts two seconds after the last change of the search term or
-is manually started by pressing the return key. If the Shift modifier is
-held when the return key is pressed, the search starts in all tabs instead
-of just the current tab. (This effect is reversed if the extended search
-dock is enabled in the settings.)</li>
-    <li><b>Find previous/next</b> Jumps to the previous/next occurrence of the
-search term in the document.</li>
-    <li><b>Cancel search</b> Cancels the currently running search and closes the
-search dock.</li>
-    <li><b>Copy to clipboard</b> If checked, the program will wait for a frame to be
-dragged to copy texts or images.</li>
-    <li><b>Add annotation</b> If checked, the program will wait for a frame to be
-dragged to add annotations.</li>
-    <li><b>Settings...</b> Opens the settings dialog. The button labeled 'Defaults'
-will revert all settings on all tabs to their default values. The button
-labeled 'Defaults on current tab' will revert only the settings on the
-current tab to their default values.</li>
+    <li><b>Relative jumps</b> If enable, the view port will keep its position
+relative to the visible page when jumping to another page.</li>
+    <li><b>Најмање премицање</b> Ако је укључено, преглед ће бити премакнут само ако
+положај мете још није видљив.</li>
+    <li><b>Чинилац увећања</b> Број којим се множи чинилац сразмере одговарајуће
+подељен увећањем у одговарајућем излазу.</li>
+    <li><b>Боја истицања</b> Одређује боју истицања.</li>
+    <li><b>Трајање истицања</b> Одређује трајање привременог истицања.</li>
+    <li><b>Боја прибелешке</b> Боја прибелешки додатих програмом коришћењем кључних
+речи СВГ боје или хексадецималне напомене „#rrggbb“.</li>
+    <li><b>Уређивач извора</b> Програм који је покренут за уређивање извора. „%1“ се
+замењује апсолутном путањом датотеке. „%2“ одговарајуће. „%3“ сезамењује
+редом у односу на број колоне.</li>
 </ul>
 
-<p>The <em>current page</em> can be changed by entering the desired page into
-the text field in the edit tool bar, which can be focused using Ctrl+K, and
-pressing the return key.</p>
-
-<h4><a name="view">View</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="graphicssettings">Поставке графике</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Continuous</b> Determines whether all rows of the page layout are visible
-at once.</li>
-    <li><b>Two pages</b> Determines whether the page layout uses two columns.</li>
-    <li><b>Two pages with cover page</b> Determines whether the page layout uses two
-columns with a break after the cover page.</li>
-    <li><b>Multiple pages</b> Determines whether the page layout uses multiple
-columns. The number of columns can be changed in the settings dialog.</li>
-    <li><b>Right to left</b> Determines how pages are arranged in layouts with
-multiple pages per row.</li>
-    <li><b>Zoom in</b> Increases the scale factor by 10 percent. The maximum scale
-factor is 5000 percent.</li>
-    <li><b>Zoom out</b> Decreases the scale factor by 10 percent. The minimum scale
-factor is 10 percent.</li>
-    <li><b>Original size</b> Resets the scale factor to 100 percent.</li>
-    <li><b>Fit to page width</b> Determines the scale factor such that all pages
-fully fit into the main view horizontally.</li>
-    <li><b>Fit to page size</b> Determines the scale factor such that all pages
-fully fit into the main view horizontally and vertically.</li>
-    <li><b>Rotate left</b> Rotates the pages left/counterclockwise by 90 degrees.</li>
-    <li><b>Rotate right</b> Rotates the pages right/clockwise by 90 degrees.</li>
-    <li><b>Invert colors</b> Determines whether pages are rendered with inverted
-colors.</li>
-    <li><b>Convert to grayscale</b> Determines whether pages are converted to
-grayscale after rendering.</li>
-    <li><b>Trim margins</b> Enables the removal of empty page margins after
-rendering.</li>
-    <li><b>Composition</b> Enables the composition of the rendered page with the
-paper color to adjust the background of scanned documents.</li>
-    <li><b>Tool bars</b> This menu contains a list of available tool bars for
-accessing frequently used actions.</li>
-    <li><b>Docks</b> This menu contains a list of available docks for displaying
-supplementary information.</li>
-    <li><b>Fonts...</b> Opens a dialog listing the fonts used in the document.</li>
-    <li><b>Fullscreen</b> Toggles the fullscreen mode, i.e. the window is shown
-maximized and without decoration.</li>
-    <li><b>Presentation...</b> Enters presentation mode which can be left by
-pressing F12 or escape. The home/end key is used to display the first/last
-page. Arrow keys right and down, space and the page down key jump to the
-next page. Arrow keys left and up, backspace and the page up key jump to the
-previous page. Pressing control and return jumps back to the page before the
-last jump.</li>
-</ul>
-
-<p>The <em>scale factor</em> can be changed by entering the desired percentage
-into the text field in the view tool bar, which can be focused using Ctrl+L,
-and pressing the return key.</p>
-
-<h4><a name="tabs">Tabs</a> <a href="#top">&uarr;</a></h4>
-
-<ul>
-    <li><b>Previous/Next tab</b> Makes the previous/next tab the current tab. Cycles
-to the last/first tab if the first/last tab is the current tab.</li>
-    <li><b>Close tab</b> Closes the current tab.</li>
-    <li><b>Close all tabs</b> Closes all tabs.</li>
-    <li><b>Close all tabs but current tab</b> Closes all tabs except for the current
-tab.</li>
-    <li><b>Recently closed</b> Contains a list of the most recently closed tabs (if
-enabled in the settings).</li>
-</ul>
-
-<p>This menu contains a list of all tabs which can be made the current tab by
-clicking on the corresponding menu item. Tabs can also be closed by
-middle-clicking. The first nine tabs can also be activated by holding the
-Alt modifier and pressing keys one to nine.</p>
-
-<h4><a name="bookmarks">Bookmarks</a> <a href="#top">&uarr;</a></h4>
-
-<ul>
-    <li><b>Previous bookmark</b> Jumps to the closest bookmark before the current
-page.</li>
-    <li><b>Next bookmark</b> Jumps to the closest bookmark after the current page.</li>
-    <li><b>Add bookmark</b> Adds a bookmark for the current file and page.</li>
-    <li><b>Remove bookmark</b> Removes the bookmark for the current file and page.</li>
-    <li><b>Remove all bookmarks</b> Removes all bookmarks.</li>
-    <li><b>Open</b> Opens the corresponding file in the current tab. If there is no
-tab, the file is opened in a new tab.</li>
-    <li><b>Open in new tab</b> Opens the corresponding file in a new tab.</li>
-    <li><b>Jump to page</b> Jumps to the corresponding page if the corresponding
-file is already open. Otherwise the corresponding file is opened in a new
-tab.</li>
-</ul>
-
-<h4><a name="help">Help</a> <a href="#top">&uarr;</a></h4>
-
-<ul>
-	<li><b>Contents</b> Displays this document.</li>
-	<li><b>About</b> Displays the program version.</li>
-</ul>
-
-<h3><a name="mainview">Main view</a> <a href="#top">&uarr;</a></h3>
-
-<p>The backspace/space key skips to the previous/next page. The home/end key
-skips to the first/last page. The arrow, page up and page down keys scroll
-the viewport. Pressing control and return jumps to the page before the last
-jump.</p>
-
-<p>Using the mouse wheel scrolls up and down. Holding <b>ALT</b> while using
-the mouse wheel scrolls left and right. Holding <b>CTRL</b> while using the
-mouse wheel scales the document. Holding <b>SHIFT</b> while using the mouse
-wheel rotates the document. (Keyboard modifiers can be changed in the
-settings dialog.) Click and hold the middle mouse button to select a
-rectangle to zoom to.</p>
-
-<p>Links are highlighted by red frames (if enabled in the settings). Left-click
-on a link to show the linked page or open the linked URL in the default
-browser (if enabled in the settings). Middle-click on a link to show the
-linked page in a new tab. Hovering over a link displays its destination as a
-tool tip.</p>
-
-<p>Form fields are highlighted by blue frames (if enabled in the
-settings). Left-click on a form field to edit its contents. Hovering over a
-form field displays its name as a tool tip.</p>
-
-<p>The source of a position in the document can be opened in the source editor
-using the context menu which optionally contains an item for the first
-matching <em>SyncTeX</em> node.</p>
-
-<p>To <em>copy texts or images</em>, hold <b>SHIFT</b>, click and hold the left
-mouse button to drag a frame around the area to copy. Once the mouse button
-is released, a pop-up menu is displayed to select whether to copy texts or
-images into the clipboard.</p>
-
-<p>To <em>add annotations</em>, hold <b>CTRL</b>, click and hold the left mouse
-button to drag a frame around the region to annotate. Once the mouse button
-is released, a pop-up menu is displayed to select whether to add text or
-highlight annotations. Left-click to <em>edit annotations</em>. Right-click
-to <em>remove annotations</em>. (Adding and removing annotations requires
-version 0.20.1 or higher of the Poppler library.) Hovering over an
-annotation displays its contents as a tool tip.</p>
-
-<p>To <em>zoom to a selection</em>, hold <b>SHIFT</b> and <b>CTRL</b>, click
-and hold the left mouse button to drag a frame around region to zoom into.</p>
-
-<p>The <em>visibility of the tool and menu bars</em> can be toggled using
-configurable keyboard shortcuts whose default values are "Shift+Alt+T" and
-"Shift+Alt+M".</p>
-
-<h3><a name="auxiliaryviews">Auxiliary views</a> <a href="#top">&uarr;</a></h3>
-
-<p>The <em>outline view</em> displays an overview of the contents of the
-document. A left click on an entry jumps to the respective page in the main
-view. The context menu can be used to expand/collapse all items below the
-selected item.</p>
-
-<p>The outline view can also be navigated using the keyboard and the mouse
-wheel. Holding Shift and using the Up/Down keys will scroll the
-view. Holding Shift and using the Left/Right keys will collapse/expand one
-level of items below the selected item. Holding Control and using the
-Left/Right keys will completely collapse/expand the selected item and its
-children. Holding Shift and using the mousel wheel will change the selected
-item. Holding Control and using the mouse wheel will expand/collapse the
-selected item.</p>
-
-<p>The <em>properties view</em> displays additional information contained in
-the document.</p>
-
-<p>The <em>thumbnails view</em> displays smaller versions of the pages of the
-document. A left click on an entry jumps to the respective page in the main
-view.</p>
-
-<p>The <em>bookmarks view</em> shows the bookmarks related to the document
-displayed in the current tab. The context menu contains entries to jump to
-the previous/next boookmark or to add bookmarks. The context menu of each
-entry also contains entries to edit and delete bookmarks.</p>
-
-<p>If enabled in the settings, the <em>extended search dock</em> shows an
-overview containing the results of all searches being performed in all
-tabs. It also shows the text surrounding a result with the search term being
-emphasized. Clicking on a result opens the corresponding tab and jumps to
-its position.</p>
-
-<h3><a name="settings">Settings</a> <a href="#top">&uarr;</a></h3>
-
-<h4><a name="behaviorsettings">Behavior settings</a> <a href="#top">&uarr;</a></h4>
-
-<ul>
-    <li><b>Open URL</b> Determines whether links to URL are opened in the default
-browser.</li>
-    <li><b>Auto-refresh</b> Determines whether files are automatically reloaded if
-changed on disk.</li>
-    <li><b>Track recently used</b> If enabled, a recently used menu is available and
-lists as many recently used files as set in the "Recently used count"
-option. (Effective after restart.)</li>
-    <li><b>Keep recently closed</b> If enabled, a recently closed menu is available
-and lists as many recently closed tabs as set in the "Recently closed count"
-option. Keeping the tabs available could increase memory usage
-considerably. (Effective after restart.)</li>
-    <li><b>Restore tabs</b> If enabled, tabs and their properties are saved on
-ending the program and restored on restart.</li>
-    <li><b>Restore bookmarks</b> If enabled, bookmarks are saved on ending the
-program and restored on restart.</li>
-    <li><b>Restore per-file settings</b> If enabled, per-file settings are
-saved/restored on opening/closing tabs.</li>
-    <li><b>Save database interval</b> The interval after which tabs, bookmarks or
-per-file settings are saved to the database.</li>
-    <li><b>Synchronize presentation</b> If enabled, the main view can be used to
-control the presentation view.</li>
-    <li><b>Presentation screen</b> The index of the screen to display the
-presentation view on.</li>
-    <li><b>Synchronize outline view</b> If enabled, the outline view will highlight
-the first entry pointing to the current page whenever the current page
-changes.</li>
-    <li><b>Minimal scrolling</b> If enabled, the view port will only be scrolled if
-the target position is not yet visible.</li>
-    <li><b>Zoom factor</b> The number by which the scale factor is multiplied
-resp. divided upon zooming in resp. out.</li>
-    <li><b>Highlight color</b> Determines the color of highlights.</li>
-    <li><b>Highlight duration</b> Determines the duration of temporary highlights.</li>
-    <li><b>Annotation color</b> The color of annotations added by the program using
-SVG color keywords or hexadecimal notation '#rrggbb'.</li>
-    <li><b>Source editor</b> The program which is started to edit sources. '%1' is
-replaced by the absolute file path. '%2' resp. '%3' is replaced by line
-resp. column number.</li>
-</ul>
-
-<h4><a name="graphicssettings">Graphics settings</a> <a href="#top">&uarr;</a></h4>
-
-<ul>
-    <li><b>Use tiling</b> Pages will be divided into tiles before rendering and
-caching to reduce memory usage.</li>
-    <li><b>Keep obsolete pixmaps</b> If enabled, then upon change of the zoom
-factor, cached pixmaps will be used to draw approximations of final pixmaps
-until these are available at the cost of increased memory usage.</li>
-    <li><b>Use device pixel ratio</b> If enabled, the highest available device pixel
-ratio is used to render at physical and display at logical resolution.</li>
-    <li><b>Decorate pages</b> Determines whether pages are set apart from the
-background.</li>
-    <li><b>Decorate links</b> Determines whether links are highlighted by red
-frames.</li>
-    <li><b>Decorate form fields</b> Determines whether form fields are highlighted
-by blue frames.</li>
-    <li><b>Background color</b> Determines the color of the background using SVG
-color keywords or hexadecimal notation '#rrggbb'.</li>
-    <li><b>Paper color</b> Determines the color of pages using SVG color keywords or
-hexadecimal notation '#rrggbb'.</li>
-    <li><b>Presentation background color</b> Overrides the paper color in the
-computation of the background color of the presentation view and is defined
-using SVG color keywords or hexadecimal notation '#rrggbb'.</li>
-    <li><b>Pages per row</b> Number of pages per row in the 'multiple pages' layout
-mode.</li>
-    <li><b>Page spacing</b> Determines both vertical and horizontal space displayed
-between pages.</li>
-    <li><b>Thumbnail spacing</b> Determines both vertical and horizontal space
-displayed between thumbnails.</li>
-    <li><b>Thumbnail size</b> Determines the size of the thumbnails.</li>
-    <li><b>Cache size</b> The program will try to cache rendered pages within this
-limit increasing rendering speed at the cost of increased memory usage.</li>
-    <li><b>Prefetch</b> The program will try to render pages that are not yet
-visible increasing rendering speed at the cost of increased cache usage.</li>
-    <li><b>Prefetch distance</b> The number of rows beyond the current row and twice
-the number of rows before the current row that are prefetched.</li>
-    <li><b>PDF settings</b>
+    <li><b>Корити плочице</b> Странице ће бити подељене на плочице пре приказивања и
+кеширања да би се смањило коришћење меморије.</li>
+    <li><b>Задржи старе мапе пиксела</b> Ако је укљчено, онда након промене чиниоца
+увећања, смештене мапе пиксела биће коришћене за цртање приближности крајњих
+мапа пиксела све док су доступне на уштрб повећања коришћења меморије.</li>
+    <li><b>Користи однос пиксела уређаја</b> Ако је укључено, највећи доступни однос
+пиксела уређаја се користи за исцртавање на физичкој и приказивање на
+логичкој резолуцији.</li>
+    <li><b>Use logical DPI</b> If enabled, the horizontal and vertical resolution of
+the monitor as reported by the operating system is used to define a scale
+factor of 100%.</li>
+    <li><b>Украси странице</b> Одређује да ли су странице постављене одвојено од
+позадине.</li>
+    <li><b>Украси везе</b> Одређује да ли су везе истакнуте црвеним оквирима.</li>
+    <li><b>Украси поља обрасца</b> Одређује да ли су поља обрасца истакнута плавим
+оквирима.</li>
+    <li><b>Боја позадине</b> Одређује боју позадине коришћењем кључних речи СВГ боје
+или хексадецималне напомене „#rrggbb“.</li>
+    <li><b>Боја папира</b> Одређује боју папира страница коришћењем кључних речи СВГ
+боје или хексадецималне напомене „#rrggbb“.</li>
+    <li><b>Боја позадине презентације</b> Превазилази боју папира у прорачуну боје
+позадине прегледа презентације и дефинисана је коришћењем кључних речи СВГ
+боје или хексадецималне напомене „#rrggbb“.</li>
+    <li><b>Страница у реду</b> Број страница у једном реду у режиму распореда „више
+страница“.</li>
+    <li><b>Размак страница</b> Одређује и усправни и водоравни размак приказан
+између страница.</li>
+    <li><b>Размак сличица</b> Одређује и усправни и водоравни размак приказан између
+сличица.</li>
+    <li><b>Величина сличице</b> Одређује величину сличице.</li>
+    <li><b>Величина оставе</b> Програм ће покушати да смести у оставу исцртане
+странице у оквиру овог ограничења повећавајући брзину исцртавања на уштрб
+повећања коришћења меморије.</li>
+    <li><b>Унапред довуци</b> Програм ће покушати да исцрта странице које још нису
+видљиве повећавајући брзину исцртавања на уштрб повећања коришћења оставе.</li>
+    <li><b>Растојање већ довученог</b> Број редова изван текућег реда и два пута
+број редова пре текућег реда који се унапред довлаче.</li>
+    <li><b>ПДФ поставке</b>
     <ul>
-        <li><b>Antialiasing</b> Improves display quality at the cost of performance</li>
-        <li><b>Text antialiasing</b> Improves text display quality at the cost of
-performance</li>
-        <li><b>Text hinting</b> May improve text display quality for certain fonts.</li>
-        <li><b>Overprint preview</b> If enabled, a preview of printing one layer of ink
-on top of another is displayed.</li>
-        <li><b>Thin line mode</b> Chooses the optimization used to draw thin lines.</li>
-        <li><b>Backend</b> Chooses the backend used to render pages.</li>
+        <li><b>Умекшавање</b> Побољшава квалитет приказа на уштрб учинковитости</li>
+        <li><b>Умекшавање текста</b> Побољшава квалитет приказа текста на уштрб
+учинковитости</li>
+        <li><b>Савети текста</b> Може да побољша квалитет приказа текста за одређене
+врсте слова.</li>
+        <li><b>Преглед предштампе</b> Ако је укључено, приказује се претпреглед штампања
+једног слоја мастила преко другог.</li>
+        <li><b>Режим танке линије</b> Бира оптимизацију коришћену за цртање танких
+линија.</li>
+        <li><b>Позадинац</b> Бира позадинца коришћеног за исцртавање страница.</li>
     </ul>
     </li>
-    <li><b>PS settings</b>
+    <li><b>ПС поставке</b>
     <ul>
-        <li><b>Graphics antialias bits</b> Determines the amount of antialiasing for
-graphics.</li>
-        <li><b>Text antialias bits</b> Determines the amount of antialiasing for text.</li>
+        <li><b>Битови умекшавања графике</b> Одређује количину умекшавања за графику.</li>
+        <li><b>Битови умекшавања текста</b> Одређује количину умекшавања за текст.</li>
     </ul>
     </li>
 </ul>
 
-<h4><a name="interfacesettings">Interface settings</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="interfacesettings">Поставке сучеља</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Extended search dock</b> If enabled, the default search dock is extended
-by an overview showing the results of all tabs. (Effective after restart.)</li>
-    <li><b>Annotation overlay</b> If enabled, all annotations on a page will be
-displayed as an interactive overlay. Otherwise each annotation will be
-handled as a separate pop-up window.</li>
-    <li><b>Form field overlay</b> If enabled, all form fields on a page will be
-displayed as an interactive overlay. Otherwise each form field will be
-handled as a separate pop-up window.</li>
-    <li><b>Tab position</b> Defines at which edge of the main view tabs will be
-displayed.</li>
-    <li><b>Tab visibility</b> Determines whether tabs will be displayed if less than
-two documents are opened.</li>
-    <li><b>Spread tabs</b> Determines if tabs will be spread out evenly over the
-whole tab bar.</li>
-    <li><b>New tab next to current tab</b> If enabled, new tabs are opened to the
-right of the active tab.</li>
-    <li><b>Exit after last tab</b> If enabled, the application exits after the last
-tab is closed.</li>
-    <li><b>Recently used count</b> Sets the number of files that are listed in the
-recently used menu, if "Track recently used" is enabled. (Effective after
-restart.)</li>
-    <li><b>Recently closed count</b> Sets the number of tabs that are listed in the
-recently closed menu, if "Keep recently closed" is enabled. (Effective after
-restart.)</li>
-    <li><b>File tool bar</b> Defines which actions are visible in the file tool
-bar. Available actions are openInNewTab, open, refresh, saveCopy, saveAs,
-print and separator. (Effective after restart.)</li>
-    <li><b>Edit tool bar</b> Defines which actions are visible in the edit tool
-bar. Available actions are currentPage, previousPage, nextPage, firstPage,
-lastPage, jumpToPage, jumpBackward, jumpForward, search,
-copyToClipboardMode, addAnnotationMode and separator. (Effective after
-restart.)</li>
-    <li><b>View tool bar</b> Defines which actions are visible in the view tool
-bar. Available actions are scaleFactor, zoomIn, zoomOut, continuousMode,
-twoPagesMode, twoPagesWithCoverPageMode, multiplePagesMode, originalSize,
-fitToPageWidthMode, fitToPageSizeMode, rotateLeft, rotateRight, fullscreen,
-presentation and separator. (Effective after restart.)</li>
-    <li><b>Document context menu</b> Defines which actions are visible in the
-document's context menu. Available actions are openCopyInNewTab,
-openCopyInNewWindow, openContainingFolder, moveToInstance, previousPage,
-nextPage, firstPage, lastPage, jumpToPage, jumpBackward, jumpForward,
-setFirstPage, findPrevious, findNext, cancelSearch and separator.</li>
-    <li><b>Tab context menu</b> Defines which actions are visible in a tab's context
-menu. Available actions are openCopyInNewTab, openCopyInNewWindow,
-openContainingFolder, moveToInstance, copyFilePath, selectFilePath,
-closeAllTabs, closeAllTabsButThisOne, closeAllTabsToTheLeft,
-closeAllTabsToTheRight and separator.</li>
-    <li><b>Scrollable menus</b> Will override the default style so that pop-up menus
-scroll instead being laid-out in mutliple columns if they are larger than
-the available screen space. (Effective after restart.)</li>
-    <li><b>Searchable menus</b> Extends the default keyboard navigation of the tabs
-and bookmarks menus by a search-as-you-type mechanism.</li>
-    <li><b>Toggle tool and menu bars with fullscreen</b> Always toggles the
-visibility of the tool and menu bars when toggling fullscreen mode.</li>
-    <li><b>Use page label</b> Determines if document-supplied page label will be
-used instead of page numbers when available.</li>
-    <li><b>Document title as tab title</b> Determines if the tab title as derived
-from the meta-data instead of the file name.</li>
-    <li><b>Current page in window title</b> If enabled, the current page and number
-of pages of the document in the active tab are displayed in the window
-title.</li>
-    <li><b>Instance name in window title</b> If enabled and the current instance is
-named, its name is displayed in the window title.</li>
-    <li><b>Highlight current thumbnail</b> If enabled, the current page is
-highlighted in the thumbnails view.</li>
-    <li><b>Limit thumbnails to results</b> If this option is enabled and a search is
-conducted, only the pages where the search term is found are displayed in
-the thumbnails view.</li>
+    <li><b>Раширена површ претраге</b> Ако је укључено, основна површ претраге се
+шири претпрегледом који показује резултате свих језичака. (Делује након
+поновног покретања.)</li>
+    <li><b>Преклапање прибелешке</b> Ако је укључено, све прибелешке на страници
+биће приказане као међудејствено преклапање. У супротном сваком прибелешком
+ће се руковати као одвојеним искок прозором.</li>
+    <li><b>Преклапање поља обрасца</b> Ако је укључено, сва поља обрасца на страници
+биће приказане као међудејствено преклапање. У супротном сваким пољем
+обрасца ће се руковати као одвојеним искок прозором.</li>
+    <li><b>Положај језичка</b> Одређује на којој ће ивици главног прегледа бити
+приказани језичци.</li>
+    <li><b>Видљивост језичка</b> Одређује да ли ће се језичци приказивати ако је
+отворено мање од два документа.</li>
+    <li><b>Простри језичке</b> Одређује да ли ће језичци бити распрострти равномерно
+преко читаве траке језичака.</li>
+    <li><b>Нови језичак уз нови језичак</b> Ако је укључено, нови језичци се
+отварају са десне стране радног језичка.</li>
+    <li><b>Изађи након последњег језичка</b> Ако је укључено, програм ће изаћи након
+затварања последњег језичка.</li>
+    <li><b>Број недавно коришћених</b> Поставља број датотека које се исписују у
+изборнику недавно коришћених, ако је укључено „Прати недавно
+коришћене“. (Делује након поновног покретања.)</li>
+    <li><b>Број недавно затворених</b> Поставља број језичака које се исписују у
+изборнику недавно затворених, ако је укључено „Задржи недавно
+затворене“. (Делује након поновног покретања.)</li>
+    <li><b>Трака алата датотеке</b> Одређује које радње су видљиве на траци алата
+датотеке. Доступне радње су Отвори у новом језичку, Отвори, Освежи, Сачувај
+умножак, Сачувај као, Штампај и раздвајач. (Делује након поновног
+покретања.)</li>
+    <li><b>Трака алата уређивања</b> Одређује које радње су видљиве на траци алата
+уређивања. Доступне радње су Тренутна страница, Претходна страница, Следећа
+страница, Прва страница, Последња страница, Иди на страницу, Иди назад, Иди
+напред, Тражи, Умножи у оставу, Додај прибелешку и раздвајач. (Делује након
+поновног покретања.)</li>
+    <li><b>Трака лата прегледа</b> Одређује које радње су видљиве на траци алата
+прегледа. Доступне радње су Чинилац сразмере, Увећај, Умањи, Непрекидно, Две
+странице, Две странице са насловном, Више страница, Изворна величина, Уклопи
+по ширини странице, Уклопи по величини странице, Окрени лево, Окрени десно,
+Преко целог екрана, Презентација и раздвајач. (Делује након поновног
+покретања.)</li>
+    <li><b>Приручни изборник документа</b> Одређује које радње су видљиве у
+приручном изборнику документа. Доступне радње су Отвори умножак у новом
+језичку, Отвори умножак у новом прозору, Отвори садржајну фасциклу, Премести
+у примерак, Претходна страница, Следећа страница, Прва страница, Последња
+страница, Иди на страницу, Иди назад, Иди напред, Постави прву страницу,
+Нађи претходно, Нађи следеће, Откажи претрагу и раздвајач.</li>
+    <li><b>Приручни изборник језичка</b> Одређује које радње су видљиве у приручном
+изборнику језичака. Доступне радње су Отвори умножак у новом језичку, Отвори
+умножак у новом прозору, Отвори садржајну фасциклу, Премести у примерак,
+Умножи путању датотеке, Изабери путању датотеке, Затвори све језичке,
+Затвори све језичке осим овог, Затвори све језичке на лево, Затвори све
+језичке на десно и раздвајач.</li>
+    <li><b>Премициви изборници</b> Преписаће основни стил тако да ће се искочни
+изборници премицати уместо да буду приказани у више колона ако су већи од
+доступног простора екрана. (Делује након поновног покретања.)</li>
+    <li><b>Претраживи изборници</b> Проширује основно тастатурно кретање изборницима
+језичака и обележивача механизмом претраге до куцате.</li>
+    <li><b>Окини траке алата и изборника са пуним екраном</b> Увек окида видљивост
+трака алата и изборника када окида режим преко целог екрана.</li>
+    <li><b>Користи натпис странице</b> Одређује да ли ће се користити натпис
+странице достављен уз документ уместо бројева страница када је доступно.</li>
+    <li><b>Наслов документа као наслов језичка</b> Одређује да ли наслов језичка
+произилази из метаподатака уместо из назива датотеке.</li>
+    <li><b>Тренутна страница у наслову прозора</b> Ако је укључено, тренутна
+страница и бројеви страница документа у радном језичку се приказују у
+наслову прозора.</li>
+    <li><b>Назив примерка у наслову прозора</b> Ако је укључено и текући примерак
+садржи назив, тај назив се приказује у наслову прозора.</li>
+    <li><b>истакни тренутну сличицу</b> Ако је укључено, тренутна страница
+јеистакнута у прегледу сличицама.</li>
+    <li><b>Ограничи сличице у резултатима</b> Ако је ова опција укључена и води се
+претрага, само странице на којима се нађе појам претраге се приказују у
+прегледу сличицама.</li>
 </ul>
 
-<h4><a name="shortcutsettings">Shortcut settings</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="shortcutsettings">Поставке пречица</a> <a href="#top">&uarr;</a></h4>
 
-<p>The shortcut settings allows the adjustment of keyboard shortcuts to
-personal preference. Shortcuts are changed by double-clicking on the
-shortcut to edit it and entering the new shortcut. Each action can have
-several shortcuts by entering a semicolon-separated list of them. Names of
-keys that are not single letters are written out explicitly (e.g. "Alt",
-"Ctrl", "PgDown"), where the matching is not case sensitive. If the shortcut
-contains modifier keys, the names of the keys are joined by a plus sign and
-modifier keys must be listed first, e.g. "Ctrl+A" or "Ctrl++".</p>
+<p>Поставке пречица омогућавају прилагођавање пречица тастатуре личним
+жељама. Пречицу можете изменити двоструким кликом на исту да бисте је
+уредили и унели нову пречицу. Свака радња може имати неколико пречица
+уношењем у списак раздвојен запетачком. Називи тастера који нису појединачна
+слова написана су изричито (нпр. „Алт“, „Ктрл“, „Страница_доле“), при чему
+подударање не разликује величину слова. Ако пречица садржи тастере
+измењиваче, називима тастера се придодаје знак плус а тастери измењивачи
+морају бити наведени први, нпр. „Ктрл+А“ или „Ктрл++“.</p>
 
-<h4><a name="modifiersettings">Modifier settings</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="modifiersettings">Поставке измењивача</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Zoom</b> The keyboard modifiers to zoom using the mouse wheel in the main
-view.</li>
-    <li><b>Rotate</b> The keyboard modifiers to rotate using the mouse wheel in the
-main view.</li>
-    <li><b>Scroll</b> The keyboard modifiers to scroll horizontally using the mouse
-wheel in the main view.</li>
-    <li><b>Copy to clipboard</b> The keyboard modifiers to copy texts or images from
-a page to the clipboard.</li>
-    <li><b>Add annotation</b> The keyboard modifiers to add annotations to a page.</li>
-    <li><b>Zoom to selection</b> The keyboard modifiers to zoom to a slection on a
-page.</li>
+    <li><b>Увећање</b> Тастатурни измењивачи за увеличавање коришћењем точкића миша
+у главном прегледу.</li>
+    <li><b>Окрени</b> Тастатурни измењивачи за окретање коришћењем точкића миша у
+главном прегледу.</li>
+    <li><b>Премакни</b> Тастатурни измењивачи за премицање коришћењем точкића миша у
+главном прегледу.</li>
+    <li><b>Умножи у оставу</b> Измењивачи на тастатури за умножавање текста или
+слика са странице у оставу.</li>
+    <li><b>Додај прибелешку</b> Измењивачи на тастатури за додавање прибелешки на
+страницу.</li>
+    <li><b>Увећај до избора</b> Тастатурни измењивачи за увеличавање до избора на
+страници.</li>
 </ul>
 
 </body>

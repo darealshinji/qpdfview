@@ -84,12 +84,12 @@
     <message>
         <location filename="../sources/pdfmodel.cpp" line="252"/>
         <source>Embedded</source>
-        <translation type="unfinished"></translation>
+        <translation>포함됨</translation>
     </message>
     <message>
         <location filename="../sources/pdfmodel.cpp" line="254"/>
         <source>Subset</source>
-        <translation type="unfinished"></translation>
+        <translation>하위</translation>
     </message>
     <message>
         <location filename="../sources/pdfmodel.cpp" line="256"/>
@@ -325,12 +325,12 @@
     <message>
         <location filename="../sources/documentview.cpp" line="1446"/>
         <source>The source editor has not been set.</source>
-        <translation type="unfinished"></translation>
+        <translation>소스 편집기가 지정되지 않았습니다.</translation>
     </message>
     <message>
         <location filename="../sources/documentview.cpp" line="2084"/>
         <source>Opening URL is disabled in the settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>설정에서 URL 열기가 비활성화되어 있습니다.</translation>
     </message>
     <message>
         <location filename="../sources/documentview.cpp" line="2124"/>
@@ -417,7 +417,7 @@
         <location filename="../sources/helpdialog.cpp" line="48"/>
         <source>help.html</source>
         <extracomment>Please replace by file name of localized help if available, e.g. &quot;help_fr.html&quot;.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>help_ko.html</translation>
     </message>
     <message>
         <location filename="../sources/helpdialog.cpp" line="63"/>
@@ -433,27 +433,27 @@
 <context>
     <name>qpdfview::MainWindow</name>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3292"/>
+        <location filename="../sources/mainwindow.cpp" line="3309"/>
         <source>Toggle tool bars</source>
         <translation>도구 모음 전환</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3293"/>
+        <location filename="../sources/mainwindow.cpp" line="3310"/>
         <source>Toggle menu bar</source>
         <translation>메뉴 모음 전환</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="484"/>
         <location filename="../sources/mainwindow.cpp" line="526"/>
-        <location filename="../sources/mainwindow.cpp" line="1482"/>
-        <location filename="../sources/mainwindow.cpp" line="1493"/>
-        <location filename="../sources/mainwindow.cpp" line="1499"/>
-        <location filename="../sources/mainwindow.cpp" line="1515"/>
-        <location filename="../sources/mainwindow.cpp" line="1535"/>
-        <location filename="../sources/mainwindow.cpp" line="1573"/>
-        <location filename="../sources/mainwindow.cpp" line="1714"/>
-        <location filename="../sources/mainwindow.cpp" line="2834"/>
-        <location filename="../sources/mainwindow.cpp" line="2844"/>
+        <location filename="../sources/mainwindow.cpp" line="1487"/>
+        <location filename="../sources/mainwindow.cpp" line="1498"/>
+        <location filename="../sources/mainwindow.cpp" line="1504"/>
+        <location filename="../sources/mainwindow.cpp" line="1520"/>
+        <location filename="../sources/mainwindow.cpp" line="1540"/>
+        <location filename="../sources/mainwindow.cpp" line="1578"/>
+        <location filename="../sources/mainwindow.cpp" line="1719"/>
+        <location filename="../sources/mainwindow.cpp" line="2813"/>
+        <location filename="../sources/mainwindow.cpp" line="2823"/>
         <source>Warning</source>
         <translation>경고</translation>
     </message>
@@ -494,580 +494,580 @@
         <translation>오른쪽의 모든 탭 닫기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1213"/>
-        <location filename="../sources/mainwindow.cpp" line="1362"/>
+        <location filename="../sources/mainwindow.cpp" line="1218"/>
+        <location filename="../sources/mainwindow.cpp" line="1367"/>
         <source>Open</source>
         <translation>열기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1378"/>
+        <location filename="../sources/mainwindow.cpp" line="1383"/>
         <source>Open in new tab</source>
         <translation>새 탭에서 열기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1482"/>
-        <location filename="../sources/mainwindow.cpp" line="1499"/>
-        <location filename="../sources/mainwindow.cpp" line="1714"/>
+        <location filename="../sources/mainwindow.cpp" line="1487"/>
+        <location filename="../sources/mainwindow.cpp" line="1504"/>
+        <location filename="../sources/mainwindow.cpp" line="1719"/>
         <source>Could not refresh &apos;%1&apos;.</source>
         <translation>&apos;%1&apos;을(를) 새로 고칠 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1525"/>
+        <location filename="../sources/mainwindow.cpp" line="1530"/>
         <source>Save copy</source>
-        <translation>복사본 저장</translation>
+        <translation>사본 저장</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1535"/>
+        <location filename="../sources/mainwindow.cpp" line="1540"/>
         <source>Could not save copy at &apos;%1&apos;.</source>
-        <translation>&apos;%1&apos;에 복사본을 저장할 수 없습니다.</translation>
+        <translation>&apos;%1&apos;에 사본을 저장할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1506"/>
+        <location filename="../sources/mainwindow.cpp" line="1511"/>
         <source>Save as</source>
         <translation>다른 이름으로 저장</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1447"/>
-        <location filename="../sources/mainwindow.cpp" line="1458"/>
+        <location filename="../sources/mainwindow.cpp" line="1452"/>
+        <location filename="../sources/mainwindow.cpp" line="1463"/>
         <source>Move to instance</source>
         <translation>인스턴스로 이동</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1447"/>
-        <location filename="../sources/mainwindow.cpp" line="1458"/>
+        <location filename="../sources/mainwindow.cpp" line="1452"/>
+        <location filename="../sources/mainwindow.cpp" line="1463"/>
         <source>Failed to access instance &apos;%1&apos;.</source>
         <translation>인스턴스 &apos;%1&apos;에 액세스하지 못했습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1493"/>
-        <location filename="../sources/mainwindow.cpp" line="1515"/>
-        <location filename="../sources/mainwindow.cpp" line="2844"/>
+        <location filename="../sources/mainwindow.cpp" line="1498"/>
+        <location filename="../sources/mainwindow.cpp" line="1520"/>
+        <location filename="../sources/mainwindow.cpp" line="2823"/>
         <source>Could not save as &apos;%1&apos;.</source>
         <translation>&apos;%1&apos;로 저장할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1573"/>
+        <location filename="../sources/mainwindow.cpp" line="1578"/>
         <source>Could not print &apos;%1&apos;.</source>
         <translation>&apos;%1&apos;을(를) 인쇄할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1609"/>
+        <location filename="../sources/mainwindow.cpp" line="1614"/>
         <source>Set first page</source>
         <translation>첫 페이지 설정</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1609"/>
+        <location filename="../sources/mainwindow.cpp" line="1614"/>
         <source>Select the first page of the body matter:</source>
         <translation>본문의 첫 페이지 선택:</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1622"/>
+        <location filename="../sources/mainwindow.cpp" line="1627"/>
         <source>Jump to page</source>
         <translation>페이지로 이동</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1622"/>
+        <location filename="../sources/mainwindow.cpp" line="1627"/>
         <source>Page:</source>
         <translation>페이지 :</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2032"/>
+        <location filename="../sources/mainwindow.cpp" line="2950"/>
         <source>Jump to page %1</source>
         <translation>%1 페이지로 이동</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2183"/>
+        <location filename="../sources/mainwindow.cpp" line="2160"/>
         <source>About qpdfview</source>
         <translation>gpdfview 정보</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2183"/>
+        <location filename="../sources/mainwindow.cpp" line="2160"/>
         <source>&lt;p&gt;&lt;b&gt;qpdfview %1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;qpdfview is a tabbed document viewer using Qt.&lt;/p&gt;&lt;p&gt;This version includes:&lt;ul&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;qpdfview %1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;qpdfview는 Qt를 사용하는 탭 문서 뷰어입니다.&lt;/p&gt;&lt;p&gt;이 버전에는 다음이 포함됩니다:&lt;ul&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2187"/>
+        <location filename="../sources/mainwindow.cpp" line="2164"/>
         <source>&lt;li&gt;PDF support using Poppler %1&lt;/li&gt;</source>
         <translation>&lt;li&gt;%1 Poppler를 사용한 PDF 지원&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2190"/>
+        <location filename="../sources/mainwindow.cpp" line="2167"/>
         <source>&lt;li&gt;PS support using libspectre %1&lt;/li&gt;</source>
         <translation>&lt;li&gt;%1 libspectre를 사용한 PS 지원&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2193"/>
+        <location filename="../sources/mainwindow.cpp" line="2170"/>
         <source>&lt;li&gt;DjVu support using DjVuLibre %1&lt;/li&gt;</source>
         <translation>&lt;li&gt;%1 DjVuLibre를 사용한 DjVu 지원&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2196"/>
+        <location filename="../sources/mainwindow.cpp" line="2173"/>
         <source>&lt;li&gt;PDF support using Fitz %1&lt;/li&gt;</source>
         <translation>&lt;li&gt;%1 Fitz를 사용한 PDF 지원&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2199"/>
+        <location filename="../sources/mainwindow.cpp" line="2176"/>
         <source>&lt;li&gt;Printing support using CUPS %1&lt;/li&gt;</source>
         <translation>&lt;li&gt;%1 CUPS를 사용한 인쇄 지원&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2416"/>
+        <location filename="../sources/mainwindow.cpp" line="2393"/>
         <source>&amp;Edit bookmark</source>
         <translation>북마크 편집(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2834"/>
+        <location filename="../sources/mainwindow.cpp" line="2813"/>
         <source>The document &apos;%1&apos; has been modified. Do you want to save your changes?</source>
         <translation>%1&apos; 문서가 수정되었습니다. 변경 사항을 저장하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3081"/>
+        <location filename="../sources/mainwindow.cpp" line="3098"/>
         <source>Page width</source>
         <translation>페이지 너비</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3082"/>
+        <location filename="../sources/mainwindow.cpp" line="3099"/>
         <source>Page size</source>
         <translation>페이지 크기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3105"/>
+        <location filename="../sources/mainwindow.cpp" line="3122"/>
         <source>Match &amp;case</source>
         <translation>대/소문자 일치(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3106"/>
+        <location filename="../sources/mainwindow.cpp" line="3123"/>
         <source>Whole &amp;words</source>
         <translation>전체 단어(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3107"/>
+        <location filename="../sources/mainwindow.cpp" line="3124"/>
         <source>Highlight &amp;all</source>
         <translation>모두 강조표시(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3167"/>
+        <location filename="../sources/mainwindow.cpp" line="3184"/>
         <source>&amp;Open...</source>
         <translation>열기(&amp;O)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3168"/>
+        <location filename="../sources/mainwindow.cpp" line="3185"/>
         <source>Open in new &amp;tab...</source>
         <translation>새 탭에서 열기...(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3282"/>
+        <location filename="../sources/mainwindow.cpp" line="3299"/>
         <source>Open &amp;copy in new tab</source>
-        <translation>새 탭에서 복사본 열기(&amp;C)</translation>
+        <translation>새 탭에서 사본 열기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3285"/>
+        <location filename="../sources/mainwindow.cpp" line="3302"/>
         <source>Move to &amp;instance...</source>
         <translation>인스턴스로 이동...(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3169"/>
+        <location filename="../sources/mainwindow.cpp" line="3186"/>
         <source>&amp;Refresh</source>
         <translation>새로고침(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1471"/>
+        <location filename="../sources/mainwindow.cpp" line="1476"/>
         <source>Information</source>
         <translation>정보</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1471"/>
+        <location filename="../sources/mainwindow.cpp" line="1476"/>
         <source>Instance-to-instance communication requires D-Bus support.</source>
         <translation>인스턴스 간 통신에는 D-Bus 지원이 필요합니다.</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2201"/>
+        <location filename="../sources/mainwindow.cpp" line="2178"/>
         <source>&lt;/ul&gt;&lt;p&gt;See &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</source>
         <translation>&lt;/ul&gt;&lt;p&gt;자세한 내용은 &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt;을 참조하십시오.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 qpdfview 개발자&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3171"/>
+        <location filename="../sources/mainwindow.cpp" line="3188"/>
         <source>Save &amp;as...</source>
         <translation>다른 이름으로 저장(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3172"/>
+        <location filename="../sources/mainwindow.cpp" line="3189"/>
         <source>Save &amp;copy...</source>
-        <translation>복사본 저장(&amp;C)...</translation>
+        <translation>사본 저장(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3173"/>
+        <location filename="../sources/mainwindow.cpp" line="3190"/>
         <source>&amp;Print...</source>
         <translation>인쇄(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3174"/>
+        <location filename="../sources/mainwindow.cpp" line="3191"/>
         <source>E&amp;xit</source>
         <translation>종료(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3179"/>
+        <location filename="../sources/mainwindow.cpp" line="3196"/>
         <source>&amp;Previous page</source>
         <translation>이전 페이지(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3180"/>
+        <location filename="../sources/mainwindow.cpp" line="3197"/>
         <source>&amp;Next page</source>
         <translation>다음 페이지(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3187"/>
+        <location filename="../sources/mainwindow.cpp" line="3204"/>
         <source>&amp;First page</source>
         <translation>첫 페이지(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3194"/>
+        <location filename="../sources/mainwindow.cpp" line="3211"/>
         <source>&amp;Last page</source>
         <translation>마지막 페이지(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3196"/>
+        <location filename="../sources/mainwindow.cpp" line="3213"/>
         <source>&amp;Set first page...</source>
         <translation>첫 페이지 설정(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3198"/>
+        <location filename="../sources/mainwindow.cpp" line="3215"/>
         <source>&amp;Jump to page...</source>
         <translation>페이지로 이동(&amp;J)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3200"/>
+        <location filename="../sources/mainwindow.cpp" line="3217"/>
         <source>Jump &amp;backward</source>
         <translation>뒤로 이동(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3201"/>
+        <location filename="../sources/mainwindow.cpp" line="3218"/>
         <source>Jump for&amp;ward</source>
         <translation>앞으로 이동(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3203"/>
+        <location filename="../sources/mainwindow.cpp" line="3220"/>
         <source>&amp;Search...</source>
         <translation>검색(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3204"/>
+        <location filename="../sources/mainwindow.cpp" line="3221"/>
         <source>Find previous</source>
         <translation>이전 찾기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3205"/>
+        <location filename="../sources/mainwindow.cpp" line="3222"/>
         <source>Find next</source>
         <translation>다음 찾기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3206"/>
+        <location filename="../sources/mainwindow.cpp" line="3223"/>
         <source>Cancel search</source>
         <translation>검색 취소</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3208"/>
+        <location filename="../sources/mainwindow.cpp" line="3225"/>
         <source>&amp;Copy to clipboard</source>
         <translation>클립보드에 복사(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3209"/>
+        <location filename="../sources/mainwindow.cpp" line="3226"/>
         <source>&amp;Add annotation</source>
         <translation>주석 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3211"/>
+        <location filename="../sources/mainwindow.cpp" line="3228"/>
         <source>Settings...</source>
         <translation>설정...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3216"/>
+        <location filename="../sources/mainwindow.cpp" line="3233"/>
         <source>&amp;Continuous</source>
         <translation>연속(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3217"/>
+        <location filename="../sources/mainwindow.cpp" line="3234"/>
         <source>&amp;Two pages</source>
         <translation>두 페이지(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3218"/>
+        <location filename="../sources/mainwindow.cpp" line="3235"/>
         <source>Two pages &amp;with cover page</source>
         <translation>표지가 있는 두 페이지(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3219"/>
+        <location filename="../sources/mainwindow.cpp" line="3236"/>
         <source>&amp;Multiple pages</source>
         <translation>여러 페이지(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3221"/>
+        <location filename="../sources/mainwindow.cpp" line="3238"/>
         <source>Right to left</source>
         <translation>오른쪽에서 왼쪽으로</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3222"/>
+        <location filename="../sources/mainwindow.cpp" line="3239"/>
         <source>Zoom &amp;in</source>
         <translation>확대(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3223"/>
+        <location filename="../sources/mainwindow.cpp" line="3240"/>
         <source>Zoom &amp;out</source>
         <translation>축소(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3224"/>
+        <location filename="../sources/mainwindow.cpp" line="3241"/>
         <source>Original &amp;size</source>
         <translation>원본 크기(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3226"/>
+        <location filename="../sources/mainwindow.cpp" line="3243"/>
         <source>Fit to page width</source>
         <translation>페이지 너비에 맞추기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3227"/>
+        <location filename="../sources/mainwindow.cpp" line="3244"/>
         <source>Fit to page size</source>
         <translation>페이지 크기에 맞추기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3229"/>
+        <location filename="../sources/mainwindow.cpp" line="3246"/>
         <source>Rotate &amp;left</source>
         <translation>왼쪽으로 회전(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3230"/>
+        <location filename="../sources/mainwindow.cpp" line="3247"/>
         <source>Rotate &amp;right</source>
         <translation>오른쪽으로 회전(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3232"/>
+        <location filename="../sources/mainwindow.cpp" line="3249"/>
         <source>Invert colors</source>
         <translation>색상 반전</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3233"/>
+        <location filename="../sources/mainwindow.cpp" line="3250"/>
         <source>Invert lightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3234"/>
+        <location filename="../sources/mainwindow.cpp" line="3251"/>
         <source>Convert to grayscale</source>
         <translation>회색조로 변환</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3235"/>
+        <location filename="../sources/mainwindow.cpp" line="3252"/>
         <source>Trim margins</source>
         <translation>여백 자르기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3237"/>
+        <location filename="../sources/mainwindow.cpp" line="3254"/>
         <source>Darken with paper color</source>
         <translation>용지 색상으로 어둡게</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3238"/>
+        <location filename="../sources/mainwindow.cpp" line="3255"/>
         <source>Lighten with paper color</source>
         <translation>용지 색상으로 밝게</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3240"/>
+        <location filename="../sources/mainwindow.cpp" line="3257"/>
         <source>Fonts...</source>
         <translation>글꼴...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3242"/>
+        <location filename="../sources/mainwindow.cpp" line="3259"/>
         <source>&amp;Fullscreen</source>
         <translation>전체화면(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3243"/>
+        <location filename="../sources/mainwindow.cpp" line="3260"/>
         <source>&amp;Presentation...</source>
         <translation>프레젠테이션(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3247"/>
+        <location filename="../sources/mainwindow.cpp" line="3264"/>
         <source>&amp;Previous tab</source>
         <translation>이전 탭(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3248"/>
+        <location filename="../sources/mainwindow.cpp" line="3265"/>
         <source>&amp;Next tab</source>
         <translation>다음 탭(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3250"/>
+        <location filename="../sources/mainwindow.cpp" line="3267"/>
         <source>&amp;Close tab</source>
         <translation>탭 닫기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3251"/>
+        <location filename="../sources/mainwindow.cpp" line="3268"/>
         <source>Close &amp;all tabs</source>
         <translation>모든 탭 닫기(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3252"/>
+        <location filename="../sources/mainwindow.cpp" line="3269"/>
         <source>Close all tabs &amp;but current tab</source>
         <translation>현재 탭을 제외한 모든 탭 닫기(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3254"/>
+        <location filename="../sources/mainwindow.cpp" line="3271"/>
         <source>Restore &amp;most recently closed tab</source>
         <translation>가장 최근에 닫힌 탭 복원(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3267"/>
+        <location filename="../sources/mainwindow.cpp" line="3284"/>
         <source>&amp;Previous bookmark</source>
         <translation>이전 북마크(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3268"/>
+        <location filename="../sources/mainwindow.cpp" line="3285"/>
         <source>&amp;Next bookmark</source>
         <translation>다음 북마크(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3270"/>
+        <location filename="../sources/mainwindow.cpp" line="3287"/>
         <source>&amp;Add bookmark</source>
         <translation>북마크 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3283"/>
+        <location filename="../sources/mainwindow.cpp" line="3300"/>
         <source>Open copy in new &amp;window</source>
         <translation>새 창에서 복사 열기(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3286"/>
+        <location filename="../sources/mainwindow.cpp" line="3303"/>
         <source>Split view horizontally...</source>
         <translation>수평으로 보기 분할...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3287"/>
+        <location filename="../sources/mainwindow.cpp" line="3304"/>
         <source>Split view vertically...</source>
         <translation>수직으로 보기 분할...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3288"/>
+        <location filename="../sources/mainwindow.cpp" line="3305"/>
         <source>Close current view</source>
         <translation>현재 보기 닫기</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3469"/>
+        <location filename="../sources/mainwindow.cpp" line="3486"/>
         <source>Thumb&amp;nails</source>
         <translation>썸네일(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3483"/>
+        <location filename="../sources/mainwindow.cpp" line="3500"/>
         <source>Book&amp;marks</source>
         <translation>북마크(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3555"/>
+        <location filename="../sources/mainwindow.cpp" line="3572"/>
         <source>Composition</source>
         <translation>구성</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2415"/>
-        <location filename="../sources/mainwindow.cpp" line="3271"/>
+        <location filename="../sources/mainwindow.cpp" line="2392"/>
+        <location filename="../sources/mainwindow.cpp" line="3288"/>
         <source>&amp;Remove bookmark</source>
         <translation>북마크 제거(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2978"/>
+        <location filename="../sources/mainwindow.cpp" line="2995"/>
         <source>Edit &apos;%1&apos; at %2,%3...</source>
         <translation>%2,%3에서 &apos;%1&apos; 편집...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3284"/>
+        <location filename="../sources/mainwindow.cpp" line="3301"/>
         <source>Open containing &amp;folder</source>
         <translation>포함하는 폴더 열기(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3170"/>
+        <location filename="../sources/mainwindow.cpp" line="3187"/>
         <source>&amp;Save</source>
         <translation>저장(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3272"/>
+        <location filename="../sources/mainwindow.cpp" line="3289"/>
         <source>Remove all bookmarks</source>
         <translation>모든 북마크 제거</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3276"/>
+        <location filename="../sources/mainwindow.cpp" line="3293"/>
         <source>&amp;Contents</source>
         <translation>목차</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3277"/>
+        <location filename="../sources/mainwindow.cpp" line="3294"/>
         <source>&amp;About</source>
         <translation>프로그램 정보(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3316"/>
-        <location filename="../sources/mainwindow.cpp" line="3510"/>
+        <location filename="../sources/mainwindow.cpp" line="3333"/>
+        <location filename="../sources/mainwindow.cpp" line="3527"/>
         <source>&amp;File</source>
         <translation>파일(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3319"/>
-        <location filename="../sources/mainwindow.cpp" line="3531"/>
+        <location filename="../sources/mainwindow.cpp" line="3336"/>
+        <location filename="../sources/mainwindow.cpp" line="3548"/>
         <source>&amp;Edit</source>
         <translation>편집(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3322"/>
-        <location filename="../sources/mainwindow.cpp" line="3544"/>
+        <location filename="../sources/mainwindow.cpp" line="3339"/>
+        <location filename="../sources/mainwindow.cpp" line="3561"/>
         <source>&amp;View</source>
         <translation>보기(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3436"/>
+        <location filename="../sources/mainwindow.cpp" line="3453"/>
         <source>&amp;Outline</source>
         <translation>개요(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3455"/>
+        <location filename="../sources/mainwindow.cpp" line="3472"/>
         <source>&amp;Properties</source>
         <translation>속성(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3357"/>
+        <location filename="../sources/mainwindow.cpp" line="3374"/>
         <source>&amp;Search</source>
         <translation>검색(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3561"/>
+        <location filename="../sources/mainwindow.cpp" line="3578"/>
         <source>&amp;Tool bars</source>
         <translation>도구 모음(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3564"/>
+        <location filename="../sources/mainwindow.cpp" line="3581"/>
         <source>&amp;Docks</source>
         <translation>도크&amp;D</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3578"/>
+        <location filename="../sources/mainwindow.cpp" line="3595"/>
         <source>&amp;Tabs</source>
         <translation>탭(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3601"/>
+        <location filename="../sources/mainwindow.cpp" line="3618"/>
         <source>&amp;Bookmarks</source>
         <translation>북마크(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3612"/>
+        <location filename="../sources/mainwindow.cpp" line="3629"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
     <message>
         <location filename="../sources/main.cpp" line="211"/>
-        <location filename="../sources/mainwindow.cpp" line="1431"/>
+        <location filename="../sources/mainwindow.cpp" line="1436"/>
         <source>Choose instance</source>
         <translation>인스턴스 선택</translation>
     </message>
     <message>
         <location filename="../sources/main.cpp" line="211"/>
-        <location filename="../sources/mainwindow.cpp" line="1431"/>
+        <location filename="../sources/mainwindow.cpp" line="1436"/>
         <source>Instance:</source>
         <translation>인스턴스:</translation>
     </message>
@@ -1075,82 +1075,87 @@
 <context>
     <name>qpdfview::PageItem</name>
     <message>
-        <location filename="../sources/pageitem.cpp" line="380"/>
+        <location filename="../sources/pageitem.cpp" line="381"/>
         <source>Go to page %1.</source>
         <translation>%1 페이지로 이동합니다.</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="384"/>
+        <location filename="../sources/pageitem.cpp" line="385"/>
         <source>Go to page %1 of file &apos;%2&apos;.</source>
         <translation>&apos;%2&apos; 파일의 %1 페이지로 이동합니다.</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="392"/>
+        <location filename="../sources/pageitem.cpp" line="393"/>
         <source>Open &apos;%1&apos;.</source>
         <translation>&apos;%1&apos;을 엽니다.</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="427"/>
+        <location filename="../sources/pageitem.cpp" line="428"/>
         <source>Edit form field &apos;%1&apos;.</source>
         <translation>양식 필드 &apos;%1&apos;을 편집합니다.</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="795"/>
+        <location filename="../sources/pageitem.cpp" line="796"/>
         <source>Copy &amp;text</source>
         <translation>텍스트 복사(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="796"/>
+        <location filename="../sources/pageitem.cpp" line="797"/>
         <source>&amp;Select text</source>
         <translation>텍스트 선택(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="797"/>
+        <location filename="../sources/pageitem.cpp" line="798"/>
+        <source>&amp;Append text to bookmark comment...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sources/pageitem.cpp" line="799"/>
         <source>Copy &amp;image</source>
         <translation>이미지 복사(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="798"/>
+        <location filename="../sources/pageitem.cpp" line="800"/>
         <source>Save image to &amp;file...</source>
         <translation>이미지를 파일에 저장...(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="833"/>
+        <location filename="../sources/pageitem.cpp" line="840"/>
         <source>Save image to file</source>
         <translation>이미지를 파일에 저장</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="837"/>
+        <location filename="../sources/pageitem.cpp" line="844"/>
         <source>Warning</source>
         <translation>경고</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="837"/>
+        <location filename="../sources/pageitem.cpp" line="844"/>
         <source>Could not save image to file &apos;%1&apos;.</source>
         <translation>이미지를 &apos;%1&apos; 파일에 저장할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="850"/>
+        <location filename="../sources/pageitem.cpp" line="857"/>
         <source>Add &amp;text</source>
         <translation>텍스트 추가(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="851"/>
+        <location filename="../sources/pageitem.cpp" line="858"/>
         <source>Add &amp;highlight</source>
         <translation>강조표시 추가(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="893"/>
+        <location filename="../sources/pageitem.cpp" line="900"/>
         <source>&amp;Copy link address</source>
         <translation>링크 주소 복사(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="894"/>
+        <location filename="../sources/pageitem.cpp" line="901"/>
         <source>&amp;Select link address</source>
         <translation>링크 주소 선택(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="917"/>
+        <location filename="../sources/pageitem.cpp" line="924"/>
         <source>&amp;Remove annotation</source>
         <translation>주석 제거(&amp;R)</translation>
     </message>
@@ -1202,12 +1207,12 @@
     <message>
         <location filename="../sources/pdfmodel.cpp" line="1226"/>
         <source>Solid</source>
-        <translation type="unfinished"></translation>
+        <translation>Solid</translation>
     </message>
     <message>
         <location filename="../sources/pdfmodel.cpp" line="1227"/>
         <source>Shaped</source>
-        <translation type="unfinished"></translation>
+        <translation>Shaped</translation>
     </message>
     <message>
         <location filename="../sources/pdfmodel.cpp" line="1230"/>
@@ -1217,12 +1222,12 @@
     <message>
         <location filename="../sources/pdfmodel.cpp" line="1235"/>
         <source>Splash</source>
-        <translation type="unfinished"></translation>
+        <translation>시작 화면</translation>
     </message>
     <message>
         <location filename="../sources/pdfmodel.cpp" line="1236"/>
         <source>Arthur</source>
-        <translation type="unfinished"></translation>
+        <translation>Arthur</translation>
     </message>
     <message>
         <location filename="../sources/pdfmodel.cpp" line="1239"/>
@@ -1260,7 +1265,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="505"/>
         <source>Critical</source>
-        <translation type="unfinished"></translation>
+        <translation>치명적</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="505"/>
@@ -1534,7 +1539,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="261"/>
         <source>Keep recently closed:</source>
-        <translation>최근에 닫은 상태 유지:</translation>
+        <translation>최근에 닫힌 상태 유지:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="265"/>
@@ -1559,7 +1564,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="274"/>
         <source>Save database interval:</source>
-        <translation>데이터베이스 간격 저장:</translation>
+        <translation>데이터베이스 저장 간격:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="297"/>
@@ -1599,7 +1604,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="324"/>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="324"/>
@@ -1624,7 +1629,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="334"/>
         <source>&apos;%1&apos; is replaced by the absolute file path. &apos;%2&apos; resp. &apos;%3&apos; is replaced by line resp. column number.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos;은(는) 절대 파일 경로로 대체됩니다. &apos;%2&apos; resp. &apos;%3&apos;은(는) 줄 resp. 열 번호로 대체됩니다.</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="334"/>
@@ -1639,7 +1644,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="407"/>
         <source>Keep obsolete pixmaps:</source>
-        <translation>더 이상 사용되지 않는 픽스맵 유지:</translation>
+        <translation>쓸모없는 픽스맵 유지:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="410"/>
@@ -1732,7 +1737,7 @@
         <location filename="../sources/settingsdialog.cpp" line="848"/>
         <location filename="../sources/settingsdialog.cpp" line="857"/>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="458"/>
@@ -1752,7 +1757,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="464"/>
         <source>Prefetch distance:</source>
-        <translation>프리페치 간격:</translation>
+        <translation>프리페치 거리:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="565"/>
@@ -1823,7 +1828,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="569"/>
         <source>Tab visibility:</source>
-        <translation>탭 가시성:</translation>
+        <translation>탭 표시여부:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="574"/>
@@ -1833,17 +1838,17 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="578"/>
         <source>New tab next to current tab:</source>
-        <translation>현재 탭 옆의 새 탭:</translation>
+        <translation>현재 탭 옆에 새 탭:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="585"/>
         <source>Recently used count:</source>
-        <translation>최근에 사용한 개수:</translation>
+        <translation>최근에 사용된 개수</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="588"/>
         <source>Recently closed count:</source>
-        <translation>최근 닫힌 수:</translation>
+        <translation>최근에 닫힌 개수</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="554"/>
@@ -1878,7 +1883,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="621"/>
         <source>Document title as tab title:</source>
-        <translation>문서 제목을 탭 제목으로:</translation>
+        <translation>탭 제목으로 문서 제목 지정:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="625"/>
@@ -1893,7 +1898,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="304"/>
         <source>Synchronize outline view:</source>
-        <translation>outline 보기 동기화:</translation>
+        <translation>개요 보기 동기화:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="632"/>

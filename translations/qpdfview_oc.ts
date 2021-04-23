@@ -433,27 +433,27 @@
 <context>
     <name>qpdfview::MainWindow</name>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3292"/>
+        <location filename="../sources/mainwindow.cpp" line="3309"/>
         <source>Toggle tool bars</source>
         <translation>Afichatge de la barra d&apos;aisinas</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3293"/>
+        <location filename="../sources/mainwindow.cpp" line="3310"/>
         <source>Toggle menu bar</source>
         <translation>Afichatge de la barra de menú</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="484"/>
         <location filename="../sources/mainwindow.cpp" line="526"/>
-        <location filename="../sources/mainwindow.cpp" line="1482"/>
-        <location filename="../sources/mainwindow.cpp" line="1493"/>
-        <location filename="../sources/mainwindow.cpp" line="1499"/>
-        <location filename="../sources/mainwindow.cpp" line="1515"/>
-        <location filename="../sources/mainwindow.cpp" line="1535"/>
-        <location filename="../sources/mainwindow.cpp" line="1573"/>
-        <location filename="../sources/mainwindow.cpp" line="1714"/>
-        <location filename="../sources/mainwindow.cpp" line="2834"/>
-        <location filename="../sources/mainwindow.cpp" line="2844"/>
+        <location filename="../sources/mainwindow.cpp" line="1487"/>
+        <location filename="../sources/mainwindow.cpp" line="1498"/>
+        <location filename="../sources/mainwindow.cpp" line="1504"/>
+        <location filename="../sources/mainwindow.cpp" line="1520"/>
+        <location filename="../sources/mainwindow.cpp" line="1540"/>
+        <location filename="../sources/mainwindow.cpp" line="1578"/>
+        <location filename="../sources/mainwindow.cpp" line="1719"/>
+        <location filename="../sources/mainwindow.cpp" line="2813"/>
+        <location filename="../sources/mainwindow.cpp" line="2823"/>
         <source>Warning</source>
         <translation>Avertiment</translation>
     </message>
@@ -494,580 +494,580 @@
         <translation>Tampar totes los onglets a dreita</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1213"/>
-        <location filename="../sources/mainwindow.cpp" line="1362"/>
+        <location filename="../sources/mainwindow.cpp" line="1218"/>
+        <location filename="../sources/mainwindow.cpp" line="1367"/>
         <source>Open</source>
         <translation>Dobrir</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1378"/>
+        <location filename="../sources/mainwindow.cpp" line="1383"/>
         <source>Open in new tab</source>
         <translation>Dobrir dins un onglet novèl</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1482"/>
-        <location filename="../sources/mainwindow.cpp" line="1499"/>
-        <location filename="../sources/mainwindow.cpp" line="1714"/>
+        <location filename="../sources/mainwindow.cpp" line="1487"/>
+        <location filename="../sources/mainwindow.cpp" line="1504"/>
+        <location filename="../sources/mainwindow.cpp" line="1719"/>
         <source>Could not refresh &apos;%1&apos;.</source>
         <translation>Impossible d&apos;actualizar « %1 ».</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1525"/>
+        <location filename="../sources/mainwindow.cpp" line="1530"/>
         <source>Save copy</source>
         <translation>Enregistrar una còpia</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1535"/>
+        <location filename="../sources/mainwindow.cpp" line="1540"/>
         <source>Could not save copy at &apos;%1&apos;.</source>
         <translation>Impossible d&apos;enregistrar la còpia cap a « %1 ».</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1506"/>
+        <location filename="../sources/mainwindow.cpp" line="1511"/>
         <source>Save as</source>
         <translation>Enregistrar jos</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1447"/>
-        <location filename="../sources/mainwindow.cpp" line="1458"/>
+        <location filename="../sources/mainwindow.cpp" line="1452"/>
+        <location filename="../sources/mainwindow.cpp" line="1463"/>
         <source>Move to instance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1447"/>
-        <location filename="../sources/mainwindow.cpp" line="1458"/>
+        <location filename="../sources/mainwindow.cpp" line="1452"/>
+        <location filename="../sources/mainwindow.cpp" line="1463"/>
         <source>Failed to access instance &apos;%1&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1493"/>
-        <location filename="../sources/mainwindow.cpp" line="1515"/>
-        <location filename="../sources/mainwindow.cpp" line="2844"/>
+        <location filename="../sources/mainwindow.cpp" line="1498"/>
+        <location filename="../sources/mainwindow.cpp" line="1520"/>
+        <location filename="../sources/mainwindow.cpp" line="2823"/>
         <source>Could not save as &apos;%1&apos;.</source>
         <translation>Impossible d&apos;enregistrar en tant que « %1 ».</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1573"/>
+        <location filename="../sources/mainwindow.cpp" line="1578"/>
         <source>Could not print &apos;%1&apos;.</source>
         <translation>Impossible d&apos;imprimir « %1 ».</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1609"/>
+        <location filename="../sources/mainwindow.cpp" line="1614"/>
         <source>Set first page</source>
         <translation>Definir la primièra pagina</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1609"/>
+        <location filename="../sources/mainwindow.cpp" line="1614"/>
         <source>Select the first page of the body matter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1622"/>
+        <location filename="../sources/mainwindow.cpp" line="1627"/>
         <source>Jump to page</source>
         <translation>Anar a la pagina</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1622"/>
+        <location filename="../sources/mainwindow.cpp" line="1627"/>
         <source>Page:</source>
         <translation>Pagina :</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2032"/>
+        <location filename="../sources/mainwindow.cpp" line="2950"/>
         <source>Jump to page %1</source>
         <translation>Anar a la pagina %1</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2183"/>
+        <location filename="../sources/mainwindow.cpp" line="2160"/>
         <source>About qpdfview</source>
         <translation>A prepaus de qpdfview</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2183"/>
+        <location filename="../sources/mainwindow.cpp" line="2160"/>
         <source>&lt;p&gt;&lt;b&gt;qpdfview %1&lt;/b&gt;&lt;/p&gt;&lt;p&gt;qpdfview is a tabbed document viewer using Qt.&lt;/p&gt;&lt;p&gt;This version includes:&lt;ul&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2187"/>
+        <location filename="../sources/mainwindow.cpp" line="2164"/>
         <source>&lt;li&gt;PDF support using Poppler %1&lt;/li&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2190"/>
+        <location filename="../sources/mainwindow.cpp" line="2167"/>
         <source>&lt;li&gt;PS support using libspectre %1&lt;/li&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2193"/>
+        <location filename="../sources/mainwindow.cpp" line="2170"/>
         <source>&lt;li&gt;DjVu support using DjVuLibre %1&lt;/li&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2196"/>
+        <location filename="../sources/mainwindow.cpp" line="2173"/>
         <source>&lt;li&gt;PDF support using Fitz %1&lt;/li&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2199"/>
+        <location filename="../sources/mainwindow.cpp" line="2176"/>
         <source>&lt;li&gt;Printing support using CUPS %1&lt;/li&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2416"/>
+        <location filename="../sources/mainwindow.cpp" line="2393"/>
         <source>&amp;Edit bookmark</source>
         <translation>&amp;Editar lo signet</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2834"/>
+        <location filename="../sources/mainwindow.cpp" line="2813"/>
         <source>The document &apos;%1&apos; has been modified. Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3081"/>
+        <location filename="../sources/mainwindow.cpp" line="3098"/>
         <source>Page width</source>
         <translation>Largor de pagina</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3082"/>
+        <location filename="../sources/mainwindow.cpp" line="3099"/>
         <source>Page size</source>
         <translation>Talha de las paginas</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3105"/>
+        <location filename="../sources/mainwindow.cpp" line="3122"/>
         <source>Match &amp;case</source>
         <translation>Sensible a la &amp;cassa</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3106"/>
+        <location filename="../sources/mainwindow.cpp" line="3123"/>
         <source>Whole &amp;words</source>
         <translation>&amp;Mots entièrs</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3107"/>
+        <location filename="../sources/mainwindow.cpp" line="3124"/>
         <source>Highlight &amp;all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3167"/>
+        <location filename="../sources/mainwindow.cpp" line="3184"/>
         <source>&amp;Open...</source>
         <translation>&amp;Dobrir...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3168"/>
+        <location filename="../sources/mainwindow.cpp" line="3185"/>
         <source>Open in new &amp;tab...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3282"/>
+        <location filename="../sources/mainwindow.cpp" line="3299"/>
         <source>Open &amp;copy in new tab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3285"/>
+        <location filename="../sources/mainwindow.cpp" line="3302"/>
         <source>Move to &amp;instance...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3169"/>
+        <location filename="../sources/mainwindow.cpp" line="3186"/>
         <source>&amp;Refresh</source>
         <translation>&amp;Actualizar</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1471"/>
+        <location filename="../sources/mainwindow.cpp" line="1476"/>
         <source>Information</source>
         <translation type="unfinished">Informacion</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="1471"/>
+        <location filename="../sources/mainwindow.cpp" line="1476"/>
         <source>Instance-to-instance communication requires D-Bus support.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2201"/>
+        <location filename="../sources/mainwindow.cpp" line="2178"/>
         <source>&lt;/ul&gt;&lt;p&gt;See &lt;a href=&quot;https://launchpad.net/qpdfview&quot;&gt;launchpad.net/qpdfview&lt;/a&gt; for more information.&lt;/p&gt;&lt;p&gt;&amp;copy; %1 The qpdfview developers&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3171"/>
+        <location filename="../sources/mainwindow.cpp" line="3188"/>
         <source>Save &amp;as...</source>
         <translation>Enregistrar &amp;jos…</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3172"/>
+        <location filename="../sources/mainwindow.cpp" line="3189"/>
         <source>Save &amp;copy...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3173"/>
+        <location filename="../sources/mainwindow.cpp" line="3190"/>
         <source>&amp;Print...</source>
         <translation>&amp;Imprimir...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3174"/>
+        <location filename="../sources/mainwindow.cpp" line="3191"/>
         <source>E&amp;xit</source>
         <translation>&amp;Quitar</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3179"/>
+        <location filename="../sources/mainwindow.cpp" line="3196"/>
         <source>&amp;Previous page</source>
         <translation>Pagina &amp;precedenta</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3180"/>
+        <location filename="../sources/mainwindow.cpp" line="3197"/>
         <source>&amp;Next page</source>
         <translation>Pagina seg&amp;uenta</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3187"/>
+        <location filename="../sources/mainwindow.cpp" line="3204"/>
         <source>&amp;First page</source>
         <translation>&amp;Primièra pagina</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3194"/>
+        <location filename="../sources/mainwindow.cpp" line="3211"/>
         <source>&amp;Last page</source>
         <translation>&amp;Darrièra pagina</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3196"/>
+        <location filename="../sources/mainwindow.cpp" line="3213"/>
         <source>&amp;Set first page...</source>
         <translation>&amp;Definir la primièra pagina…</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3198"/>
+        <location filename="../sources/mainwindow.cpp" line="3215"/>
         <source>&amp;Jump to page...</source>
         <translation>&amp;Anar a la pagina…</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3200"/>
+        <location filename="../sources/mainwindow.cpp" line="3217"/>
         <source>Jump &amp;backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3201"/>
+        <location filename="../sources/mainwindow.cpp" line="3218"/>
         <source>Jump for&amp;ward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3203"/>
+        <location filename="../sources/mainwindow.cpp" line="3220"/>
         <source>&amp;Search...</source>
         <translation>Rec&amp;ercar...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3204"/>
+        <location filename="../sources/mainwindow.cpp" line="3221"/>
         <source>Find previous</source>
         <translation>Recercar lo precedent</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3205"/>
+        <location filename="../sources/mainwindow.cpp" line="3222"/>
         <source>Find next</source>
         <translation>Recercar lo seguent</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3206"/>
+        <location filename="../sources/mainwindow.cpp" line="3223"/>
         <source>Cancel search</source>
         <translation>Anullar la recèrca</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3208"/>
+        <location filename="../sources/mainwindow.cpp" line="3225"/>
         <source>&amp;Copy to clipboard</source>
         <translation>&amp;Copiar cap al quichapapièrs</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3209"/>
+        <location filename="../sources/mainwindow.cpp" line="3226"/>
         <source>&amp;Add annotation</source>
         <translation>&amp;Apondre una anotacion</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3211"/>
+        <location filename="../sources/mainwindow.cpp" line="3228"/>
         <source>Settings...</source>
         <translation>Paramètres...</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3216"/>
+        <location filename="../sources/mainwindow.cpp" line="3233"/>
         <source>&amp;Continuous</source>
         <translation>&amp;Continú</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3217"/>
+        <location filename="../sources/mainwindow.cpp" line="3234"/>
         <source>&amp;Two pages</source>
         <translation>&amp;Doas paginas</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3218"/>
+        <location filename="../sources/mainwindow.cpp" line="3235"/>
         <source>Two pages &amp;with cover page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3219"/>
+        <location filename="../sources/mainwindow.cpp" line="3236"/>
         <source>&amp;Multiple pages</source>
         <translation>&amp;Paginas multiplas</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3221"/>
+        <location filename="../sources/mainwindow.cpp" line="3238"/>
         <source>Right to left</source>
         <translation>De dreita a esquèrra</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3222"/>
+        <location filename="../sources/mainwindow.cpp" line="3239"/>
         <source>Zoom &amp;in</source>
         <translation>Zoom &amp;avant</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3223"/>
+        <location filename="../sources/mainwindow.cpp" line="3240"/>
         <source>Zoom &amp;out</source>
         <translation>Zoom &amp;arrièr</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3224"/>
+        <location filename="../sources/mainwindow.cpp" line="3241"/>
         <source>Original &amp;size</source>
         <translation>Talha &amp;originala</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3226"/>
+        <location filename="../sources/mainwindow.cpp" line="3243"/>
         <source>Fit to page width</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3227"/>
+        <location filename="../sources/mainwindow.cpp" line="3244"/>
         <source>Fit to page size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3229"/>
+        <location filename="../sources/mainwindow.cpp" line="3246"/>
         <source>Rotate &amp;left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3230"/>
+        <location filename="../sources/mainwindow.cpp" line="3247"/>
         <source>Rotate &amp;right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3232"/>
+        <location filename="../sources/mainwindow.cpp" line="3249"/>
         <source>Invert colors</source>
         <translation>Inversar las colors</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3233"/>
+        <location filename="../sources/mainwindow.cpp" line="3250"/>
         <source>Invert lightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3234"/>
+        <location filename="../sources/mainwindow.cpp" line="3251"/>
         <source>Convert to grayscale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3235"/>
+        <location filename="../sources/mainwindow.cpp" line="3252"/>
         <source>Trim margins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3237"/>
+        <location filename="../sources/mainwindow.cpp" line="3254"/>
         <source>Darken with paper color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3238"/>
+        <location filename="../sources/mainwindow.cpp" line="3255"/>
         <source>Lighten with paper color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3240"/>
+        <location filename="../sources/mainwindow.cpp" line="3257"/>
         <source>Fonts...</source>
         <translation>Poliças…</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3242"/>
+        <location filename="../sources/mainwindow.cpp" line="3259"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Ecran complet</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3243"/>
+        <location filename="../sources/mainwindow.cpp" line="3260"/>
         <source>&amp;Presentation...</source>
         <translation>&amp;Presentacion…</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3247"/>
+        <location filename="../sources/mainwindow.cpp" line="3264"/>
         <source>&amp;Previous tab</source>
         <translation>Onglet &amp;precedent</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3248"/>
+        <location filename="../sources/mainwindow.cpp" line="3265"/>
         <source>&amp;Next tab</source>
         <translation>Onglet &amp;seguent</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3250"/>
+        <location filename="../sources/mainwindow.cpp" line="3267"/>
         <source>&amp;Close tab</source>
         <translation>&amp;Tampar l&apos;onglet</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3251"/>
+        <location filename="../sources/mainwindow.cpp" line="3268"/>
         <source>Close &amp;all tabs</source>
         <translation>Tampar &amp;totes los onglets</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3252"/>
+        <location filename="../sources/mainwindow.cpp" line="3269"/>
         <source>Close all tabs &amp;but current tab</source>
         <translation>Tampar totes los onglets &amp;levat l&apos;onglet actual</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3254"/>
+        <location filename="../sources/mainwindow.cpp" line="3271"/>
         <source>Restore &amp;most recently closed tab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3267"/>
+        <location filename="../sources/mainwindow.cpp" line="3284"/>
         <source>&amp;Previous bookmark</source>
         <translation>Signet &amp;precedent</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3268"/>
+        <location filename="../sources/mainwindow.cpp" line="3285"/>
         <source>&amp;Next bookmark</source>
         <translation>Signet &amp;seguent</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3270"/>
+        <location filename="../sources/mainwindow.cpp" line="3287"/>
         <source>&amp;Add bookmark</source>
         <translation>&amp;Apondre un signet</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3283"/>
+        <location filename="../sources/mainwindow.cpp" line="3300"/>
         <source>Open copy in new &amp;window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3286"/>
+        <location filename="../sources/mainwindow.cpp" line="3303"/>
         <source>Split view horizontally...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3287"/>
+        <location filename="../sources/mainwindow.cpp" line="3304"/>
         <source>Split view vertically...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3288"/>
+        <location filename="../sources/mainwindow.cpp" line="3305"/>
         <source>Close current view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3469"/>
+        <location filename="../sources/mainwindow.cpp" line="3486"/>
         <source>Thumb&amp;nails</source>
         <translation>&amp;Miniaturas</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3483"/>
+        <location filename="../sources/mainwindow.cpp" line="3500"/>
         <source>Book&amp;marks</source>
         <translation>Si&amp;gnets</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3555"/>
+        <location filename="../sources/mainwindow.cpp" line="3572"/>
         <source>Composition</source>
         <translation>Composicion</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2415"/>
-        <location filename="../sources/mainwindow.cpp" line="3271"/>
+        <location filename="../sources/mainwindow.cpp" line="2392"/>
+        <location filename="../sources/mainwindow.cpp" line="3288"/>
         <source>&amp;Remove bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="2978"/>
+        <location filename="../sources/mainwindow.cpp" line="2995"/>
         <source>Edit &apos;%1&apos; at %2,%3...</source>
         <translation>Editar « %1 » a %2, %3…</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3284"/>
+        <location filename="../sources/mainwindow.cpp" line="3301"/>
         <source>Open containing &amp;folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3170"/>
+        <location filename="../sources/mainwindow.cpp" line="3187"/>
         <source>&amp;Save</source>
         <translation>&amp;Enregistrar</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3272"/>
+        <location filename="../sources/mainwindow.cpp" line="3289"/>
         <source>Remove all bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3276"/>
+        <location filename="../sources/mainwindow.cpp" line="3293"/>
         <source>&amp;Contents</source>
         <translation>En&amp;senhador</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3277"/>
+        <location filename="../sources/mainwindow.cpp" line="3294"/>
         <source>&amp;About</source>
         <translation>&amp;A prepaus de</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3316"/>
-        <location filename="../sources/mainwindow.cpp" line="3510"/>
+        <location filename="../sources/mainwindow.cpp" line="3333"/>
+        <location filename="../sources/mainwindow.cpp" line="3527"/>
         <source>&amp;File</source>
         <translation>&amp;Fichièr</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3319"/>
-        <location filename="../sources/mainwindow.cpp" line="3531"/>
+        <location filename="../sources/mainwindow.cpp" line="3336"/>
+        <location filename="../sources/mainwindow.cpp" line="3548"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editar</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3322"/>
-        <location filename="../sources/mainwindow.cpp" line="3544"/>
+        <location filename="../sources/mainwindow.cpp" line="3339"/>
+        <location filename="../sources/mainwindow.cpp" line="3561"/>
         <source>&amp;View</source>
         <translation>&amp;Afichar</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3436"/>
+        <location filename="../sources/mainwindow.cpp" line="3453"/>
         <source>&amp;Outline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3455"/>
+        <location filename="../sources/mainwindow.cpp" line="3472"/>
         <source>&amp;Properties</source>
         <translation>&amp;Proprietats</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3357"/>
+        <location filename="../sources/mainwindow.cpp" line="3374"/>
         <source>&amp;Search</source>
         <translation>&amp;Recercar</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3561"/>
+        <location filename="../sources/mainwindow.cpp" line="3578"/>
         <source>&amp;Tool bars</source>
         <translation>&amp;Barras d&apos;aisinas</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3564"/>
+        <location filename="../sources/mainwindow.cpp" line="3581"/>
         <source>&amp;Docks</source>
         <translation>&amp;Encarts</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3578"/>
+        <location filename="../sources/mainwindow.cpp" line="3595"/>
         <source>&amp;Tabs</source>
         <translation>&amp;Tabulacions</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3601"/>
+        <location filename="../sources/mainwindow.cpp" line="3618"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Marcapaginas</translation>
     </message>
     <message>
-        <location filename="../sources/mainwindow.cpp" line="3612"/>
+        <location filename="../sources/mainwindow.cpp" line="3629"/>
         <source>&amp;Help</source>
         <translation>&amp;Ajuda</translation>
     </message>
     <message>
         <location filename="../sources/main.cpp" line="211"/>
-        <location filename="../sources/mainwindow.cpp" line="1431"/>
+        <location filename="../sources/mainwindow.cpp" line="1436"/>
         <source>Choose instance</source>
         <translation>Causir una instància</translation>
     </message>
     <message>
         <location filename="../sources/main.cpp" line="211"/>
-        <location filename="../sources/mainwindow.cpp" line="1431"/>
+        <location filename="../sources/mainwindow.cpp" line="1436"/>
         <source>Instance:</source>
         <translation>Instància :</translation>
     </message>
@@ -1075,82 +1075,87 @@
 <context>
     <name>qpdfview::PageItem</name>
     <message>
-        <location filename="../sources/pageitem.cpp" line="380"/>
+        <location filename="../sources/pageitem.cpp" line="381"/>
         <source>Go to page %1.</source>
         <translation>Anar a la pagina %1.</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="384"/>
+        <location filename="../sources/pageitem.cpp" line="385"/>
         <source>Go to page %1 of file &apos;%2&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="392"/>
+        <location filename="../sources/pageitem.cpp" line="393"/>
         <source>Open &apos;%1&apos;.</source>
         <translation>Dobrir « %1 ».</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="427"/>
+        <location filename="../sources/pageitem.cpp" line="428"/>
         <source>Edit form field &apos;%1&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="795"/>
+        <location filename="../sources/pageitem.cpp" line="796"/>
         <source>Copy &amp;text</source>
         <translation>Copiar lo &amp;tèxte</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="796"/>
+        <location filename="../sources/pageitem.cpp" line="797"/>
         <source>&amp;Select text</source>
         <translation>&amp;Seleccionar lo tèxte</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="797"/>
+        <location filename="../sources/pageitem.cpp" line="798"/>
+        <source>&amp;Append text to bookmark comment...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sources/pageitem.cpp" line="799"/>
         <source>Copy &amp;image</source>
         <translation>Copiar &amp;l&apos;imatge</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="798"/>
+        <location filename="../sources/pageitem.cpp" line="800"/>
         <source>Save image to &amp;file...</source>
         <translation>Enregistrar l&apos;imatge dins lo &amp;fichièr…</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="833"/>
+        <location filename="../sources/pageitem.cpp" line="840"/>
         <source>Save image to file</source>
         <translation>Enregistrar l&apos;imatge dins un fichièr</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="837"/>
+        <location filename="../sources/pageitem.cpp" line="844"/>
         <source>Warning</source>
         <translation>Avertiment</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="837"/>
+        <location filename="../sources/pageitem.cpp" line="844"/>
         <source>Could not save image to file &apos;%1&apos;.</source>
         <translation>Impossible d&apos;enregistrar l&apos;imatge dins lo fichièr « %1 ».</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="850"/>
+        <location filename="../sources/pageitem.cpp" line="857"/>
         <source>Add &amp;text</source>
         <translation>Apondre de &amp;tèxte</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="851"/>
+        <location filename="../sources/pageitem.cpp" line="858"/>
         <source>Add &amp;highlight</source>
         <translation>Metre en &amp;susbrilhança</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="893"/>
+        <location filename="../sources/pageitem.cpp" line="900"/>
         <source>&amp;Copy link address</source>
         <translation>&amp;Copiar l&apos;adreça del ligam</translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="894"/>
+        <location filename="../sources/pageitem.cpp" line="901"/>
         <source>&amp;Select link address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/pageitem.cpp" line="917"/>
+        <location filename="../sources/pageitem.cpp" line="924"/>
         <source>&amp;Remove annotation</source>
         <translation type="unfinished"></translation>
     </message>

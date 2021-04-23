@@ -83,8 +83,8 @@ Dateien in neuen Reitern.</li>
 (falls dies in den Einstellungen eingeschaltet ist).</li>
     <li><b>Aktualisieren</b> Lädt die Datei neu, die im aktuellen Reiter angezeigt
 wird.</li>
-    <li><b>Save</b> Saves changes to annotations and form fields to the file
-displayed in the current tab.</li>
+    <li><b>Speichern</b> Speichert Änderungen an Anmerkungen und Formularfeldern in
+der Datei, die in der aktuellen Registerkarte angezeigt wird.</li>
     <li><b>Speichern unter...</b> Öffnet einen Auswahldialog zum Speichern einer
 Kopie der im aktuellen Reiter angezeigten Datei mit allen Änderungen an
 Anmerkungen und Formularfeldern.</li>
@@ -263,9 +263,9 @@ eingeschaltet ist). Ein Linksklick auf ein Formularfeld ermöglicht die
 Bearbeitung. Wird der Mauszeiger ohne Tastendruck auf einem Formularfeld
 platziert, wird dessen Name als Tooltip angezeigt.</p>
 
-<p>The source of a position in the document can be opened in the source editor
-using the context menu which optionally contains an item for the first
-matching <em>SyncTeX</em> node.</p>
+<p>Der Quelltext einer Position im Dokument kann im Quelltexteditor über das
+Kontextmenü geöffnet werden, das optional einen Eintrag für den ersten
+passenden <em>SyncTeX</em> Knoten enthält.</p>
 
 <p><em>In Zwischenablage kopieren:</em> Bei gedrückter <b>SHIFT</b>-Taste mit
 der linken Maustaste klicken, halten und einen Rahmen um die zu kopierende
@@ -363,6 +363,8 @@ Präsentationsansicht zeigen soll.</li>
     <li><b>Gliederung synchronisieren</b> Falls eingeschaltet, wird in der
 Gliederungsansicht der erste Eintrag zur aktuellen Seite hervorgehoben, wenn
 die aktuelle Seite wechselt.</li>
+    <li><b>Relative jumps</b> If enable, the view port will keep its position
+relative to the visible page when jumping to another page.</li>
     <li><b>Minimaler Bildlauf</b> Falls aktiviert, wird die Ansicht nur dann wenn
 verschoben, wenn das Ziel eines Sprungs nicht bereits sichtbar ist.</li>
     <li><b>Vergrößerungsfaktor</b> Der Skalierungsfaktor wird beim Vergrößern mit
@@ -391,6 +393,9 @@ Arbeitsspeicherverbrauchs) bereits erstellte Grafiken der alten Auflösung
 verwendet, um Näherungen der endgültigen Grafiken darzustellen, bis diese
 verfügbar sind.</li>
     <li>.</li>
+    <li><b>Use logical DPI</b> If enabled, the horizontal and vertical resolution of
+the monitor as reported by the operating system is used to define a scale
+factor of 100%.</li>
     <li><b>Seiten verzieren</b> Legt fest, ob Seiten vom Hintergrund abgesetzt
 dargestellt werden.</li>
     <li><b>Verweise verzieren</b> Legt fest, ob Verweise ("Links") durch rote Rahmen
@@ -498,16 +503,16 @@ Aktionen sind "scaleFactor" (Skalenfaktor), "zoomIn" (Vergrößern), "zoomOut"
 "rotateLeft" (Nach links drehen), "rotateRight" (Nach rechts drehen),
 "fullscreen" (Vollbild), "presentation" (Präsentation) und "separator"
 (Trennelement). (Tritt nach Neustart des Programms in Kraft.)</li>
-    <li><b>Document context menu</b> Defines which actions are visible in the
-document's context menu. Available actions are openCopyInNewTab,
+    <li><b>Dokument-Kontextmenü</b> Definiert, welche Aktionen im Kontextmenü des
+Dokuments sichtbar sind. Verfügbare Aktionen sind openCopyInNewTab,
 openCopyInNewWindow, openContainingFolder, moveToInstance, previousPage,
 nextPage, firstPage, lastPage, jumpToPage, jumpBackward, jumpForward,
-setFirstPage, findPrevious, findNext, cancelSearch and separator.</li>
-    <li><b>Tab context menu</b> Defines which actions are visible in a tab's context
-menu. Available actions are openCopyInNewTab, openCopyInNewWindow,
-openContainingFolder, moveToInstance, copyFilePath, selectFilePath,
-closeAllTabs, closeAllTabsButThisOne, closeAllTabsToTheLeft,
-closeAllTabsToTheRight and separator.</li>
+setFirstPage, findPrevious, findNext, cancelSearch und Trennzeichen.</li>
+    <li><b>Registerkarten-Kontextmenü</b> Definiert, welche Aktionen im Kontextmenü
+einer Registerkarte sichtbar sind. Verfügbare Aktionen sind
+openCopyInNewTab, openCopyInNewWindow, openContainingFolder, moveToInstance,
+copyFilePath, selectFilePath, closeAllTabs, closeAllTabsButThisOne,
+closeAllTabsToTheLeft, closeAllTabsToTheRight und Trennzeichen.</li>
     <li><b>Laufende Menüs</b> Überschreibt die Vorgabe des Standardstils, so dass
 Menüs laufen anstatt in mehreren Spalten dargestellt zu werden, falls sie
 größer sind als die verfügbare Bildschirmfläche. (Nach Neustart wirksam.)</li>
