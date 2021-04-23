@@ -1,6 +1,7 @@
 /*
 
-Copyright 2014-2015 Adam Reichold
+Copyright 2021 S. Razi Alavizadeh
+Copyright 2014-2015, 2021 Adam Reichold
 
 This file is part of qpdfview.
 
@@ -44,6 +45,8 @@ struct BookmarkItem
         label(label),
         comment(comment),
         modified(modified) {}
+
+    void appendToComment(const QString& text);
 
 };
 

@@ -1,8 +1,8 @@
 /*
 
-Copyright 2014 S. Razi Alavizadeh
+Copyright 2014, 2021 S. Razi Alavizadeh
 Copyright 2020 Johan Björklund
-Copyright 2012-2014, 2018 Adam Reichold
+Copyright 2012-2014, 2018, 2021 Adam Reichold
 Copyright 2014 Dorian Scholz
 Copyright 2018 Egor Zenkov
 
@@ -193,6 +193,8 @@ signals:
 
     void linkClicked(int page);
     void linkClicked(bool newTab, const QString& filePath, int page);
+
+    void appendTextToBookmarkComment(int page, const QString& text);
 
     void renderFlagsChanged(qpdfview::RenderFlags renderFlags);
 

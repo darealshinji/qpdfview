@@ -1,6 +1,7 @@
 /*
 
-Copyright 2012-2014 Adam Reichold
+Copyright 2021 S. Razi Alavizadeh
+Copyright 2012-2014, 2021 Adam Reichold
 
 This file is part of qpdfview.
 
@@ -104,6 +105,7 @@ signals:
     void rubberBandStarted();
     void rubberBandFinished();
 
+    void appendTextToBookmarkComment(int page, const QString& text);
     void zoomToSelection(int page, const QRectF& rect);
     void openInSourceEditor(int page, QPointF pos);
 

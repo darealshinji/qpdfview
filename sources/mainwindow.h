@@ -1,8 +1,8 @@
 /*
 
-Copyright 2014 S. Razi Alavizadeh
+Copyright 2014, 2021 S. Razi Alavizadeh
 Copyright 2020 Johan Björklund
-Copyright 2012-2018 Adam Reichold
+Copyright 2012-2018, 2021 Adam Reichold
 Copyright 2018 Pavel Sanda
 Copyright 2012 Michał Trybus
 Copyright 2012 Alexander Volkov
@@ -117,6 +117,8 @@ protected slots:
 
     void on_currentTab_linkClicked(int page);
     void on_currentTab_linkClicked(bool newTab, const QString& filePath, int page);
+
+    void on_currentTab_appendTextToBookmarkComment(int page, const QString& text);
 
     void on_currentTab_renderFlagsChanged(qpdfview::RenderFlags renderFlags);
 
@@ -324,6 +326,8 @@ private:
 
     void setWindowTitleForCurrentTab();
     void setCurrentPageSuffixForCurrentTab();
+
+    void addBookmark(int page, const QString& appendToComment = QString());
 
     BookmarkModel* bookmarkModelForCurrentTab(bool create = false);
 

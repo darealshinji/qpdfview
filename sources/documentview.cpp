@@ -1,6 +1,6 @@
 /*
 
-Copyright 2014 S. Razi Alavizadeh
+Copyright 2014, 2021 S. Razi Alavizadeh
 Copyright 2020 Johan Björklund
 Copyright 2021 Vitaly Cheptsov
 Copyright 2013 Thomas Etter
@@ -2875,6 +2875,7 @@ void DocumentView::preparePages()
 
         connect(page, SIGNAL(rubberBandFinished()), SLOT(on_pages_rubberBandFinished()));
 
+        connect(page, SIGNAL(appendTextToBookmarkComment(int,QString)), SIGNAL(appendTextToBookmarkComment(int,QString)));
         connect(page, SIGNAL(zoomToSelection(int,QRectF)), SLOT(on_pages_zoomToSelection(int,QRectF)));
         connect(page, SIGNAL(openInSourceEditor(int,QPointF)), SLOT(on_pages_openInSourceEditor(int,QPointF)));
 

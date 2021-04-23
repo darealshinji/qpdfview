@@ -1,7 +1,8 @@
 /*
 
+Copyright 2021 S. Razi Alavizadeh
 Copyright 2020 Johan Björklund
-Copyright 2012-2015 Adam Reichold
+Copyright 2012-2015, 2021 Adam Reichold
 
 This file is part of qpdfview.
 
@@ -794,6 +795,7 @@ void PageItem::copyToClipboard(QPoint screenPos)
 
     QAction* copyTextAction = menu.addAction(tr("Copy &text"));
     QAction* selectTextAction = menu.addAction(tr("&Select text"));
+    QAction* appendTextToBookmarkCommentAction = menu.addAction(tr("&Append text to bookmark comment..."));
     const QAction* copyImageAction = menu.addAction(tr("Copy &image"));
     const QAction* saveImageToFileAction = menu.addAction(tr("Save image to &file..."));
 
@@ -801,6 +803,7 @@ void PageItem::copyToClipboard(QPoint screenPos)
 
     copyTextAction->setVisible(!text.isEmpty());
     selectTextAction->setVisible(!text.isEmpty() && QApplication::clipboard()->supportsSelection());
+    appendTextToBookmarkCommentAction->setVisible(!text.isEmpty());
 
     const QAction* action = menu.exec(screenPos);
 
@@ -814,6 +817,10 @@ void PageItem::copyToClipboard(QPoint screenPos)
         {
             QApplication::clipboard()->setText(text, QClipboard::Selection);
         }
+    }
+    else if(action == appendTextToBookmarkCommentAction)
+    {
+        emit appendTextToBookmarkComment(m_index + 1, text);
     }
     else if(action == copyImageAction || action == saveImageToFileAction)
     {

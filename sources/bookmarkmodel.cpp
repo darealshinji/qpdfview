@@ -1,7 +1,7 @@
 /*
 
-Copyright 2018 S. Razi Alavizadeh
-Copyright 2014-2015 Adam Reichold
+Copyright 2018,2021 S. Razi Alavizadeh
+Copyright 2014-2015, 2021 Adam Reichold
 
 This file is part of qpdfview.
 
@@ -31,6 +31,20 @@ namespace qpdfview
 
 static inline bool operator<(int page, const BookmarkItem& bookmark) { return page < bookmark.page; }
 static inline bool operator<(const BookmarkItem& bookmark, int page) { return bookmark.page < page; }
+
+void BookmarkItem::appendToComment(const QString& text)
+{
+    if(comment.endsWith("\n"))
+    {
+        comment.append("\n");
+    }
+    else if(!comment.isEmpty())
+    {
+        comment.append("\n\n");
+    }
+
+    comment.append(text);
+}
 
 QHash< QString, BookmarkModel* > BookmarkModel::s_instances;
 

@@ -1,10 +1,10 @@
 /*
 
-Copyright 2014-2015, 2018 S. Razi Alavizadeh
+Copyright 2014-2015, 2018, 2021 S. Razi Alavizadeh
 Copyright 2020 Johan Björklund
 Copyright 2018 Marshall Banana
 Copyright 2021 Vitaly Cheptsov
-Copyright 2012-2018 Adam Reichold
+Copyright 2012-2018, 2021 Adam Reichold
 Copyright 2018 Pavel Sanda
 Copyright 2014 Dorian Scholz
 Copyright 2018 Martin Spacek
@@ -1075,6 +1075,11 @@ void MainWindow::on_currentTab_linkClicked(bool newTab, const QString& filePath,
     }
 }
 
+void MainWindow::on_currentTab_appendTextToBookmarkComment(int page, const QString& text)
+{
+    addBookmark(page, text);
+}
+
 void MainWindow::on_currentTab_renderFlagsChanged(qpdfview::RenderFlags renderFlags)
 {
     Q_UNUSED(renderFlags);
@@ -2025,35 +2030,7 @@ void MainWindow::on_nextBookmark_triggered()
 
 void MainWindow::on_addBookmark_triggered()
 {
-    const QString& currentPageLabel = s_settings->mainWindow().usePageLabel() || currentTab()->hasFrontMatter()
-            ? currentTab()->pageLabelFromNumber(currentTab()->currentPage())
-            : currentTab()->defaultPageLabelFromNumber(currentTab()->currentPage());
-
-    BookmarkItem bookmark(currentTab()->currentPage(), tr("Jump to page %1").arg(currentPageLabel));
-
-    BookmarkModel* model = bookmarkModelForCurrentTab(false);
-
-    if(model != 0)
-    {
-        model->findBookmark(bookmark);
-    }
-
-    QScopedPointer< BookmarkDialog > dialog(new BookmarkDialog(bookmark, this));
-
-    if(dialog->exec() == QDialog::Accepted)
-    {
-        if(model == 0)
-        {
-            model = bookmarkModelForCurrentTab(true);
-
-            m_bookmarksView->setModel(model);
-        }
-
-        model->addBookmark(bookmark);
-
-        m_bookmarksMenuIsDirty = true;
-        scheduleSaveBookmarks();
-    }
+    addBookmark(currentTab()->currentPage());
 }
 
 void MainWindow::on_removeBookmark_triggered()
@@ -2796,6 +2773,8 @@ void MainWindow::connectTab(DocumentView* tab)
     connect(tab, SIGNAL(linkClicked(int)), SLOT(on_currentTab_linkClicked(int)));
     connect(tab, SIGNAL(linkClicked(bool,QString,int)), SLOT(on_currentTab_linkClicked(bool,QString,int)));
 
+    connect(tab, SIGNAL(appendTextToBookmarkComment(int,QString)), SLOT(on_currentTab_appendTextToBookmarkComment(int,QString)));
+
     connect(tab, SIGNAL(renderFlagsChanged(qpdfview::RenderFlags)), SLOT(on_currentTab_renderFlagsChanged(qpdfview::RenderFlags)));
 
     connect(tab, SIGNAL(invertColorsChanged(bool)), SLOT(on_currentTab_invertColorsChanged(bool)));
@@ -2960,6 +2939,44 @@ void MainWindow::setCurrentPageSuffixForCurrentTab()
     }
 
     m_currentPageSpinBox->setSuffix(suffix);
+}
+
+void MainWindow::addBookmark(int page, const QString& appendToComment)
+{
+    const QString& currentPageLabel = s_settings->mainWindow().usePageLabel() || currentTab()->hasFrontMatter()
+            ? currentTab()->pageLabelFromNumber(page)
+            : currentTab()->defaultPageLabelFromNumber(page);
+
+    BookmarkItem bookmark(page, tr("Jump to page %1").arg(currentPageLabel));
+
+    BookmarkModel* model = bookmarkModelForCurrentTab(false);
+
+    if(model != 0)
+    {
+        model->findBookmark(bookmark);
+    }
+
+    if(!appendToComment.isEmpty())
+    {
+        bookmark.appendToComment(appendToComment);
+    }
+
+    QScopedPointer< BookmarkDialog > dialog(new BookmarkDialog(bookmark, this));
+
+    if(dialog->exec() == QDialog::Accepted)
+    {
+        if(model == 0)
+        {
+            model = bookmarkModelForCurrentTab(true);
+
+            m_bookmarksView->setModel(model);
+        }
+
+        model->addBookmark(bookmark);
+
+        m_bookmarksMenuIsDirty = true;
+        scheduleSaveBookmarks();
+    }
 }
 
 BookmarkModel* MainWindow::bookmarkModelForCurrentTab(bool create)
