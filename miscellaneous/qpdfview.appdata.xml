@@ -31,10 +31,11 @@
     </description>
     <launchable type="desktop-id">qpdfview.desktop</launchable>
     <screenshots>
-        <screenshot type="default" width="800" height="600">http://screenshots.debian.net/image/13652_large.png</screenshot>
-        <screenshot width="800" height="600">http://screenshots.debian.net/screenshots/q/qpdfview/13653_large.png</screenshot>
-        <screenshot width="426" height="503">http://screenshots.debian.net/screenshots/q/qpdfview/9701_large.png</screenshot>
-        <screenshot width="707" height="600">http://screenshots.debian.net/screenshots/q/qpdfview/9399_large.png</screenshot>
+        <screenshot type="default" width="707" height="600">https://screenshots.debian.net/shrine/screenshot/9399/simage/large-47fb2d07d8d4c4a7b03c844a6546d274.png</screenshot>
+        <screenshot width="426" height="503">https://screenshots.debian.net/shrine/screenshot/9701/simage/large-fc24ce71b940de85cd43c4754916adc3.png</screenshot>
+        <screenshot width="590" height="600">https://screenshots.debian.net/shrine/screenshot/14328/simage/large-731879411844dbc090dccc9b54a52ab4.png</screenshot>
+        <screenshot width="800" height="600">https://screenshots.debian.net/shrine/screenshot/13653/simage/large-f9866a77af5bad2957f8458092f0b1bd.png</screenshot>
+        <screenshot width="800" height="600">https://screenshots.debian.net/shrine/screenshot/13652/simage/large-65ce6463e4607d141709d48039915c59.png</screenshot>
     </screenshots>
     <url type="homepage">https://launchpad.net/qpdfview</url>
     <developer_name>Adam Reichold</developer_name>
