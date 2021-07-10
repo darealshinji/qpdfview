@@ -11,3 +11,5 @@ isEmpty(APP_DIR_DATA_PATH):APP_DIR_DATA_PATH = data
 
 win32:include(qpdfview_win32.pri)
 os2:include(qpdfview_os2.pri)
+
+CONFIG += c++11
