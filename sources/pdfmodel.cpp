@@ -23,6 +23,8 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pdfmodel.h"
 
+#include <memory>
+
 #include <QCache>
 #include <QFormLayout>
 #include <QMessageBox>

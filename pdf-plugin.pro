@@ -20,7 +20,12 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 lessThan(QT_MAJOR_VERSION, 6): QT += xml
 
 !without_pkgconfig {
-    pkg_config_exe = $$pkgConfigExecutable()
+    greaterThan(QT_MAJOR_VERSION, 4) {
+        pkg_config_exe = $$pkgConfigExecutable()
+    } else {
+        pkg_config_exe = pkg-config
+    }
+
     poppler_qt_pkg = poppler-qt$${QT_MAJOR_VERSION}
 
     system($$pkg_config_exe --atleast-version=0.14 $${poppler_qt_pkg}):DEFINES += HAS_POPPLER_14
