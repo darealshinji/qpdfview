@@ -166,6 +166,7 @@ protected slots:
     void on_saveAs_triggered();
     void on_saveCopy_triggered();
     void on_print_triggered();
+    void on_email_triggered();
 
     void on_recentlyUsed_openTriggered(const QString& filePath);
 
@@ -369,6 +370,7 @@ private:
     QAction* m_saveAsAction;
     QAction* m_saveCopyAction;
     QAction* m_printAction;
+    QAction* m_emailAction;
     QAction* m_exitAction;
 
     QAction* m_previousPageAction;
