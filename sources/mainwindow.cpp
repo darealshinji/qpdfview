@@ -596,6 +596,7 @@ void MainWindow::on_tabWidget_currentChanged()
 
     m_refreshAction->setEnabled(hasCurrent);
     m_printAction->setEnabled(hasCurrent);
+    m_emailAction->setEnabled(hasCurrent);
 
     m_previousPageAction->setEnabled(hasCurrent);
     m_nextPageAction->setEnabled(hasCurrent);
@@ -1577,6 +1578,11 @@ void MainWindow::on_print_triggered()
     {
         QMessageBox::warning(this, tr("Warning"), tr("Could not print '%1'.").arg(currentTab()->fileInfo().filePath()));
     }
+}
+
+void MainWindow::on_email_triggered()
+{
+    QProcess::startDetached(QLatin1String("xdg-email"), QStringList() << QLatin1String("--attach") << currentTab()->fileInfo().absoluteFilePath());
 }
 
 void MainWindow::on_recentlyUsed_openTriggered(const QString& filePath)
@@ -3188,6 +3194,15 @@ void MainWindow::createActions()
     m_saveAsAction = createAction(tr("Save &as..."), QLatin1String("saveAs"), QLatin1String("document-save-as"), QKeySequence::SaveAs, SLOT(on_saveAs_triggered()));
     m_saveCopyAction = createAction(tr("Save &copy..."), QLatin1String("saveCopy"), QIcon(), QKeySequence(), SLOT(on_saveCopy_triggered()));
     m_printAction = createAction(tr("&Print..."), QLatin1String("print"), QLatin1String("document-print"), QKeySequence::Print, SLOT(on_print_triggered()));
+    m_emailAction = createAction(tr("Send by &e-mail..."), QLatin1String("email"), QLatin1String("mail-send"), QList<QKeySequence>(), SLOT(on_email_triggered()));
+
+    m_emailAction->setVisible(
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+        !QStandardPaths::findExecutable(QLatin1String("xdg-email")).isEmpty()
+#else
+        false
+#endif
+    );
     m_exitAction = createAction(tr("E&xit"), QLatin1String("exit"), QIcon::fromTheme("application-exit"), QKeySequence::Quit, SLOT(close()));
     m_exitAction->setMenuRole(QAction::QuitRole);
 
@@ -3539,7 +3554,7 @@ void MainWindow::createMenus()
         setToolButtonMenu(m_fileToolBar, m_openInNewTabAction, m_recentlyUsedMenu);
     }
 
-    m_fileMenu->addActions(QList< QAction* >() << m_refreshAction << m_saveAction << m_saveAsAction << m_saveCopyAction << m_printAction);
+    m_fileMenu->addActions(QList< QAction* >() << m_refreshAction << m_saveAction << m_saveAsAction << m_saveCopyAction << m_printAction << m_emailAction);
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_exitAction);
 
