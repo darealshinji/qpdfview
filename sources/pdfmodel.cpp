@@ -1120,7 +1120,18 @@ Properties PdfDocument::properties() const
 
     int pdfMajorVersion = 1;
     int pdfMinorVersion = 0;
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+
+    const auto pdfVersion = m_document->getPdfVersion();
+    pdfMajorVersion = pdfVersion.major;
+    pdfMinorVersion = pdfVersion.minor;
+
+#else
+
     m_document->getPdfVersion(&pdfMajorVersion, &pdfMinorVersion);
+
+#endif // QT_VERSION
 
     properties.push_back(qMakePair(tr("PDF version"), QString("%1.%2").arg(pdfMajorVersion).arg(pdfMinorVersion)));
 
