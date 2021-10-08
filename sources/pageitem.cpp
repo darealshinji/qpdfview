@@ -69,6 +69,19 @@ inline bool modifiersUseMouseButton(Settings* settings, Qt::MouseButton mouseBut
     return ((settings->pageItem().copyToClipboardModifiers() | settings->pageItem().addAnnotationModifiers()) & mouseButton) != 0;
 }
 
+inline void showToolTip(Settings* settings, const QGraphicsSceneHoverEvent* event, const QString& text)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,2,0)
+
+    QToolTip::showText(event->screenPos(), text, 0, QRect(), settings->documentView().highlightDuration());
+
+#else
+
+    QToolTip::showText(event->screenPos(), text);
+
+#endif // QT_VERSION
+}
+
 } // anonymous
 
 Settings* PageItem::s_settings = 0;
@@ -378,11 +391,11 @@ void PageItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
 
                     if(link->urlOrFileName.isNull())
                     {
-                        QToolTip::showText(event->screenPos(), tr("Go to page %1.").arg(link->page));
+                        showToolTip(s_settings, event, tr("Go to page %1.").arg(link->page));
                     }
                     else
                     {
-                        QToolTip::showText(event->screenPos(), tr("Go to page %1 of file '%2'.").arg(link->page).arg(link->urlOrFileName));
+                        showToolTip(s_settings, event, tr("Go to page %1 of file '%2'.").arg(link->page).arg(link->urlOrFileName));
                     }
 
                     return;
@@ -390,7 +403,7 @@ void PageItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
                 else if(!link->urlOrFileName.isNull() && !presentationMode())
                 {
                     setCursor(Qt::PointingHandCursor);
-                    QToolTip::showText(event->screenPos(), tr("Open '%1'.").arg(link->urlOrFileName));
+                    showToolTip(s_settings, event, tr("Open '%1'.").arg(link->urlOrFileName));
 
                     return;
                 }
@@ -412,7 +425,7 @@ void PageItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
             if(m_normalizedTransform.mapRect(annotation->boundary()).contains(event->pos()))
             {
                 setCursor(Qt::PointingHandCursor);
-                QToolTip::showText(event->screenPos(), annotation->contents());
+                showToolTip(s_settings, event, annotation->contents());
 
                 return;
             }
@@ -425,7 +438,7 @@ void PageItem::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
             if(m_normalizedTransform.mapRect(formField->boundary()).contains(event->pos()))
             {
                 setCursor(Qt::PointingHandCursor);
-                QToolTip::showText(event->screenPos(), tr("Edit form field '%1'.").arg(formField->name()));
+                showToolTip(s_settings, event, tr("Edit form field '%1'.").arg(formField->name()));
 
                 return;
             }
