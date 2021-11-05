@@ -29,54 +29,54 @@ This file is additionally licensed under the Creative Commons Attribution-ShareA
 <html>
 
 <head>
-    <title>Pomocník</title>
+    <title>Bantuan</title>
 </head>
 
 <body>
 
-<h2><a name="top">Pomocník</a></h2>
+<h2><a name="top">Bantuan</a></h2>
 
-<h4>Obsah</h4>
+<h4>Daftar Isi</h4>
 <ol>
-    <li><a href="#mainmenu">Hlavné menu</a></li>
+    <li><a href="#mainmenu">Menu utama</a></li>
     <ol>
-        <li><a href="#file">Súbor</a></li>
-        <li><a href="#edit">Upraviť</a></li>
-        <li><a href="#view">Zobraziť</a></li>
-        <li><a href="#tabs">Karty</a></li>
-        <li><a href="#bookmarks">Záložky</a></li>
-        <li><a href="#help">Nápoveda</a></li>
+        <li><a href="#file">Berkas</a></li>
+        <li><a href="#edit">Sunting</a></li>
+        <li><a href="#view">Tampilan</a></li>
+        <li><a href="#tabs">Tab</a></li>
+        <li><a href="#bookmarks">Bookmarks</a></li>
+        <li><a href="#help">Bantuan</a></li>
     </ol>
-    <li><a href="#mainview">Hlavné zobrazenie</a></li>
-    <li><a href="#auxiliaryviews">Pomocné zobrazenia</a></li>
-    <li><a href="#settings">Nastavenia</a></li>
+    <li><a href="#mainview">Tampilan utama</a></li>
+    <li><a href="#auxiliaryviews">Auxiliary views</a></li>
+    <li><a href="#settings">Pengaturan</a></li>
     <ol>
-    	<li><a href="#behaviorsettings">Nastavenia správania</a></li>
-    	<li><a href="#graphicssettings">Nastavenia grafiky</a></li>
-    	<li><a href="#interfacesettings">Nastavenia rozhrania</a></li>
-    	<li><a href="#shortcutsettings">Nastavenia klávesových skratiek</a></li>
-    	<li><a href="#modifiersettings">Nastavenia modifikátorov</a></li>
+    	<li><a href="#behaviorsettings">Pengaturan perilaku</a></li>
+    	<li><a href="#graphicssettings">Pengaturan grafis</a></li>
+    	<li><a href="#interfacesettings">Pengaturan antarmuka</a></li>
+    	<li><a href="#shortcutsettings">Pengaturan pintasan</a></li>
+    	<li><a href="#modifiersettings">Modifier settings</a></li>
     </ol>
 </ol>
 
-<h4>Úvod</h4>
+<h4>Pengantar</h4>
 
-<p><em>qpdfview</em> prehliadač dokumentov na kartách. Používa Poppler pre
-podporu PDF, libspectre pre podporu PS, DjVuLibre pre podporu DjVu, CUPS pro
-podporu tlače a Qt toolkit pre svoje rozhranie.</p>
+<p><em>qpdfview</em> is a tabbed document viewer. It uses Poppler for PDF
+support, libspectre for PS support, DjVuLibre for DjVu support, CUPS for
+printing support and the Qt toolkit for its interface.</p>
 
-<p>Pozrite sa, prosím, do manuálových stránok, ak hľadáte informácie k
-možnostiam príkazového riadka a k súborom s nastavením.</p>
+<p>Please refer to the manual page for information on command-line options and
+configuration files.</p>
 
-<h3><a name="mainmenu">Hlavné menu</a> <a href="#top">&uarr;</a></h3>
+<h3><a name="mainmenu">Menu utama</a> <a href="#top">&uarr;</a></h3>
 
-<h4><a name="file">Súbor</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="file">Berkas</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Otvoriť...</b> Otovorí dialóg na otvorenie súboru v aktuálnej karte. Ak
-nie je otvorená žiadna karta, automaticky sa otvorí nová.</li>
-    <li><b>Otvoriť v novej karte...</b> Otvorí dialóg na otvorenie súborov v nových
-kartách.</li>
+    <li><b>Open...</b> Opens a dialog to choose a file to open in the current
+tab. If there is no tab, the file is opened in a new tab.</li>
+    <li><b>Open in new tab...</b> Opens a dialog to choose files to open in new
+tabs.</li>
     <li><b>Recently used</b> Contains a list of the most recently used files (if
 enabled in the settings).</li>
     <li><b>Refresh</b> Reloads the file displayed in the current tab.</li>
@@ -86,12 +86,12 @@ displayed in the current tab.</li>
 tab including changes to annotations and form fields.</li>
     <li><b>Save copy...</b> Opens a dialog to save an umodified copy of the file
 displayed in the current tab.</li>
-    <li><b>Tlačiť...</b> Otvorí dialóg na vytlačenie súboru v aktuálne otvorenej
-karte.</li>
-    <li><b>Ukončiť</b> Zatvorí všetky karty a ukončí program.</li>
+    <li><b>Print...</b> Opens a dialog to print the file displayed in the current
+tab.</li>
+    <li><b>Exit</b> Closes all tabs and ends the program.</li>
 </ul>
 
-<h4><a name="edit">Upraviť</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="edit">Edit</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Next/Previous/First/Last page</b> Skips to the next/previous/first/last
@@ -106,8 +106,8 @@ is manually started by pressing the return key. If the Shift modifier is
 held when the return key is pressed, the search starts in all tabs instead
 of just the current tab. (This effect is reversed if the extended search
 dock is enabled in the settings.)</li>
-    <li><b>Nájsť predchodzie/ďaľšie</b> Skočí na predchodí/nasledujúci výskyt
-hľadaného výrazu v dokumente.</li>
+    <li><b>Find previous/next</b> Jumps to the previous/next occurrence of the
+search term in the document.</li>
     <li><b>Cancel search</b> Cancels the currently running search and closes the
 search dock.</li>
     <li><b>Copy to clipboard</b> If checked, the program will wait for a frame to be
@@ -124,7 +124,7 @@ current tab to their default values.</li>
 the text field in the edit tool bar, which can be focused using Ctrl+K, and
 pressing the return key.</p>
 
-<h4><a name="view">Zobraziť</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="view">View</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Continuous</b> Determines whether all rows of the page layout are visible
@@ -174,7 +174,7 @@ last jump.</li>
 into the text field in the view tool bar, which can be focused using Ctrl+L,
 and pressing the return key.</p>
 
-<h4><a name="tabs">Karty</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="tabs">Tabs</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Previous/Next tab</b> Makes the previous/next tab the current tab. Cycles
@@ -192,7 +192,7 @@ clicking on the corresponding menu item. Tabs can also be closed by
 middle-clicking. The first nine tabs can also be activated by holding the
 Alt modifier and pressing keys one to nine.</p>
 
-<h4><a name="bookmarks">Záložky</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="bookmarks">Bookmarks</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Previous bookmark</b> Jumps to the closest bookmark before the current
@@ -209,14 +209,14 @@ file is already open. Otherwise the corresponding file is opened in a new
 tab.</li>
 </ul>
 
-<h4><a name="help">Nápoveda</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="help">Help</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
 	<li><b>Contents</b> Displays this document.</li>
 	<li><b>About</b> Displays the program version.</li>
 </ul>
 
-<h3><a name="mainview">Hlavné zobrazenie</a> <a href="#top">&uarr;</a></h3>
+<h3><a name="mainview">Main view</a> <a href="#top">&uarr;</a></h3>
 
 <p>The backspace/space key skips to the previous/next page. The home/end key
 skips to the first/last page. The arrow, page up and page down keys scroll
@@ -264,7 +264,7 @@ and hold the left mouse button to drag a frame around region to zoom into.</p>
 configurable keyboard shortcuts whose default values are "Shift+Alt+T" and
 "Shift+Alt+M".</p>
 
-<h3><a name="auxiliaryviews">Pomocné zobrazenia</a> <a href="#top">&uarr;</a></h3>
+<h3><a name="auxiliaryviews">Auxiliary views</a> <a href="#top">&uarr;</a></h3>
 
 <p>The <em>outline view</em> displays an overview of the contents of the
 document. A left click on an entry jumps to the respective page in the main
@@ -298,10 +298,9 @@ tabs. It also shows the text surrounding a result with the search term being
 emphasized. Clicking on a result opens the corresponding tab and jumps to
 its position.</p>
 
-<h3><a name="settings">Nastavenia</a> <a href="#top">&uarr;</a></h3>
+<h3><a name="settings">Settings</a> <a href="#top">&uarr;</a></h3>
 
-<h4><a name="behaviorsettings">Nastavenia správania</a> <a
-href="#top">&uarr;</a></h4>
+<h4><a name="behaviorsettings">Behavior settings</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Open URL</b> Determines whether links to URL are opened in the default
@@ -345,7 +344,7 @@ replaced by the absolute file path. '%2' resp. '%3' is replaced by line
 resp. column number.</li>
 </ul>
 
-<h4><a name="graphicssettings">Nastavenia grafiky</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="graphicssettings">Graphics settings</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Use tiling</b> Pages will be divided into tiles before rendering and
@@ -384,7 +383,7 @@ limit increasing rendering speed at the cost of increased memory usage.</li>
 visible increasing rendering speed at the cost of increased cache usage.</li>
     <li><b>Prefetch distance</b> The number of rows beyond the current row and twice
 the number of rows before the current row that are prefetched.</li>
-    <li><b>Nastavenia PDF</b>
+    <li><b>PDF settings</b>
     <ul>
         <li><b>Antialiasing</b> Improves display quality at the cost of performance</li>
         <li><b>Text antialiasing</b> Improves text display quality at the cost of
@@ -396,7 +395,7 @@ on top of another is displayed.</li>
         <li><b>Backend</b> Chooses the backend used to render pages.</li>
     </ul>
     </li>
-    <li><b>Nastavenia PS</b>
+    <li><b>PS settings</b>
     <ul>
         <li><b>Graphics antialias bits</b> Determines the amount of antialiasing for
 graphics.</li>
@@ -405,8 +404,7 @@ graphics.</li>
     </li>
 </ul>
 
-<h4><a name="interfacesettings">Nastavenia rozhrania</a> <a
-href="#top">&uarr;</a></h4>
+<h4><a name="interfacesettings">Interface settings</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Extended search dock</b> If enabled, the default search dock is extended
@@ -479,8 +477,7 @@ conducted, only the pages where the search term is found are displayed in
 the thumbnails view.</li>
 </ul>
 
-<h4><a name="shortcutsettings">Nastavenia klávesových skratiek</a> <a
-href="#top">&uarr;</a></h4>
+<h4><a name="shortcutsettings">Shortcut settings</a> <a href="#top">&uarr;</a></h4>
 
 <p>The shortcut settings allows the adjustment of keyboard shortcuts to
 personal preference. Shortcuts are changed by double-clicking on the
@@ -491,8 +488,7 @@ keys that are not single letters are written out explicitly (e.g. "Alt",
 contains modifier keys, the names of the keys are joined by a plus sign and
 modifier keys must be listed first, e.g. "Ctrl+A" or "Ctrl++".</p>
 
-<h4><a name="modifiersettings">Nastavenia modifikátorov</a> <a
-href="#top">&uarr;</a></h4>
+<h4><a name="modifiersettings">Modifier settings</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
     <li><b>Zoom</b> The keyboard modifiers to zoom using the mouse wheel in the main

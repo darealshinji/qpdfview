@@ -48,14 +48,14 @@ This file is additionally licensed under the Creative Commons Attribution-ShareA
         <li><a href="#help">帮助</a></li>
     </ol>
     <li><a href="#mainview">主视图</a></li>
-    <li><a href="#auxiliaryviews">Auxiliary views</a></li>
+    <li><a href="#auxiliaryviews">辅助视图</a></li>
     <li><a href="#settings">设置</a></li>
     <ol>
-    	<li><a href="#behaviorsettings">Behavior settings</a></li>
-    	<li><a href="#graphicssettings">Graphics settings</a></li>
-    	<li><a href="#interfacesettings">Interface settings</a></li>
-    	<li><a href="#shortcutsettings">Shortcut settings</a></li>
-    	<li><a href="#modifiersettings">Modifier settings</a></li>
+    	<li><a href="#behaviorsettings">行为设置</a></li>
+    	<li><a href="#graphicssettings">显示设置</a></li>
+    	<li><a href="#interfacesettings">接口设置</a></li>
+    	<li><a href="#shortcutsettings">快捷方式设置</a></li>
+    	<li><a href="#modifiersettings">编辑器设置</a></li>
     </ol>
 </ol>
 
@@ -64,53 +64,35 @@ This file is additionally licensed under the Creative Commons Attribution-ShareA
 <p><em>qpdfview</em> 是一个标签式文档查看器。它使用 Poppler 来提供 PDF 支持、使用 libspecture 来提供 PS
 支持、使用 DjVuLibre 提供 DjVu 支持、使用 CUPS 提供打印支持并使用 Qt 工具箱编写其用户界面。</p>
 
-<p>Please refer to the manual page for information on command-line options and
-configuration files.</p>
+<p>有关命令行选项和配置文件的信息，请参阅手册页。</p>
 
 <h3><a name="mainmenu">主菜单</a> <a href="#top">&uarr;</a></h3>
 
-<h4><a name="file">File</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="file">文件</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Open...</b> Opens a dialog to choose a file to open in the current
-tab. If there is no tab, the file is opened in a new tab.</li>
-    <li><b>Open in new tab...</b> Opens a dialog to choose files to open in new
-tabs.</li>
-    <li><b>Recently used</b> Contains a list of the most recently used files (if
-enabled in the settings).</li>
-    <li><b>Refresh</b> Reloads the file displayed in the current tab.</li>
-    <li><b>Save</b> Saves changes to annotations and form fields to the file
-displayed in the current tab.</li>
-    <li><b>Save as...</b> Opens a dialog to save the file displayed in the current
-tab including changes to annotations and form fields.</li>
-    <li><b>Save copy...</b> Opens a dialog to save an umodified copy of the file
-displayed in the current tab.</li>
-    <li><b>Print...</b> Opens a dialog to print the file displayed in the current
-tab.</li>
-    <li><b>Exit</b> Closes all tabs and ends the program.</li>
+    <li><b>打开...</b> 打开一个对话框，选择要在当前标签页中打开的文件。如果没有标签页，则在新标签页中打开文件。</li>
+    <li><b>在新标签页中打开...</b> 打开一个对话框，选择要在新标签页中打开的文件。</li>
+    <li><b>最近使用</b> 包含最近使用的文件列表（如果在“设置”中启用）。</li>
+    <li><b>刷新</b> 重新加载当前选项卡中显示的文件。</li>
+    <li><b>保存</b> 将对注释和表单字段的更改保存到当前选项卡中显示的文件中。</li>
+    <li><b>另存为...</b> 打开一个对话框以保存当前选项卡中显示的文件，包括对注释和表单字段的更改。</li>
+    <li><b>保存副本...</b> 打开一个对话框，保存当前选项卡中显示的文件的修改副本。</li>
+    <li><b>打印...</b> 打开对话框以打印当前选项卡中显示的文件。</li>
+    <li><b>退出</b> 关闭所有选项卡并结束程序。</li>
 </ul>
 
-<h4><a name="edit">Edit</a> <a href="#top">&uarr;</a></h4>
+<h4><a name="edit">编辑</a> <a href="#top">&uarr;</a></h4>
 
 <ul>
-    <li><b>Next/Previous/First/Last page</b> Skips to the next/previous/first/last
-page of the document.</li>
-    <li><b>Jump to page...</b> Opens a dialog to enter a page to display in the
-current tab.</li>
-    <li><b>Jump backward/forward</b> Jumps backward/forward in the history of
-displayed page.</li>
-    <li><b>Search...</b> Opens the search dock below the main view. The search
-automatically starts two seconds after the last change of the search term or
-is manually started by pressing the return key. If the Shift modifier is
-held when the return key is pressed, the search starts in all tabs instead
-of just the current tab. (This effect is reversed if the extended search
-dock is enabled in the settings.)</li>
-    <li><b>Find previous/next</b> Jumps to the previous/next occurrence of the
-search term in the document.</li>
-    <li><b>Cancel search</b> Cancels the currently running search and closes the
-search dock.</li>
-    <li><b>Copy to clipboard</b> If checked, the program will wait for a frame to be
-dragged to copy texts or images.</li>
+    <li><b>下一页/上一页/首页/最后一页</b> 跳转到文档的下一页/上一页/首页/最后一页。</li>
+    <li><b>跳转到页面...</b> 打开一个对话框，输入要在当前选项卡中显示的页面。</li>
+    <li><b>向后/向前跳转</b> 在显示页面的历史记录中向后/向前跳转。</li>
+    <li><b>搜索...</b>
+打开主视图下方的搜索驳接。搜索在最后一次更改搜索词两秒钟后自动开始，或按回车键手动开始。如果按下返回键时按住Shift修改器，则搜索将在所有选项卡中开始，而不仅仅是在当前选项卡中。（如果在“设置”中启用了扩展搜索驳接，则此效果会反转。）</li>
+    <li><b>查找上一个/下一个</b> 跳转到文档中搜索词的上一个/下一个匹配项。</li>
+    <li><b>取消搜索</b> 取消当前正在运行的搜索并关闭搜索驳接。</li>
+    <li><b>复制到剪贴板</b> 如果选中，程序将等待拖动帧以复制文本或图像。</li>
     <li><b>Add annotation</b> If checked, the program will wait for a frame to be
 dragged to add annotations.</li>
     <li><b>Settings...</b> Opens the settings dialog. The button labeled 'Defaults'

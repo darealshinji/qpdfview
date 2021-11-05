@@ -32,9 +32,9 @@ SUBDIRS += application.pro
 
 TRANSLATIONS += \
     translations/qpdfview_ast.ts \
-    translations/qpdfview_ber.ts \
     translations/qpdfview_az.ts \
     translations/qpdfview_be.ts \
+    translations/qpdfview_ber.ts \
     translations/qpdfview_bg.ts \
     translations/qpdfview_bs.ts \
     translations/qpdfview_ca.ts \
@@ -70,8 +70,8 @@ TRANSLATIONS += \
     translations/qpdfview_nds.ts \
     translations/qpdfview_oc.ts \
     translations/qpdfview_pl.ts \
-    translations/qpdfview_pt_BR.ts \
     translations/qpdfview_pt.ts \
+    translations/qpdfview_pt_BR.ts \
     translations/qpdfview_ro.ts \
     translations/qpdfview_ru.ts \
     translations/qpdfview_sk.ts \
