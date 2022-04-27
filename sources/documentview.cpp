@@ -2956,8 +2956,21 @@ void DocumentView::prepareScene()
         renderParam.setResolution(logicalDpiX(), logicalDpiY());
     }
 
-    const qreal visibleWidth = m_layout->visibleWidth(viewport()->width());
-    const qreal visibleHeight = m_layout->visibleHeight(viewport()->height());
+    qreal viewportWidth = viewport()->width();
+    qreal viewportHeight = viewport()->height();
+
+    if(verticalScrollBarPolicy() == Qt::ScrollBarAsNeeded && !verticalScrollBar()->isVisible())
+    {
+        viewportWidth -= verticalScrollBar()->width();
+    }
+
+    if(horizontalScrollBarPolicy() == Qt::ScrollBarAsNeeded && !horizontalScrollBar()->isVisible())
+    {
+        viewportHeight -= horizontalScrollBar()->height();
+    }
+
+    const qreal visibleWidth = m_layout->visibleWidth(viewportWidth);
+    const qreal visibleHeight = m_layout->visibleHeight(viewportHeight);
 
     foreach(PageItem* page, m_pageItems)
     {
