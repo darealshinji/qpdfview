@@ -33,6 +33,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 
 class QDomNode;
 class QFileSystemWatcher;
+class QGestureEvent;
 class QPrinter;
 class QStandardItemModel;
 
@@ -278,11 +279,14 @@ protected slots:
     void on_pages_wasModified();
 
 protected:
+    bool event(QEvent* event);
+
     void resizeEvent(QResizeEvent* event);
 
     void keyPressEvent(QKeyEvent* event);
     void mousePressEvent(QMouseEvent* event);
     void wheelEvent(QWheelEvent* event);
+    void gestureEvent(QGestureEvent* event);
 
     void contextMenuEvent(QContextMenuEvent* event);
 

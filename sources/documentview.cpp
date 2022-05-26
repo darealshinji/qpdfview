@@ -34,6 +34,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDesktopServices>
 #include <QDir>
 #include <QFileSystemWatcher>
+#include <QGesture>
 #include <QKeyEvent>
 #include <qmath.h>
 #include <QMenu>
@@ -772,6 +773,8 @@ DocumentView::DocumentView(QWidget* parent) : QGraphicsView(parent),
     setFocusPolicy(Qt::StrongFocus);
     setAcceptDrops(false);
     setDragMode(QGraphicsView::ScrollHandDrag);
+
+    grabGesture(Qt::SwipeGesture);
 
     connect(verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(on_verticalScrollBar_valueChanged()));
 
@@ -2139,6 +2142,17 @@ void DocumentView::on_pages_wasModified()
     emit documentModified();
 }
 
+bool DocumentView::event(QEvent* event)
+{
+    if (event->type() == QEvent::Gesture)
+    {
+        gestureEvent(static_cast< QGestureEvent* >(event));
+        return true;
+    }
+
+    return QGraphicsView::event(event);
+}
+
 void DocumentView::resizeEvent(QResizeEvent* event)
 {
     qreal left = 0.0, top = 0.0;
@@ -2365,6 +2379,37 @@ void DocumentView::wheelEvent(QWheelEvent* event)
     }
 
     QGraphicsView::wheelEvent(event);
+}
+
+void DocumentView::gestureEvent(QGestureEvent* event)
+{
+    if(QGesture* const gesture = event->gesture(Qt::SwipeGesture))
+    {
+        QSwipeGesture* const swipeGesture = static_cast< QSwipeGesture* >(gesture);
+
+        if(swipeGesture->horizontalDirection() == QSwipeGesture::Left || swipeGesture->verticalDirection() == QSwipeGesture::Up)
+        {
+            if(swipeGesture->state() == Qt::GestureFinished)
+            {
+                previousPage();
+            }
+
+            event->accept();
+            return;
+        }
+        else if(swipeGesture->horizontalDirection() == QSwipeGesture::Left || swipeGesture->verticalDirection() == QSwipeGesture::Up)
+        {
+            if(swipeGesture->state() == Qt::GestureFinished)
+            {
+                nextPage();
+            }
+
+            event->accept();
+            return;
+        }
+    }
+
+    event->setAccepted(false);
 }
 
 void DocumentView::contextMenuEvent(QContextMenuEvent* event)
