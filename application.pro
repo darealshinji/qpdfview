@@ -243,6 +243,7 @@ with_fitz {
         HEADERS += synctex/synctex_parser.h synctex/synctex_parser_utils.h synctex/synctex_parser_local.h
         SOURCES += synctex/synctex_parser.c synctex/synctex_parser_utils.c
 
+        DEFINES += HAS_SYNCTEX_2
         INCLUDEPATH += synctex
         LIBS += -lz
     }
