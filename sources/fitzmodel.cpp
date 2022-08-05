@@ -72,9 +72,9 @@ Outline loadOutline(fz_outline* item)
         Section& section = outline.back();
         section.title = QString::fromUtf8(item->title);
 
-        if(item->page != -1)
+        if(item->page.page != -1)
         {
-            section.link.page = item->page + 1;
+            section.link.page = item->page.page + 1;
         }
         else if (item->uri != 0)
         {
@@ -319,12 +319,12 @@ QList<QRectF> FitzPage::search(const QString& text, bool matchCase, bool wholeWo
     const QByteArray needle = text.toUtf8();
 
     QVector< fz_quad > hits(32);
-    int numberOfHits = fz_search_stext_page(m_parent->m_context, textPage, needle.constData(), hits.data(), hits.size());
+    int numberOfHits = fz_search_stext_page(m_parent->m_context, textPage, needle.constData(), 0, hits.data(), hits.size());
 
     while(numberOfHits == hits.size())
     {
         hits.resize(2 * hits.size());
-        numberOfHits = fz_search_stext_page(m_parent->m_context, textPage, needle.constData(), hits.data(), hits.size());
+        numberOfHits = fz_search_stext_page(m_parent->m_context, textPage, needle.constData(), 0, hits.data(), hits.size());
     }
 
     hits.resize(numberOfHits);
