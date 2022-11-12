@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="my">
 <context>
     <name>Model::ImageDocument</name>
     <message>
@@ -317,49 +317,49 @@
 <context>
     <name>qpdfview::DocumentView</name>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Information</source>
         <translation>အချက်အလက်</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
         <source>The source editor has not been set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Opening URL is disabled in the settings.</source>
         <translation>Opening URL is disabled in the settings.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <source>Warning</source>
         <translation type="unfinished">သတိပေးချက်</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <location filename="../sources/main.cpp" line="365"/>
         <source>SyncTeX data for &apos;%1&apos; could not be found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2643"/>
+        <location filename="../sources/documentview.cpp" line="2688"/>
         <source>Printing &apos;%1&apos;...</source>
         <translation>&apos;%1&apos; ကိုစာရွက်ထုတ်နေပါသည်</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Unlock %1</source>
         <translation>Unlock %1</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Password:</source>
         <translation>စကားဝှက် −</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="538"/>
+        <location filename="../sources/documentview.cpp" line="539"/>
         <source>Page %1</source>
         <translation type="unfinished"></translation>
     </message>

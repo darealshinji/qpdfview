@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="ko">
 <context>
     <name>Model::ImageDocument</name>
     <message>
@@ -317,49 +317,49 @@
 <context>
     <name>qpdfview::DocumentView</name>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Information</source>
         <translation>정보</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
         <source>The source editor has not been set.</source>
         <translation>소스 편집기가 지정되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Opening URL is disabled in the settings.</source>
         <translation>설정에서 URL 열기가 비활성화되어 있습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <source>Warning</source>
         <translation>경고</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <location filename="../sources/main.cpp" line="365"/>
         <source>SyncTeX data for &apos;%1&apos; could not be found.</source>
         <translation>&apos;%1&apos;에 대한 SyncTeX 데이터를 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2643"/>
+        <location filename="../sources/documentview.cpp" line="2688"/>
         <source>Printing &apos;%1&apos;...</source>
         <translation>&apos;%1&apos; 인쇄중...</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Unlock %1</source>
         <translation>%1 잠금 해제</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Password:</source>
         <translation>비밀번호:</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="538"/>
+        <location filename="../sources/documentview.cpp" line="539"/>
         <source>Page %1</source>
         <translation>%1 페이지</translation>
     </message>

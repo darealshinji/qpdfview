@@ -5,9 +5,6 @@ set -o pipefail
 source_dir=../translations-export
 dest_dir=./translations
 
-# trap 'rm -f "${temp_file}"' EXIT
-# temp_file="$(mktemp)"
-
 for source_file in ${source_dir}/*.po
 do
     locale="$(basename ${source_file} .po)"
@@ -15,7 +12,7 @@ do
 
     sed "s/^\"X-Generator:..*/\"X-Qt-Contexts: true\\\\n\"/" "${source_file}" \
     | sed -r "/^msgctxt \"[^Qq][^:]+\"/ s/^msgctxt \"([^Qq][^:|\"]+)|\"$/msgctxt \"qpdfview::\1/" \
-    | lconvert -if po -i - -o "${dest_file}"
+    | lconvert -if po -i - -o "${dest_file}" -target-language ${locale}
 done
 
 lupdate -no-obsolete ./qpdfview.pro

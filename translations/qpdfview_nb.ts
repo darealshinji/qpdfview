@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="nb">
 <context>
     <name>Model::ImageDocument</name>
     <message>
@@ -317,49 +317,49 @@
 <context>
     <name>qpdfview::DocumentView</name>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Information</source>
         <translation>Informasjon</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
         <source>The source editor has not been set.</source>
         <translation>Kilderedigereren har ikke blitt valgt enda.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Opening URL is disabled in the settings.</source>
         <translation>Åpning av URL-er er skrudd av i innstillingene.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <source>Warning</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <location filename="../sources/main.cpp" line="365"/>
         <source>SyncTeX data for &apos;%1&apos; could not be found.</source>
         <translation>SyncTeX-dataene for &apos;%1&apos; ble ikke funnet.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2643"/>
+        <location filename="../sources/documentview.cpp" line="2688"/>
         <source>Printing &apos;%1&apos;...</source>
         <translation>Skriver ut &apos;%1&apos; …</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Unlock %1</source>
         <translation>Lås opp %1</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Password:</source>
         <translation>Passord:</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="538"/>
+        <location filename="../sources/documentview.cpp" line="539"/>
         <source>Page %1</source>
         <translation>Side %1</translation>
     </message>

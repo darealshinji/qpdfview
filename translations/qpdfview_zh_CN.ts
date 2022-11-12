@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="zh_CN">
 <context>
     <name>Model::ImageDocument</name>
     <message>
@@ -317,49 +317,49 @@
 <context>
     <name>qpdfview::DocumentView</name>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Information</source>
         <translation>信息</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
         <source>The source editor has not been set.</source>
         <translation>未设置源编辑器。</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Opening URL is disabled in the settings.</source>
         <translation>在设置中已经禁用打开 URL。</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <location filename="../sources/main.cpp" line="365"/>
         <source>SyncTeX data for &apos;%1&apos; could not be found.</source>
         <translation>找不到 “%1” 的 SyncTeX 数据</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2643"/>
+        <location filename="../sources/documentview.cpp" line="2688"/>
         <source>Printing &apos;%1&apos;...</source>
         <translation>正在打印“%1”...</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Unlock %1</source>
         <translation>解锁 %1</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Password:</source>
         <translation>密码：</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="538"/>
+        <location filename="../sources/documentview.cpp" line="539"/>
         <source>Page %1</source>
         <translation>第 %1 页</translation>
     </message>

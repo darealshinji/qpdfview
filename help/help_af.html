@@ -1,0 +1,538 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+
+
+<!--
+
+Copyright 2012 Benjamin Eltzner
+Copyright 2012 Adam Reichold
+
+This file is part of qpdfview.
+
+qpdfview is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+qpdfview is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with qpdfview.  If not, see <http://www.gnu.org/licenses/>
+.
+
+This file is additionally licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported (CC-BY-SA) license. The full text of the license can be found at https://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+-->
+<html>
+
+<head>
+    <title>Hulp</title>
+</head>
+
+<body>
+
+<h2><a name="top">Help</a></h2>
+
+<h4>Opgawe van inhoud</h4>
+<ol>
+    <li><a href="#mainmenu">Hoof spyskaart</a></li>
+    <ol>
+        <li><a href="#file">File</a></li>
+        <li><a href="#edit">Wysig</a></li>
+        <li><a href="#view">Beskou</a></li>
+        <li><a href="#tabs">Tabs</a></li>
+        <li><a href="#bookmarks">Boekmerke</a></li>
+        <li><a href="#help">Hulp</a></li>
+    </ol>
+    <li><a href="#mainview">Hoof aansig</a></li>
+    <li><a href="#auxiliaryviews">Hulp aansigte</a></li>
+    <li><a href="#settings">Instellings</a></li>
+    <ol>
+    	<li><a href="#behaviorsettings">Gedrag instellings</a></li>
+    	<li><a href="#graphicssettings">Grafiese instellings</a></li>
+    	<li><a href="#interfacesettings">Koppelvlak instellings</a></li>
+    	<li><a href="#shortcutsettings">Kortpad instellings</a></li>
+    	<li><a href="#modifiersettings">Wysiger instellings</a></li>
+    </ol>
+</ol>
+
+<h4>Inleiding</h4>
+
+<p><em>qpdfview</em> is 'n oortjie dokument bekyker. Dit maak gebruik Poppler
+vir PDF ondersteun, libspectre vir PS ondersteun, DjVuLibre vir DjVu
+ondersteun, CUPS vir afdruk ondersteuning en die Qt gereedskapstel vir sy
+koppelvlak.</p>
+
+<p>Verwys asseblief na die handleiding bladsy vir inligting oor bevelreël
+opsies en konfigurasie lêers.</p>
+
+<h3><a name="mainmenu">Hoof spyskaart</a> <a href="#top">&uarr;</a></h3>
+
+<h4><a name="file">Lêer</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Oop...</b> Oops 'n dialoog om 'n lêer te kies om in die huidige oortjie
+oop te maak Indien daar geen oortjie is nie, word die lêer in 'n nuwe
+oortjie oopgemaak.</li>
+    <li><b>Oop in nuwe oortjie...</b> Oops 'n dialoog om lêers te kies om in nuwe
+oortjies oop te maak.</li>
+    <li><b>Onlangs gebruikde</b> Bevat 'n lys van die mees onlangs gebruikte lêers
+(indien geaktiveer in die instellings).</li>
+    <li><b>Verfris</b> Herlaai die lêer wat in die huidige oortjie vertoon word.</li>
+    <li><b>Stoor</b> Stoor veranderinge aan aantekeninge en vormvelde in die lêer
+wat in die huidige oortjie vertoon word.</li>
+    <li><b>Stoor as...</b> Oops 'n dialoog om die lêer wat in die huidige oortjie
+vertoon word, te stoor, insluitend veranderinge aan aantekeninge en
+vormvelde.</li>
+    <li><b>Stoor as...</b> Oops 'n dialoog om 'n ongewysigde kopie van die lêer wat
+in die huidige oortjie vertoon word, te stoor.</li>
+    <li><b>Afdruk...</b> Oops 'n dialoog om die lêer wat in die huidige oortjie
+vertoon word, te afdruk.</li>
+    <li><b>Uitgang</b> Toemaak alle oortjies en beëindig die program.</li>
+</ul>
+
+<h4><a name="edit">Uitgang</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Volgende/Vorige/Eerste/Laaste bladsy</b> Spring na die
+volgende/vorige/eerste/laaste bladsy van die dokument.</li>
+    <li><b>Spring na bladsy...</b> Oops 'n dialoog om 'n bladsy te betree om in die
+huidige oortjie te vertoon.</li>
+    <li><b>Spring agtertoe/vorentoe</b> Spring agtertoe/vorentoe in die geskiedenis
+van vertoonde bladsy.</li>
+    <li><b>Soek...</b> Oops die soekdok onder die hoofaansig. Die soektog begin
+outomaties twee sekondes na die laaste verandering van die soekterm of word
+met die hand begin deur die terug-sleutel te druk. As die Shift-wysiger
+gehou word wanneer die terugkeer-sleutel gedruk word, begin die soektog in
+alle oortjies in plaas van net die huidige oortjie. (Hierdie effek word
+omgekeer as die uitgebreide soekdok in die instellings geaktiveer is.)</li>
+    <li><b>Vind vorige/volgende</b> Springe na die vorige/volgende voorkoms van die
+soekterm in die dokument.</li>
+    <li><b>Kanselleer soek</b> Kanselleer die soektog wat tans loop en maak die
+soekdok toe.</li>
+    <li><b>Kopieer na knipbord</b> As dit gemerk is, sal die program wag dat 'n raam
+gesleep word om tekste of beelde te kopieer.</li>
+    <li><b>Byvoeg annotasie</b>As dit gemerk is, sal die program wag vir 'n raam om
+na gesleep te word byvoeg annotasie.</li>
+    <li><b>Instellings...</b> Oop die instellings dialoog. Die knoppie geetiket
+'Defaults' sal alle instellings terugdraai op alle oortjies na hul verstek
+waardes. Die knoppie geetiket 'Defaults on current tab' sal slegs die
+instellings-terugdraai op die huidige oortjie na hul verstek waardes.</li>
+</ul>
+
+<p>Die <em>huidige bladsy</em> kan verander word deur die verlangde bladsy in
+die teksveld in die redigeernutsbalk in te voer, wat gefokus kan word met
+behulp van Ctrl+K, en druk die terugkeer-sleutel.</p>
+
+<h4><a name="view">Beskou</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Deurlopend</b> Bepaal whether alle rye van die bladsy uitleg is op een
+slag sigbaar.</li>
+    <li><b>Twee bladsye</b> Bepaal whether die bladsyuitleg twee kolomme gebruik.</li>
+    <li><b>Twee bladsye met bedek bladsy</b> Bepaal of die bladsyuitleg twee kolomme
+met 'n breuk na die bedek-bladsy gebruik.</li>
+    <li><b>Veelvuldige bladsye</b> Bepaal of die bladsyuitleg veelvuldige kolomme
+gebruik. Die aantal kolomme kan in die instellings dialoog verander word.</li>
+    <li><b>Regs na links</b> Bepaal hoe bladsye gerangskik word in uitlegte met
+veelvuldige bladsye per ry.</li>
+    <li><b>Zoem in</b> Verhoog die skaalfaktor met 10 persent. Die maksimum
+skaalfaktor is 5000 persent.</li>
+    <li><b>Zoem uit</b> Afneems die skaal faktor met 10 persent. Die minimum skaal
+faktor is 10 persent.</li>
+    <li><b>Oorspronklike grootte</b> Stel die skaal faktor terug na 100 persent.</li>
+    <li><b>Pas by bladsy wydte</b> Determine the scale factor so that all pages fit
+horizontally fully into the main view.</li>
+    <li><b>Pas by bladsy grootte</b> Bepaal die skaalfaktor sodat alle bladsye
+horisontaal en vertikaal volledig in die hoofaansig pas.</li>
+    <li><b>Roteer links</b> Roteer die bladsye 90 grade links/teenkloksgewys.</li>
+    <li><b>Roteer regs</b> Roteer die bladsye 90 grade regs/kloksgewys.</li>
+    <li><b>Keer kleure om</b> Bepaal whether bladsye is rendered met omgekeerde
+kleure.</li>
+    <li><b>Skakel om na grysskaal</b> Bepaal of bladsye is omgeskakel na grysskaal
+na rendering.</li>
+    <li><b>Trim marges</b> In staat stel die verwydering van leë bladsymarges na
+rendering.</li>
+    <li><b>Komposisie</b> In staat stel die komposisie van die rendered bladsy met
+die papierkleur om die agtergrond van geskandeerde dokumente aan te pas.</li>
+    <li><b>Gereedskapstawe</b> Hierdie spyskaart bevat 'n lys van beskikbare
+nutsbalke vir toegang tot handelinge wat gereeld gebruik word.</li>
+    <li><b>Docks</b> Hierdie spyskaart bevat 'n lys beskikbare dokke vir die vertoon
+van aanvullende inligting.</li>
+    <li><b>Lettertipes...</b> Oops 'n dialoog met 'n lys van die lettertipes wat in
+die dokument gebruik word.</li>
+    <li><b>Volskerm</b> Toggles die volskermmodus, dit wil sê die venster word
+gemaksimeer en sonder versiering gewys.</li>
+    <li><b>Aanbieding...</b> Gaan aanbiedingsmodus in wat verlaat kan word deur F12
+te druk of ontsnap. Die tuis-/eindsleutel word gebruik om die eerste/laaste
+bladsy te vertoon. Pyltjiesleutels regs en af, spasie en die bladsy
+af-sleutel spring na die volgende bladsy. Pyltjie sleutels links en op,
+terugspasie en die bladsy op sleutel spring na die vorige bladsy. Deur
+beheer en terug te druk, spring terug na die bladsy voor die laaste sprong.</li>
+</ul>
+
+<p>Die <em>skaal faktor</em> kan verander word deur die verlangde persentasie
+in die teksveld in die aansignutsbalk in te voer, wat gefokus kan word deur
+Ctrl+L te gebruik, en die terugkeer-sleutel te druk.</p>
+
+<h4><a name="tabs">Oortjies</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Vorige/Volgende oortjie</b> Maak die vorige/volgende oortjie die huidige
+oortjie. Cycles na die laaste/eerste oortjie as die eerste/laaste oortjie
+die huidige oortjie is.</li>
+    <li><b>Sluit oortjie</b> Sluit die huidige oortjie.</li>
+    <li><b>Sluit alle oortjies</b> Sluit alle oortjies.</li>
+    <li><b>Maak alle oortjies toe, maar huidige oortjie</b> Maak alle oortjies toe,
+behalwe die huidige oortjie.</li>
+    <li><b>Onlangs gesluit</b> Bevat 'n lys van die mees onlangs geslote oortjies
+(indien geaktiveer in die instellings).</li>
+</ul>
+
+<p>Hierdie spyskaart bevat 'n lys van alle oortjies wat die huidige oortjie
+gemaak kan word deur op die ooreenstemmende kieslys-item te klik. Oortjies
+kan ook gesluit word deur middel te klik. Die eerste nege oortjies kan ook
+geaktiveer word deur die Alt wysiger te hou en sleutels een tot nege te druk</p>
+
+<h4><a name="bookmarks">Boekmerke</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Vorige boekmerk</b> Spring na die naaste boekmerk voor die huidige
+bladsy.</li>
+    <li><b>Volgende boekmerk</b> Spring na die naaste boekmerk na die huidige
+bladsy.</li>
+    <li><b>Byvoeg Boekmerk</b> Voeg 'n boekmerk by vir die huidige lêer en bladsy.</li>
+    <li><b>Verwyder boekmerk</b> Verwyder die boekmerk vir die huidige lêer en
+bladsy.</li>
+    <li><b>Verwyder alle boekmerke</b>Verwyder alle boekmerke.</li>
+    <li><b>Oop</b> Maak die ooreenstemmende lêer in die huidige oortjie oop. As daar
+geen oortjie is nie, word die lêer in 'n nuwe oortjie oopgemaak.</li>
+    <li><b>Maak oop in nuwe oortjie</b> Maak die ooreenstemmende lêer oop in 'n nuwe
+oortjie.</li>
+    <li><b>Spring na bladsy</b> Spring na die ooreenstemmende bladsy as die
+ooreenstemmende lêer reeds oop is. Andersins word die ooreenstemmende lêer
+in 'n nuwe oortjie oopgemaak.</li>
+</ul>
+
+<h4><a name="help">Hulp</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+	<li><b>Inhoud</b> Vertoon hierdie dokument.</li>
+	<li><b>Omtrent</b> Vertoon die program weergawe.</li>
+</ul>
+
+<h3><a name="mainview">Hoofaansig</a> <a href="#top">&uarr;</a></h3>
+
+<p>Die terugspasie/spasie-sleutel gaan na die vorige/volgende bladsy. Die
+tuis/eindsleutel spring na die eerste/laaste bladsy. Die pyltjie-, bladsy op
+en bladsy af sleutels blaai deur die viewport. Deur beheer en terug te druk,
+spring na die bladsy voor die laaste sprong.</p>
+
+<p>Deur die muiswiel te gebruik, blaai op en af. Vashou <b>ALT</b> terwyl die
+muiswiel gebruik, blaai links en regs. Vashou <b>CTRL</b> terwyl die gebruik
+van die muiswiel die dokument skaal. Vashou <b>SHIFT</b> terwyl die muiswiel
+gebruik word, draai die dokument. (Sleutelbordwysigers kan in die
+instellingsdialoog verander word.) Klik en hou die middelste muisknoppie in
+om 'n reghoek te kies om na te zoem.</p>
+
+<p>Skakels word met rooi rame uitgelig (indien geaktiveer in die
+instellings). Linkskliek op 'n skakel om die gekoppelde bladsy te wys of
+maak die gekoppelde URL in die verstekblaaier oop (indien geaktiveer in die
+instellings). Middelkliek op 'n skakel om die gekoppelde bladsy in 'n nuwe
+oortjie te wys. Deur oor 'n skakel te beweeg, word sy bestemming as 'n
+hulpmiddelwenk vertoon.</p>
+
+<p>Vormvelde word met blou rame uitgelig (indien geaktiveer in die
+instellings). Linkskliek op 'n vormveld om die inhoud daarvan te wysig. Deur
+oor 'n vormveld te beweeg, word sy naam as 'n hulpmiddelwenk vertoon.</p>
+
+<p>Die bron van 'n posisie in die dokument kan in die bronredigeerder oopgemaak
+word deur die kontek spyskaart wat opsioneel 'n item vir die eerste passing
+bevat <em>SyncTeX</em> nodus.</p>
+
+<p>Om <em>kopieer tekste of beelde</em>, hou <b>SHIFT</b>, klik en hou die
+linkermuisknoppie in om 'n raam rondom die area te sleep om te
+kopieer. Sodra die muisknoppie vrygelaat is, 'n opwipkieslys word vertoon om
+te kies of tekste of prente na die knipbord moet kopieer.</p>
+
+<p>Om <em>byvoeg annotasies</em>, hou <b>CTRL</b>, klik en hou die
+linkermuisknoppie in om 'n raam om die streek te sleep om te annoteer. Sodra
+die muisknoppie vrygelaat is,'n opwip-kieslys word vertoon om te kies
+whether dit gaan byvoeg teks of hoogtepunt annotasies. Links-kliek om
+<em>wysig annotasies</em>. Regs-kliek om <em>verwyder annotasies</em>. (Om
+aantekeninge by te voeg en te verwyder, vereis weergawe 0.20.1 of hoër van
+die Poppler biblioteek.) Hovering oor 'n annotasie vertoon die inhoud
+daarvan as 'n hulpmiddelwenk.</p>
+
+<p>Om <em>zoem na 'n seleksie</em>, hou <b>SHIFT</b> en <b>CTRL</b>, klik en
+hou die linkermuisknoppie in om 'n raam rondom die streek te sleep om zoem
+in tot.</p>
+
+<p>Die <em>sigbaarheid van die gereedskap en spyskaartbalke</em> kan gewissel
+word met konfigureerbare sleutelbordkortpaaie waarvan die verstekwaardes is
+"Shift+Alt+T" en "Shift+Alt+M".</p>
+
+<h3><a name="auxiliaryviews">Hulpbeskouings</a> <a href="#top">&uarr;</a></h3>
+
+<p>Die <em>uiteensetting aansig</em> vertoon 'n oorsig van die inhoud van die
+dokument. 'n Linkerkliek op 'n inskrywing spring na die onderskeie bladsy in
+die hoofaansig. Die kontekskieslys kan gebruik word om alle items onder die
+geselekteerde item uit te brei/in te vou.</p>
+
+<p>Die buitelynaansig kan ook met die sleutelbord en die muiswiel navigeer
+word. As jy Shift hou en die Op/Af-sleutels gebruik, sal die aansig
+blaai. Om Shift te hou en die links/regs-sleutels te gebruik, sal een vlak
+items onder die geselekteerde item invou/uitbrei. Deur Beheer te hou en die
+links/regs-sleutels te gebruik, sal die geselekteerde item en sy kinders
+heeltemal ineenvou/uitvou. Hou Shift en gebruik die muiswiel sal die
+geselekteerde item verander. Hou beheer en gebruik die muiswiel sal die
+geselekteerde item uitbrei/invou.</p>
+
+<p>Die <em>eiendomme uitsig</em> vertoon bykomende inligting vervat in die
+dokument.</p>
+
+<p>Die <em>duimnaels aansig</em> vertoon kleiner weergawes van die bladsye van
+die dokument. 'n Linkerkliek op 'n inskrywing spring na die onderskeie
+bladsy in die hoofaansig.</p>
+
+<p>Die <em>boekmerke aansig</em> wys die boekmerke wat verband hou met die
+dokument wat in die huidige oortjie vertoon word. Die kontekskieslys bevat
+inskrywings om na die vorige te spring/volgende boekmerk of om boekmerke by
+te voeg. Die konteks kieslys van elke inskrywing bevat ook inskrywings om
+boekmerke te wysig en uit te vee.</p>
+
+<p>Indien in die instellings geaktiveer, die <em>uitgebreide soektog dok</em>
+wys 'n oorsig wat die resultate bevat van alle soektogte wat in alle
+oortjies uitgevoer word. Dit wys ook die teks rondom 'n resultaat met die
+soekterm synde beklemtoon. Deur op 'n resultaat te klik, maak die
+ooreenstemmende oortjie oop en spring na sy posisie.</p>
+
+<h3><a name="settings">Instellings</a> <a href="#top">&uarr;</a></h3>
+
+<h4><a name="behaviorsettings">Gedrag instellings</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Oop URL</b> Bepaal of skakels na URL in die verstekblaaier oopgemaak
+word.</li>
+    <li><b>Outo-verfris</b> Bepaal of lêers outomaties herlaai word as dit op skyf
+verander word.</li>
+    <li><b>Snit onlangs gebruik</b> Indien in staat gestel, 'n spyskaart wat onlangs
+gebruik is, is beskikbaar en lys soveel onlangs gebruikte lêers soos in die
+"Recently used count" opsie. (Effektief na herbegin.)</li>
+    <li><b>Hou onlangs toegemaak</b> Indien in staat gestel, 'n spyskaart wat
+onlangs gesluit is, is beskikbaar en lys soveel onlangs geslote oortjies
+soos ingestel in die "Recently closed count" opsie. Om die oortjies
+beskikbaar te hou, kan geheuegebruik aansienlik verhoog. (Effektief na
+herbegin.)</li>
+    <li><b>Herstel oortjies</b> Indien in staat gestel, oortjies en hul eienskappe
+word gestoor wanneer die program beëindig word en met herbegin herstel.</li>
+    <li><b>Herstel boekmerke</b> Indien in staat gestel, boekmerke word gestoor
+wanneer die program beëindig word en met herbegin herstel.</li>
+    <li><b>Herstel per-lêer-instellings</b> Indien in staat gestel, per-lêer
+instellings word gestoor/herstel met oopmaak/oortjies toemaak.</li>
+    <li><b>Stoor databasis interval</b> Die interval waarna oortjies, boekmerke of
+per-lêer-instellings in die databasis gestoor word.</li>
+    <li><b>Sinkroniseer aanbieding</b> Indien in staat gestel, die hoofaansig kan
+gebruik word om die aanbiedingaansig te beheer.</li>
+    <li><b>Aanbieding skerm</b> Die indeks van die skerm om die aanbiedingsaansig op
+te vertoon.</li>
+    <li><b>Sinkroniseer buitelynaansig</b> Indien in staat gestel, die
+buitelynaansig sal die eerste inskrywing wat na die huidige bladsy wys,
+uitlig wanneer die huidige bladsy verander.</li>
+    <li><b>Relatiewe spronge</b> Indien In staat gestel, die aansigpoort sal sy
+posisie relatief tot die sigbare bladsy behou wanneer na 'n ander bladsy
+gespring word.</li>
+    <li><b>Minimale blaai</b> Indien In staat gestel, die aansigpoort sal slegs
+gerol word as die teikenposisie nog nie sigbaar is nie.</li>
+    <li><b>Zoem faktor</b> Die getal waarmee die skaalfaktor vermenigvuldig word
+resp. verdeel by inzoom resp. uit.</li>
+    <li><b>Hoogtepunt kleur</b> Bepaal die kleur van hoogtepunte.</li>
+    <li><b>Hoogtepunt duur</b> Bepaal die duur van tydelike hoogtepunte.</li>
+    <li><b>Annotasie kleur</b> Die kleur van aantekeninge wat deur die program
+bygevoeg is met behulp van SVG kleur sleutelwoorde of heksadesimale notasie
+'#rrggbb'.</li>
+    <li><b>Bron redakteur</b> Die program wat begin is om bronne te redigeer. '%1'
+word vervang deur die absolute lêerpad. '%2' resp. '%3' word vervang deur
+lyn resp. kolom nom</li>
+</ul>
+
+<h4><a name="graphicssettings">Grafiese instellings</a> <a
+href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Gebruik teëlwerk</b> Bladsye sal in teëls verdeel word voordat dit
+weergegee en gekas word om geheuegebruik te verminder.</li>
+    <li><b>Hou uitgediende pixmaps</b> Indien in staat gestel, dan by verandering
+van die zoemfaktor, gekaste pixmaps sal gebruik word om benaderings van
+finale pixmaps te teken totdat dit beskikbaar is teen die koste van
+verhoogde geheuegebruik.</li>
+    <li><b>Gebruik toestel pixel verhouding</b> Indien in staat gestel, die hoogste
+beskikbare toestel pixel verhouding word gebruik om weer te gee by fisies en
+vertoon teen logiese resolusie.</li>
+    <li><b>Gebruik logies DPI</b> Indien in staat gestel, die horisontale en
+vertikale resolusie van die monitor soos gerapporteer deur die bedryfstelsel
+word gebruik om 'n skaalfaktor van 100% te definieer.</li>
+    <li><b>Versier bladsye</b> Bepaal whether bladsye apart vanaf die agtergrond
+geplaas is.</li>
+    <li><b>Versier koppelings</b> Bepaal of skakels deur rooi rame uitgelig word.</li>
+    <li><b>Versier vorm velde</b> Bepaal of vormvelde deur blou rame uitgelig word.</li>
+    <li><b>Agtergrond kleur</b> Bepaal die kleur van die agtergrond met behulp van
+SVG kleur sleutelwoorde of heksadesimale notasie '#rrggbb'.</li>
+    <li><b>Papier kleur</b> Bepaal die kleur van die agtergrond met behulp van SVG
+kleur sleutelwoorde of heksadesimale notasie '#rrggbb'.</li>
+    <li><b>Aanbieding agtergrond kleur</b> Overrides die papierkleur in die
+berekening van die agtergrondkleur van die aanbiedingsaansig en word
+gedefinieer met behulp van SVG kleur sleutelwoorde of heksadesimale notasie
+'#rrggbb'.</li>
+    <li><b>Bladsye per ry</b> Aantal bladsye per ry in die 'multiple pages' uitleg
+modus.</li>
+    <li><b>Bladsy spasiëring</b> Bepaal beide vertikale en horisontale spasie wat
+tussen bladsye vertoon word.</li>
+    <li><b>Duimnael spasiëring</b> Bepaal beide vertikale en horisontale spasie wat
+tussen duimnaels vertoon word.</li>
+    <li><b>Duimnael grootte</b> Bepaal die grootte van die duimnaels.</li>
+    <li><b>Cache grootte</b> Die program sal probeer om gelewerde bladsye binne
+hierdie limiet te kas, wat die leweringspoed verhoog ten koste van verhoogde
+geheuegebruik.</li>
+    <li><b>Prefetch</b> Die program sal probeer om bladsye weer te gee wat nog nie
+sigbaar is nie en verhoog die leweringspoed ten koste van verhoogde
+kasgebruik.</li>
+    <li><b>Prefetch afstand</b> Die aantal rye buite die huidige ry en twee keer die
+aantal rye voor die huidige ry wat is prefetched.</li>
+    <li><b>PDF instellings</b>
+    <ul>
+        <li><b>Anti-aliasering</b> Verbeter vertoonkwaliteit ten koste van prestasie</li>
+        <li><b>Teks anti-aliasering</b> Verbeter teks vertoon kwaliteit ten koste van
+prestasie</li>
+        <li><b>Teks-wenking</b> Mag teks vertoon kwaliteit vir sekere lettertipes
+verbeter.</li>
+        <li><b>Oordruk voorskou</b> Indien in staat gestel, 'n voorskou van die
+afdruking van een laag ink bo-op 'n ander word vertoon.</li>
+        <li><b>Dun lyn modus</b> Kies die optimalisering wat gebruik word om dun lyne te
+trek.</li>
+        <li><b>Terugeinde</b> Kies die terugeinde wat gebruik word om bladsye weer te
+gee.</li>
+    </ul>
+    </li>
+    <li><b>PS instellings</b>
+    <ul>
+        <li><b>Grafiese anti-alias stukkies</b> Bepaal die hoeveelheid anti-aliasing vir
+grafika.</li>
+        <li><b>Teks anti-alias stukkies</b> Bepaal die hoeveelheid anti-aliasing vir
+teks.</li>
+    </ul>
+    </li>
+</ul>
+
+<h4><a name="interfacesettings">Interface instellings</a> <a
+href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Verlengde soek dok</b> Indien in staat gestel, die verstek soekdok word
+verlengde met 'n oorsig wat die resultate van alle oortjies
+wys. (Doeltreffend na herbegin.)</li>
+    <li><b>Annotasie oorleg</b> Indien in staat gestel, alle aantekeninge op 'n
+bladsy sal as 'n interaktiewe oorleg vertoon word. Andersins sal elke
+aantekening as 'n aparte opspringvenster hanteer word.</li>
+    <li><b>Vorm veld oorleg</b> Indien in staat gestel, alle vormvelde op 'n bladsy
+sal as 'n interaktiewe oorleg vertoon word. Andersins sal elke vormveld as
+'n aparte opspringvenster hanteer word.</li>
+    <li><b>Oortjie posisie</b> Definieer aan watter rand van die hoofaansig oortjies
+vertoon sal word.</li>
+    <li><b>Oortjie sigbaarheid</b> Bepaal of oortjies vertoon sal word as minder as
+twee dokumente oopgemaak word.</li>
+    <li><b>Versprei oortjies</b> Bepaal of oortjies eweredig oor die hele
+oortjiebalk versprei sal word.</li>
+    <li><b>Nuwe oortjie langs huidige oortjie</b> Indien in staat gestel, nuwe
+oortjies word regs van die aktiewe oortjie oopgemaak.</li>
+    <li><b>Verlaat na laaste oortjie</b> Indien in staat gestel, die toepassing word
+verlaat nadat die laaste oortjie gesluit is.</li>
+    <li><b>Onlangs gebruik count</b> Stel die aantal lêers wat in die onlangs
+gebruikte spyskaart gelys is, indien "Track recently used" is in staat
+gestel. (Effektief na herbegin.)</li>
+    <li><b>Onlangs geslote count</b> Stel die aantal oortjies wat in die onlangs
+geslote spyskaart gelys word, indien "Keep recently closed" is in staat
+gestel. (Effektief na herbegin.)</li>
+    <li><b>Lêer nutsbalk</b> Definieer watter handelinge sigbaar is in die lêer
+nutsbalk. Beskikbare handelinge is oopInNewTab, oop, verfris, stoorKopieer,
+stoor As, druk en skei. (Effektief na herbegin.)</li>
+    <li><b>Wysig nutsbalk</b> Definieer watter aksies sigbaar is in die redigeer
+nutsbalk. Beskikbare handelinge is huidige bladsy, vorige bladsy, volgende
+bladsy, eerste bladsy, laaste bladsy, spring na bladsy, spring terug, spring
+vorentoe, soek, kopieer na knipbordmodus, voeg annotasiemodus by en
+skeier. (Effektief na herbegin.)</li>
+    <li><b>Bekyk nutsbalk</b> Definieer watter handelinge sigbaar is in die
+aansignutsbalk. Beskikbare aksies is skaalFaktor, zoemin, zoemUit,
+aaneenlopendeModus, tweeBladsyeModus, tweeBladsyeMetVoorBladModus,
+meervoudigeBladsyeModus, oorspronklikeGrootte, pasTotBladsyWydteModus,
+pasTotBladsyGrootteModus, roteerLinks, roteerRegs , Volskerm, aanbieding en
+skeier. (Doeltreffend na herbegin.)</li>
+    <li><b>Dokument konteks kieslys</b> Definieer watter handelinge sigbaar is in
+die dokument se kontek kieslys. Beskikbare aksies is
+oopKopieerInNuweOortjie, oopKopieerInNuweVenster, oopBevattendeVouer,
+beweegTotInstansie, vorigeBladsy, volgendeBladsy, eersteBladsy,
+laasteBladsy, springNaBladsy, springTerug, springVorentoe, stelEersteBladsy,
+vindVorige, vindVolgende, kanselleerSoek en skeier.</li>
+    <li><b>Oortjie konteks kieslys</b> Definieer watter handelinge sigbaar is in 'n
+oortjie se kontekskieslys. Beskikbare handelinge is openCopyInNewTab,
+openCopyInNewWindow, openContainingFolder, moveToInstance, copyFilePath,
+selectFilePath, closeAllTabs, closeAllTabsButThisOne, closeAllTabsToTheLeft,
+closeAllTabsToTheRight en skeiding.</li>
+    <li><b>Rolbare spyskaarte</b> Sal die verstekstyl ignoreer sodat
+opspringkieslyste blaai in plaas daarvan om in veelvuldige kolomme uitgelê
+te word as hulle groter is as die beskikbare skermspasie. (Doeltreffend na
+herbegin.)</li>
+    <li><b>Soekbare spyskaarte</b> Brei die versteksleutelbordnavigasie van die
+oortjies en boekmerkkieslyste uit deur 'n soek-soos-jy-tipe meganisme.</li>
+    <li><b>Wissel nutsding en kieslysbalke met volskerm</b> Wissel altyd die
+sigbaarheid van die nutsding en kieslysbalke wanneer volskermmodus gewissel
+word.</li>
+    <li><b>Gebruik bladsy etiket</b> Bepaal of dokumentverskafde bladsy etiket
+gebruik sal word in plaas van bladsy nommers wanneer beskikbaar.</li>
+    <li><b>Dokumenttitel as oortjietitel</b> Bepaal of die oortjietitel afgelei is
+van die metadata in plaas van die lêernaam.</li>
+    <li><b>Huidige bladsy in venster titel</b> Indien in staat gestel, die huidige
+bladsy en aantal bladsye van die dokument in die aktiewe oortjie word in die
+venstertitel vertoon.</li>
+    <li><b>Instansie naam in venster titel</b> Indien in staat gestel en die huidige
+instansie genoem word, word die naam daarvan in die venstertitel vertoon.</li>
+    <li><b>Merk huidige miniatuur</b> Indien in staat gestel, die huidige bladsy
+word in die duimnael-aansig uitgelig.</li>
+    <li><b>Limit thumbnails to results</b> If this option is enabled and a search is
+conducted, only the pages where the search term is found are displayed in
+the thumbnails view.</li>
+</ul>
+
+<h4><a name="shortcutsettings">Shortcut settings</a> <a href="#top">&uarr;</a></h4>
+
+<p>The shortcut settings allows the adjustment of keyboard shortcuts to
+personal preference. Shortcuts are changed by double-clicking on the
+shortcut to edit it and entering the new shortcut. Each action can have
+several shortcuts by entering a semicolon-separated list of them. Names of
+keys that are not single letters are written out explicitly (e.g. "Alt",
+"Ctrl", "PgDown"), where the matching is not case sensitive. If the shortcut
+contains modifier keys, the names of the keys are joined by a plus sign and
+modifier keys must be listed first, e.g. "Ctrl+A" or "Ctrl++".</p>
+
+<h4><a name="modifiersettings">Modifier settings</a> <a href="#top">&uarr;</a></h4>
+
+<ul>
+    <li><b>Zoom</b> The keyboard modifiers to zoom using the mouse wheel in the main
+view.</li>
+    <li><b>Rotate</b> The keyboard modifiers to rotate using the mouse wheel in the
+main view.</li>
+    <li><b>Scroll</b> The keyboard modifiers to scroll horizontally using the mouse
+wheel in the main view.</li>
+    <li><b>Copy to clipboard</b> The keyboard modifiers to copy texts or images from
+a page to the clipboard.</li>
+    <li><b>Add annotation</b> The keyboard modifiers to add annotations to a page.</li>
+    <li><b>Zoom to selection</b> The keyboard modifiers to zoom to a slection on a
+page.</li>
+</ul>
+
+</body>
+
+</html>

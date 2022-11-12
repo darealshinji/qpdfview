@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="es">
 <context>
     <name>Model::ImageDocument</name>
     <message>
@@ -317,49 +317,49 @@
 <context>
     <name>qpdfview::DocumentView</name>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Information</source>
         <translation>Información</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="1446"/>
+        <location filename="../sources/documentview.cpp" line="1449"/>
         <source>The source editor has not been set.</source>
         <translation>No se ha definido el editor de código fuente.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2084"/>
+        <location filename="../sources/documentview.cpp" line="2087"/>
         <source>Opening URL is disabled in the settings.</source>
         <translation>Se ha desactivado la apertura de direcciones web en las preferencias.</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2124"/>
+        <location filename="../sources/documentview.cpp" line="2127"/>
         <location filename="../sources/main.cpp" line="365"/>
         <source>SyncTeX data for &apos;%1&apos; could not be found.</source>
         <translation>No se han encontrado los datos de SyncTeX para «%1».</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2643"/>
+        <location filename="../sources/documentview.cpp" line="2688"/>
         <source>Printing &apos;%1&apos;...</source>
         <translation>Imprimiendo «%1»…</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Unlock %1</source>
         <translation>Desbloquear %1</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="2717"/>
+        <location filename="../sources/documentview.cpp" line="2762"/>
         <source>Password:</source>
         <translation>Contraseña:</translation>
     </message>
     <message>
-        <location filename="../sources/documentview.cpp" line="538"/>
+        <location filename="../sources/documentview.cpp" line="539"/>
         <source>Page %1</source>
         <translation>Página %1</translation>
     </message>
@@ -390,12 +390,12 @@
     <message>
         <location filename="../sources/annotationwidgets.cpp" line="180"/>
         <source>Could not open file attachment saved to &apos;%1&apos;.</source>
-        <translation>No se pudo abrir el archivo adjunto guardado en «%1».</translation>
+        <translation>No se ha podido abrir el archivo adjunto guardado en «%1».</translation>
     </message>
     <message>
         <location filename="../sources/annotationwidgets.cpp" line="186"/>
         <source>Could not save file attachment to &apos;%1&apos;.</source>
-        <translation>No se pudo guardar el archivo adjunto en «%1».</translation>
+        <translation>No se ha podido guardar el archivo adjunto en «%1».</translation>
     </message>
 </context>
 <context>
@@ -543,7 +543,7 @@
         <location filename="../sources/mainwindow.cpp" line="1521"/>
         <location filename="../sources/mainwindow.cpp" line="2829"/>
         <source>Could not save as &apos;%1&apos;.</source>
-        <translation>No se pudo guardar como «%1».</translation>
+        <translation>No se ha podido guardar como «%1».</translation>
     </message>
     <message>
         <location filename="../sources/mainwindow.cpp" line="1579"/>
@@ -1265,7 +1265,7 @@
     <message>
         <location filename="../sources/pluginhandler.cpp" line="498"/>
         <source>Could not match file type of &apos;%1&apos;!</source>
-        <translation>No se pudo encontrar el tipo de archivo de «%1».</translation>
+        <translation>No se ha podido identificar el tipo de archivo de «%1».</translation>
     </message>
     <message>
         <location filename="../sources/pluginhandler.cpp" line="505"/>
@@ -1569,7 +1569,7 @@
     <message>
         <location filename="../sources/settingsdialog.cpp" line="274"/>
         <source>Save database interval:</source>
-        <translation>Intervalo para guarda la base de datos:</translation>
+        <translation>Intervalo para guardar la base de datos:</translation>
     </message>
     <message>
         <location filename="../sources/settingsdialog.cpp" line="297"/>

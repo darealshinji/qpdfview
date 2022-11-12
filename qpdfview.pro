@@ -31,6 +31,7 @@ with_fitz {
 SUBDIRS += application.pro
 
 TRANSLATIONS += \
+    translations/qpdfview_af.ts \
     translations/qpdfview_ast.ts \
     translations/qpdfview_az.ts \
     translations/qpdfview_be.ts \
@@ -74,6 +75,7 @@ TRANSLATIONS += \
     translations/qpdfview_pt_BR.ts \
     translations/qpdfview_ro.ts \
     translations/qpdfview_ru.ts \
+    translations/qpdfview_rue.ts \
     translations/qpdfview_sk.ts \
     translations/qpdfview_sr.ts \
     translations/qpdfview_sv.ts \
