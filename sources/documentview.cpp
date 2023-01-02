@@ -1563,20 +1563,18 @@ bool DocumentView::save(const QString& filePath, bool withChanges)
         return false;
     }
 
-    temporaryFile.close();
-
     if(!m_document->save(temporaryFile.fileName(), withChanges))
+    {
+        return false;
+    }
+
+    if(!temporaryFile.seek(0))
     {
         return false;
     }
 
     // Copy from temporary file to actual file...
     QFile file(filePath);
-
-    if(!temporaryFile.open())
-    {
-        return false;
-    }
 
     if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
     {
