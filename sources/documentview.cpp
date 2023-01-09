@@ -176,8 +176,21 @@ QString intToRoman(int number)
     return result;
 }
 
-bool copyFile(QFile& source, QFile& destination)
+bool copyFile(const QString& sourcePath, const QString& destinationPath)
 {
+    QFile source(sourcePath);
+    QFile destination(destinationPath);
+
+    if(!source.open(QIODevice::ReadOnly))
+    {
+        return false;
+    }
+
+    if(!destination.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    {
+        return false;
+    }
+
     const qint64 maxSize = 4096;
     qint64 size = -1;
 
@@ -196,6 +209,14 @@ bool copyFile(QFile& source, QFile& destination)
         }
     }
     while(size > 0);
+
+    if(!destination.flush())
+    {
+        return false;
+    }
+
+    source.close();
+    destination.close();
 
     return true;
 }
@@ -1568,20 +1589,8 @@ bool DocumentView::save(const QString& filePath, bool withChanges)
         return false;
     }
 
-    if(!temporaryFile.seek(0))
-    {
-        return false;
-    }
-
     // Copy from temporary file to actual file...
-    QFile file(filePath);
-
-    if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
-    {
-        return false;
-    }
-
-    if(!copyFile(temporaryFile, file))
+    if(!copyFile(temporaryFile.fileName(), filePath))
     {
         return false;
     }
