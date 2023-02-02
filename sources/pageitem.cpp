@@ -837,7 +837,11 @@ void PageItem::copyToClipboard(QPoint screenPos)
     }
     else if(action == copyImageAction || action == saveImageToFileAction)
     {
-        const QRect rect = m_rubberBand.translated(-m_boundingRect.topLeft()).toRect();
+        QTransform transform;
+        transform.scale(m_renderParam.devicePixelRatio(), m_renderParam.devicePixelRatio());
+        transform.translate(-m_boundingRect.topLeft().x(), -m_boundingRect.topLeft().y());
+
+        const QRect rect = transform.mapRect(m_rubberBand).toRect();
         const QImage image = m_page->render(m_renderParam.devicePixelRatio() * m_renderParam.resolutionX() * m_renderParam.scaleFactor(),
                                             m_renderParam.devicePixelRatio() * m_renderParam.resolutionY() * m_renderParam.scaleFactor(),
                                             m_renderParam.rotation(), rect);
