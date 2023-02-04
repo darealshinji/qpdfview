@@ -1,3 +1,6 @@
+Release 0.5.1:
+  * Copying image data to the clipboard will now consider the device pixel ratio.
+
 Release 0.5:
   * Added support for Qt version 6 while keeping compatibility with Qt version 4 and 5 intact.
   * Changed required language version from C++98 to C++11.
