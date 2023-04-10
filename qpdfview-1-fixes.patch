@@ -1,0 +1,29 @@
+--- a/application.pro
++++ b/application.pro
+@@ -109,7 +109,7 @@
+ !without_pdf {
+     DEFINES += WITH_PDF
+ 
+-    !without_pkgconfig:POPPLER_VERSION = $$system(pkg-config --modversion poppler-qt$${QT_MAJOR_VERSION})
++    !without_pkgconfig:POPPLER_VERSION = $$system($$pkgConfigExecutable() --modversion poppler-qt$${QT_MAJOR_VERSION})
+     DEFINES += POPPLER_VERSION=\\\"$${POPPLER_VERSION}\\\"
+ 
+     static_pdf_plugin {
+@@ -135,7 +135,7 @@
+ !without_ps {
+     DEFINES += WITH_PS
+ 
+-    !without_pkgconfig:LIBSPECTRE_VERSION = $$system(pkg-config --modversion libspectre)
++    !without_pkgconfig:LIBSPECTRE_VERSION = $$system($$pkgConfigExecutable() --modversion libspectre)
+     DEFINES += LIBSPECTRE_VERSION=\\\"$${LIBSPECTRE_VERSION}\\\"
+ 
+     static_ps_plugin {
+@@ -159,7 +159,7 @@
+ !without_djvu {
+     DEFINES += WITH_DJVU
+ 
+-    !without_pkgconfig:DJVULIBRE_VERSION = $$system(pkg-config --modversion ddjvuapi)
++    !without_pkgconfig:DJVULIBRE_VERSION = $$system($$pkgConfigExecutable() --modversion ddjvuapi)
+     DEFINES += DJVULIBRE_VERSION=\\\"$${DJVULIBRE_VERSION}\\\"
+ 
+     static_djvu_plugin {
