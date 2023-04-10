@@ -109,7 +109,7 @@ plugin_resolve_all {
 !without_pdf {
     DEFINES += WITH_PDF
 
-    !without_pkgconfig:POPPLER_VERSION = $$system(pkg-config --modversion poppler-qt$${QT_MAJOR_VERSION})
+    !without_pkgconfig:POPPLER_VERSION = $$system($$pkgConfigExecutable() --modversion poppler-qt$${QT_MAJOR_VERSION})
     DEFINES += POPPLER_VERSION=\\\"$${POPPLER_VERSION}\\\"
 
     static_pdf_plugin {
@@ -135,7 +135,7 @@ plugin_resolve_all {
 !without_ps {
     DEFINES += WITH_PS
 
-    !without_pkgconfig:LIBSPECTRE_VERSION = $$system(pkg-config --modversion libspectre)
+    !without_pkgconfig:LIBSPECTRE_VERSION = $$system($$pkgConfigExecutable() --modversion libspectre)
     DEFINES += LIBSPECTRE_VERSION=\\\"$${LIBSPECTRE_VERSION}\\\"
 
     static_ps_plugin {
@@ -159,7 +159,7 @@ plugin_resolve_all {
 !without_djvu {
     DEFINES += WITH_DJVU
 
-    !without_pkgconfig:DJVULIBRE_VERSION = $$system(pkg-config --modversion ddjvuapi)
+    !without_pkgconfig:DJVULIBRE_VERSION = $$system($$pkgConfigExecutable() --modversion ddjvuapi)
     DEFINES += DJVULIBRE_VERSION=\\\"$${DJVULIBRE_VERSION}\\\"
 
     static_djvu_plugin {
@@ -234,11 +234,11 @@ with_fitz {
 !without_synctex {
     DEFINES += WITH_SYNCTEX
 
-    !without_pkgconfig:system(pkg-config --exists synctex) {
+    !without_pkgconfig:system($$pkgConfigExecutable() --exists synctex) {
         CONFIG += link_pkgconfig
         PKGCONFIG += synctex
 
-        system(pkg-config --atleast-version=1.19 synctex):DEFINES += HAS_SYNCTEX_2
+        system($$pkgConfigExecutable() --atleast-version=1.19 synctex):DEFINES += HAS_SYNCTEX_2
     } else {
         HEADERS += synctex/synctex_parser.h synctex/synctex_parser_utils.h synctex/synctex_parser_local.h
         SOURCES += synctex/synctex_parser.c synctex/synctex_parser_utils.c
