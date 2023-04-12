@@ -30,7 +30,7 @@ define $(PKG)_BUILD
     $(MAKE) -j '$(JOBS)' -C '$(BUILD_DIR)' qmake_all
     $(SED) -i 's|-lqpdfview_|libqpdfview_|g' '$(BUILD_DIR)/Makefile.application' # workaround for bug
 
-    cd '$(SOURCE_DIR)/translations' && '$(PREFIX)/$(TARGET)/qt5/bin/lrelease' *.ts
+    '$(PREFIX)/$(TARGET)/qt5/bin/lrelease' '$(SOURCE_DIR)/qpdfview.pro'
     $(MAKE) -j '$(JOBS)' -C '$(BUILD_DIR)'
 
     cp '$(BUILD_DIR)/qpdfview.exe' '$(PREFIX)/$(TARGET)/bin/'
