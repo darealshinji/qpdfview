@@ -1,15 +1,6 @@
 #!/bin/bash
 # tested on Ubuntu 20.04 schroot
 
-function patch_ai ()
-{
-  wget -q -c "https://raw.githubusercontent.com/darealshinji/code-snippets/master/hexedit.c"
-  gcc -O2 hexedit.c
-  ./a.out set --offset=0x08 --char=0x00 --file="$1"
-  ./a.out set --offset=0x09 --char=0x00 --file="$1"
-  ./a.out set --offset=0x0A --char=0x00 --file="$1"
-}
-
 set -e
 set -x
 
@@ -195,7 +186,8 @@ rm -f qt/gcc_64/plugins/sqldrivers/libqsqlodbc.so
 rm -f qt/gcc_64/plugins/sqldrivers/libqsqlpsql.so
 
 wget -q -c -O deploy.AppImage "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
-patch_ai deploy.AppImage
+gcc -O2 hexedit.c -o hexedit
+./hexedit memset 8 3 0x0 deploy.AppImage
 chmod a+x deploy.AppImage
 ./deploy.AppImage appdir/usr/share/applications/qpdfview.desktop -verbose=2 -bundle-non-qt-libs -extra-plugins=iconengines,imageformats
 
@@ -208,6 +200,6 @@ cp $SPDIR/COPYING $doc/$SPDIR
 cp $QPDFDIR/{CONTRIBUTORS,COPYING,CHANGES} $doc/qpdfview
 
 wget -q -c "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
-patch_ai appimagetool-x86_64.AppImage
+./hexedit memset 8 3 0x0 appimagetool-x86_64.AppImage
 chmod a+x appimagetool-x86_64.AppImage
 VERSION=$VERSION ./appimagetool-x86_64.AppImage appdir
