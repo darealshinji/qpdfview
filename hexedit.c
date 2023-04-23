@@ -28,15 +28,22 @@
 #include <unistd.h>
 
 
-inline long get_long(const char *str)
+long get_long(const char *str)
 {
-  int base = 10;
+  long l;
 
-  if (strncmp(str, "0x", 2) == 0) {
-    base = 16;
+  if (strlen(str) > 2 && (str[0] == '0' || str[0] == '\\') &&
+      tolower(str[1]) == 'x')
+  {
+    char *copy = strdup(str);
+    copy[0] = '0';
+    l = strtol(copy, NULL, 16);
+    free(copy);
+  } else {
+    l = strtol(str, NULL, 10);
   }
 
-  return strtol(str, NULL, base);
+  return l;
 }
 
 int read_data(const char *arg_offset, const char *arg_length, const char *file)
@@ -131,8 +138,8 @@ int write_data(const char *arg_offset, const char *arg_data, const char *file)
   }
 
   long len = strlen(arg_data);
-  char *copy = malloc(len + 2);
-  char *p = copy;
+  char *copy = malloc(len + 1);
+  char *ptr = copy;
 
   for (long i=0; i < len; i++) {
     if (isspace(arg_data[i])) continue;
@@ -143,14 +150,14 @@ int write_data(const char *arg_offset, const char *arg_data, const char *file)
       return 1;
     }
 
-    *p++ = arg_data[i];
+    *ptr++ = arg_data[i];
   }
 
-  *p = 0;
+  *ptr = 0;
   len = strlen(copy);
 
-  unsigned char *arr = malloc(len + 2);
-  unsigned char *p2 = arr;
+  unsigned char *data = malloc(len + 2);
+  unsigned char *ptr2 = data;
   size_t num_bytes = 0;
 
   if (len % 2 != 0) {
@@ -163,14 +170,14 @@ int write_data(const char *arg_offset, const char *arg_data, const char *file)
     char tmp[5] = { '0','x',0,0,0 };
     tmp[2] = copy[i];
     tmp[3] = copy[i+1];
-    *p2++ = (unsigned char)strtol(tmp, NULL, 16);
+    *ptr2++ = (unsigned char)strtol(tmp, NULL, 16);
     num_bytes++;
   }
 
-  free(copy);
+  int rv = write_to_file(file, data, get_long(arg_offset), num_bytes);
 
-  int rv = write_to_file(file, arr, get_long(arg_offset), num_bytes);
-  free(arr);
+  free(copy);
+  free(data);
 
   return rv;
 }
@@ -189,28 +196,53 @@ int memset_write_data(const char *arg_offset, const char *arg_length, const char
   if (chrlen == 1) {
     /* literal character */
     c = (unsigned char)arg_char[0];
-  } else if (chrlen > 2 && strncmp(arg_char, "0x", 2) == 0) {
+  } else if (chrlen > 2 && (arg_char[0] == '0' || arg_char[0] == '\\') &&
+             tolower(arg_char[1]) == 'x')
+  {
     /* hex number */
     char *endptr = NULL;
+    char *copy = strdup(arg_char);
+    copy[0] = '0';
+
     errno = 0;
     long l = strtol(arg_char, &endptr, 16);
 
     if (errno != 0 || *endptr != '\0' || l < 0 || l > 255) {
+      free(copy);
       ERR_INVARG;
     }
 
+    free(copy);
     c = (unsigned char)l;
-  } else if (chrlen > 1 && arg_char[0] == '\\') {
+  } else if (arg_char[0] == '\\') {
+    /* control character */
+    if (chrlen == 2) {
+      switch(arg_char[1]) {
+        case 'n': c = '\n'; break;
+        case 't': c = '\t'; break;
+        case 'r': c = '\r'; break;
+        case 'a': c = '\a'; break;
+        case 'b': c = '\b'; break;
+        case 'f': c = '\f'; break;
+        case 'v': c = '\v'; break;
+        case 'e': c = 0x1B; break;
+        default:
+          break;
+      }
+    }
+
     /* escaped decimal number */
-    char *endptr = NULL;
-    errno = 0;
-    long l = strtol(arg_char + 1, &endptr, 10);
+    if (c == 0) {
+      char *endptr = NULL;
+      errno = 0;
+      long l = strtol(arg_char + 1, &endptr, 10);
 
-    if (errno != 0 || *endptr != '\0' || l < 0 || l > 255) {
-      ERR_INVARG;
+      if (errno != 0 || *endptr != '\0' || l < 0 || l > 255) {
+        ERR_INVARG;
+      }
+
+      c = (unsigned char)l;
     }
-
-    c = (unsigned char)l;
   } else {
     ERR_INVARG;
   }
@@ -232,10 +264,10 @@ void show_help(const char *self)
   printf("  %s write <offset> <data> <file>\n", self);
   printf("  %s memset <offset> <length> <char> <file>\n"
          "\n", self);
-  printf("  Offset and length may be hexadecimal prefixed with `0x' or decimal.\n"
+  printf("  Offset and length may be hexadecimal prefixed with `0x'/`\\x' or decimal.\n"
          "  Data must be hexadecimal without prefixes.\n"
-         "  Char can be a literal character, a hexadecimal value prefixed with `0x'\n"
-         "  or a decimal number prefixed with `\\'.\n");
+         "  Char can be a literal character, escaped control character, hexadecimal value\n"
+         "  prefixed with `0x'/`\\x' or a decimal number prefixed with `\\'.\n");
 }
 
 int main(int argc, char **argv)
@@ -249,9 +281,11 @@ int main(int argc, char **argv)
 
   if (argc == 5 && strcmp(argv[1], "read") == 0) {
     return read_data(argv[2], argv[3], argv[4]);
-  } else if (argc == 5 && strcmp(argv[1], "write") == 0) {
+  }
+  else if (argc == 5 && strcmp(argv[1], "write") == 0) {
     return write_data(argv[2], argv[3], argv[4]);
-  } else if (argc == 6 && strcmp(argv[1], "memset") == 0) {
+  }
+  else if (argc == 6 && strcmp(argv[1], "memset") == 0) {
     return memset_write_data(argv[2], argv[3], argv[4], argv[5]);
   }
 
@@ -259,5 +293,3 @@ int main(int argc, char **argv)
 
   return 1;
 }
-
-
