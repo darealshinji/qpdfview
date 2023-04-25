@@ -31,6 +31,7 @@ sudo apt update
 sudo apt upgrade
 sudo apt install --no-install-recommends \
   build-essential \
+  pkg-config \
   wget \
   fuse \
   python3-pip \
@@ -186,8 +187,6 @@ rm -f qt/gcc_64/plugins/sqldrivers/libqsqlodbc.so
 rm -f qt/gcc_64/plugins/sqldrivers/libqsqlpsql.so
 
 wget -q -c -O deploy.AppImage "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
-gcc -O2 hexedit.c -o hexedit
-./hexedit memset 8 3 0x0 deploy.AppImage
 chmod a+x deploy.AppImage
 ./deploy.AppImage appdir/usr/share/applications/qpdfview.desktop -verbose=2 -bundle-non-qt-libs -extra-plugins=iconengines,imageformats
 
@@ -200,6 +199,5 @@ cp $SPDIR/COPYING $doc/$SPDIR
 cp $QPDFDIR/{CONTRIBUTORS,COPYING,CHANGES} $doc/qpdfview
 
 wget -q -c "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
-./hexedit memset 8 3 0x0 appimagetool-x86_64.AppImage
 chmod a+x appimagetool-x86_64.AppImage
 VERSION=$VERSION ./appimagetool-x86_64.AppImage appdir
