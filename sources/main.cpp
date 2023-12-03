@@ -68,6 +68,12 @@ typedef synctex_node_t synctex_node_p;
 
 #endif // WITH_SIGNALS
 
+#ifdef Q_OS_WIN
+
+#include <windows.h>
+
+#endif // Q_OS_WIN
+
 #ifdef __amigaos4__
 
 #include <proto/dos.h>
@@ -215,20 +221,42 @@ void parseCommandLineArguments()
                     instanceName = chosenInstanceName;
                 }
             }
-            else if(argument == QLatin1String("--help"))
-            {
-                std::cout << "Usage: qpdfview [options] [--] [file[#page]] [file[#src:name:line:column]] ..." << std::endl
-                          << std::endl
-                          << "Available options:" << std::endl
-                          << "  --help                      Show this information" << std::endl
-                          << "  --quiet                     Suppress warning messages when opening files" << std::endl
-                          << "  --search text               Search for text in the current tab" << std::endl
-                          << "  --unique                    Open files as tabs in unique window" << std::endl
-                          << "  --unique --instance name    Open files as tabs in named instance" << std::endl
-                          << "  --unique --choose-instance  Open files as tabs after choosing an instance name" << std::endl
-                          << std::endl
-                          << "Please report bugs at \"https://launchpad.net/qpdfview\"." << std::endl;
+#ifndef Q_OS_WIN
 
+            else if(argument == QLatin1String("--help"))
+
+#else
+
+            else if(argument == QLatin1String("/help") || argument == QLatin1String("/?"))
+
+#endif // Q_OS_WIN
+            {
+#ifndef Q_OS_WIN
+
+                #define INDENT "  "
+                #define BREAK  ""
+
+#else
+
+                #define INDENT "\n"
+                #define BREAK  "\n    "
+
+#endif  // Q_OS_WIN
+
+                const char* const usage =
+                    "Usage: qpdfview [options] [--] [file[#page]] [file[#src:name:line:column]] ...\n"
+                    "\n"
+                    "Available options:\n"
+                    INDENT "--help                      " BREAK "Show this information\n"
+                    INDENT "--quiet                     " BREAK "Suppress warning messages when opening files\n"
+                    INDENT "--search text               " BREAK "Search for text in the current tab\n"
+                    INDENT "--unique                    " BREAK "Open files as tabs in unique window\n"
+                    INDENT "--unique --instance name    " BREAK "Open files as tabs in named instance\n"
+                    INDENT "--unique --choose-instance  " BREAK "Open files as tabs after choosing an instance name\n"
+                    "\n"
+                    "Please report bugs at \"https://launchpad.net/qpdfview\".\n";
+
+                qInfo() << usage;
                 exit(ExitOk);
             }
             else if(argument == QLatin1String("--"))
@@ -452,6 +480,54 @@ void prepareSignalHandler()
 #endif // WITH_SIGNALS
 }
 
+#ifdef Q_OS_WIN
+
+void showMessageBox(QtMsgType type, const QMessageLogContext& context, const QString& message)
+{
+    Q_UNUSED(context);
+
+    const char* prefix;
+    UINT icon;
+
+    switch (type)
+    {
+        case QtDebugMsg:
+            prefix = "Debug: ";
+            icon = MB_ICONINFORMATION;
+            break;
+        case QtInfoMsg:
+            prefix = "";
+            icon = MB_ICONINFORMATION;
+            break;
+        case QtWarningMsg:
+            prefix = "Warning: ";
+            icon = MB_ICONWARNING;
+            break;
+        case QtCriticalMsg:
+            prefix = "Critical error: ";
+            icon = MB_ICONERROR;
+            break;
+        case QtFatalMsg:
+            prefix = "Fatal error: ";
+            icon = MB_ICONERROR;
+            break;
+    }
+
+    const QString fullMessage = prefix + message;
+    MessageBoxA(NULL, fullMessage.toLocal8Bit().constData(), "qpdfview", MB_OK | icon);
+}
+
+#endif // Q_OS_WIN
+
+void installMessageHandler()
+{
+#ifdef Q_OS_WIN
+
+    qInstallMessageHandler(showMessageBox);
+
+#endif // Q_OS_WIN
+}
+
 } // anonymous
 
 int main(int argc, char** argv)
@@ -459,6 +535,8 @@ int main(int argc, char** argv)
     qRegisterMetaType< QList< QRectF > >("QList<QRectF>");
     qRegisterMetaType< Rotation >("Rotation");
     qRegisterMetaType< RenderParam >("RenderParam");
+
+    installMessageHandler();
 
     parseWorkbenchExtendedSelection(argc, argv);
 
