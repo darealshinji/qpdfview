@@ -1,4 +1,4 @@
-/*
+    /*
 
 Copyright 2018 Marshall Banana
 Copyright 2012-2013, 2018 Adam Reichold
@@ -227,7 +227,7 @@ void parseCommandLineArguments()
 
 #else
 
-            else if(argument == QLatin1String("/help") || argument == QLatin1String("/?"))
+            else if(argument == QLatin1String("--help") || argument == QLatin1String("/help") || argument == QLatin1String("/?"))
 
 #endif // Q_OS_WIN
             {
