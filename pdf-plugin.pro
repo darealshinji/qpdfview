@@ -11,6 +11,8 @@ TARGET_SHORT = qpdfpdf
 OBJECTS_DIR = objects-pdf
 MOC_DIR = moc-pdf
 
+CONFIG += c++17
+
 HEADERS = sources/model.h sources/pdfmodel.h sources/annotationwidgets.h sources/formfieldwidgets.h
 SOURCES = sources/pdfmodel.cpp sources/annotationwidgets.cpp sources/formfieldwidgets.cpp
 
