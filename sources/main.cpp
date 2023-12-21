@@ -480,18 +480,13 @@ void showMessageBox(QtMsgType type, const QMessageLogContext& context, const QSt
 {
     Q_UNUSED(context);
 
-    const char* prefix;
-    UINT icon;
+    const char* prefix = "";
+    UINT icon = MB_ICONINFORMATION;
 
     switch (type)
     {
         case QtDebugMsg:
             prefix = "Debug: ";
-            icon = MB_ICONINFORMATION;
-            break;
-        case QtInfoMsg:
-            prefix = "";
-            icon = MB_ICONINFORMATION;
             break;
         case QtWarningMsg:
             prefix = "Warning: ";
