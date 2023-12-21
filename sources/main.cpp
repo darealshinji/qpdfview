@@ -400,15 +400,15 @@ void activateUniqueInstance()
 
     if(unique)
     {
-        QScopedPointer< QDBusInterface > interface(MainWindowAdaptor::createInterface());
+        QScopedPointer< QDBusInterface > uniqueInstance(MainWindowAdaptor::createInterface());
 
-        if(interface->isValid())
+        if(uniqueInstance->isValid())
         {
-            interface->call("raiseAndActivate");
+            uniqueInstance->call("raiseAndActivate");
 
             foreach(const File& file, files)
             {
-                QDBusReply< bool > reply = interface->call("jumpToPageOrOpenInNewTab", QFileInfo(file.filePath).absoluteFilePath(), file.page, true, file.enclosingBox, quiet);
+                QDBusReply< bool > reply = uniqueInstance->call("jumpToPageOrOpenInNewTab", QFileInfo(file.filePath).absoluteFilePath(), file.page, true, file.enclosingBox, quiet);
 
                 if(!reply.isValid())
                 {
@@ -420,12 +420,12 @@ void activateUniqueInstance()
 
             if(!files.isEmpty())
             {
-                interface->call("saveDatabase");
+                uniqueInstance->call("saveDatabase");
             }
 
             if(!searchText.isEmpty())
             {
-                interface->call("startSearch", searchText);
+                uniqueInstance->call("startSearch", searchText);
             }
 
             exit(ExitOk);
