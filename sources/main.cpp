@@ -164,8 +164,6 @@ void parseCommandLineArguments()
 
     QStringList arguments = QApplication::arguments();
 
-    qDebug() << arguments;
-
     if(!arguments.isEmpty())
     {
         arguments.removeFirst();
