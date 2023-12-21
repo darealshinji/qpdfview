@@ -164,6 +164,8 @@ void parseCommandLineArguments()
 
     QStringList arguments = QApplication::arguments();
 
+    qDebug() << arguments;
+
     if(!arguments.isEmpty())
     {
         arguments.removeFirst();
@@ -221,15 +223,7 @@ void parseCommandLineArguments()
                     instanceName = chosenInstanceName;
                 }
             }
-#ifndef Q_OS_WIN
-
             else if(argument == QLatin1String("--help"))
-
-#else
-
-            else if(argument == QLatin1String("--help") || argument == QLatin1String("/help") || argument == QLatin1String("/?"))
-
-#endif // Q_OS_WIN
             {
 #ifndef Q_OS_WIN
 
