@@ -52,6 +52,12 @@ Application::Application(int& argc, char** argv) : QApplication(argc, argv),
     setAttribute(Qt::AA_UseHighDpiPixmaps);
 
 #endif // QT_VERSION
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+
+    setDesktopFileName("qpdfivew");
+
+#endif // QT_VERSION
 }
 
 void Application::setMainWindow(MainWindow* mainWindow)
